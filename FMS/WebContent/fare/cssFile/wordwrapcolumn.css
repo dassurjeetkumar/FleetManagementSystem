@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.url {
+    max-width: 150px;
+    word-wrap: break-word;
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="revenue_sector" extends="struts-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+		<!-- <global-exception-mappings>
+
+  			 <exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+ <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+ 
+  		 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+  		   		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" /> 
+  		 
+  		  <exception-mapping exception="java.lang.Exception" result="welcome" /> 
+		</global-exception-mappings> -->	
+		
+		
+		<action name="viewrevenuesector"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="viewRevenue">
+
+			<result name="success" type="tiles">revenueData</result>
+		</action>
+		<action name="viewRevenueData"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction">
+
+		</action>
+
+		<action name="CreateRevenueSector"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="createRevenue">
+			<result name="success" type="tiles">CreateRevenueSector</result>
+		</action>
+
+		<action name="createRevenueAction"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="createRevenueAction">
+			<result name="input" type="tiles">CreateRevenueSector</result>
+			<result name="success" type="tiles">revenueList</result>
+		</action>
+
+		<action name="viewRevenueSectorList"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="showRevenueSector">
+			<result name="success" type="redirectAction">viewrevenuesector</result>
+		</action>
+		<action name="editRevenueSector"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="editRevenueSector">
+			<result name="success" type="tiles">editRevenueSector</result>
+		</action>
+		<action name="addEditedRevenueSector"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="addeditedrevenue">
+
+			<result name="input" type="tiles">editRevenueSector</result>
+			<result name="success" type="chain">viewrevenuesector</result>
+		</action>
+
+		<action name="deleteRevenueSector"
+			class="com.trimax.its.revenuesector.action.RevenueSectorAction"
+			method="deleteRevenueSectorAction">
+			<result name="success" type="tiles">revenueData</result>
+			<result name="input" type="tiles">revenueData </result>
+		</action>
+
+	</package>
+</struts>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/its/!svn/ver/7343/its/src/com/trimax/its/dao
+END
+VendorDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/4214/its/src/com/trimax/its/dao/VendorDAO.java
+END
+getReasonListDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/7343/its/src/com/trimax/its/dao/getReasonListDao.java
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/6119/its/src/com/trimax/its/dao/UserDao.java
+END
+ErrorLogDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/99/its/src/com/trimax/its/dao/ErrorLogDAO.java
+END
+SessionDetailsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6696/its/src/com/trimax/its/dao/SessionDetailsDao.java
+END
+MenuDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/2330/its/src/com/trimax/its/dao/MenuDao.java
+END

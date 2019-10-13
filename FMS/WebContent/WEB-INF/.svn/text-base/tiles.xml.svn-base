@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/layout/baselayout.jsp">
+		<put-attribute name="layoutId" value="" />
+		<put-attribute name="js" value="/layout/js.jsp" />
+		<put-attribute name="css" value="/layout/css.jsp" />
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+	</definition>
+
+	<definition name="loginbaseLayout" template="/layout/loginBaselayout.jsp">
+		<put-attribute name="layoutId" value="" />
+		<put-attribute name="js" value="/layout/js.jsp" />
+		<put-attribute name="css" value="/layout/css.jsp" />
+		<put-attribute name="title" value="" />
+		<put-attribute name="content" value="" />
+
+	</definition>
+	
+	<definition name="vtureport" template="/layout/vtureport.jsp">
+		<put-attribute name="layoutId" value="" />
+		<put-attribute name="js" value="/layout/js.jsp" />
+		<put-attribute name="css" value="/layout/css.jsp" />
+		<put-attribute name="title" value="" />
+		<put-attribute name="content" value="" />
+
+	</definition>
+
+	<definition name="index" extends="baseLayout">
+		<put-attribute name="layoutId" value="index" />
+		<put-attribute name="title" value="Dashboard" />
+		<put-attribute name="content" value="/layout/content.jsp" />
+	</definition>
+
+	<definition name="login" extends="loginbaseLayout">
+		<put-attribute name="layoutId" value="login" />
+		<put-attribute name="title" value="Login page" />
+		<put-attribute name="content" value="/pages/login.jsp" />
+	</definition>
+
+
+	<definition name="Vendor" extends="baseLayout">
+		<put-attribute name="title" value="Create Vendor" />
+		<put-attribute name="content" value="/Master/Vendor.jsp" />
+	</definition>
+
+
+	<definition name="ShowVendor" extends="baseLayout">
+		<put-attribute name="title" value="Create Vendor" />
+		<put-attribute name="content" value="/Master/Vendor.jsp" />
+	</definition>
+
+	<definition name="ShowVendorList" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+	<definition name="Organisation" extends="baseLayout">
+		<put-attribute name="title" value="Organisation" />
+		<put-attribute name="content" value="/transport/organisation.jsp" />
+	</definition>
+
+	<definition name="BusStopText" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop" />
+		<put-attribute name="layoutId" value="BusStopText" />
+		<put-attribute name="content" value="/transport/busStopsText.jsp" />
+	</definition>
+	<definition name="AddPage" extends="baseLayout">
+		<put-attribute name="title" value="Page List" />
+		<put-attribute name="layoutId" value="Add Page" />
+		<put-attribute name="content" value="/pages/admin/addPage.jsp" />
+	</definition>
+	<definition name="AddGroup" extends="baseLayout">
+		<put-attribute name="title" value="Group List" />
+		<put-attribute name="layoutId" value="Add Page" />
+		<put-attribute name="content" value="/pages/admin/addGroup.jsp" />
+	</definition>
+	<definition name="EditPage" extends="baseLayout">
+		<put-attribute name="title" value="Edit Page" />
+		<put-attribute name="layoutId" value="Add Page" />
+		<put-attribute name="content" value="/pages/admin/editAddPage.jsp" />
+	</definition>
+	<definition name="CreatePage" extends="baseLayout">
+		<put-attribute name="title" value="Create Page" />
+		<put-attribute name="layoutId" value="Add Page" />
+		<put-attribute name="content" value="/pages/admin/createNewPage.jsp" />
+	</definition>
+
+	<definition name="FindParentId" extends="baseLayout">
+		<put-attribute name="title" value="Create Page" />
+		<put-attribute name="layoutId" value="Add Page" />
+		<put-attribute name="content" value="/pages/admin/createNewPage.jsp" />
+	</definition>
+
+
+	<!-- Vendor -->
+	<definition name="Vendor" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+
+	<definition name="ShowVendor" extends="baseLayout">
+		<put-attribute name="title" value="Create Vendor" />
+		<put-attribute name="content" value="/Master/Vendor.jsp" />
+	</definition>
+
+	<definition name="ShowVendorList" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+	<definition name="DeleteRecordList" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+	<definition name="ModifyRecord" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/EditVendor.jsp" />
+	</definition>
+
+
+	<definition name="EditRecord" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+	<!-- Vendor -->
+
+
+
+	<!-- Employee Start -->
+
+	<definition name="ShowEmployeeList" extends="baseLayout">
+		<put-attribute name="title" value="Show Employee List" />
+		<put-attribute name="content"
+			value="/pages/usermanagement/employeelist.jsp" />
+	</definition>
+
+
+	<definition name="ShowEmployee" extends="baseLayout">
+		<put-attribute name="title" value="Show Employee" />
+		<put-attribute name="content"
+			value="/pages/usermanagement/createemployee.jsp" />
+	</definition>
+
+	<definition name="AddEmployeeTest" extends="baseLayout">
+		<put-attribute name="title" value="Add Employee" />
+		<put-attribute name="content"
+			value="/pages/usermanagement/employeelist.jsp" />
+	</definition>
+
+
+	<definition name="EditEmployee" extends="baseLayout">
+		<put-attribute name="title" value="Edit Employee" />
+		<put-attribute name="content"
+			value="/pages/usermanagement/editemployee.jsp" />
+	</definition>
+
+
+	<definition name="UpdateEmployee" extends="baseLayout">
+		<put-attribute name="title" value="Edit Employee" />
+		<put-attribute name="content"
+			value="/pages/usermanagement/employeelist.jsp" />
+	</definition>
+
+	<!-- Employee End -->
+
+
+
+	<!-- Show WAybills Start-->
+
+	<definition name="showWaybills" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showWaybills.jsp" />
+	</definition>
+
+	<definition name="showWaybillsView" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showOnlineWaybills.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="showWaybillsScheduleTrip" extends="baseLayout">
+		<put-attribute name="title" value="Show Schedule Trip Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showOnlineWaybillsScheduleTripReport.jsp" />
+	</definition>
+	
+	
+
+	<definition name="showWaybillsTripwise" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showWaybillsTripwise.jsp" />
+	</definition>
+	
+	<definition name="showWaybillsWiseDayWise" extends="baseLayout">
+		<put-attribute name="title" value="Waybill Wise Day Wise Report" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showWaybillDayWise.jsp" />
+	</definition>
+	<definition name="showDepotWiseETMCount" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showDepotWiseETMCountReport.jsp" />
+	</definition>
+	
+	<definition name="ShowLiveBusDetailsAll" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/showWaybills/ShowLiveBusDetailsAll.jsp" />
+	</definition>
+	
+	<definition name="ShowLiveBusDetailsTracking" extends="baseLayout">
+	<put-attribute name="title" value="Show live bus detail"/>
+	<put-attribute name="content" value="/showWaybills/LiveBusTrackingData.jsp"/>
+	</definition>
+	
+	<definition name="LiveBusTrackingDataForAll" extends="baseLayout">
+		<put-attribute name="layoutId" value="ShowAllBusesOnline" />
+		<put-attribute name="title" value="Live Buses For All" />
+		<put-attribute name="content" value="/showWaybills/LiveBusTrackingDataForAll.jsp" />
+	</definition>
+	
+	<!-- Show WAybills END-->
+
+<!-- waybills-2016 start -->
+  
+  <definition name="showWaybillsEtmTicket" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showWaybillsEtmTicket.jsp" />
+	</definition>
+	<definition name="showWaybillsWiseDayWiseEtmTicket" extends="baseLayout">
+		<put-attribute name="title" value="Waybill Wise Day Wise Report" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showWaybillDayWiseEtmTicket.jsp" />
+	</definition>
+    <definition name="showWaybillsViewEtmTicket" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showOnlineWaybillsEtmTicket.jsp" />
+	</definition>
+
+    <definition name="showWaybillsTripwiseEtmTicket" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/showWaybills/showWaybillsTripwiseEtmTicket.jsp" />
+	</definition>
+<!-- end -->
+<!-- waybills-Before Live  -->
+  
+<!--   <definition name="showWaybillsBeforeLive" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Show Waybill" /> -->
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+<!-- 		<put-attribute name="content" value="/showWaybills/showWaybillsBeforeLive.jsp" /> -->
+<!-- 	</definition> -->
+<!-- 	<definition name="showWaybillsWiseDayWiseEtmTicket" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Waybill Wise Day Wise Report" /> -->
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+<!-- 		<put-attribute name="content" value="/showWaybills/showWaybillDayWiseBeforeLive.jsp" /> -->
+<!-- 	</definition> -->
+<!--     <definition name="showWaybillsViewEtmTicket" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Show Waybill" /> -->
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+<!-- 		<put-attribute name="content" value="/showWaybills/showOnlineWaybillsBeforeLive.jsp" /> -->
+<!-- 	</definition> -->
+
+<!--     <definition name="showWaybillsTripwiseEtmTicket" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Show Waybill" /> -->
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+<!-- 		<put-attribute name="content" value="/showWaybills/showWaybillsTripwiseBeforeLive.jsp" /> -->
+<!-- 	</definition> -->
+<!-- end -->
+
+	<definition name="BusStopEdit" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/transport/busStopsEdit.jsp" />
+	</definition>
+	<definition name="BusStopMap" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Map" />
+		<put-attribute name="content" value="/transport/busStopMap.jsp" />
+	</definition>
+	
+	<definition name="BusStopMapFence" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Map" />
+		<put-attribute name="content" value="/pages/vts/busStopFence.jsp" />
+	</definition>
+
+
+	<definition name="ShowVehicle" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="layoutId" value="showVehilce" />
+		<put-attribute name="content" value="/vehicle/showVehicle.jsp" />
+	</definition>
+
+	<definition name="EditVehicle" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/editVehicle.jsp" />
+	</definition>
+
+	<definition name="FormFour" extends="baseLayout">
+		<put-attribute name="layoutId" value="FormFour" />
+		<put-attribute name="title" value="Form 4" />
+		<put-attribute name="content" value="/transport/formFour.jsp" />
+	</definition>
+
+	<definition name="BusStopCreate" extends="baseLayout">
+		<put-attribute name="title" value="Create Stop Map" />
+		<put-attribute name="content" value="/transport/busStopCreate.jsp" />
+	</definition>
+
+	<definition name="RouteText" extends="baseLayout">
+		<put-attribute name="title" value="View Route" />
+		<put-attribute name="layoutId" value="RouteText" />
+		<put-attribute name="content" value="/route/routeViewText.jsp" />
+	</definition>
+
+	<definition name="RouteMap" extends="baseLayout">
+		<put-attribute name="title" value="Create Route" />
+		<put-attribute name="layoutId" value="RouteMap" />
+		<put-attribute name="content" value="/route/routeMap.jsp" />
+	</definition>
+	
+	<definition name="edittrips" extends="baseLayout">
+		<put-attribute name="title" value="Edit Trips" />
+		<put-attribute name="layoutId" value="edittrip" />
+		<put-attribute name="content" value="/transport/editTrips.jsp" />
+	</definition>
+
+	<!-- <definition name="FareChartCopy" extends="baseLayout"> <put-attribute 
+		name="title" value="Fare Chart"/> <put-attribute name="layoutId" value="FareChartCopy"/> 
+		<put-attribute name="content" value="/fare/copyFareChartMaster.jsp"/> </definition> 
+		<definition name="FareChart" extends="baseLayout"> <put-attribute name="title" 
+		value="Fare Chart"/> <put-attribute name="layoutId" value="FareChart"/> <put-attribute 
+		name="content" value="/fare/farechartMaster.jsp"/> </definition> <definition 
+		name="EditFareChartMaster" extends="baseLayout"> <put-attribute name="title" 
+		value="EditChartMaster"/> <put-attribute name="layoutId" value="Edit FareChart 
+		Master"/> <put-attribute name="content" value="/fare/fareChartMasterEdit.jsp"/> 
+		</definition> <definition name="CreateFareChart" extends="baseLayout"> <put-attribute 
+		name="title" value="createChart"/> <put-attribute name="layoutId" value="CreateFareChart"/> 
+		<put-attribute name="content" value="/fare/createFareChartMaster.jsp"/> </definition> 
+		<definition name="FareChartTri" extends="baseLayout"> <put-attribute name="title" 
+		value="Fare Chart"/> <put-attribute name="layoutId" value="CreateFareChart"/> 
+		<put-attribute name="content" value="/fare/fareChartTri.jsp"/> </definition> 
+		<definition name="RateMaster" extends="baseLayout"> <put-attribute name="title" 
+		value="Rate Master"/> <put-attribute name="layoutId" value="RateMaster"/> 
+		<put-attribute name="content" value="/fare/rateMaster.jsp"/> </definition> 
+		<definition name="RateMasterAdd" extends="baseLayout"> <put-attribute name="title" 
+		value="Rate Master"/> <put-attribute name="layoutId" value="RateMasterAdd"/> 
+		<put-attribute name="content" value="/fare/rateMasterAdd.jsp"/> </definition> 
+		<definition name="RateMasterEdit" extends="baseLayout"> <put-attribute name="title" 
+		value="Rate Master"/> <put-attribute name="layoutId" value="RateMasterAdd"/> 
+		<put-attribute name="content" value="/fare/rateMasterEdit.jsp"/> </definition> 
+		<definition name="RateMasterDetail" extends="baseLayout"> <put-attribute 
+		name="title" value="Rate Master"/> <put-attribute name="layoutId" value="RateMasterAdd"/> 
+		<put-attribute name="content" value="/fare/rateMasterDetail.jsp"/> </definition> 
+		<definition name="RateMasterDetailEdit" extends="baseLayout"> <put-attribute 
+		name="title" value="Rate Master"/> <put-attribute name="layoutId" value="RateMasterAdd"/> 
+		<put-attribute name="content" value="/fare/rateMasterDetailEdit.jsp"/> </definition> -->
+
+
+	<definition name="RoleAction" extends="baseLayout">
+		<put-attribute name="title" value="Role List" />
+		<put-attribute name="layoutId" value="Role" />
+		<put-attribute name="content" value="/pages/admin/role.jsp" />
+	</definition>
+	<definition name="CreateRoleAction" extends="baseLayout">
+		<put-attribute name="title" value="Create Role" />
+		<put-attribute name="layoutId" value="Role" />
+		<put-attribute name="content" value="/pages/admin/createrole.jsp" />
+	</definition>
+	<definition name="editPage" extends="baseLayout">
+		<put-attribute name="title" value="Edit Role" />
+		<put-attribute name="layoutId" value="Edit" />
+		<put-attribute name="content" value="/pages/admin/editRole.jsp" />
+	</definition>
+	<definition name="CreateGroup" extends="baseLayout">
+		<put-attribute name="title" value="Create Group" />
+		<put-attribute name="layoutId" value="Edit" />
+		<put-attribute name="content" value="/pages/admin/createGroup.jsp" />
+
+	</definition>
+
+	<definition name="EditGroup" extends="baseLayout">
+		<put-attribute name="title" value="Edit Group" />
+		<put-attribute name="layoutId" value="Edit" />
+		<put-attribute name="content" value="/pages/admin/editGroup.jsp" />
+
+	</definition>
+
+
+
+	<definition name="AddUserGRoup" extends="baseLayout">
+		<put-attribute name="title" value="User Group" />
+		<put-attribute name="layoutId" value="Edit" />
+		<put-attribute name="content" value="/pages/admin/UserGroup.jsp" />
+
+	</definition>
+
+	<definition name="GroupMap" extends="baseLayout">
+		<put-attribute name="title" value="User Group Map" />
+		<put-attribute name="layoutId" value="Edit" />
+		<put-attribute name="content" value="/pages/admin/UserGroupMap.jsp" />
+
+	</definition>
+	<definition name="viewGroupRole" extends="baseLayout">
+		<put-attribute name="title" value="View Group Role" />
+		<put-attribute name="layoutId" value="Edit" />
+		<put-attribute name="content" value="/pages/admin/groupRole.jsp" />
+
+	</definition>
+	<definition name="viewpagerole" extends="baseLayout">
+		<put-attribute name="title" value="View Page Role" />
+		<put-attribute name="layoutId" value="view" />
+		<put-attribute name="content" value="/pages/admin/viewPagerole.jsp" />
+
+	</definition>
+
+	<definition name="Schedule" extends="baseLayout">
+		<put-attribute name="title" value="Schedule Details" />
+		<put-attribute name="layoutId" value="schedule" />
+		<put-attribute name="content" value="/transport/schedule.jsp" />
+	</definition>
+
+	<definition name="CreateSchedule" extends="baseLayout">
+		<put-attribute name="title" value="Create Schedule" />
+		<put-attribute name="layoutId" value="createschedule" />
+		<put-attribute name="content" value="/transport/createSchedule.jsp" />
+	</definition>
+
+	<definition name="Trips" extends="baseLayout">
+		<put-attribute name="title" value="Create Trips" />
+		<put-attribute name="layoutId" value="createtrips" />
+		<put-attribute name="content" value="/transport/trips.jsp" />
+	</definition>
+	<definition name="VehicleType" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/vehicleTypeList.jsp" />
+	</definition>
+	<definition name="CreateVehicleType" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/createVehicleType.jsp" />
+	</definition>
+	<definition name="EditVehicleType" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/editVehicleType.jsp" />
+	</definition>
+	<definition name="ShiftType" extends="baseLayout">
+		<put-attribute name="title" value="Duty Type" />
+		<put-attribute name="content" value="/ShiftType/ShiftType.jsp" />
+	</definition>
+
+	<definition name="CreateShiftType" extends="baseLayout">
+		<put-attribute name="title" value="Duty Type" />
+		<put-attribute name="content" value="/ShiftType/CreateShiftType.jsp" />
+	</definition>
+	<definition name="EditShiftType" extends="baseLayout">
+		<put-attribute name="title" value="Duty Type" />
+		<put-attribute name="content" value="/ShiftType/EditShiftType.jsp" />
+	</definition>
+
+	<definition name="RoadType" extends="baseLayout">
+		<put-attribute name="title" value="Road Type" />
+		<put-attribute name="content" value="/RoadType/RoadType.jsp" />
+	</definition>
+
+	<definition name="CreateRoadType" extends="baseLayout">
+		<put-attribute name="title" value="Road Type" />
+		<put-attribute name="content" value="/RoadType/CreateRoadType.jsp" />
+	</definition>
+	<definition name="EditRoadType" extends="baseLayout">
+		<put-attribute name="title" value="Road Type" />
+		<put-attribute name="content" value="/RoadType/EditRoadType.jsp" />
+	</definition>
+	<definition name="EditDockingDetails" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/editDockingDetails.jsp" />
+	</definition>
+
+	<definition name="CreateNewVehicle" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/createVehicle.jsp" />
+	</definition>
+
+	<!-- <definition name="PassRate" extends="baseLayout"> <put-attribute name="title" 
+		value="Pass Rate Master"/> <put-attribute name="layoutId" value="PassRate"/> 
+		<put-attribute name="content" value="/pass/viewPass.jsp"/> </definition> 
+		<definition name="PassType" extends="baseLayout"> <put-attribute name="title" 
+		value="Pass Type"/> <put-attribute name="layoutId" value="PassType"/> <put-attribute 
+		name="content" value="/pass/viewPassType.jsp"/> </definition> -->
+
+	<definition name="ChangePassword" extends="baseLayout">
+		<put-attribute name="title" value="changepasssword" />
+		<put-attribute name="content" value="/Password/ChangePassword.jsp" />
+	</definition>
+
+	<definition name="EditVehicleType" extends="baseLayout">
+		<put-attribute name="title" value="Vehicle Management" />
+		<put-attribute name="content" value="/vehicle/editVehicleType.jsp" />
+	</definition>
+
+	<definition name="viewBusStopType" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Type View" />
+		<put-attribute name="layoutId" value="viewBusStopType" />
+		<put-attribute name="content"
+			value="/transport/busstoptype/busstoptypeView.jsp" />
+	</definition>
+
+	<definition name="addBusStopType" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Type Create" />
+		<put-attribute name="layoutId" value="addBusStopType" />
+		<put-attribute name="content"
+			value="/transport/busstoptype/busstoptypeAdd.jsp" />
+	</definition>
+
+	<definition name="editBusStopType" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Type Edit" />
+		<put-attribute name="layoutId" value="editBusStopType" />
+		<put-attribute name="content"
+			value="/transport/busstoptype/busstoptypeEdit.jsp" />
+	</definition>
+
+
+
+
+	<!-- definition name="showBusstopList" extends="baseLayout"> <put-attribute 
+		name="title" value="Report"/> <put-attribute name="content" value="/Reports/BusstopReport.jsp"/> 
+		</definition -->
+
+
+	<definition name="viewFloor" extends="baseLayout">
+		<put-attribute name="title" value="Floor View" />
+		<put-attribute name="layoutId" value="viewFloor" />
+		<put-attribute name="content" value="/route/floor/floorView.jsp" />
+	</definition>
+
+	<definition name="addFloor" extends="baseLayout">
+		<put-attribute name="title" value="Floor Create" />
+		<put-attribute name="layoutId" value="addFloor" />
+		<put-attribute name="content" value="/route/floor/floorAdd.jsp" />
+	</definition>
+
+	<definition name="addFloorBus" extends="baseLayout">
+		<put-attribute name="title" value="Floor Create" />
+		<put-attribute name="layoutId" value="addFloor" />
+		<put-attribute name="content"
+			value="/route/floor/FloorAddBusstation.jsp" />
+	</definition>
+
+	<definition name="editFloor" extends="baseLayout">
+		<put-attribute name="title" value="Floor Edit" />
+		<put-attribute name="layoutId" value="editFloor" />
+		<put-attribute name="content" value="/route/floor/floorEdit.jsp" />
+	</definition>
+
+
+	<definition name="viewBay" extends="baseLayout">
+		<put-attribute name="title" value="Bay View" />
+		<put-attribute name="layoutId" value="viewBay" />
+		<put-attribute name="content" value="/route/bay/bayView.jsp" />
+	</definition>
+
+	<definition name="addBay" extends="baseLayout">
+		<put-attribute name="title" value="Bay Create" />
+		<put-attribute name="layoutId" value="addBay" />
+		<put-attribute name="content" value="/route/bay/bayAdd.jsp" />
+	</definition>
+
+	<definition name="addBaybus" extends="baseLayout">
+		<put-attribute name="title" value="Bay Create" />
+		<put-attribute name="layoutId" value="addBay" />
+		<put-attribute name="content" value="/route/bay/bayBusstation.jsp" />
+	</definition>
+
+	<definition name="editBay" extends="baseLayout">
+		<put-attribute name="title" value="Bay Edit" />
+		<put-attribute name="layoutId" value="editBay" />
+		<put-attribute name="content" value="/route/bay/bayEdit.jsp" />
+	</definition>
+
+
+	<definition name="viewPlatform" extends="baseLayout">
+		<put-attribute name="title" value="Platform View" />
+		<put-attribute name="layoutId" value="viewPlatform" />
+		<put-attribute name="content" value="/route/platform/platformView.jsp" />
+	</definition>
+
+	<definition name="addPlatform" extends="baseLayout">
+		<put-attribute name="title" value="Platform Create" />
+		<put-attribute name="layoutId" value="addPlatform" />
+		<put-attribute name="content" value="/route/platform/platformAdd.jsp" />
+	</definition>
+	<definition name="addBus" extends="baseLayout">
+		<put-attribute name="title" value="Platform Create" />
+		<put-attribute name="layoutId" value="addPlatform" />
+		<put-attribute name="content"
+			value="/route/platform/platformbusstation.jsp" />
+	</definition>
+
+	<definition name="editPlatform" extends="baseLayout">
+		<put-attribute name="title" value="Platform Edit" />
+		<put-attribute name="layoutId" value="editPlatform" />
+		<put-attribute name="content" value="/route/platform/platformEdit.jsp" />
+	</definition>
+
+	<definition name="viewscheduleType" extends="baseLayout">
+		<put-attribute name="title" value="ScheduleType" />
+		<put-attribute name="layoutId" value="ScheduleType" />
+		<put-attribute name="content" value="/transport/showscheduleType.jsp" />
+	</definition>
+	<definition name="viewcreatescheduleType" extends="baseLayout">
+		<put-attribute name="title" value="ScheduleType" />
+		<put-attribute name="layoutId" value="ScheduleType" />
+		<put-attribute name="content" value="/transport/createscheduleType.jsp" />
+	</definition>
+	<definition name="viewEditscheduleType" extends="baseLayout">
+		<put-attribute name="title" value="ScheduleType" />
+		<put-attribute name="layoutId" value="ScheduleType" />
+		<put-attribute name="content" value="/transport/editscheduletype.jsp" />
+	</definition>
+	<definition name="EditRouteMap" extends="baseLayout">
+		<put-attribute name="title" value="Edit Route" />
+		<put-attribute name="layoutId" value="RouteMap" />
+		<put-attribute name="content" value="/route/EditrouteMap.jsp" />
+	</definition>
+
+	<definition name="viewTripType" extends="baseLayout">
+		<put-attribute name="title" value="TripType View" />
+		<put-attribute name="layoutId" value="viewTripType" />
+		<put-attribute name="content"
+			value="/transport/triptype/tripTypeView.jsp" />
+	</definition>
+
+	<definition name="addTripType" extends="baseLayout">
+		<put-attribute name="title" value="TripType Create" />
+		<put-attribute name="layoutId" value="addFloor" />
+		<put-attribute name="content"
+			value="/transport/triptype/tripTypeAdd.jsp" />
+	</definition>
+	<definition name="editTripType" extends="baseLayout">
+		<put-attribute name="title" value="TripType Edit" />
+		<put-attribute name="layoutId" value="editFloor" />
+		<put-attribute name="content"
+			value="/transport/triptype/tripTypeEdit.jsp" />
+	</definition>
+
+	<definition name="viewTicketType" extends="baseLayout">
+		<put-attribute name="title" value="Ticket Type View" />
+		<put-attribute name="layoutId" value="viewTicketType" />
+		<put-attribute name="content"
+			value="/transport/tickettype/tickettypeView.jsp" />
+	</definition>
+
+	<definition name="addTicketType" extends="baseLayout">
+		<put-attribute name="title" value="Ticket Type Create" />
+		<put-attribute name="layoutId" value="addTicketType" />
+		<put-attribute name="content"
+			value="/transport/tickettype/tickettypeAdd.jsp" />
+	</definition>
+
+	<definition name="editTicketType" extends="baseLayout">
+		<put-attribute name="title" value="Ticket Type Edit" />
+		<put-attribute name="layoutId" value="editTicketType" />
+		<put-attribute name="content"
+			value="/transport/tickettype/tickettypeEdit.jsp" />
+	</definition>
+
+	<definition name="EditSchedule" extends="baseLayout">
+		<put-attribute name="title" value="Edit Schedule" />
+		<put-attribute name="layoutId" value="editschedule" />
+		<put-attribute name="content" value="/transport/editSchedule.jsp" />
+	</definition>
+	
+	<definition name="editFormFour" extends="baseLayout">
+		<put-attribute name="title" value="Edit Form IV" />
+		<put-attribute name="layoutId" value="editformfour" />
+		<put-attribute name="content" value="/transport/editFormFour.jsp" />
+	</definition>
+
+	<definition name="viewFormFour" extends="baseLayout">
+		<put-attribute name="title" value="Schedule Related Form Four" />
+		<put-attribute name="layoutId" value="formfourview" />
+		<put-attribute name="content" value="/transport/FormFourView.jsp" />
+	</definition>
+	
+	<definition name="viewtrips" extends="baseLayout">
+		<put-attribute name="title" value="View Trips" />
+		<put-attribute name="layoutId" value="tripsview" />
+		<put-attribute name="content" value="/transport/tripsView.jsp" />
+	</definition>
+	
+	<definition name="copyschedule" extends="baseLayout">
+		<put-attribute name="title" value="Copy Schedule" />
+		<put-attribute name="layoutId" value="copyschedule" />
+		<put-attribute name="content" value="/transport/copySchedule.jsp" />
+	</definition>
+
+	<definition name="curtailschedule" extends="baseLayout">
+		<put-attribute name="title" value="Schedule Curtailment" />
+		<put-attribute name="layoutId" value="curtailschedule" />
+		<put-attribute name="content" value="/transport/curtailSchedule.jsp" />
+	</definition>
+
+
+	<definition name="BusStopGroupText" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Group" />
+		<put-attribute name="layoutId" value="BusStopGroupText" />
+		<put-attribute name="content" value="/transport/busStopGroupText.jsp" />
+	</definition>
+
+	<definition name="BusStopGroupCreateMap" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Group" />
+		<put-attribute name="layoutId" value="BusStopGroupCreateMap" />
+		<put-attribute name="content" value="/transport/busStopGroupMap.jsp" />
+	</definition>
+
+	<definition name="BusStopGroupEditMap" extends="baseLayout">
+		<put-attribute name="title" value="Bus Stop Group" />
+		<put-attribute name="layoutId" value="BusStopGroupCreateMap" />
+		<put-attribute name="content" value="/transport/busStopGroupEditMap.jsp" />
+	</definition>
+
+
+
+	<!-- Start Case Type -->
+
+	<definition name="CaseTypeList" extends="baseLayout">
+		<put-attribute name="title" value="Case Type " />
+		<put-attribute name="content"
+			value="/transport/caseType/caseTypeList.jsp" />
+	</definition>
+
+	<definition name="EditCaseType" extends="baseLayout">
+		<put-attribute name="title" value="Case Type " />
+		<put-attribute name="content"
+			value="/transport/caseType/editCaseType.jsp" />
+	</definition>
+
+	<definition name="CreateNewCaseType" extends="baseLayout">
+		<put-attribute name="title" value="Case Type " />
+		<put-attribute name="content"
+			value="/transport/caseType/createCaseType.jsp" />
+	</definition>
+
+	<!-- End Case Type -->
+	
+	<!-- Revenue Sector Start -->
+	
+	<definition name="revenueData" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue Sector"/>
+      <put-attribute name="content"   value="/RevenueSector/revenueSector.jsp"/>
+   </definition>
+   
+   <definition name="CreateRevenueSector" extends="baseLayout">
+      <put-attribute name="title"  value=" Create Revenue Sector"/>
+      <put-attribute name="content"   value="/RevenueSector/createRevenueSector.jsp"/>
+   </definition>
+   
+   <definition name="revenueList" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue Sector"/>
+      <put-attribute name="layoutId"  value="View"/>
+      <put-attribute name="content"   value="/RevenueSector/revenueSector.jsp"/>      
+   </definition>
+   
+   <definition name="editRevenueSector" extends="baseLayout">
+      <put-attribute name="title"  value="Edit  Revenue Sector"/>
+      <put-attribute name="layoutId"  value="Edit Revenue Sector"/>
+      <put-attribute name="content"   value="/RevenueSector/editRevenueSector.jsp"/>      
+   </definition>
+	<!-- Revenue Sector End -->
+	
+	<definition name="dashboardAdmin" extends="baseLayout">
+		<put-attribute name="layoutId" value="index" />
+		<put-attribute name="title" value="Admin Dashboard" />
+		<put-attribute name="content" value="/layout/content.jsp" />
+	</definition>
+	
+	<definition name="ViewRouteMap" extends="baseLayout">
+		<put-attribute name="title" value="View Route" />
+		<put-attribute name="layoutId" value="RouteMap" />
+		<put-attribute name="content" value="/route/ViewrouteMap.jsp" />
+	</definition>
+	<definition name="createviewRoutePis" extends="baseLayout">
+		<put-attribute name="title" value="View Route Pis" />
+		<put-attribute name="layoutId" value="RouteMapPis" />
+		<put-attribute name="content" value="/route/ViewrouteMapPis.jsp" />
+	</definition>
+	<definition name="ViewRouteMapPis" extends="baseLayout">
+		<put-attribute name="title" value="View Route Pis" />
+		<put-attribute name="layoutId" value="RouteMapPis" />
+		<put-attribute name="content" value="/route/ViewrouteMapPis1.jsp" />
+	</definition>
+	<definition name="editviewRoutePis" extends="baseLayout">
+		<put-attribute name="title" value="View Route Pis" />
+		<put-attribute name="layoutId" value="RouteMapPis" />
+		<put-attribute name="content" value="/route/editviewRoutePis.jsp" />
+	</definition>
+	<definition name="CopyRouteMap" extends="baseLayout">
+		<put-attribute name="title" value="Copy Route" />
+		<put-attribute name="layoutId" value="RouteMap" />
+		<put-attribute name="content" value="/route/CopyrouteMap.jsp" />
+	</definition>
+	
+	<definition name="TicketInventory" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="TicketInventory"/>
+      <put-attribute name="content"   value="/route/TicketInventory.jsp"/>      
+   </definition>
+   
+   <definition name="IssueTicketInventory" extends="baseLayout">
+      <put-attribute name="title"  value="Initial Stock Entry"/>
+      <put-attribute name="layoutId"  value="TicketInventory"/>
+      <put-attribute name="content"   value="/route/IssueTicketInventory.jsp"/>      
+   </definition>
+   
+   <!-- 	start Ticket Inventory Pass Day -->
+  <definition name="ViewInventoryTicketPassType" extends="baseLayout">
+     	<put-attribute name="title"  value=" Ticket Inventory Pass Day"/>
+ 		<put-attribute name="content"  value="/inventoryticketpasstype/InventoryTicketPassTypeList.jsp"/>      	
+    </definition>
+  
+    <definition name="CreateInventoryTicketPassType" extends="baseLayout">
+     	<put-attribute name="title"  value=" Create Ticket Inventory  Pass Day"/>
+ 		<put-attribute name="content"  value="/inventoryticketpasstype/createInventoyTicketPassType.jsp"/>      	
+    </definition>
+    
+    
+    <definition name="InventoryTicketPassList" extends="baseLayout">
+     	<put-attribute name="title"  value=" Ticket  Inventory Pass Day"/>
+ 		<put-attribute name="content"  value="/inventoryticketpasstype/InventoryTicketPassTypeList.jsp"/>      	
+    </definition>
+    
+     
+   
+   <definition name="editInventoryTicketPassType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit   Ticket Inventory Pass Day"/>
+      <put-attribute name="layoutId"  value="Edit   Ticket Inventory Pass Day"/>
+      <put-attribute name="content"   value="/inventoryticketpasstype/editInventoyTicketPassType.jsp"/>      
+   </definition>
+       <!-- 	End  Ticket Inventory Pass Day -->
+   <definition name="Exception" extends="baseLayout">
+		<put-attribute name="layoutId" value="index" />
+		<put-attribute name="title" value="Admin Dashboard" />
+		<put-attribute name="content" value="/pages/admin/customException.jsp" />
+	</definition>
+	
+	<!-- Show WAybillsLC start-->
+<definition name="showWaybillLc" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/OnlineWaybillLC/ShowOnlineWaybillLC.jsp" />
+</definition>
+	
+<definition name="showWaybillLcdepot" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/OnlineWaybillLC/depotwaybillwise.jsp" />
+</definition>
+<definition name="showWaybilllcdetails" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/OnlineWaybillLC/showOnlineLCwaybill.jsp" />
+</definition>
+<definition name="showLCwaybiltripwise" extends="baseLayout">
+		<put-attribute name="title" value="Show Waybill" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/OnlineWaybillLC/showLCwaybiltripwise.jsp" />
+</definition>
+<definition name="showWaybillsWiselcDayWise" extends="baseLayout">
+		<put-attribute name="title" value="Waybill Wise Day Wise Report" />
+		<put-attribute name="layoutId" value="BusStopEdit" />
+		<put-attribute name="content" value="/OnlineWaybillLC/showLCwaybiltripwise.jsp" />
+	</definition>
+	
+   <definition name="createDashboard" extends="baseLayout">
+      <put-attribute name="title"  value="Dashboard "/>
+      <put-attribute name="content"   value="/Dashboard/CreateDashboardName.jsp"/>
+   </definition>
+    <definition name="createDashboardAssign" extends="baseLayout">
+      <put-attribute name="title"  value="Dashboard "/>
+      <put-attribute name="content"   value="/Dashboard/createDashboadAssignChart.jsp"/>
+   </definition>
+    <definition name="createDashboardUserAssign" extends="baseLayout">
+      <put-attribute name="title"  value="Dashboard "/>
+      <put-attribute name="content"   value="/Dashboard/CreateUserDashBoardMapping.jsp"/>
+   </definition>
+<!-- Show WAybillsLC END-->
+<definition name="busStopRouteInfo" extends="baseLayout">
+		<put-attribute name="title" value="View Route" />
+		<put-attribute name="layoutId" value="RouteText" />
+		<put-attribute name="content" value="/route/busstopWiseRouteView.jsp" />
+	</definition>
+<definition name="VehilceToPlot" extends="baseLayout">
+		<put-attribute name="title" value="View Online Vehicles" />
+		<put-attribute name="layoutId" value="RouteText" />
+		<put-attribute name="content" value="/route/VehicleToPlot.jsp" />
+	</definition>
+	
+	<definition name="LinearRouteTracking" extends="baseLayout">
+		<put-attribute name="title" value="Linear Route Tracking" />
+		<put-attribute name="layoutId" value="LinearRouteTracking" />
+		<put-attribute name="content" value="/route/linearRouteTracking.jsp" />
+	</definition>
+	
+	<definition name="LinearRouteTrackingRouteNo" extends="baseLayout">
+		<put-attribute name="title" value="Linear Route Tracking Route No" />
+		<put-attribute name="layoutId" value="LinearRouteTrackingRouteNo" />
+		<put-attribute name="content" value="/vehicle/LinearRouteTrackingRouteNo.jsp" />
+	</definition>
+
+	<definition name="RouteViewTemplate" extends="baseLayout">
+		<put-attribute name="title" value="Route View Template" />
+		<put-attribute name="layoutId" value="LinearRouteTracking" />
+		<put-attribute name="content" value="/route/routeViewTemplate.jsp" />
+	</definition>
+ <definition name="showDashboardMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Dashboard "/>
+      <put-attribute name="content"   value="/Dashboard/DashBoardList.jsp"/>
+   </definition>
+   
+   <definition name="editDashboardMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Dashboard "/>
+      <put-attribute name="content"   value="/Dashboard/editDashboard.jsp"/>
+   </definition>
+<!--    target amount editpage start-->
+   <definition name="EditTargetAmountSchedule" extends="baseLayout">
+		<put-attribute name="title" value="Edit Schedule" />
+		<put-attribute name="layoutId" value="editschedule" />
+		<put-attribute name="content" value="/transport/editTargetAmount.jsp" />
+	</definition>
+	
+	<definition name="destination" extends="baseLayout">
+		<put-attribute name="title" value="Linear Route Tracking" />
+		<put-attribute name="layoutId" value="LinearRouteTracking" />
+		<put-attribute name="content" value="/route/linearRouteTracking.jsp" />
+			</definition>
+			
+
+	
+	 <definition name="EditVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+       <put-attribute name="layoutId"  value="vehicleMaster"/>
+      <put-attribute name="content"  value="/vehicle/editVehicle.jsp"/>      
+   </definition>
+   
+	<!--    target amount editpage end-->
+	
+	<definition name="searchroute" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+       <put-attribute name="layoutId"  value="vehicleMaster"/>
+      <put-attribute name="content"  value="/vehicle/SearchRoute.jsp"/>      
+   </definition>
+   <definition name="TripPlanner" extends="baseLayout">
+      <put-attribute name="title"  value="Trip Planner"/>
+       <put-attribute name="layoutId"  value="Trip Planner"/>
+      <put-attribute name="content"  value="/pages/vts/TripPlanner.jsp"/>      
+   </definition>
+ 
+   
+   		
+<!--  Revenue Report-->
+   <definition name="CumulativeRevenueReport" extends="baseLayout">
+      <put-attribute name="title"  value="Cummulative Revenue Report"/>
+       <put-attribute name="layoutId"  value="Cummulative Revenue Report"/>
+      <put-attribute name="content"  value="/Reports/revenueReport.jsp"/>      
+   </definition>
+   
+   <!-- ETM Status Report -->
+    <definition name="ETMStatusReport" extends="baseLayout">
+      <put-attribute name="title"  value="ETM Status Report"/>
+       <put-attribute name="layoutId"  value="ETM Status Report"/>
+      <put-attribute name="content"  value="/Reports/ETMStatusReport.jsp"/>      
+   </definition>
+   
+   <!-- ConductorWise Earning Report -->
+     <definition name="CondWiseEarningReport" extends="baseLayout">
+      <put-attribute name="title"  value="ConductorWise Earning Report"/>
+       <put-attribute name="layoutId"  value=" ConductorWise Earning Report"/>
+      <put-attribute name="content"  value="/Reports/CumCondEarReport.jsp"/>      
+   </definition>
+   
+   <!-- ScheduledWise Earning Report -->
+     <definition name="SchedEarReport" extends="baseLayout">
+      <put-attribute name="title"  value="ScheduledWise Earning Report"/>
+       <put-attribute name="layoutId"  value="ScheduledWise Earning Report"/>
+      <put-attribute name="content"  value="/Reports/SchedwisseEarnReport.jsp"/>      
+   </definition>
+   
+   <!-- Ticket Book Sale Report -->
+     <definition name="TicketBookSaleReport" extends="baseLayout">
+      <put-attribute name="title"  value="Ticket Book Sale Report"/>
+       <put-attribute name="layoutId"  value="Ticket Book Sale Report"/>
+      <put-attribute name="content"  value="/Reports/ticketBookSaleReport.jsp"/>      
+   </definition>
+   
+   <!--IMMS login page  -->
+    <definition name="IMMSlogin" extends="baseLayout">
+         <put-attribute name="layoutId" value="IMMSlogin1" /> 
+        <put-attribute name="title" value="IMMS login page" />
+        <put-attribute name="content" value="/pages/admin/IMMSlogin1.jsp" />
+    </definition>
+    
+<!--   ETM&OnlineRevenueMismatch  -->
+    <definition name="Etmandonlinerevenuemismatch" extends="baseLayout">
+      <put-attribute name="title"  value="Etm and online revenue mismatch"/>
+       <put-attribute name="layoutId"  value="Etm and online revenue mismatch"/>
+       <put-attribute name="content"  value="/Reports/Etmandonlinerevenuemismatch.jsp"/>     
+ </definition>  
+       
+
+<!--   schedule mapping in its  -->
+    <definition name="schedulemappingits" extends="baseLayout">
+      <put-attribute name="title"  value="schedule mapping its"/>
+       <put-attribute name="layoutId"  value="schedule mapping its"/>
+       <put-attribute name="content"  value="/Reports/schedulemappingits.jsp"/>     
+ </definition> 
+ 
+<!--  Trip Planner Report -->
+ <definition name="TripwiseRevenue" extends="baseLayout">
+      <put-attribute name="title"  value="TripWise Revenue Report"/>
+       <put-attribute name="layoutId"  value="TripWise Revenue Report"/>
+      <put-attribute name="content"  value="/Reports/ShowTripWiseRevenue.jsp"/>      
+   </definition>
+    <definition name="StageWisePassangerCount" extends="baseLayout">
+      <put-attribute name="title"  value="StageWise Passanger Count Report"/>
+       <put-attribute name="layoutId"  value="StageWise Passanger Count Report"/>
+      <put-attribute name="content"  value="/Reports/StageWisePassangerCountReport.jsp"/>      
+   </definition>
+   
+<!--    Vehicle Location Report -->
+   <definition name="VehicleLocation" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Location Report"/>
+       <put-attribute name="layoutId"  value="Vehicle Location Report"/>
+      <put-attribute name="content"  value="/Reports/VehicleLocationReport.jsp"/>      
+   </definition>
+   
+<!--    Audited and Non Audited Schedules -->
+   <definition name="DetailsOfOperatedAndNotOperated" extends="baseLayout">
+		<put-attribute name="title" value="Bags Operated And NotOperated" />
+		<put-attribute name="content"
+			value="/Reports/DetailsOfOperatedAndNotOperated.jsp" />
+	</definition>
+
+   <definition name="LinearRouteTrackingPlanner" extends="baseLayout">
+		<put-attribute name="title" value="Linear Route Tracking Planner" />
+		<put-attribute name="layoutId" value="LinearRouteTrackingPlanner" />
+		<put-attribute name="content" value="/route/LinearRouteTrackingPlanner.jsp" />
+	</definition>
+   
+    <definition name="ScheduleTripwiseStatusSummary" extends="baseLayout">
+		<put-attribute name="title" value="Schedule TripWise Status Summary Report" />
+		<put-attribute name="layoutId" value="ScheduleTripwiseStatusSummary" />
+		<put-attribute name="content" value="/Reports/ScheduleTripwiseStatusSummaryReport.jsp" />
+	</definition>
+	
+	 <definition name="ScheduleOperationAndRevenueSummary" extends="baseLayout">
+		<put-attribute name="title" value="Schedule Operation And Revenue Summary  Report" />
+		<put-attribute name="layoutId" value="ScheduleOperationAndRevenueSummary" />
+		<put-attribute name="content" value="/Reports/ScheduleOperationAndRevenueSummaryReport.jsp" />
+	</definition>
+	
+	  <definition name="StagewiseTicketConsumptionReport" extends="baseLayout">
+		<put-attribute name="title" value="Stagewise Ticket Consumption Report " />
+		<put-attribute name="layoutId" value="StagewiseTicketConsumptionReport" />
+		<put-attribute name="content" value="/Reports/StagewiseTicketConsumptionReport.jsp" />
+	</definition> 
+	
+	 <definition name="OperatedScheduleKM" extends="baseLayout">
+		<put-attribute name="title" value="Operated Scheduled KM Report " />
+		<put-attribute name="layoutId" value="OperatedScheduledKMReport" />
+		<put-attribute name="content" value="/Reports/OperatedScheduledKMReport.jsp" />
+	</definition>
+	
+	 <definition name="MasterSummaryReport" extends="baseLayout">
+		<put-attribute name="title" value="Master Summary Report " />
+		<put-attribute name="layoutId" value="Master Summary Report" />
+		<put-attribute name="content" value="/Reports/MasterSummaryReport.jsp" />
+	</definition>
+	 <definition name="FormOneReport" extends="baseLayout">
+		<put-attribute name="title" value="View Form One Report" />
+		<put-attribute name="layoutId" value="FormOneReport" />
+		<put-attribute name="content" value="/route/FormOneReport.jsp" />
+	</definition>
+	 <definition name="FormTwoReport" extends="baseLayout">
+		<put-attribute name="title" value="View Form Two Report" />
+		<put-attribute name="layoutId" value="FormTwoReport" />
+		<put-attribute name="content" value="/route/FormTwoReport.jsp" />
+	</definition>
+	 <definition name="RouteWiseTripReport" extends="baseLayout">
+		<put-attribute name="title" value="View Route Wise Trip Report" />
+		<put-attribute name="layoutId" value="RouteWiseTripReport" />
+		<put-attribute name="content" value="/route/RouteWiseTripReport.jsp" />
+	</definition>
+	
+	
+	 <definition name="lineData" extends="baseLayout">
+      <put-attribute name="title"  value="Line Sector"/>
+      <put-attribute name="content"   value="/LineSector/lineSectorView.jsp"/>
+   </definition>
+   <definition name="CreateLineSector" extends="baseLayout">
+      <put-attribute name="title"  value=" Create Line Sector"/>
+      <put-attribute name="content"   value="/LineSector/createLineSector.jsp"/>
+   </definition>
+   <definition name="lineList" extends="baseLayout">
+      <put-attribute name="title"  value="Line Sector"/>
+      <put-attribute name="layoutId"  value="View"/>
+      <put-attribute name="content"   value="/LineSector/lineSectorView.jsp"/>      
+   </definition>
+   <definition name="editLineSector" extends="baseLayout">
+      <put-attribute name="title"  value="Edit  Line Sector"/>
+      <put-attribute name="layoutId"  value="Edit Line Sector"/>
+      <put-attribute name="content"   value="/LineSector/editLineSector.jsp"/>      
+   </definition>
+	 <definition name="RouteWiseTripTimePlanning" extends="baseLayout">
+      <put-attribute name="title"  value="Route Wise Trip Timing Plan VTU"/>
+       <put-attribute name="layoutId"  value="Route Wise Trip Timing Plan VTU"/>
+      <put-attribute name="content"  value="/route/RouteWiseTripTimePlanning.jsp"/>      
+   </definition>
+    <definition name="RouteWiseTripTimePlanningFrequency" extends="baseLayout">
+      <put-attribute name="title"  value="Route Wise Trip Timing Plan"/>
+       <put-attribute name="layoutId"  value="Route Wise Trip Timing Plan"/>
+      <put-attribute name="content"  value="/route/RouteWiseTripTimePlanningFrequency.jsp"/>      
+   </definition>
+   <definition name="CausewisedeadKilometerReport" extends="baseLayout">
+		<put-attribute name="title" value="View Cause wise dead Kilometer Report" />
+		<put-attribute name="layoutId" value="CausewisedeadKilometerReport" />
+		<put-attribute name="content" value="/Reports/CausewisedeadKilometerReport.jsp" />
+	</definition>
+	
+	  <definition name="StagewisePassengerTicketCountReport" extends="baseLayout">
+		<put-attribute name="title" value="Stagewise Passenger Ticket Count Report " />
+		<put-attribute name="layoutId" value="StagewisePassengerTicketCountReport" />
+		<put-attribute name="content" value="/Reports/StageWisePassengerTktCount.jsp" />
+	</definition> 
+	
+	 <definition name="NuditoKannadaName" extends="baseLayout">
+      <put-attribute name="title"  value="Nudi to Kannada Name"/>
+      <put-attribute name="layoutId"  value="Nudi to Kannada Name"/>
+      <put-attribute name="content"   value="/kannadaconversion/nudi_to_kannada.jsp"/>      
+   </definition>
+
+   
+   
+   <definition name="ScheduleServiceLimit" extends="baseLayout">
+		<put-attribute name="title" value="Enter Schedule Service Limit" />
+		<put-attribute name="layoutId" value="enterscheduleservicelimit" />
+		<put-attribute name="content" value="/vehicle/scheduleServiceLimit.jsp" />
+	</definition>
+
+   <definition name="StopWiseTravelDurationDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Bus Stop Wise Travel Duration Details"/>
+       <put-attribute name="layoutId"  value="Bus Stop Wise Travel Duration Details"/>
+      <put-attribute name="content"  value="/route/BusStopWiseTravelDurationDetails.jsp"/>     
+   </definition>
+   
+   
+    <definition name="PassIssuerType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Issuer Type"/>
+       <put-attribute name="layoutId"  value="Pass Issuer Type"/>
+      <put-attribute name="content"  value="/pass/PassIssuerType.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassIssuerType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Issuer Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Issuer Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassIssuerType.jsp"/>     
+   </definition>
+     <definition name="editPassIssuerType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Issuer Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Issuer Type"/>
+      <put-attribute name="content"  value="/pass/EditPassIssuerType.jsp"/>     
+   </definition>
+<!--    pass distance type added by itishree -->
+   <definition name="PassDistanceType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Distance Type"/>
+       <put-attribute name="layoutId"  value="Pass Distance Type"/>
+      <put-attribute name="content"  value="/pass/PassDistanceType.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassDistanceType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Issuer Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Issuer Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassDistanceType.jsp"/>     
+   </definition>
+     <definition name="editPassDistanceType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Distance Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Issuer Type"/>
+      <put-attribute name="content"  value="/pass/EditPassDistanceType.jsp"/>     
+   </definition>
+
+<!-- 	ended by itishree -->
+
+<!--    pass purchase type added by itishree -->
+   <definition name="PassPurchaseType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Purchase Type"/>
+       <put-attribute name="layoutId"  value="Pass Purchase Type"/>
+      <put-attribute name="content"  value="/pass/PassPurchaseType.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassPurchaseType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Purchase Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Purchase Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassPurchaseType.jsp"/>     
+   </definition>
+     <definition name="editPassPurchaseType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Purchase Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Purchase Type"/>
+      <put-attribute name="content"  value="/pass/EditPassPurchaseType.jsp"/>     
+   </definition>
+
+<!-- 	ended by itishree -->
+
+<!--    pass Duration type added by itishree -->
+   <definition name="PassDurationType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Duration Type"/>
+       <put-attribute name="layoutId"  value="Pass Duration Type"/>
+      <put-attribute name="content"  value="/pass/PassDurationType.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassDurationType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Duration Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Duration Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassDurationType.jsp"/>     
+   </definition>
+     <definition name="editPassDurationType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Duration Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Duration Type"/>
+      <put-attribute name="content"  value="/pass/EditPassDurationType.jsp"/>     
+   </definition>
+<!-- 	ended by itishree -->
+
+<!--    pass Caste type added by itishree -->
+   <definition name="PassCasteType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Caste Type"/>
+       <put-attribute name="layoutId"  value="Pass Caste Type"/>
+      <put-attribute name="content"  value="/pass/PassCasteType.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassCasteType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Caste Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Caste Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassCasteType.jsp"/>     
+   </definition>
+     <definition name="editPassCasteType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Caste Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Caste Type"/>
+      <put-attribute name="content"  value="/pass/editPassCasteType.jsp"/>     
+   </definition>
+<!-- 	ended by itishree -->
+
+<!--    pass Institution type added by itishree -->
+   <definition name="PassInstitutionType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Institution Type"/>
+       <put-attribute name="layoutId"  value="Pass Institution Type"/>
+      <put-attribute name="content"  value="/pass/PassInstitutionType.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassInstitutionType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Institution Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Institution Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassInstitutionType.jsp"/>     
+   </definition>
+     <definition name="editPassInstitutionType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Institution Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Institution Type"/>
+      <put-attribute name="content"  value="/pass/editPassInstitutionType.jsp"/>     
+   </definition>
+<!-- 	ended by itishree -->
+
+<!--    pass Issuer Counter  added by itishree -->
+   <definition name="PassCounterMasterView" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Issuer Counter Type"/>
+       <put-attribute name="layoutId"  value="Pass Issuer Counter Type"/>
+      <put-attribute name="content"  value="/pass/PassCounterMasterView.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassCounterMasterType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Issuer Counter Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Issuer Counter Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassCounterMasterType.jsp"/>     
+   </definition>
+     <definition name="editPassCounterMasterType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Issuer Counter Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Issuer Counter Type"/>
+      <put-attribute name="content"  value="/pass/editPassCounterMasterType.jsp"/>     
+   </definition>
+<!-- 	ended by itishree -->
+
+<!--    pass Issuer Center  added by itishree -->
+   <definition name="PassIssuerCenterView" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Issuer Center Type"/>
+       <put-attribute name="layoutId"  value="Pass Issuer Center Type"/>
+      <put-attribute name="content"  value="/pass/PassIssuerCenterView.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassIssuerCenterType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Issuer Center Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Issuer Center Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassIssuerCenterType.jsp"/>     
+   </definition>
+     <definition name="editPassIssuerCenterType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Issuer Center Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Issuer Center Type"/>
+      <put-attribute name="content"  value="/pass/editPassIssuerCenterType.jsp"/>     
+   </definition>
+<!-- 	ended by itishree -->
+<!--    pass SubType Center  added by itishree -->
+   <definition name="PassSubTypeView" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Sub Type"/>
+       <put-attribute name="layoutId"  value="Pass Sub Type"/>
+      <put-attribute name="content"  value="/pass/PassSubTypeView.jsp"/>     
+   </definition>
+   
+    <definition name="CreatePassSubType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Pass Sub Type"/>
+       <put-attribute name="layoutId"  value="Create Pass Sub Type"/>
+      <put-attribute name="content"  value="/pass/CreatePassSubType.jsp"/>     
+   </definition>
+     <definition name="editPassSubType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Pass Sub Type"/>
+       <put-attribute name="layoutId"  value="Edit Pass Sub Type"/>
+      <put-attribute name="content"  value="/pass/editPassSubType.jsp"/>     
+   </definition>
+<!-- 	ended by itishree -->
+<!-- 			activedashboard -->
+	<definition name="showActEtmDashboard" extends="baseLayout">
+    <put-attribute name="layoutId" value="showActEtmDashboard" />
+		<put-attribute name="title" value="ETM Active Dashboard" />
+      <put-attribute name="content"   value="/Dashboard/activeDashboard.jsp"/>
+   </definition>
+	 <definition name="ViewAllFormFour" extends="baseLayout">
+      <put-attribute name="title"  value="View All Form Four"/>
+      <put-attribute name="layoutId"  value="ViewAllFormFour"/>
+      <put-attribute name="content"   value="/transport/triptype/ViewAllFormFour.jsp"/>      
+   </definition>
+    <definition name="ViewAllFormFourDetails" extends="baseLayout">
+      <put-attribute name="title"  value="View All FormFour Details"/>
+      <put-attribute name="layoutId"  value="ViewAllFormFourDetails"/>
+      <put-attribute name="content"   value="/transport/triptype/ViewAllFormFourDetails.jsp"/>      
+   </definition>
+	 <definition name="SMSPageEmployee" extends="baseLayout">
+      <put-attribute name="title"  value="SMS Page Employee"/>
+      <put-attribute name="content"  value="/pages/usermanagement/SMSPageEmployee.jsp"/>      
+   </definition>
+   <definition name="SMSPageForAll" extends="baseLayout">
+      <put-attribute name="title"  value="SMS Page Employee"/>
+      <put-attribute name="content"  value="/pages/usermanagement/SmsSendToAll.jsp"/>      
+   </definition>
+   
+   <!--   Ticket Sub Type added by Itishree -->
+  <definition name="TicketSubTypeTiles" extends="baseLayout">
+      <put-attribute name="title"  value="Ticket Sub Type"/>
+       <put-attribute name="layoutId"  value="Ticket Sub Type"/>
+      <put-attribute name="content"  value="/transport/TicketSubType.jsp"/>     
+   </definition>
+   
+    <definition name="CreateTicketSubType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Ticket Sub Type"/>
+       <put-attribute name="layoutId"  value="Create Ticket Sub Type"/>
+      <put-attribute name="content"  value="/transport/CreateTicketSubType.jsp"/>     
+   </definition>
+    <definition name="editTicketSubType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Ticket Sub Type"/>
+       <put-attribute name="layoutId"  value="Edit Ticket Sub Type"/>
+      <put-attribute name="content"  value="/transport/EditTicketSubType.jsp"/>     
+   </definition>
+<!--    end by Itishree -->
+
+<definition name="EtmWiseDenomination" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Wise Denomination Report"/>
+      <put-attribute name="content"   value="/Reports/EtmWiseDenomination.jsp"/>      
+   </definition>
+   <definition name="EmployeeDutyType" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Duty Type"/>
+      <put-attribute name="content"   value="/Reports/EmployeeDutyType.jsp"/>      
+   </definition>
+    <definition name="EmployeeDutyTypeView" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Duty Type View"/>
+      <put-attribute name="content"   value="/Reports/EmployeeDutyTypeView.jsp"/>      
+   </definition>
+     <definition name="EditEmployeeDutyType" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Duty Type View"/>
+      <put-attribute name="content"   value="/Reports/EditEmployeeDuty.jsp"/>      
+   </definition>
+   
+ 
+<!--    Gopinath code for employee default -->
+
+   <definition name="Employeedefault" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Default"/>
+      <put-attribute name="content"   value="/Reports/Employeedefault.jsp"/>      
+   </definition>
+    <definition name="EmployeeDefaultView" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Duty Type View"/>
+      <put-attribute name="content"   value="/Reports/EmployeeDefaultView.jsp"/>      
+   </definition>
+     <definition name="EditEmployeeDefault" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Duty Type View"/>
+      <put-attribute name="content"   value="/Reports/EditEmployeeDefault.jsp"/>      
+   </definition>
+   <definition name="EditRouteName" extends="baseLayout">
+		<put-attribute name="title" value="Edit Route Name" />
+		<put-attribute name="layoutId" value="EditRouteName" />
+		<put-attribute name="content" value="/route/EditRouteName.jsp" />
+	</definition>
+	
+	<!--    Gopinath code for employee default -->
+   </tiles-definitions>
+   
+   
+	

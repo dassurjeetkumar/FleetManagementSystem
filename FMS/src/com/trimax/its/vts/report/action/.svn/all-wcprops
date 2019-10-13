@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/7408/its/src/com/trimax/its/vts/report/action
+END
+TripwiseLateArrivalReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/its/!svn/ver/6662/its/src/com/trimax/its/vts/report/action/TripwiseLateArrivalReport.java
+END
+TripwiseEarlyDepartureReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/its/!svn/ver/6662/its/src/com/trimax/its/vts/report/action/TripwiseEarlyDepartureReport.java
+END
+StudentPassCashCollection.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/its/!svn/ver/7310/its/src/com/trimax/its/vts/report/action/StudentPassCashCollection.java
+END
+DailyCheckList.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/7169/its/src/com/trimax/its/vts/report/action/DailyCheckList.java
+END
+CWSAndDWSReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7408/its/src/com/trimax/its/vts/report/action/CWSAndDWSReport.java
+END
+TripwiseLateDepartureReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/its/!svn/ver/6662/its/src/com/trimax/its/vts/report/action/TripwiseLateDepartureReport.java
+END
+TripwiseEarlyArrivalReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/its/!svn/ver/6662/its/src/com/trimax/its/vts/report/action/TripwiseEarlyArrivalReport.java
+END
+StudentInformationDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/its/!svn/ver/7310/its/src/com/trimax/its/vts/report/action/StudentInformationDetails.java
+END

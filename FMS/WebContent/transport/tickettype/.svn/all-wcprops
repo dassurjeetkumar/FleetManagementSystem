@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/4327/its/WebContent/transport/tickettype
+END
+tickettypeAdd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/4327/its/WebContent/transport/tickettype/tickettypeAdd.jsp
+END
+tickettypeView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4327/its/WebContent/transport/tickettype/tickettypeView.jsp
+END
+tickettypeEdit.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4327/its/WebContent/transport/tickettype/tickettypeEdit.jsp
+END

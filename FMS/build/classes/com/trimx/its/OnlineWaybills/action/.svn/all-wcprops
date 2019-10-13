@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/7418/its/src/com/trimx/its/OnlineWaybills/action
+END
+OnlineWaybills.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/7343/its/src/com/trimx/its/OnlineWaybills/action/OnlineWaybills.java
+END
+ShowOnlineWaybillEtmTicketDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/its/!svn/ver/6665/its/src/com/trimx/its/OnlineWaybills/action/ShowOnlineWaybillEtmTicketDao.java
+END
+ShowOnlineWaybillDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/its/!svn/ver/7432/its/src/com/trimx/its/OnlineWaybills/action/ShowOnlineWaybillDAO.java
+END
+ShowOnlineWaybillsActionEtmTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/its/!svn/ver/6665/its/src/com/trimx/its/OnlineWaybills/action/ShowOnlineWaybillsActionEtmTicket.java
+END
+ShowOnlineWaybillsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/its/!svn/ver/6665/its/src/com/trimx/its/OnlineWaybills/action/ShowOnlineWaybillsAction.java
+END

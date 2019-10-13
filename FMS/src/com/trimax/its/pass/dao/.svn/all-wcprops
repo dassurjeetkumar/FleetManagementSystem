@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/its/!svn/ver/6738/its/src/com/trimax/its/pass/dao
+END
+PassIssuerTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/6539/its/src/com/trimax/its/pass/dao/PassIssuerTypeDAO.java
+END
+PassSubTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/6625/its/src/com/trimax/its/pass/dao/PassSubTypeDAO.java
+END
+PassTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/4238/its/src/com/trimax/its/pass/dao/PassTypeDao.java
+END
+PassPurchaseTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6539/its/src/com/trimax/its/pass/dao/PassPurchaseTypeDAO.java
+END
+PassCounterMasterDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/dao/PassCounterMasterDAO.java
+END
+PassDurationTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6738/its/src/com/trimax/its/pass/dao/PassDurationTypeDAO.java
+END
+PassIssuerCenterDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/dao/PassIssuerCenterDAO.java
+END
+PassCasteTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/dao/PassCasteTypeDAO.java
+END
+PassDistanceTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6539/its/src/com/trimax/its/pass/dao/PassDistanceTypeDAO.java
+END
+PassInstitutionTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/dao/PassInstitutionTypeDAO.java
+END
+PassRateDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/6733/its/src/com/trimax/its/pass/dao/PassRateDao.java
+END

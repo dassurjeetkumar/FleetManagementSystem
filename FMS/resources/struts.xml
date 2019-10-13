@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.custom.i18n.resources"
+		value="global-messages" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+	<package name="default" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+
+
+
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings> <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" 
+			result="welcome" /> <exception-mapping exception="java.lang.NumberFormatException" 
+			result="NullException" /> <exception-mapping exception="java.lang.NullPointerException" 
+			result="NullException" /> <exception-mapping exception="java.io.IOException" 
+			result="NullException" /> <exception-mapping exception="java.sql.SQLException" 
+			result="NullException" /> <exception-mapping exception="java.lang.Exception" 
+			result="welcome" /> </global-exception-mappings> -->
+
+		<action name="welcome" class="com.trimax.its.action.UserAction"
+			method="welcome">
+			<result name="welcome" type="tiles">login</result>
+		</action>
+
+		<!-- <action name="LocaleAction" class="com.trimax.its.action.LocaleAction"> 
+			<result type="tiles">login</result> </action> -->
+
+		<action name="LoginAction"
+			class="com.trimax.its.action.LoginAction">
+			<result type="tiles">dashboardAdmin</result>
+			<result name="input" type="tiles">login</result>
+		</action>
+
+		<action name="LogoutAction"
+			class="com.trimax.its.action.LogoutAction">
+			<result type="tiles">login</result>
+		</action>
+		<action name="changepasswordAction"
+			class="com.trimax.its.action.ChangePasswordAction">
+			<result name="success" type="tiles">ChangePassword</result>
+			<result name="input" type="tiles">ChangePassword</result>
+		</action>
+		<action name="ChangePassWord"
+			class="com.trimax.its.action.ChangePasswordAction"
+			method="changePassWord">
+
+			<result name="success" type="tiles">ChangePassword</result>
+			<result name="input" type="tiles">ChangePassword</result>
+		</action>
+
+
+		<action name="IMMSlog"
+			class="com.trimax.its.action.IMMSloginaction">
+			<result name="success" type="tiles">IMMSlogin</result>
+		</action>
+
+
+
+
+		<action name="DashboardAdmin"
+			class="com.trimax.its.action.DashboardAction">
+			<result name="success" type="tiles">dashboardAdmin</result>
+		</action>
+
+		<action name="ShowOrganisation"
+			class="com.trimax.its.transport.action.OrganisationAction">
+			<result name="success" type="tiles">Organisation</result>
+		</action>
+
+
+		<action name="showOnlineWaybills"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="showSelection">
+			<result name="success" type="tiles">showWaybills</result>
+		</action>
+
+		<action name="showOnlineWaybillsGprs"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="showDataOfDepot">
+			<result name="success" type="tiles">showWaybills</result>
+		</action>
+		<action name="showOnlineWaybillsGprswaybillwise"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="showDataOfDepotWaybillwise">
+			<result name="success" type="tiles">showWaybillsView</result>
+		</action>
+
+
+
+		<action name="showOnlineWaybillsScheduleTripReport"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="showOnlineWaybillsScheduleTripReport">
+			<result name="success" type="tiles">showWaybillsScheduleTrip</result>
+		</action>
+
+
+
+		<action name="showOnlineWaybillsGprsTripwise"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="showDataOfDepotTripwise">
+			<result name="success" type="tiles">showWaybillsTripwise</result>
+		</action>
+
+		<action name="ShowGPRSWaybillWiseDayWise"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="ShowGPRSWaybillWiseDayWise">
+			<result name="success" type="tiles">showWaybillsWiseDayWise</result>
+		</action>
+
+		<action name="showDepotWiseETMCount"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="getActiveETMCountDepotWise">
+			<result name="success" type="tiles">showDepotWiseETMCount</result>
+		</action>
+
+		<!-- onlinewaybill -2016 -->
+
+		<action name="showOnlineWaybillsetmTicket"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionEtmTicket"
+			method="showSelection">
+			<result name="success" type="tiles">showWaybillsEtmTicket</result>
+		</action>
+
+		<action name="showOnlineWaybillsGprsEtmTicket"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionEtmTicket"
+			method="showDataOfDepot">
+			<result name="success" type="tiles">showWaybillsEtmTicket</result>
+		</action>
+
+		<action name="ShowGPRSWaybillWiseDayWiseEtmTicket"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionEtmTicket"
+			method="ShowGPRSWaybillWiseDayWise">
+			<result name="success" type="tiles">showWaybillsWiseDayWiseEtmTicket
+			</result>
+		</action>
+		<action name="showOnlineWaybillsGprswaybillwiseEtmTicket"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionEtmTicket"
+			method="showDataOfDepotWaybillwise">
+			<result name="success" type="tiles">showWaybillsViewEtmTicket</result>
+		</action>
+		<action name="showOnlineWaybillsGprsTripwiseEtmTicket"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionEtmTicket"
+			method="showDataOfDepotTripwise">
+			<result name="success" type="tiles">showWaybillsTripwiseEtmTicket
+			</result>
+		</action>
+
+
+		<!-- end -->
+
+
+
+
+		<!-- onlinewaybill Before Live Data -->
+
+		<!-- <action name="showOnlineWaybillsBeforeLive" -->
+		<!-- class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionBeforeLive" 
+			method="showSelectionBeforeLive"> -->
+		<!-- <result name="success" type="tiles">showWaybillsBeforeLive</result> -->
+		<!-- </action> -->
+
+		<!-- <action name="showOnlineWaybillsGprsBeforeLive" -->
+		<!-- class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionBeforeLive" 
+			method="showDataOfDepotBeforeLive"> -->
+		<!-- <result name="success" type="tiles">showWaybillsBeforeLive</result> -->
+		<!-- </action> -->
+
+		<!-- <action name="ShowGPRSWaybillWiseDayWiseBeforeLive" -->
+		<!-- class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionBeforeLive" 
+			method="ShowGPRSWaybillWiseDayWise"> -->
+		<!-- <result name="success" type="tiles">showWaybillsWiseDayWiseBeforeLive</result> -->
+		<!-- </action> -->
+		<!-- <action name="showOnlineWaybillsGprswaybillwiseBeforeLive" -->
+		<!-- class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionBeforeLive" 
+			method="showDataOfDepotWaybillwise"> -->
+		<!-- <result name="success" type="tiles">showWaybillsViewBeforeLive</result> -->
+		<!-- </action> -->
+		<!-- <action name="showOnlineWaybillsGprsTripwiseBeforeLive" -->
+		<!-- class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsActionBeforeLive" 
+			method="showDataOfDepotTripwise"> -->
+		<!-- <result name="success" type="tiles">showWaybillsTripwiseBeforeLive</result> -->
+		<!-- </action> -->
+
+
+		<!-- end -->
+
+		<!-- <action name="ShowBusStop" class="com.trimax.its.transport.action.BusStopsAction" 
+			> <result name="success" type="tiles">BusStopText</result> </action> -->
+
+		<!-- <action name="EditBusStop" class="com.trimax.its.transport.action.BusStopsAction" 
+			method="edit"> <result name="success" type="tiles">BusStopEdit</result> </action> 
+			<action name="AddEditedBusStop" class="com.trimax.its.transport.action.BusStopsAction" 
+			method="addEdited"> <result name="success" type="chain">ShowBusStop</result> 
+			</action> <action name="DeleteBusStop" class="com.trimax.its.transport.action.BusStopsAction" 
+			method="deleteBusStop"> <result name="success" type="chain">ShowBusStop</result> 
+			</action> -->
+
+		<!-- <action name="ShowLiveBuses" class="com.trimax.its.vts.action.LiveBusesAction"> 
+			<result name="success" type="tiles">ShowBusesOnline</result> </action> <action 
+			name="actgetCordinates" class="com.trimax.its.vts.action.LiveBusesAction" 
+			method="getCordinates"> <result name="success" type="tiles">ShowBusesOnline</result> 
+			</action> -->
+
+		<!-- waybilllc start -->
+		<action name="showOnlineWaybillLc"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="showSelection">
+			<result name="success" type="tiles">showWaybillLc</result>
+		</action>
+
+		<action name="getDepotName"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="getPerticularDepotName">
+		</action>
+
+		<action name="showOnlineDepotGprs"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="showDataOfDepot">
+			<result name="success" type="tiles">showWaybillLc</result>
+		</action>
+
+		<action name="Showlcdepotwaybill"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="showDataOfPerticularDepot">
+			<result name="success" type="tiles">showWaybillLcdepot</result>
+		</action>
+		<action name="ShowLcWaybillWiseDayWise"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="ShowLcWaybillWiseDayWise">
+			<result name="success" type="tiles">showLCwaybiltripwise</result>
+		</action>
+
+		<action name="showOnlineWaybillsLCwaybillwise"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="showDataOfDepotWaybillwise">
+			<result name="success" type="tiles">showWaybillsView</result>
+		</action>
+		<action name="showOnlineWaybillsLCTripwise"
+			class="com.trimax.its.OnlineWaybillLC.action.OnlineWaybillLCAction"
+			method="showDataOfDepotTripwise">
+			<result name="success" type="tiles">showLCwaybiltripwise</result>
+		</action>
+		<action name="ShowLiveBusDetailsAll"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="showLiveBusDetails">
+			<result name="success" type="tiles">ShowLiveBusDetailsAll</result>
+		</action>
+		<action name="SearchRoute"
+			class="com.trimax.its.action.SearchRouteAction" method="SearchRoute">
+			<result name="success" type="tiles">SearchRoute</result>
+		</action>
+
+		<action name="getroutdetails"
+			class="com.trimax.its.action.SearchRouteAction"
+			method="getroutdetails">
+		</action>
+		<action name="Tripplanner"
+			class="com.trimax.its.action.TripPlannerAction">
+			<result name="success" type="tiles">TripPlanner</result>
+		</action>
+		<action name="TripPlannerDownList1"
+			class="com.trimax.its.action.TripPlannerAction"
+			method="tripPlannerDownList1">
+
+		</action>
+		<action name="TripPlannerMapDisplayAction"
+			class="com.trimax.its.action.TripPlannerAction"
+			method="tripPlannerMapDisplayAction">
+
+		</action>
+
+		<action name="LinearRouteTrackingRouteNo"
+			class="com.trimax.its.action.SearchRouteAction" method="getRouteList">
+			<result name="success" type="tiles">LinearRouteTrackingRouteNo
+			</result>
+		</action>
+
+
+
+		<action name="LiveBusTrackingData"
+			class="com.trimax.its.vts.action.ShowLiveBusAction"
+			method="showLiveBusDetailsTrackingData">
+			<result name="success" type="tiles">ShowLiveBusDetailsTracking
+			</result>
+		</action>
+
+		<!-- Revenue Report -->
+
+		<action name="CumulativeRevenueReport"
+			class="com.trimax.its.report.action.CumulativeRevenueReport">
+			<result name="success" type="tiles">CumulativeRevenueReport</result>
+		</action>
+		<action name="AjaxCumulativeRevenueReport"
+			class="com.trimax.its.report.action.CumulativeRevenueReport"
+			method="AjaxCumulativeRevenueReport">
+		</action>
+		<action name="getDepotList"
+			class="com.trimax.its.vts.action.ScheduleTripwiseStatusSummaryReport"
+			method="getPerticularDepot">
+		</action>
+
+
+		<!-- ETM status Report -->
+
+		<action name="ETMStatusReport"
+			class="com.trimax.its.report.action.ETMStatusReport">
+			<result name="success" type="tiles">ETMStatusReport</result>
+		</action>
+		<action name="AjaxETMStatusReport"
+			class="com.trimax.its.report.action.ETMStatusReport"
+			method="AjaxETMStatusReport">
+		</action>
+
+
+		<!-- Conductor Wise Earning Report -->
+
+		<action name="CondWiseEarningReport"
+			class="com.trimax.its.report.action.CondWiseEarningReport">
+			<result name="success" type="tiles">CondWiseEarningReport</result>
+		</action>
+		<action name="AjaxCondWiseEarningReport"
+			class="com.trimax.its.report.action.CondWiseEarningReport"
+			method="AjaxCondWiseEarningReport">
+		</action>
+		<action name="getCondTokenNo"
+			class="com.trimax.its.report.action.CondWiseEarningReport"
+			method="getCondTokenNo">
+		</action>
+
+
+		<!-- ScheduleWise Earn Report -->
+		<action name="SchedEarReport"
+			class="com.trimax.its.report.action.SchedWiseEarReport">
+			<result name="success" type="tiles">SchedEarReport</result>
+		</action>
+		<action name="AjaxSchedEarReport"
+			class="com.trimax.its.report.action.SchedWiseEarReport"
+			method="AjaxSchedEarReport">
+		</action>
+		<action name="getDepotWiseSchdNo"
+			class="com.trimax.its.report.action.SchedWiseEarReport"
+			method="getDepotWiseSchdNo">
+		</action>
+
+
+		<!-- Ticket Book Sale Report -->
+		<action name="TicketBookSaleReport"
+			class="com.trimax.its.report.action.TcktBookSaleReport">
+			<result name="success" type="tiles">TicketBookSaleReport</result>
+		</action>
+		<action name="AjaxTicketBookSaleReport"
+			class="com.trimax.its.report.action.TcktBookSaleReport"
+			method="AjaxTicketBookSaleReport">
+		</action>
+		<action name="getDepot"
+			class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularDepot">
+		</action>
+
+
+
+
+		<!-- schedule mapping in its -->
+		<action name="schedulemappingits"
+			class="com.trimax.its.report.action.schedulemappingits">
+			<result name="success" type="tiles">schedulemappingits</result>
+		</action>
+		<action name="ScheduleMappingAjax"
+			class="com.trimax.its.report.action.schedulemappingits"
+			method="mappingshedule">
+			<result name="success" type="tiles">schedulemappingits</result>
+		</action>
+
+
+		<!-- TripWise Revenue Report -->
+		<action name="TripwiseRevenue"
+			class="com.trimax.its.report.action.TripWiseRevenueReport">
+			<result name="success" type="tiles">TripwiseRevenue</result>
+		</action>
+		<action name="AjaxTripRevenueData"
+			class="com.trimax.its.report.action.TripWiseRevenueReport"
+			method="getTripRevenueData">
+		</action>
+		<action name="getScheduleId"
+			class="com.trimax.its.report.action.TripWiseRevenueReport"
+			method="getDepotWiseSchdNo">
+		</action>
+
+		<!-- Vehicle Location Data Report -->
+		<action name="VehicleLocation"
+			class="com.trimax.its.report.action.VehicleLocationReportAction">
+			<result name="success" type="tiles">VehicleLocation</result>
+		</action>
+		<action name="AjaxVehicleLocation"
+			class="com.trimax.its.report.action.VehicleLocationReportAction"
+			method="getVehicleLocationData">
+		</action>
+		<action name="getLiveVehicles"
+			class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularVehicles">
+		</action>
+
+
+
+
+		<action name="OperatedAndNotOperated"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction">
+			<result name="success" type="tiles">DetailsOfOperatedAndNotOperated
+			</result>
+		</action>
+		<action name="OperatedNotOperatedSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="OperatedNotOperatedSchedules">
+		</action>
+		<action name="TotalSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="TotalSchedules">
+		</action>
+		<action name="OperatedSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="OperatedSchedules">
+		</action>
+		<action name="NotOperatedSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="NotOperatedSchedules">
+		</action>
+		<action name="AuditedSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="AuditedSchedules">
+		</action>
+		<action name="OnlineSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="OnlineSchedules">
+		</action>
+		<action name="OAuditedSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="OAuditedSchedules">
+		</action>
+		<action name="ClosedSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="ClosedSchedules">
+		</action>
+		<action name="OperatedETMSchedules"
+			class="com.trimax.its.report.action.OperatedAndNotOperatedAction"
+			method="OperatedETMSchedules">
+		</action>
+
+		<action name="ScheduleTripwiseStatusSummary"
+			class="com.trimax.its.vts.action.ScheduleTripwiseStatusSummaryReport">
+			<result name="success" type="tiles">ScheduleTripwiseStatusSummary
+			</result>
+		</action>
+		<action name="getScheduleTripwiseSummaryData"
+			class="com.trimax.its.vts.action.ScheduleTripwiseStatusSummaryReport"
+			method="getScheduleTripwiseSummaryData">
+		</action>
+		<action name="getShiftType"
+			class="com.trimax.its.vts.action.ScheduleTripwiseStatusSummaryReport"
+			method="getShiftTypeData">
+		</action>
+		<action name="getDepotAll"
+			class="com.trimax.its.vts.action.ScheduleTripwiseStatusSummaryReport"
+			method="getPerticularDepot">
+		</action>
+
+
+		<action name="ScheduleOperationAndRevenueSummary"
+			class="com.trimax.its.vts.action.ScheduleOperationAndRevenueSummaryAction">
+			<result name="success" type="tiles">ScheduleOperationAndRevenueSummary
+			</result>
+		</action>
+		<action name="getScheduleOperationAndRevenueSummaryData"
+			class="com.trimax.its.vts.action.ScheduleOperationAndRevenueSummaryAction"
+			method="getScheduleOperationRevenueData">
+		</action>
+		<action name="getShiftType"
+			class="com.trimax.its.vts.action.ScheduleOperationAndRevenueSummaryAction"
+			method="getShiftTypeData">
+		</action>
+
+		<action name="StagewiseTicketConsumptionReport"
+			class="com.trimax.its.vts.action.StagewiseTicketConsumptionReportAction">
+			<result name="success" type="tiles">StagewiseTicketConsumptionReport
+			</result>
+		</action>
+		<action name="getStagewiseTicketConsumptionDetails"
+			class="com.trimax.its.vts.action.StagewiseTicketConsumptionReportAction"
+			method="getStageWiseData">
+		</action>
+		<action name="getRouteList"
+			class="com.trimax.its.vts.action.StagewiseTicketConsumptionReportAction"
+			method="getRouteListData">
+		</action>
+		<action name="getScheduleDetails"
+			class="com.trimax.its.vts.action.StagewiseTicketConsumptionReportAction"
+			method="getScheduleFormFourID">
+		</action>
+
+		<action name="OperatedScheduleKM"
+			class="com.trimax.its.report.action.OperatedScheduledKm">
+			<result name="success" type="tiles">OperatedScheduleKM</result>
+		</action>
+		<action name="getOperatedScheduleKM"
+			class="com.trimax.its.report.action.OperatedScheduledKm"
+			method="getOperatedScheduleKMData">
+		</action>
+		<action name="getScheduleList"
+			class="com.trimax.its.report.action.OperatedScheduledKm"
+			method="getScheduleListData">
+		</action>
+
+		<action name="Stagewisepassangercount"
+			class="com.trimax.its.report.action.StageWisePassangerCount">
+			<result name="success" type="tiles">StageWisePassangerCount</result>
+		</action>
+		<action name="getWaybill"
+			class="com.trimax.its.report.action.StageWisePassangerCount"
+			method="getWaybillNo">
+		</action>
+		<action name="getShiftNoForStage"
+			class="com.trimax.its.report.action.StageWisePassangerCount"
+			method="getShiftNoForStage">
+		</action>
+		<action name="getTripNoForStage"
+			class="com.trimax.its.report.action.StageWisePassangerCount"
+			method="getTripNoForStage">
+		</action>
+		<action name="getStageNo"
+			class="com.trimax.its.report.action.StageWisePassangerCount"
+			method="getStageNo">
+		</action>
+		<action name="StageWisePassangerCountSubmitAction"
+			class="com.trimax.its.report.action.StageWisePassangerCount"
+			method="stageWisePassangerCountSubmitAction">
+		</action>
+
+
+		<action name="MasterSummaryReport"
+			class="com.trimax.its.report.action.MasterSummaryReportAction">
+			<result name="success" type="tiles">MasterSummaryReport</result>
+		</action>
+		<action name="getSummaryDataForVehicle"
+			class="com.trimax.its.report.action.MasterSummaryReportAction"
+			method="getMasterSummaryDataForVehicle">
+		</action>
+		<action name="getSummaryDataForSchedule"
+			class="com.trimax.its.report.action.MasterSummaryReportAction"
+			method="getMasterSummaryDataForSchedule">
+		</action>
+		<action name="getSummaryDataForEmployee"
+			class="com.trimax.its.report.action.MasterSummaryReportAction"
+			method="getMasterSummaryDataForEmployee">
+		</action>
+		<action name="getVehicle"
+			class="com.trimax.its.report.action.MasterSummaryReportAction"
+			method="getVehicle">
+		</action>
+		<!-- for Form-3 report for VTU -->
+		<action name="RouteWiseTripTimePlanningVtu"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanning">
+			<result name="success" type="tiles">RouteWiseTripTimePlanning</result>
+		</action>
+		<action name="showRouteWiseTripTimingVtu"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanning"
+			method="getRouteWiseTripTimingVtu">
+		</action>
+		<action name="BusStopFixedSource"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanning"
+			method="getBusStopFixedSource">
+		</action>
+		<action name="BusStopFixedDest"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanning"
+			method="getBusStopFixedDest">
+		</action>
+		<action name="getScheduleForTripTiming"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanning"
+			method="getScheduleForTripTiming">
+		</action>
+		<!-- end -->
+		<!-- for Form-3 report from form-4 -->
+		<action name="RouteWiseTripTimePlanning"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanningFrequency">
+			<result name="success" type="tiles">RouteWiseTripTimePlanningFrequency
+			</result>
+		</action>
+		<action name="showRouteWiseTripTiming"
+			class="com.trimax.its.report.action.RouteWiseTripTimePlanningFrequency"
+			method="getRouteWiseTripTiming">
+		</action>
+		<!-- end -->
+
+
+		<action name="StagewisePassengerTicketCountReport"
+			class="com.trimax.its.action.StagewisePassengerTicketCountReport">
+			<result name="success" type="tiles">StagewisePassengerTicketCountReport
+			</result>
+		</action>
+
+		<action name="getRouteLists"
+			class="com.trimax.its.action.StagewisePassengerTicketCountReport"
+			method="getRouteListData">
+		</action>
+		<action name="getStageList"
+			class="com.trimax.its.action.StagewisePassengerTicketCountReport"
+			method="getStageList">
+
+		</action>
+
+		<action name="getStagewisePassengerTicketCountDetails"
+			class="com.trimax.its.action.StagewisePassengerTicketCountReport"
+			method="getStageWiseCountData">
+		</action>
+		<action name="tripWiseDuration"
+			class="com.trimax.its.report.action.tripWiseDurationReport">
+			<result name="success" type="tiles">tripWiseDuration</result>
+		</action>
+		<action name="showTripwiseTravelduration"
+			class="com.trimax.its.report.action.tripWiseDurationReport"
+			method="showTripwiseTravelduration">
+		</action>
+
+		<action name="getBusStopWiseTravelDurationDetails"
+			class="com.trimax.its.action.BusStopWiseTravelDurationDetails">
+			<result name="success" type="tiles">StopWiseTravelDurationDetails
+			</result>
+		</action>
+		<action name="StopWiseTravelDurationDetails"
+			class="com.trimax.its.action.BusStopWiseTravelDurationDetails"
+			method="getStopWiseTravelDurationDetails">
+		</action>
+		<action name="BusStopDropDownList1"
+			class="com.trimax.its.action.BusStopWiseTravelDurationDetails"
+			method="getBusStopDropDownList1">
+		</action>
+
+
+		<!-- waybilllc start end -->
+
+	</package>
+	<include file="struts-transport.xml"></include>
+	<include file="struts-vts.xml"></include>
+	<include file="struts-admin.xml"></include>
+	<!-- <include file="struts-fare.xml"></include> -->
+	<include file="struts-fare.xml"></include>
+	<include file="struts-pass.xml"></include>
+	<include file="structs-route.xml"></include>
+	<include file="struts-device.xml"></include>
+
+	<include file="struts-vehicle.xml"></include>
+	<include file="struts-org.xml"></include>
+	<include file="struts-breaktype.xml"></include>
+	<include file="struts-reports.xml"></include>
+	<include file="struts-ticketing.xml"></include>
+	<include file="struts-account.xml"></include>
+
+	<include file="struts-toll.xml"></include>
+	<!-- Employee Revenue -->
+	<include file="struts-revenue_sector.xml"></include>
+	<!-- end -->
+
+	<!-- Line Sector -->
+	<include file="struts-line_sector.xml"></include>
+	<!-- end -->
+	<include file="struts-ccc.xml"></include>
+	<include file="struts-pis.xml"></include>
+	<include file="struts-holiday.xml"></include>
+	<include file="struts-cashremittancevoucher.xml"></include>
+	<include file="struts-memo_notice.xml"></include>
+	<include file="struts-training.xml"></include>
+	<include file="struts-passengercategory.xml"></include>
+	<include file="struts-InInventoryTicketPassType.xml"></include>
+	<include file="struts-inventory.xml"></include>
+	<include file="struts-ad.xml"></include>
+	<include file="struts-etm.xml"></include>
+	<include file="struts-dashboard.xml"></include>
+	<include file="struts-dashBoardReport.xml"></include>
+
+	<include file="struts-deviceType.xml"></include>
+	<!-- <include file="struts-actdashboard.xml"></include> -->
+
+
+</struts>

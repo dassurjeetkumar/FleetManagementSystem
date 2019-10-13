@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+   <definition name="viewAccountHead"	extends="baseLayout">
+      <put-attribute name="title"  	value="Account Head"/>
+      <put-attribute name="layoutId"  value="AccountHead"/>
+      <put-attribute name="content"   value="/accountHead/viewAccountHead.jsp"/>   
+   </definition>
+   <definition name="addAccountHead" extends="baseLayout">
+      <put-attribute name="title"  value="Account Head Add"/>
+      <put-attribute name="layoutId"  value="addAccountHead"/>
+      <put-attribute name="content"   value="/accountHead/addAccountHead.jsp"/>       
+   </definition>
+   
+   <definition name="editAccountHead" extends="baseLayout">
+      <put-attribute name="title"  value="Account Head Edit"/>
+      <put-attribute name="layoutId"  value="editAccountHead"/>
+      <put-attribute name="content"   value="/accountHead/editAccountHead.jsp"/>       
+   </definition>
+   </tiles-definitions>

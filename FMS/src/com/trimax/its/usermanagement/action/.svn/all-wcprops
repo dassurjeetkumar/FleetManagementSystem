@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/7212/its/src/com/trimax/its/usermanagement/action
+END
+EmployeeTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/its/!svn/ver/5212/its/src/com/trimax/its/usermanagement/action/EmployeeTypeAction.java
+END
+SMSPageAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/6849/its/src/com/trimax/its/usermanagement/action/SMSPageAction.java
+END
+SmsSendToAllAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/its/!svn/ver/6908/its/src/com/trimax/its/usermanagement/action/SmsSendToAllAction.java
+END
+DesignationTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/its/!svn/ver/2452/its/src/com/trimax/its/usermanagement/action/DesignationTypeAction.java
+END
+BataConfigDetailAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/its/!svn/ver/5116/its/src/com/trimax/its/usermanagement/action/BataConfigDetailAction.java
+END
+EmployeeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/7212/its/src/com/trimax/its/usermanagement/action/EmployeeAction.java
+END
+UserAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/6703/its/src/com/trimax/its/usermanagement/action/UserAction.java
+END

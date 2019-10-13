@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/its/!svn/ver/5224/its/WebContent/RevenueSector
+END
+RevenueGeoMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/2960/its/WebContent/RevenueSector/RevenueGeoMap.jsp
+END
+editRevenueSector.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/5224/its/WebContent/RevenueSector/editRevenueSector.jsp
+END
+revenueSector.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/5224/its/WebContent/RevenueSector/revenueSector.jsp
+END
+editRevenueGeoFence.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/2961/its/WebContent/RevenueSector/editRevenueGeoFence.jsp
+END
+createRevenueSector.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/5224/its/WebContent/RevenueSector/createRevenueSector.jsp
+END

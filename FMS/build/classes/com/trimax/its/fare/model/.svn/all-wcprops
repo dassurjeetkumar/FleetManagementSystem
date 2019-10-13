@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/6687/its/src/com/trimax/its/fare/model
+END
+FareChart.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/5213/its/src/com/trimax/its/fare/model/FareChart.java
+END
+LuggageType.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/1449/its/src/com/trimax/its/fare/model/LuggageType.java
+END
+RoutePoint_Fare.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/2610/its/src/com/trimax/its/fare/model/RoutePoint_Fare.java
+END
+RevenueType.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/2620/its/src/com/trimax/its/fare/model/RevenueType.java
+END
+PenaltyTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/1449/its/src/com/trimax/its/fare/model/PenaltyTicket.java
+END
+Concession.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/1449/its/src/com/trimax/its/fare/model/Concession.java
+END
+PassengerType.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/1389/its/src/com/trimax/its/fare/model/PassengerType.java
+END
+bankRemmitanceModal.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/5301/its/src/com/trimax/its/fare/model/bankRemmitanceModal.java
+END
+RateMasterDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6687/its/src/com/trimax/its/fare/model/RateMasterDetail.java
+END
+SpecialPassTicketModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/5326/its/src/com/trimax/its/fare/model/SpecialPassTicketModel.java
+END
+RateMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/4611/its/src/com/trimax/its/fare/model/RateMaster.java
+END
+TollPassTicketModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/5421/its/src/com/trimax/its/fare/model/TollPassTicketModel.java
+END
+Farechart_Master.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/3501/its/src/com/trimax/its/fare/model/Farechart_Master.java
+END

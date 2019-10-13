@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="device" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+		<action name="deviceType" class="com.trimax.its.device.action.DeviceTypeAction">
+			
+		</action>
+		<action name="showdeviceType" class="com.trimax.its.device.action.DeviceTypeAction" method="showDeviceType">
+			<result name="success" type="tiles">deviceType</result>
+		</action>
+		<action name="createDeviceType" class="com.trimax.its.device.action.DeviceTypeAction" method="createDeviceType">
+			<result name="success" type="tiles">createPage</result>
+		</action>
+		<action name="createDeviceTypeAction" class="com.trimax.its.device.action.DeviceTypeAction" method="createDeviceTypeAction">
+		<result name="input" type="tiles">createPage</result>
+			<result name="success" type="tiles">deviceType</result>
+		</action>
+		<action name="editDeviceType" class="com.trimax.its.device.action.DeviceTypeAction" method="editDeviceType">
+			<result name="success" type="tiles">deviceEdit</result>
+		</action>
+		<action name="addeditedDeviceType" class="com.trimax.its.device.action.DeviceTypeAction" method="addeditedDeviceType">
+		<result name="input" type="tiles">deviceEdit</result>
+			<result name="success" type="tiles">deviceType</result>
+		</action>
+		<action name="deleteDeviceType" class="com.trimax.its.device.action.DeviceTypeAction" method="deleteDeviceTypeAction">
+			<result name="success" type="tiles">deviceType</result>
+		</action>
+		<action name="deviceList" class="com.trimax.its.device.action.DeviceAction" method="getDeviceList">
+			<result name="success" type="tiles">device</result>
+		</action>
+		<action name="showdevice" class="com.trimax.its.device.action.DeviceAction" method="showDevice">
+			<result name="success" type="tiles">device</result>
+		</action>
+		<action name="createDevice" class="com.trimax.its.device.action.DeviceAction" method="createDevice">
+			<result name="success" type="tiles">deviceCreate</result>
+		</action>
+		<action name="createDeviceAction" class="com.trimax.its.device.action.DeviceAction" method="addDevice">
+		
+		<result name="input" type="tiles">deviceCreate</result>
+			<result name="success" type="tiles">device</result>
+		<!--  -->
+		</action>
+		<action name="deviceNameAjaxAction" class="com.trimax.its.device.action.DeviceAjaxAction" method="getdeviceTypes">
+		
+		</action>
+		<action name="deviceNameAjaxActionVen" class="com.trimax.its.device.action.DeviceAjaxAction">
+		
+		</action>
+		<action name="deviceAction" class="com.trimax.its.device.action.DeviceAction" method="addDeviceAction">
+		<!-- <interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+		<result name="input" type="tiles">deviceCreate</result>
+		<result name="success" type="tiles">device</result>
+		<!-- <result name="invalid.token" type="tiles">device</result> -->
+		</action>
+		<action name="editDevice" class="com.trimax.its.device.action.DeviceAction" method="editPageAction">
+		<result name="success" type="tiles">Editdevice</result>
+		</action>
+		<action name="EditdeviceAction" class="com.trimax.its.device.action.DeviceAction" method="saveEdited">
+	<!-- 	<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+		<result name="input" type="tiles">Editdevice</result>
+		<result name="success" type="tiles">device</result>
+	<!-- 	<result name="invalid.token" type="tiles">device</result> -->
+		</action>
+		<action name="deleteDevice" class="com.trimax.its.device.action.DeviceAction" method="deleteselected">
+			<result name="success" type="tiles">device</result>
+			<result name="fail" type="tiles">device</result>
+		</action>
+		<action name="showHistory" class="com.trimax.its.device.action.DeviceHistoryAction" >
+		
+		</action>
+		<action name="showDeviceHistory" class="com.trimax.its.device.action.DeviceHistoryAction" method="showDeviceHistory">
+		<result name="success" type="tiles">showDeviceHistory</result>
+		</action>
+		<action name="saveSimCard" class="com.trimax.its.device.action.DeviceAction" method="saveSimCard">
+		<result name="input" type="tiles">Editdevice</result>
+		<result name="success" type="tiles">device</result>
+		</action>
+		<action name="addOrg" class="com.trimax.its.device.action.DeviceAction" method="addOrg">
+		<result name="input" type="tiles">Editdevice</result>
+		<result name="success" type="tiles">device</result>
+		</action>
+		<action name="battery" class="com.trimax.its.device.action.DeviceAction" method="addBattery">
+		<result name="input" type="tiles">Editdevice</result>
+		<result name="success" type="tiles">device</result>
+		</action>
+		
+		<!-- Start Battery -->
+		<action name="BatteryView" class="com.trimax.its.device.action.BatteryAction">
+			<result name="success" type="tiles">BatteryList</result>	
+				<result name="input" type="tiles">BatteryList</result>	
+		</action>
+		<action name="BatteryViewAjaxAction" class="com.trimax.its.device.action.BatteryAction" method="getBatteryListAjax">
+			<result name="" type="tiles">BatteryList</result>	
+		</action>
+		
+		<action name="CreateBatteryAction" class="com.trimax.its.device.action.BatteryAction" method="createBattery">
+		
+			<result name="success" type="tiles">CreateBattery</result>	
+		</action>
+		<action name="SaveNewBatteryAction" class="com.trimax.its.device.action.BatteryAction" method="saveBattery">
+		<result name="input" type="tiles">CreateBattery</result>
+			<result name="success" type="chain">BatteryView</result>	
+			<result name="fail" type="tiles">CreateBattery</result>
+		</action>
+		<action name="EditBatteryDetails" class="com.trimax.its.device.action.BatteryAction" method="EditBattery">
+		
+			<result name="success" type="tiles">EditBattery</result>	
+		</action>
+		<action name="SaveEditedBatteryAction" class="com.trimax.its.device.action.BatteryAction" method="saveEditedBattery">
+		<result name="input" type="tiles">EditBattery</result>
+			<result name="success" type="chain">BatteryView</result>	
+			<result name="fail" type="tiles">EditBattery</result>
+		</action>
+		<action name="DeleteBattery" class="com.trimax.its.device.action.BatteryAction" method="DeleteBattery">
+		
+		<result name="success" type="chain">BatteryView</result>	
+		</action>
+		
+		<action name="SimView" class="com.trimax.its.device.action.SimCardAction">
+			
+		</action>
+		<action name="SimViewAjaxAction" class="com.trimax.its.device.action.SimCardAction" method="getSimListAjax">
+			<result name="success" type="tiles">SimList</result>	
+			<result name="input" type="tiles">SimList</result>	
+		</action>
+		
+		
+		<action name="CreateSimAction" class="com.trimax.its.device.action.SimCardAction" method="createSimcard">
+		
+			<result name="success" type="tiles">CreateSimCard</result>	
+		</action>
+		<action name="SaveNewSimcardAction" class="com.trimax.its.device.action.SimCardAction" method="saveSimCard">
+		<result name="input" type="tiles">CreateSimCard</result>
+			<result name="success" type="chain">SimViewAjaxAction</result>	
+		
+		</action>
+		<action name="EditSimDetails" class="com.trimax.its.device.action.SimCardAction" method="EditSimCard">
+		
+			<result name="success" type="tiles">EditSim</result>	
+		</action>
+		<action name="SaveEditedSimcardAction" class="com.trimax.its.device.action.SimCardAction" method="saveEditedBattery">
+		<result name="input" type="tiles">EditSim</result>
+			<result name="success" type="chain">SimViewAjaxAction</result>	
+		</action>
+		<action name="DeleteSim" class="com.trimax.its.device.action.SimCardAction" method="DeleteSim">
+		
+		<result name="success" type="chain">SimViewAjaxAction</result>	
+		</action>
+		
+		<!-- End Battery -->
+		
+<!-- 		Start Data Card -->
+
+		<action name="DataCard" class="com.trimax.its.device.action.DataCardAction">
+			
+		</action>
+		
+		<action name="datacardlist" class="com.trimax.its.device.action.DataCardAction"
+			method="viewDataCard">
+			<result name="success" type="tiles">DataCardList</result>
+		</action>
+		<action name="createDataCard" class="com.trimax.its.device.action.DataCardAction"
+			method="createDataCard">
+			<result name="success" type="tiles">CreateDataCard</result>
+		</action> 
+		
+		<action name="createDataCardAction" class="com.trimax.its.device.action.DataCardAction"
+			method="createDataCardAction">
+			<result name="input" type="tiles">CreateDataCard</result>
+			<result name="success" type="tiles">DataCardList</result>
+			<result name="fail" type="tiles">CreateDataCard</result>
+		</action> 
+		
+		<action name="DeleteDatacardDetails" class="com.trimax.its.device.action.DataCardAction"
+			method="deleteDatacard">
+			<result name="success" type="tiles">DataCardList</result>
+			<result name="input" type="tiles">DataCardList</result>
+		</action>
+		
+		<action name="ModifyDataCardDetails" class="com.trimax.its.device.action.DataCardAction"
+			method="getEditDetails">
+			
+			<result name="success" type="tiles">showEditDataCard</result>
+		</action>
+		
+		<action name="updateDataCardDetails" class="com.trimax.its.device.action.DataCardAction"
+			method="updateDataCardDetails">
+			<result name="input" type="tiles">showEditDataCard</result>
+			<result name="success" type="tiles">DataCardList</result>
+		</action>
+			
+<!-- 		END Data Card -->
+
+<!-- 		Start RFID Card -->
+
+		<action name="RFIDCard" class="com.trimax.its.device.action.RFIDCardAction">
+			
+		</action>
+		
+		<action name="rfidcardlist" class="com.trimax.its.device.action.RFIDCardAction"
+			method="viewRFIDCard">
+			<result name="success" type="tiles">RFIDCardList</result>
+		</action>
+		<action name="createRFIDCard" class="com.trimax.its.device.action.RFIDCardAction"
+			method="createRFIDCard">
+			<result name="success" type="tiles">CreateRFIDCard</result>
+		</action> 
+		
+		<action name="createRFIDCardAction" class="com.trimax.its.device.action.RFIDCardAction"
+			method="createRFIDCardAction">
+			<result name="input" type="tiles">CreateRFIDCard</result>
+			<result name="success" type="tiles">RFIDCardList</result>
+			<result name="fail" type="tiles">CreateRFIDCard</result>
+		</action> 
+		<action name="ModifyRFIDCardDetails" class="com.trimax.its.device.action.RFIDCardAction"
+			method="getEditDetails">
+			
+			<result name="success" type="tiles">showEditRFIDCard</result>
+		</action>
+		
+		<action name="updateRFIDCardDetails" class="com.trimax.its.device.action.RFIDCardAction"
+			method="updateRFIDCardDetails">
+			<result name="input" type="tiles">showEditRFIDCard</result>
+			<result name="success" type="tiles">RFIDCardList</result>
+		</action>
+		
+		<action name="DeleteRFIDcardDetails" class="com.trimax.its.device.action.RFIDCardAction"
+			method="deleteRFIDcard">
+			<result name="success" type="tiles">RFIDCardList</result>
+			<result name="input" type="tiles">RFIDCardList</result>
+		</action>
+<!-- 		ENd RFID Card -->
+
+<!-- 		Start Maintenance Type -->
+
+		<action name="MaintenanceType" class="com.trimax.its.device.action.MaintenanceTypeAction">
+			
+		</action>
+		
+		<action name="maintenancetypelist" class="com.trimax.its.device.action.MaintenanceTypeAction"
+			method="viewMaintenanceType">
+			<result name="success" type="tiles">MaintenanceTypeList</result>
+		</action>
+		
+		<action name="createMaintenanceType" class="com.trimax.its.device.action.MaintenanceTypeAction"
+			method="createMaintenanceType">
+			<result name="success" type="tiles">CreateMaintenanceType</result>
+		</action> 
+		
+		
+		<action name="CreateMaintenanceTypeAction" class="com.trimax.its.device.action.MaintenanceTypeAction"
+			method="createMaintenanceTypeAction">
+			<result name="input" type="tiles">CreateMaintenanceType</result>
+			<result name="success" type="tiles">MaintenanceTypeList</result>
+			<result name="fail" type="tiles">CreateMaintenanceType</result>
+		</action> 
+		
+		<action name="ModifyMaintenanceTypeDetails" class="com.trimax.its.device.action.MaintenanceTypeAction"
+			method="getEditDetails">
+			
+			<result name="success" type="tiles">showEditMaintenanceType</result>
+		</action>
+		
+		<action name="updateMaintenanceTypeDetails" class="com.trimax.its.device.action.MaintenanceTypeAction"
+			method="updateMaintenanceTypeDetails">
+			<result name="input" type="tiles">showEditMaintenanceType</result>
+			<result name="success" type="tiles">MaintenanceTypeList</result>
+		</action>
+		
+		<action name="DeleteMaintenanceTypeDetails" class="com.trimax.its.device.action.MaintenanceTypeAction"
+			method="deleteMaintenanceType">
+			<result name="success" type="tiles">MaintenanceTypeList</result>
+			<result name="input" type="tiles">MaintenanceTypeList</result>
+		</action>
+		
+		
+		<action name="getEtmDeviceView" class="com.trimax.its.etm.action.EtmDeviceHistoryAction">
+			<result name="success" type="tiles">EtmDeviceHistoryView</result>
+		</action>
+		<action name="AjaxEtmDeviceView" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getetmview"> 
+ 		</action>
+		<action name="getEtmDeviceHistoryData" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getDivisionData" >
+		<result name="success" type="tiles">EtmDeviceHistory</result>
+		</action>
+		
+		<!-- <action name="getEtmDeviceHistory" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getdropdownlist">
+		<result name="success" type="tiles">EtmDeviceHistory</result>
+		</action> -->
+		
+		<action name="createetmissue" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getdropdownlist">
+		<result name="success" type="tiles">EtmDeviceHistory</result>
+		</action>
+		
+		<action name="saveEtmDeviceData" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="saveEtmDeviceData">
+		<result name="success" type="tiles">EtmDeviceHistoryView</result>
+		</action>
+			
+		<action name="serviceTicketToCompanyEtm" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="serviceTicketToCompanyEtm">
+		<result name="success" type="tiles">serviceTicketToPickUp</result>
+		</action>
+		<action name="serviceTicketToCompanyEtmDuplicate" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="serviceTicketToCompanyEtmDuplicate">
+		<result name="success" type="tiles">serviceTicketToCompanyEtmDuplicate</result>
+		</action>
+		<action name="serviceTicketToCompanyEtmpickup" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="serviceTicketToCompanyEtmpickup">
+		<result name="success" type="tiles">serviceTicketToCompany</result>
+		</action>
+		<action name="AjaxserviceTableAction" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="AjaxserviceTablePickupAction">
+		</action>
+		<action name="AjaxserviceTicketToCompanyEtm" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="AjaxserviceTicketToCompanyEtm">
+		</action>
+		<action name="AjaxserviceTableDuplicateAction" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="AjaxserviceTableDuplicateAction">
+		</action>
+		<action name="serviceTicketToCompanyduplicate" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="serviceTicketToCompanyduplicate">
+		<result name="success" type="tiles">serviceTicketToCompanyduplicate</result>
+		</action>
+		<action name="AjaxserviceTicketToCompanyduplicateAction" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="AjaxserviceTicketToCompanyduplicateAction">
+		</action>
+		<action name="ResolveETM" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="ResolveETM">
+		<result name="success" type="tiles">EtmDeviceHistoryView</result>
+		</action>
+		
+		<action name="ReceivedByDepot" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="ReceivedByDepotETM">
+		<result name="success" type="tiles">EtmDeviceHistoryView</result>
+		</action>
+		<action name="receiveETM" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="updateReceiveETM">
+		<result name="success" type="tiles">EtmPickFromDepot</result>
+		</action>
+		<action name="resolveETM" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="updateResolveETM">
+		<result name="success" type="tiles">EtmDeviceHistoryView</result>
+		</action>
+		<action name="receiveETMFromVerifone" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="receiveETMFromVerifone">
+		<result name="success" type="tiles">ReceviedFromVerifone</result>
+		</action>
+		<action name="getetmpickfromdepot" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="etmpickfromdevice">
+		<result name="success" type="tiles">EtmPickFromDepot</result>
+		</action>
+		<action name="ajaxgetetmpickdepot" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getetmpickfromdepot">
+		</action>
+		
+		<action name="getetmnotreslove" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="etmreslovetrimax">
+		<result name="success" type="tiles">EtmnotResolvedtrimax</result>
+		</action>
+		<action name="ajaxgetetmnotreslove" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getetmreslovetrimax">
+		</action>
+		
+		<action name="receviedfromverifone" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="etmreceviedfromverifone">
+		<result name="success" type="tiles">ReceviedFromVerifone</result>
+		</action>
+		<action name="ajaxgetrecfromverifone" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getetmreceviedfromverifone">
+		</action>
+		<action name="reportOfDevice" class="com.trimax.its.etm.action.ReportOfDevice">
+		<result name="success" type="tiles">ReportOfDevice</result>
+		</action>
+		<action name="AjaxreportOfDevice" class="com.trimax.its.etm.action.ReportOfDevice" method="getReportData"></action>
+	    
+	    <action name="etmreceivedfromtrimax" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="etmreceviedfromtrimax">
+		<result name="success" type="tiles">EtmReceviedFromTrimax</result>
+		</action>
+		<action name="ajaxgetrecfromtrimax" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getetmreceviedfromtrimax">
+		</action>
+	  <action name="etmresolved" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="etmresolved">
+		<result name="success" type="tiles">EtmResolve</result>
+		</action>
+		<action name="ajaxgetetmresolved" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" method="getetmresolved">
+		</action>
+		<action name="depotwisecausewisesummary" class="com.trimax.its.etm.action.DepotWiseCauseWiseSummary">
+		<result name="success" type="tiles">DepotAndCauseSummary</result>
+		</action>
+		<action name="ajaxgetdepotandcausesummary" class="com.trimax.its.etm.action.DepotWiseCauseWiseSummary" method="getdata">
+		</action>
+		<action name="etmwisestatus" class="com.trimax.its.etm.action.EtmWiseStatus">
+		<result name="success" type="tiles">etmwisestatusreport</result>
+		</action>
+		<action name="AjaxEtmWiseStatus" class="com.trimax.its.etm.action.EtmWiseStatus" method="getdata">
+		</action>
+		<action name="causewiseetmhistory" class="com.trimax.its.etm.action.CauseWiseEtmHistory">
+		<result name="success" type="tiles">causewiseetmhistoryreport</result>
+		</action>
+		<action name="Ajaxcausewiseetmhistory" class="com.trimax.its.etm.action.CauseWiseEtmHistory" method="getdata">
+		</action>
+		<action name="etmrepairstatus" class="com.trimax.its.etm.action.EtmRepairStatus">
+		<result name="success" type="tiles">etmrepairstatusreport</result>
+		</action>
+	<action name="Ajaxetmrepairstatus" class="com.trimax.its.etm.action.EtmRepairStatus" method="getdata">
+		</action>
+		<action name="ajaxgetdepotwisedata" class="com.trimax.its.etm.action.EtmRepairStatus" method="getdepotwisedata">
+		</action>
+			<action name="resolvedetmreport" class="com.trimax.its.etm.action.ResolvedEtmReport">
+		<result name="success" type="tiles">resolvedetmreport</result>
+		</action>
+		<action name="ajaxgetresolvedetmreport" class="com.trimax.its.etm.action.ResolvedEtmReport" method="getdata">
+		</action>
+		<action name="verifonepending" class="com.trimax.its.etm.action.VerifonePending">
+		<result name="success" type="tiles">verifonepending</result>
+		</action>
+		<action name="ajaxgetverifonepending" class="com.trimax.its.etm.action.VerifonePending" method="getdata">
+		</action>
+		<action name="getmanualschedulecount"
+			class="com.trimax.its.revenuesector.action.ManualScheduleCount">
+			<result name="success" type="tiles">manualschedulecount</result>
+		</action>
+			<action name="ajaxgetmanualschcount"
+			class="com.trimax.its.revenuesector.action.ManualScheduleCount"
+			method="getdata">	</action>
+			<action name="ajaxgetdepotwisemanualcount" class="com.trimax.its.revenuesector.action.ManualScheduleCount" method="getdepotdata">
+		</action>
+		
+		<action name="conductoretmuseage" class="com.trimax.its.report.action.ConductorEtmUseage">
+		<result name="success" type="tiles">conductoretmuse</result>
+		</action>
+		
+	</package>
+</struts>
+		

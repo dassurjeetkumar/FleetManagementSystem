@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/6738/its/src/com/trimax/its/pass/action
+END
+PassSubTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6625/its/src/com/trimax/its/pass/action/PassSubTypeAction.java
+END
+PassIssuerTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/6642/its/src/com/trimax/its/pass/action/PassIssuerTypeAction.java
+END
+PassInstitutionTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/action/PassInstitutionTypeAction.java
+END
+PassRateAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/6642/its/src/com/trimax/its/pass/action/PassRateAction.java
+END
+CasteTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/action/CasteTypeAction.java
+END
+PassDistanceTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/action/PassDistanceTypeAction.java
+END
+PassIssuerCenterAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/action/PassIssuerCenterAction.java
+END
+PassDurationTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6738/its/src/com/trimax/its/pass/action/PassDurationTypeAction.java
+END
+PassCounterMasterAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/action/PassCounterMasterAction.java
+END
+PassPurchaseTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/action/PassPurchaseTypeAction.java
+END
+PassTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4365/its/src/com/trimax/its/pass/action/PassTypeAction.java
+END

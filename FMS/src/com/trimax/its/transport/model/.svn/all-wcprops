@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/7139/its/src/com/trimax/its/transport/model
+END
+TicketSubType.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/7139/its/src/com/trimax/its/transport/model/TicketSubType.java
+END
+RouteNoUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5318/its/src/com/trimax/its/transport/model/RouteNoUtil.java
+END
+ScheduleDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/2893/its/src/com/trimax/its/transport/model/ScheduleDetails.java
+END
+FormFour.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6375/its/src/com/trimax/its/transport/model/FormFour.java
+END
+CaseType.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/1489/its/src/com/trimax/its/transport/model/CaseType.java
+END
+BusstopJson.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/121/its/src/com/trimax/its/transport/model/BusstopJson.java
+END
+PointType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/2294/its/src/com/trimax/its/transport/model/PointType.java
+END
+TicketType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/939/its/src/com/trimax/its/transport/model/TicketType.java
+END
+FormFourType.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/2188/its/src/com/trimax/its/transport/model/FormFourType.java
+END
+HappyHour.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/6544/its/src/com/trimax/its/transport/model/HappyHour.java
+END
+PeakHour.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/4832/its/src/com/trimax/its/transport/model/PeakHour.java
+END
+TripType.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/5214/its/src/com/trimax/its/transport/model/TripType.java
+END
+BusStopGroupStop.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/1497/its/src/com/trimax/its/transport/model/BusStopGroupStop.java
+END
+Customer.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6940/its/src/com/trimax/its/transport/model/Customer.java
+END
+ScheduleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/5113/its/src/com/trimax/its/transport/model/ScheduleService.java
+END
+OrgType.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/5106/its/src/com/trimax/its/transport/model/OrgType.java
+END
+BusStopGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/1497/its/src/com/trimax/its/transport/model/BusStopGroup.java
+END
+WeeklyChart.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/4367/its/src/com/trimax/its/transport/model/WeeklyChart.java
+END
+BusStopType.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/2474/its/src/com/trimax/its/transport/model/BusStopType.java
+END
+ShiftType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/5114/its/src/com/trimax/its/transport/model/ShiftType.java
+END
+RoadType.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/3000/its/src/com/trimax/its/transport/model/RoadType.java
+END
+BreakType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/1165/its/src/com/trimax/its/transport/model/BreakType.java
+END
+GroupType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/1497/its/src/com/trimax/its/transport/model/GroupType.java
+END
+Schedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6822/its/src/com/trimax/its/transport/model/Schedule.java
+END
+Route_Trans.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/1979/its/src/com/trimax/its/transport/model/Route_Trans.java
+END
+BusStops.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6397/its/src/com/trimax/its/transport/model/BusStops.java
+END
+ScheduleType.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/4832/its/src/com/trimax/its/transport/model/ScheduleType.java
+END

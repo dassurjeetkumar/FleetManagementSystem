@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="vehicle" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="itsStack" />
+
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		<!-- <global-exception-mappings> <exception-mapping exception="java.lang.NumberFormatException" 
+			result="NullException" /> <exception-mapping exception="java.lang.NullPointerException" 
+			result="NullException" /> <exception-mapping exception="java.io.IOException" 
+			result="NullException" /> <exception-mapping exception="java.sql.SQLException" 
+			result="NullException" /> <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" 
+			result="welcome" /> <exception-mapping exception="java.lang.Exception" result="welcome" 
+			/> <exception-mapping exception="java.lang.NullPointerException" result="welcome" 
+			/> </global-exception-mappings> -->
+
+
+		<action name="VehicleDetails" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="execute">
+			<result name="success" type="tiles">ShowVehicle</result>
+			<result name="input" type="tiles">ShowVehicle</result>
+		</action>
+
+		<action name="VehicleDetailsAjaxAction" class="com.trimax.its.vehicle.action.VehicleAjaxAction">
+			<result name="success" type="tiles">ShowVehicle</result>
+		</action>
+		
+			<action name="ScrapVehicleMaster" class="com.trimax.its.vehicle.action.VehicleAjaxAction" method="getScrapVehicleList">
+			<result name="success" type="tiles">ShowVehicle</result>
+		</action>
+
+		<action name="VehicleTransferHistoryAjaxAction" class="com.trimax.its.vehicle.action.VehicleAjaxAction"
+			method="getTransferVehicleHistoryList">
+			<result name="success" type="tiles">ShowVehicle</result>
+		</action>
+
+		<action name="FcrenewalHistoryAjaxAction" class="com.trimax.its.vehicle.action.VehicleAjaxAction"
+			method="getFCRenewalRecordsList">
+			<result name="success" type="tiles">ShowVehicle</result>
+		</action>
+
+		<action name="VehicleDockingHistoryAjaxAction" class="com.trimax.its.vehicle.action.VehicleAjaxAction"
+			method="getDockingHistoryRecordsList">
+			<result name="success" type="tiles">ShowVehicle</result>
+		</action>
+
+		<action name="VehicleFuelHistoryAjaxAction" class="com.trimax.its.vehicle.action.VehicleAjaxAction"
+			method="getFuelRecordsList">
+			<result name="success" type="tiles">ShowVehicle</result>
+		</action>
+
+		<action name="EditVehicleDetails" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getParticularVehicleDetails">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetDepotName" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getDepotNames">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetVehicleType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getVehicleType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetBrandType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getBrandType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetMakeType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getMakeType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetModelType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getModelType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetBodyType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getBodyType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetServiceType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getServiceType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetCategoryType" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="getCategoryType">
+			<result name="success" type="tiles">EditVehicle</result>
+		</action>
+
+		<action name="GetStatusOfVehicle" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="statusOfVehicle">
+			<result name="success" type=""></result>
+		</action>
+
+		<action name="SaveEditVehicleDetails" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="saveEditedVehicleDetails">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">EditVehicle</result>
+			<result name="fail" type="tiles">EditVehicle</result>
+			<result name="invalid.token" type="chain">VehicleDetails</result>
+		</action>
+
+		<action name="TransferVehicleAction"
+			class="com.trimax.its.vehicle.action.TransferVehicleAction">
+			<result name="success" type="tiles">TransferVehicle</result>
+		</action>
+
+		<action name="SaveTransferVehicleAction"
+			class="com.trimax.its.vehicle.action.TransferVehicleAction" method="saveTransferVehicleDetails">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">TransferVehicle</result>
+			<result name="fail" type="tiles">TransferVehicle</result>
+			<result name="invalid.token" type="chain">VehicleDetails</result>
+		</action>
+
+		<action name="FcRenewAction" class="com.trimax.its.vehicle.action.FcRenewAction">
+			<result name="success" type="tiles">FcRenewVehicle</result>
+		</action>
+
+		<action name="SaveFcRenewAction" class="com.trimax.its.vehicle.action.FcRenewAction"
+			method="saveFcRenewalDetails">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">FcRenewVehicle</result>
+			<result name="fail" type="tiles">FcRenewVehicle</result>
+			<result name="invalid.token" type="chain">VehicleDetails</result>
+		</action>
+
+
+		<action name="DockingVehicle" class="com.trimax.its.vehicle.action.DockingAction">
+			<result name="success" type="tiles">DockingVehicle</result>
+			<result name="input" type="tiles">DockingVehicle</result>
+		</action>
+
+		<action name="StartDockingVehicle" class="com.trimax.its.vehicle.action.DockingAction"
+			method="startDockingVehicle">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="fail" type="chain">DockingVehicle</result>
+			<result name="input" type="tiles">DockingVehicle</result>
+			<result name="invalid.token" type="chain">VehicleDetails</result>
+		</action>
+
+		<action name="EndDockingVehicle" class="com.trimax.its.vehicle.action.DockingAction"
+			method="endDockingVehicle">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="fail" type="tiles">DockingVehicle</result>
+			<result name="input" type="tiles">DockingVehicle</result>
+		</action>
+
+		<action name="EditDockingAction" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="editDockingVehicle">
+			<result name="success" type="tiles">EditDockingDetails</result>
+		</action>
+
+
+		<!-- <action name="saveEditDockingAction" class="com.trimax.its.vehicle.action.VehicleAction" 
+			method="saveEditedDockingInfo"> <result name="success" type="chain">VehicleDetails</result> 
+			<result name="input" type="tiles">EditVehicle</result> <result name="fail" 
+			type="tiles">EditVehicle</result> </action> -->
+
+		<action name="SaveFuleAction" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="saveFuel">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">EditVehicle</result>
+			<result name="fail" type="tiles">EditVehicle</result>
+		</action>
+
+
+
+		<action name="DeleteVehicle" class="com.trimax.its.vehicle.action.VehicleAction"
+			method="deleteVehicle">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="fail" type="chain">VehicleDetails</result>
+		</action>
+
+		<action name="CreateVehicleDetails"
+			class="com.trimax.its.vehicle.action.CreateVehicleAction" method="createVehicleDetails">
+			<result name="success" type="tiles">CreateNewVehicle</result>
+		</action>
+
+		<action name="findUnitName"
+			class="com.trimax.its.vehicle.action.CreateVehicleAction" method="getUnitName">
+			<result name="input" type="tiles">IssueTicketBag</result>
+
+		</action>
+
+		<action name="AjaxCreateNewVehicleAction"
+			class="com.trimax.its.vehicle.action.CreateVehicleAction" method="createNewVehicle">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">CreateNewVehicle</result>
+			<result name="fail" type="tiles">CreateNewVehicle</result>
+		</action>
+
+		<action name="OrgAllocation"
+			class="com.trimax.its.vehicle.action.OrgAlloactionAction">
+			<result name="success" type="tiles">OrgAllocation</result>
+		</action>
+
+
+		<action name="AllocateOrgToVehicle"
+			class="com.trimax.its.vehicle.action.OrgAlloactionAction" method="AllocateOrgToVehicle">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">OrgAllocation</result>
+			<result name="fail" type="tiles">OrgAllocation</result>
+		</action>
+
+		<action name="DeviceAllocationToVehicleAction"
+			class="com.trimax.its.vehicle.action.DeviceAllocationToVehicle">
+			<result name="success" type="tiles">DeviceALloacation</result>
+		</action>
+
+		<action name="DeviceNumbers"
+			class="com.trimax.its.vehicle.action.DeviceAllocationToVehicle"
+			method="getDeviceNumbers">
+			<result name="success" type="tiles">DeviceALloacation</result>
+		</action>
+
+		<action name="assignDeviceToVehilce"
+			class="com.trimax.its.vehicle.action.DeviceAllocationToVehicle"
+			method="assignDevice">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">DeviceALloacation</result>
+			<result name="fail" type="tiles">DeviceALloacation</result>
+		</action>
+
+
+		<action name="ScrapVehicleAction" class="com.trimax.its.vehicle.action.ScrapVehicleAction">
+			<result name="success" type="tiles">ScrapVehicle</result>
+		</action>
+
+
+		<action name="SaveScrapVehicle" class="com.trimax.its.vehicle.action.ScrapVehicleAction"
+			method="scrapVehicle">
+			<result name="success" type="chain">VehicleDetails</result>
+			<result name="input" type="tiles">ScrapVehicle</result>
+			<result name="fail" type="tiles">ScrapVehicle</result>
+		</action>
+
+		<action name="VehicleType" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="execute">
+			<result name="success" type="tiles">VehicleType</result>
+			<result name="input" type="tiles">VehicleType</result>
+
+		</action>
+
+		<action name="VehicleTypeListAjax" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="getVehicleTypeRecordsList">
+			<result name="success" type="tiles">VehicleType</result>
+		</action>
+
+		<action name="CreateVehicleType" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="createVehicleType">
+			<result name="success" type="tiles">CreateVehicleType</result>
+		</action>
+
+		<action name="SaveVehicleType" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="saveNewVehicleType">
+			<result name="success" type="chain">VehicleType</result>
+			<result name="input" type="tiles">CreateVehicleType</result>
+			<result name="fail" type="tiles">CreateVehicleType</result>
+		</action>
+
+		<action name="EditVehicleType" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="editVehicleType">
+			<result name="success" type="tiles">EditVehicleType</result>
+		</action>
+
+		<action name="saveEditVehicleTypeAction" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="saveEditedVehilceTypeDetails">
+			<result name="success" type="chain">VehicleType</result>
+			<result name="fail" type="tiles">EditVehicleType</result>
+			<result name="input" type="tiles">EditVehicleType</result>
+		</action>
+
+		<action name="DeleteVehicleType" class="com.trimax.its.vehicle.action.VehicleTypeAction"
+			method="deleteVehicleType">
+			<result name="success" type="chain">VehicleType</result>
+			<result name="fail" type="chain">VehicleType</result>
+		</action>
+
+
+		<action name="ServiceTypeList" class="com.trimax.its.vehicle.action.ServiceTypeAction">
+			<result name="success" type="tiles">ServiceTypeList</result>
+			<result name="input" type="tiles">ServiceTypeList</result>
+
+		</action>
+
+		<action name="ServiceTypeListAjax" class="com.trimax.its.vehicle.action.ServiceTypeAction"
+			method="getServiceTypeRecordsList">
+			<result name="success" type="tiles">VehicleType</result>
+		</action>
+
+		<action name="EditServiceType" class="com.trimax.its.vehicle.action.ServiceTypeAction"
+			method="editServiceType">
+			<result name="success" type="tiles">EditServiceType</result>
+		</action>
+
+		<action name="saveEditServiceTypeAction" class="com.trimax.its.vehicle.action.ServiceTypeAction"
+			method="saveEditedServiceTypeDetails">
+			<result name="success" type="chain">ServiceTypeList</result>
+			<result name="fail" type="tiles">EditServiceType</result>
+			<result name="input" type="tiles">EditServiceType</result>
+		</action>
+		<action name="CreateServiceType" class="com.trimax.its.vehicle.action.ServiceTypeAction"
+			method="createServiceType">
+			<result name="success" type="tiles">CreateNewServiceType</result>
+		</action>
+
+		<action name="SaveServiceType" class="com.trimax.its.vehicle.action.ServiceTypeAction"
+			method="saveNewServiceType">
+			<result name="success" type="chain">ServiceTypeList</result>
+			<result name="fail" type="tiles">CreateNewServiceType</result>
+			<result name="input" type="tiles">CreateNewServiceType</result>
+		</action>
+
+		<action name="DeleteServiceType" class="com.trimax.its.vehicle.action.ServiceTypeAction"
+			method="deleteServiceType">
+			<result name="success" type="chain">ServiceTypeList</result>
+			<result name="fail" type="chain">ServiceTypeList</result>
+		</action>
+
+<!-- Service tax for Vayu vajra -->
+         <action name="ServiceTypeTaxList" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction">
+			<result name="success" type="tiles">ServiceTypeTaxList</result>
+			<result name="input" type="tiles">ServiceTypeTaxList</result>
+		</action>
+
+		<action name="ServiceTypeTaxListAjax" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction"
+			method="getServiceTaxRecordsList">
+			<result name="success" type="tiles">VehicleType</result>
+		</action>
+<!-- 		<action name="submitServiceTax" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction" method="submitServiceTax"> -->
+<!-- 		 <result name="success" type="tiles">ServiceTypeTaxList</result> -->
+ 		
+<!-- 		</action>     -->
+
+		<action name="EditTaxOfServiceType" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction"
+			method="editServiceTax">
+			<result name="success" type="tiles">EditTaxOfServiceType</result>
+		</action>
+
+		<action name="saveEditTaxServiceTypeAction" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction"
+			method="saveEditedServiceTaxDetails">
+			<result name="success" type="chain">ServiceTypeTaxList</result>
+			<result name="fail" type="tiles">EditTaxOfServiceType</result>
+			<result name="input" type="tiles">EditTaxOfServiceType</result>
+		</action>
+		<action name="CreateTaxServiceType" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction"
+			method="createServiceTax">
+			<result name="success" type="tiles">CreateNewServiceTax</result>
+		</action>
+
+		<action name="SaveServiceTypeTax" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction"
+			method="saveNewServiceTax">
+			<result name="success" type="chain">ServiceTypeTaxList</result>
+			<result name="fail" type="tiles">CreateNewServiceTax</result>
+			<result name="input" type="tiles">CreateNewServiceTax</result>
+		</action>
+
+		<action name="DeleteServiceTax" class="com.trimax.its.vehicle.action.ServiceTypeTaxAction"
+			method="deleteServiceTax">
+			<result name="success" type="chain">ServiceTypeTaxList</result>
+			<result name="fail" type="chain">ServiceTypeTaxList</result>
+		</action>
+<!-- service tax vayu vajra end -->
+
+		<action name="MakeTypeList" class="com.trimax.its.vehicle.action.MakeTypeAction">
+			<result name="success" type="tiles">MakeTypeList</result>
+			<result name="input" type="tiles">MakeTypeList</result>
+
+		</action>
+
+		<action name="MakeTypeListAjax" class="com.trimax.its.vehicle.action.MakeTypeAction"
+			method="getMakeTypeRecordsList">
+			<result name="success" type="tiles">VehicleType</result>
+		</action>
+
+		<action name="EditMakeType" class="com.trimax.its.vehicle.action.MakeTypeAction"
+			method="editMakeType">
+			<result name="success" type="tiles">EditMakeType</result>
+		</action>
+
+		<action name="saveEditMakeTypeAction" class="com.trimax.its.vehicle.action.MakeTypeAction"
+			method="saveEditedMakeTypeDetails">
+			<result name="success" type="chain">MakeTypeList</result>
+			<result name="fail" type="tiles">EditMakeType</result>
+			<result name="input" type="tiles">EditMakeType</result>
+		</action>
+
+		<action name="CreateMakeType" class="com.trimax.its.vehicle.action.MakeTypeAction"
+			method="createMakeType">
+			<result name="success" type="tiles">CreateNewMakeType</result>
+		</action>
+
+		<action name="SaveMakeType" class="com.trimax.its.vehicle.action.MakeTypeAction"
+			method="saveNewMakeType">
+			<result name="success" type="chain">MakeTypeList</result>
+			<result name="fail" type="tiles">CreateNewMakeType</result>
+			<result name="input" type="tiles">CreateNewMakeType</result>
+		</action>
+
+		<action name="DeleteMakeType" class="com.trimax.its.vehicle.action.MakeTypeAction"
+			method="deleteMakeType">
+			<result name="success" type="chain">MakeTypeList</result>
+		</action>
+
+         <action name="ScheduleMappingList" class="com.trimax.its.vehicle.action.ScheduleMappingAction">
+			<result name="success" type="tiles">ScheduleMappingList</result>
+			<result name="input" type="tiles">ScheduleMappingList</result>
+		</action>
+		
+		<action name="ScheduleMappingListAjax" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="getScheduleMappingRecordsList">
+			<result name="success" type="chain">ScheduleMappingList</result>
+		</action>
+		<action name="ScheduleMappingListAjaxServiceCall" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="getScheduleMappingRecordsListAjax">
+			<result name="success" type="chain">ScheduleMappingList</result>
+		</action>
+		
+		<action name="OnlineETMAvailabilityList" class="com.trimax.its.vehicle.action.ETMAvailabilityAction">
+			<result name="success" type="tiles">OnlineETMAvailabilityList</result>
+			<result name="input" type="tiles">OnlineETMAvailabilityList</result>
+		</action>
+		
+		<action name="OnlineETMAvailabilityListAjax" class="com.trimax.its.vehicle.action.ETMAvailabilityAction"
+			method="getETMList">
+			<result name="success" type="chain">OnlineETMAvailabilityList</result>
+		</action>
+		
+	 	<action name="CreateScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="createScheduleMapping">
+			<result name="success" type="tiles">CreateScheduleMapping</result>
+		</action>
+		<action name="getScheduleListForScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction" method="getScheduleListForScheduleMapping">
+
+     	</action>
+     	<action name="getShiftListForScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction" method="getShiftListForScheduleMapping">
+
+     	</action>
+		<action name="EditScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="editScheduleMapping">
+			<result name="success" type="tiles">EditScheduleMapping</result>
+		</action>
+
+		<action name="saveEditScheduleMappingAction" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="saveEditScheduleMappingAction">
+			<result name="success" type="chain">ScheduleMappingList</result>
+			<result name="fail" type="tiles">EditScheduleMapping</result>
+			<result name="input" type="tiles">EditScheduleMapping</result>
+ 		</action>
+ 		
+ 		<action name="saveEditScheduleMappingActionWebServiceCall" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="saveEditScheduleMappingActionWebServiceCall">
+			<result name="success" type="chain">ScheduleMappingList</result>
+			<result name="fail" type="tiles">EditScheduleMapping</result>
+			<result name="input" type="tiles">EditScheduleMapping</result>
+ 		</action>
+ 		<action name="saveScheduleMappingActionWebServiceCall" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="saveScheduleMappingActionWebServiceCall">
+			<result name="success" type="chain">ScheduleMappingList</result>
+			<result name="fail" type="tiles">CreateScheduleMapping</result>
+			<result name="input" type="tiles">CreateScheduleMapping</result>
+ 		</action>
+ 		
+ 		<action name="DeleteScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="deleteScheduleMapping">
+			<result name="success" type="chain">ScheduleMappingList</result>
+			<result name="fail" type="chain">ScheduleMappingList</result>
+		</action> 
+		 
+        <action name="getDepotVehicle" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="getPerticularVehicle">
+		</action>
+		 <action name="getDepotVehicleList" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction"
+			method="getPerticularVehicleList">
+		</action>
+		
+		<action name="getDepotVehicleForScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="getDepotVehicleForScheduleMapping">
+		</action>
+
+		<action name="ModelTypeList" class="com.trimax.its.vehicle.action.ModelTypeAction">
+			<result name="success" type="tiles">ModelTypeList</result>
+			<result name="input" type="tiles">ModelTypeList</result>
+		</action>
+
+		<action name="ModelTypeListAjax" class="com.trimax.its.vehicle.action.ModelTypeAction"
+			method="getModelTypeRecordsList">
+			<result name="success" type="chain">ModelTypeList</result>
+		</action>
+
+		<action name="EditModelType" class="com.trimax.its.vehicle.action.ModelTypeAction"
+			method="editModelType">
+			<result name="success" type="tiles">EditModelType</result>
+		</action>
+
+		<action name="saveEditModelTypeAction" class="com.trimax.its.vehicle.action.ModelTypeAction"
+			method="saveEditedModelTypeDetails">
+			<result name="success" type="chain">ModelTypeList</result>
+			<result name="fail" type="tiles">EditModelType</result>
+			<result name="input" type="tiles">EditModelType</result>
+		</action>
+
+		<action name="CreateModelType" class="com.trimax.its.vehicle.action.ModelTypeAction"
+			method="createModelType">
+			<result name="success" type="tiles">CreateNewModelType</result>
+		</action>
+
+		<action name="SaveModelType" class="com.trimax.its.vehicle.action.ModelTypeAction"
+			method="saveNewModelType">
+			<result name="success" type="chain">ModelTypeList</result>
+			<result name="fail" type="tiles">CreateNewModelType</result>
+			<result name="input" type="tiles">CreateNewModelType</result>
+		</action>
+
+		<action name="DeleteModelType" class="com.trimax.its.vehicle.action.ModelTypeAction"
+			method="deleteModelType">
+			<result name="success" type="chain">ModelTypeList</result>
+			<result name="fail" type="chain">ModelTypeList</result>
+		</action>
+
+		<action name="viewBrandTypeList" class="com.trimax.its.vehicle.action.BrandTypeAction">
+
+		</action>
+
+		<action name="EditBrandType" class="com.trimax.its.vehicle.action.BrandTypeAction"
+			method="editBrandType">
+			<result name="success" type="tiles">EditBrandType</result>
+		</action>
+
+		<action name="saveEditBrandTypeAction" class="com.trimax.its.vehicle.action.BrandTypeAction"
+			method="saveEditedBrandTypeDetails">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input" type="tiles">EditBrandType</result>
+			<result name="success" type="chain">BrandTypeList</result>
+			<result name="invalid.token" type="tiles">EditBrandType</result>
+		</action>
+		<action name="CreateBrandType" class="com.trimax.its.vehicle.action.BrandTypeAction"
+			method="createBrandType">
+			<result name="success" type="tiles">CreateNewBrandType</result>
+		</action>
+
+		<action name="SaveBrandType" class="com.trimax.its.vehicle.action.BrandTypeAction"
+			method="saveNewBrandType">
+			<result name="input" type="tiles">CreateNewBrandType</result>
+			<result name="success" type="chain">BrandTypeList</result>
+		</action>
+
+		<action name="DeleteBrandType" class="com.trimax.its.vehicle.action.BrandTypeAction"
+			method="deleteBrandType">
+			<result name="success" type="chain">BrandTypeList</result>
+		</action>
+
+		<action name="VehicleCategoryAjax"
+			class="com.trimax.its.vehicle.action.VehicleCategoryAction" method="getVehicleCategoryList">
+			<result name="success" type="chain">BrandTypeList</result>
+		</action>
+
+		<action name="VehicleCategoryList"
+			class="com.trimax.its.vehicle.action.VehicleCategoryAction">
+			<result name="success" type="tiles">VehicleCategoryList</result>
+			<result name="input" type="tiles">VehicleCategoryList</result>
+		</action>
+
+		<action name="CreateVehicleCategoryAction"
+			class="com.trimax.its.vehicle.action.VehicleCategoryAction" method="createVehilceCategory">
+			<result name="success" type="tiles">CreateVehicleCategory</result>
+		</action>
+
+		<action name="SaveVehicleCategory"
+			class="com.trimax.its.vehicle.action.VehicleCategoryAction" method="saveVehicleCategory">
+			<result name="success" type="chain">VehicleCategoryList</result>
+			<result name="input" type="tiles">CreateVehicleCategory</result>
+			<result name="fail" type="tiles">CreateVehicleCategory</result>
+		</action>
+
+		<action name="DeleteVehicleCategory"
+			class="com.trimax.its.vehicle.action.VehicleCategoryAction" method="deleteVehicleCategory">
+			<result name="success" type="chain">VehicleCategoryList</result>
+		</action>
+
+		<action name="DockingHistoryList"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction">
+			<result name="success" type="tiles">DockingHistoryList</result>
+		</action>
+
+		<action name="DockingHistoryListAjaxAction"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="getDockingHistoryRecordsList">
+			<result name="success" type="tiles">DockingHistoryList</result>
+		</action>
+
+
+
+		<!-- <action name="DockingTypeAjaxListAction" class="com.trimax.its.vehicle.action.DockingTypeAction" 
+			method="getDockingTypeRecordsList"> </action> <action name="dockingtypeview" 
+			class="com.trimax.its.vehicle.action.DockingTypeAction" method="viewDockingType"> 
+			<result name="success" type="tiles">DockingTypeList</result> </action> <action 
+			name="createdockingtypeview" class="com.trimax.its.vehicle.action.DockingTypeAction" 
+			method="createdockingtypeview"> <result name="success" type="tiles">CreateDockingType</result> 
+			</action> <action name="editdockingtypeview" class="com.trimax.its.vehicle.action.DockingTypeAction" 
+			method="editdockingtypeview"> <result name="success" type="tiles">EditDockingType</result> 
+			</action> <action name="createDockingTypeAction" class="com.trimax.its.vehicle.action.DockingTypeAction" 
+			method="createDockingTypeAction"> <interceptor-ref name="token"></interceptor-ref> 
+			<interceptor-ref name="defaultStack"></interceptor-ref> <result name="success" 
+			type="tiles">DockingTypeList</result> <result name="invalid.token" type="tiles">DockingTypeList</result> 
+			</action> <action name="editDockingTypeAction" class="com.trimax.its.vehicle.action.DockingTypeAction" 
+			method="editDockingTypeAction"> <interceptor-ref name="token"></interceptor-ref> 
+			<interceptor-ref name="defaultStack"></interceptor-ref> <result name="success" 
+			type="tiles">DockingTypeList</result> <result name="invalid.token" type="tiles">DockingTypeList</result> 
+			</action> -->
+
+		<action name="DockingTypeList" class="com.trimax.its.vehicle.action.DockingTypeAction">
+			<result name="success" type="tiles">DockingTypeList</result>
+		</action>
+
+		<action name="DockingTypeListAjax" class="com.trimax.its.vehicle.action.DockingTypeAction"
+			method="getDockingTypeRecordsList">
+			<result name="success" type="chain">DockingTypeList</result>
+		</action>
+
+		<action name="EditDockingType" class="com.trimax.its.vehicle.action.DockingTypeAction"
+			method="editDockingType">
+			<result name="success" type="tiles">EditDockingType</result>
+		</action>
+
+		<action name="saveEditDockingTypeAction" class="com.trimax.its.vehicle.action.DockingTypeAction"
+			method="saveEditedDockingTypeDetails">
+			<result name="success" type="chain">DockingTypeList</result>
+			<result name="fail" type="tiles">EditDockingType</result>
+			<result name="input" type="tiles">EditDockingType</result>
+		</action>
+
+		<action name="CreateDockingType" class="com.trimax.its.vehicle.action.DockingTypeAction"
+			method="createDockingType">
+			<result name="success" type="tiles">CreateNewDockingType</result>
+		</action>
+
+		<action name="SaveDockingType" class="com.trimax.its.vehicle.action.DockingTypeAction"
+			method="saveNewDockingType">
+			<result name="success" type="chain">DockingTypeList</result>
+			<result name="fail" type="tiles">CreateNewDockingType</result>
+			<result name="input" type="tiles">CreateNewDockingType</result>
+		</action>
+
+		<action name="DeleteDockingType" class="com.trimax.its.vehicle.action.DockingTypeAction"
+			method="deleteDockingType">
+			<result name="success" type="chain">DockingTypeList</result>
+			<result name="fail" type="chain">DockingTypeList</result>
+		</action>
+
+		<action name="accidenttype" class="com.trimax.its.vehicle.action.AccidentTypeAction">
+
+		</action>
+
+		<action name="accidenttypeView" class="com.trimax.its.vehicle.action.AccidentTypeAction"
+			method="viewAccidentType">
+			<result name="success" type="tiles">AccidentTypeList</result>
+		</action>
+		<action name="createAccidenttypeview" class="com.trimax.its.vehicle.action.AccidentTypeAction"
+			method="createAccidenttypeview">
+			<result name="success" type="tiles">CreateAccidentTypeList</result>
+		</action>
+		<action name="createAccidentTypeAction" class="com.trimax.its.vehicle.action.AccidentTypeAction"
+			method="createAccidenttypeAction">
+			<result name="input" type="tiles">CreateAccidentTypeList</result>
+			<result name="success" type="tiles">AccidentTypeList</result>
+		</action>
+		<action name="deleteAccidentType" class="com.trimax.its.vehicle.action.AccidentTypeAction"
+			method="deleteAccidentType">
+			<result name="input" type="tiles">CreateAccidentTypeList</result>
+			<result name="success" type="tiles">AccidentTypeList</result>
+		</action>
+
+		<action name="deleteAccidentType" class="com.trimax.its.vehicle.action.AccidentTypeAction"
+			method="deleteAccidentType">
+			<result name="input" type="tiles">CreateAccidentTypeList</result>
+			<result name="success" type="tiles">AccidentTypeList</result>
+		</action>
+		<action name="BrandTypeList" class="com.trimax.its.vehicle.action.BrandTypeAction"
+			method="showBrandType">
+			<result name="success" type="tiles">BrandTypeList</result>
+			<result name="input" type="tiles">BrandTypeList</result>
+		</action>
+
+
+
+
+
+
+		<action name="showBreakdowntypeList"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="showBreakdownTypeList">
+			<result name="input" type="tiles">CreateAccidentTypeList</result>
+			<result name="success" type="tiles">ShowBreakdowntypelist</result>
+		</action>
+
+		<action name="breakdowntype"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction">
+
+		</action>
+
+		<action name="showbreakdowntype"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="showCreateBreakdownType">
+			<result name="success" type="tiles">ShowBreakdowntype</result>
+		</action>
+
+		<action name="addBreakdowntypeDetails"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="addBreakdownType">
+			<result name="input" type="tiles">ErrorBreakdowntype</result>
+			<result name="success" type="tiles">AddBreakdowntype</result>
+			<result name="error" type="tiles">ErrorBreakdowntype</result>
+		</action>
+
+		<action name="deleteBreakdownType"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="deleteBreakdowntype">
+			<result name="success" type="tiles">DeletedBreakdowntypeDetails
+			</result>
+		</action>
+
+		<action name="editBreakdownType"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="edit">
+			<result name="success" type="tiles">EditBreakdowntypeDetails</result>
+		</action>
+
+
+		<action name="updateBreakdownTypedeails"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="updateBreakdownTypeDetails">
+			<result name="success" type="tiles">UpdateBreakdowntypeDetails
+			</result>
+			<result name="error" type="tiles">ErrorUpdateBreakdowntypeDetails
+			</result>
+			<result name="input" type="tiles">ErrorUpdateBreakdowntypeDetails
+			</result>
+
+		</action>
+
+		<action name="updateBreakdownType"
+			class="com.trimax.its.vehicle.action.BreakDownTypeDetailsAction"
+			method="updateBreakdownTypeDetails">
+			<result name="success" type="tiles">UpdateBreakdowntypeDetails
+			</result>
+			<result name="error" type="chain">editBreakdownType</result>
+
+		</action>
+
+		<!-- VehicleDefectsAction -->
+		<action name="VehicleDefect"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction">
+
+		</action>
+
+		<action name="vehicledefectlist"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="viewVehicleDefect">
+			<result name="success" type="tiles">VehicleDefectList</result>
+		</action>
+
+		<action name="createVehicleDefectsview"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="createVehicleDefectsview">
+			<result name="success" type="tiles">CreateVehicleDefectsview</result>
+		</action>
+
+		<action name="createVehicleDefectAction"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="createVehicleDefectAction">
+			<result name="input" type="tiles">CreateVehicleDefectsview</result>
+			<result name="success" type="tiles">VehicleDefectList</result>
+		</action>
+
+		<action name="DeleteVehicleDefects"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="deleteVehicleDefects">
+			<result name="success" type="tiles">DeleteVehicleDefect</result>
+			<result name="input" type="tiles">DeleteVehicleDefect</result>
+		</action>
+
+		<action name="editVehicleDefectDetails"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="getEditDetails">
+			<result name="success" type="tiles">showEditVehicleDefect</result>
+		</action>
+		<action name="updateVehicleDefectDetails"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="updateDdefectDetails">
+			<result name="input" type="tiles">showEditVehicleDefect</result>
+			<result name="success" type="tiles">UpdateDefect</result>
+		</action>
+
+		<action name="GetvehicleName"
+			class="com.trimax.its.vehicle.action.VehicleDefectsAction" method="getVehicledetails">
+			<result name="success" type="tiles">CreateVehicleDefectsviewdetails
+			</result>
+		</action>
+
+		<!-- end VehicleDefectsAction -->
+
+		<!-- Rajesh start -->
+		<action name="viewcomplaint" class="com.trimax.its.vehicle.action.ComplaintAction"
+			method="insertData">
+			<result name="success" type="tiles">complaintListtile</result>
+		</action>
+		<action name="complaintListView" class="com.trimax.its.vehicle.action.ComplaintAction">
+
+		</action>
+		<action name="createcomplaint" class="com.trimax.its.vehicle.action.ComplaintAction"
+			method="createComplaint">
+			<result name="success" type="tiles">createcomplaint</result>
+		</action>
+
+<!-- causses for cancellation and extraKM -->
+        <action name="causeCancellation" class="com.trimax.its.vehicle.action.CancellationAction">
+			<result name="success" type="tiles">cancelationcause</result>
+		</action>
+		
+        <action name="cancellationListAjax" class="com.trimax.its.vehicle.action.CancellationAction"
+			method="getCancellationRecordsList">
+			<result name="success" type="tiles">cancelationcause</result>
+		</action>
+		
+		
+        <action name="CreateCancelCause" class="com.trimax.its.vehicle.action.CancellationAction"
+			method="createCauseCancel">
+			<result name="success" type="tiles">CreateCancleCuse</result>
+		</action>
+		
+		<action name="SaveCancellationCause" class="com.trimax.its.vehicle.action.CancellationAction"
+			method="SaveCancellCause">
+			<result name="success" type="chain">causeCancellation</result>
+			<result name="input" type="tiles">CreateCancleCuse</result>
+			<result name="fail" type="tiles">CreateCancleCuse</result>
+		</action>
+		
+		<action name="EditCauseCanclType" class="com.trimax.its.vehicle.action.CancellationAction"
+			method="editCanclCauseType">
+			<result name="success" type="tiles">EditCanclCause</result>
+		</action>
+
+		<action name="saveEditCauseCanclAction" class="com.trimax.its.vehicle.action.CancellationAction"
+			method="saveEditedCauseCanclTypeDetails">
+			<result name="success" type="chain">causeCancellation</result>
+			<result name="fail" type="tiles">EditCanclCause</result>
+			<result name="input" type="tiles">EditCanclCause</result>
+		</action>
+		<action name="DeleteCanclCauseType" class="com.trimax.its.vehicle.action.CancellationAction"
+			method="deletecanclcauseType">
+			<result name="success" type="chain">causeCancellation</result>
+			<result name="fail" type="chain">causeCancellation</result>
+		</action>
+		<action name="reasonExtraKM" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction">
+			<result name="success" type="tiles">extrakmcause</result>
+		</action>
+		<action name="extraKmListAjax" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction"
+			method="getextraKmRecordsList">
+			<result name="success" type="tiles">extrakmcause</result>
+		</action>
+		<action name="CreateExtraKMCause" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction"
+			method="createReasonExtraKm">
+			<result name="success" type="tiles">CreateExtraKm</result>
+		</action>
+		<action name="SaveExtaKMCause" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction"
+			method="SaveExtraKMlCause">
+			<result name="success" type="chain">reasonExtraKM</result>
+			<result name="input" type="tiles">CreateExtraKm</result>
+			<result name="fail" type="tiles">CreateExtraKm</result>
+		</action>
+		<action name="EditExtraKMType" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction"
+			method="editExtraKmType">
+			<result name="success" type="tiles">EditExtaKm</result>
+		</action>
+
+		<action name="saveEditExtraKmAction" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction"
+			method="saveEditedExtraKmTypeDetails">
+			<result name="success" type="chain">reasonExtraKM</result>
+			<result name="fail" type="tiles">EditExtaKm</result>
+			<result name="input" type="tiles">EditExtaKm</result>
+		</action>
+		<action name="DeleteExtakmType" class="com.trimax.its.vehicle.action.ReasonForExtraKMAction"
+			method="deleteExtraKmType">
+			<result name="success" type="chain">reasonExtraKM</result>
+			<result name="fail" type="chain">reasonExtraKM</result>
+		</action>
+		
+
+
+
+		<!-- Start Component Type -->
+		<action name="componentType"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction">
+			<result name="success" type="tiles">ComponentType</result>
+		</action>
+
+		<action name="componentTypeView"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction"
+			method="showComponentType">
+			<result name="success" type="tiles">ComponentType</result>
+		</action>
+
+		<action name="createComponentType"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction"
+			method="createComponentType">
+			<result name="success" type="tiles">CreateComponentType</result>
+
+		</action>
+		<action name="createComponentTypeAction"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction"
+			method="createComponentTypeAction">
+			<result name="input" type="tiles">CreateComponentType</result>
+			<result name="success" type="tiles">ComponentType</result>
+
+		</action>
+
+
+
+		<!-- //add complaint action -->
+
+		<action name="createcomplaintAction" class="com.trimax.its.vehicle.action.ComplaintAction"
+			method="addComplaint">
+			<result name="success" type="tiles">complaintadd</result>
+			<result name="input" type="tiles">createcomplaint</result>
+		</action>
+
+		<!-- delete complaint -->
+
+		<action name="deleteComplaint" class="com.trimax.its.vehicle.action.ComplaintAction"
+			method="deleteComplaintAction">
+			<result name="success" type="tiles">complaintdelete</result>
+		</action>
+
+
+		<!-- edit page call -->
+
+		<action name="ModifyComplaintDetails" class="com.trimax.its.vehicle.action.ComplaintAction"
+			method="editComplaintType">
+			<result name="success" type="tiles">complaintEdit</result>
+		</action>
+
+		<!-- add edited complaints -->
+
+
+		<action name="addeditedcomplaint" class="com.trimax.its.vehicle.action.ComplaintAction"
+			method="addeditedCompliant">
+			<result name="success" type="tiles">complaintUpdate</result>
+			<result name="input" type="tiles">complaintEdit</result>
+		</action>
+
+
+		<!-- action end -->
+
+		<action name="editComponentType"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction"
+			method="editComponentType">
+			<result name="success" type="tiles">updateComponentType</result>
+		</action>
+		<action name="addeditedComponentType"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction"
+			method="addeditedComponentType">
+			<result name="input" type="tiles">updateComponentType</result>
+			<result name="success" type="tiles">ComponentType</result>
+		</action>
+		<action name="deleteComponentType"
+			class="com.trimax.its.componenttype.action.ComponentTypeAction"
+			method="deleteComponentTypeAction">
+			<result name="success" type="tiles">ComponentType</result>
+		</action>
+		<!-- End Component Type -->
+
+
+
+		<!-- Vehicle Maintenance -->
+		<action name="Vehiclemaintenance"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction">
+
+		</action>
+
+		<action name="vehiclemaintenancelist"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction"
+			method="viewVehiclemaintenance">
+			<result name="success" type="tiles">VehiclemaintenanceList</result>
+		</action>
+		<action name="createVehicleMaintence"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction"
+			method="createVehicleMaintenance">
+			<result name="success" type="tiles">CreateVehicleMaintenance</result>
+		</action>
+
+
+
+		<action name="breakdownhistory"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="viewBreakDownHistory">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="chain">ViewBreakDownHistory</result>
+		</action>
+
+		<action name="viewBreakDownHistoryList"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="viewBreakDownHistoryDetails">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="chain">ViewBreakDownHistory</result>
+		</action>
+		<action name="createVehicleMaintenceAction"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction"
+			method="createVehicleMaintenanceAction">
+			<result name="input" type="tiles">CreateVehicleMaintenance</result>
+			<result name="success" type="tiles">VehiclemaintenanceList</result>
+
+		</action>
+		<action name="DeleteMaintenanceDetails"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction"
+			method="deleteVehicleMaintenance">
+			<result name="success" type="tiles">VehiclemaintenanceList</result>
+			<result name="input" type="tiles">VehiclemaintenanceList</result>
+		</action>
+
+		<action name="ModifyVehicleMaintenanceDetails"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction"
+			method="getEditDetails">
+
+			<result name="success" type="tiles">showEditVehicleMaintenance
+			</result>
+		</action>
+
+		<action name="updateVehicleMaintenanceDetails"
+			class="com.trimax.its.vehicle.action.VehicleMaintenanceAction"
+			method="updateMaintenanceDetails">
+			<result name="input" type="tiles">showEditVehicleMaintenance</result>
+			<result name="success" type="tiles">VehiclemaintenanceList</result>
+		</action>
+		<!-- End Vehicle Maintenance -->
+		<!-- Start of Break Down History -->
+
+
+		<action name="GetVehicleId"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="findVehicleId">
+			<result name="success" type="tiles">CreateBreakDownHistory</result>
+
+		</action>
+
+
+		<action name="GetBreakDownId"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="findBreakDownId">
+			<result name="success" type="tiles">CreateBreakDownHistory</result>
+
+		</action>
+
+
+		<action name="createBreakDownHistory"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="createBreakDownHistory">
+			<result name="success" type="tiles">CreateBreakDownHistory</result>
+			<result name="error" type="chain">CreateBreakDownHistory</result>
+		</action>
+		<action name="editBreakDownHistory"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="editBreakDownHistory">
+			<result name="success" type="tiles">EditBreakDownHistory</result>
+			<result name="error" type="chain">EditBreakDownHistory</result>
+		</action>
+		<action name="breakdownhistory"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="viewBreakDownHistory">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="chain">ViewBreakDownHistory</result>
+		</action>
+
+		<action name="viewBreakDownHistoryList"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="viewBreakDownHistoryDetails">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="chain">ViewBreakDownHistory</result>
+		</action>
+
+
+		<action name="saveBreakDownHistory"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="saveBreakDownHistoryDetails">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="tiles">CreateBreakDownHistory</result>
+		</action>
+
+		<action name="editBreakDownDetails"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="editBreakDownHistoryDetails">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="tiles">EditBreakDownHistory</result>
+		</action>
+		<action name="deleteBreakDownHistory"
+			class="com.trimax.its.vehicle.action.BreakDownHistoryAction" method="deleteBreakDownHistoryDetails">
+			<result name="success" type="tiles">ViewBreakDownHistory</result>
+			<result name="error" type="tiles">ViewBreakDownHistory</result>
+		</action>
+
+		<!-- End BreakDown History -->
+		<!-- peak hour start -->
+
+		<action name="PeakHours" class="com.trimax.its.transport.action.PeakHourAction"	method="viewPeakHour">
+			<result name="success" type="tiles">PeakHourlist</result>		
+			
+		</action>
+		<action name="canclePeakHours" class="com.trimax.its.transport.action.PeakHourAction" method="canclePeakCreation">
+			<result name="success" type="tiles">PeakHourlist</result>		
+			
+		</action>
+		<action name="PeakHourListAction" class="com.trimax.its.transport.action.PeakHourAction">
+		</action>
+
+		<action name="createPeakHour" class="com.trimax.its.transport.action.PeakHourAction" method="createPeakHour">
+			<result name="success" type="tiles">createpeakhour</result>
+		</action>
+
+		<action name="createPeakHourAction" class="com.trimax.its.transport.action.PeakHourAction" method="addPeakHour">
+			<result name="success" type="tiles">createpeakhourRateMaster</result>
+			<result name="input" type="tiles">createpeakhour</result>
+		</action>
+
+		<action name="ModifyPeakHourDetails" class="com.trimax.its.transport.action.PeakHourAction"	method="editPeakHour">
+			<result name="success" type="tiles">peakHourEdit</result>
+		</action>
+
+		<action name="addEditPeakHourAction" class="com.trimax.its.transport.action.PeakHourAction"	method="addeditedPeakHour">
+			<result name="success" type="tiles">PeakHourlist</result>
+			<result name="input" type="tiles">peakHourEdit</result>
+		</action>
+
+		<action name="deletePeakHour" class="com.trimax.its.transport.action.PeakHourAction" method="deletePeakHourAction">
+			<result name="success" type="tiles">PeakHourlist</result>
+		</action>
+
+		<action name="findServiceTypeAction1" class="com.trimax.its.transport.action.PeakHourAction" method="getServiceTypeForPeakHour">
+
+		</action>
+		<action name="getRateMasterVersion" class="com.trimax.its.transport.action.PeakHourAction" method="getRateMasterVersion">
+
+		</action>
+		<action name="getRateMasterVersionForEdit" class="com.trimax.its.transport.action.PeakHourAction" method="getRateMasterVersionForEdit">
+
+		</action>
+		<action name="setRateMasterVersion" class="com.trimax.its.transport.action.PeakHourAction" method="setRateMasterVersion">
+
+		</action>
+		<action name="rateDetailsUpdate" class="com.trimax.its.transport.action.PeakHourAction" method="rateDetailsUpdate">
+			<result name="success" type="tiles">RateMaster</result>
+			<result name="input" type="tiles">createpeakhourRateMaster</result>
+		</action>
+
+		<!-- peak hour end -->
+
+		<!-- dock history start -->
+
+		<action name="createDockHistory"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="createDockHistory">
+			<result name="success" type="tiles">createdochistory</result>
+		</action>
+		<action name="createDockingHistoryAction"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="addDockHistory">
+			<result name="success" type="tiles">docklist</result>
+			<result name="input" type="tiles">createdochistory</result>
+		</action>
+
+
+		<action name="ModifyDockingHistoryDetails"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="editDockingHistory">
+			<result name="success" type="tiles">dockingEdit</result>
+		</action>
+
+		<action name="AddEditDockingHistory"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="addeditedDockhistory">
+			<result name="success" type="tiles">docklist</result>
+			<result name="input" type="tiles">dockingEdit</result>
+		</action>
+
+		<action name="deleteDockinghistory"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="deleteDockHistoryAction">
+			<result name="success" type="tiles">docklist</result>
+
+		</action>
+
+		<!-- doc history end -->
+		<action name="createPeakHourAjaxTesttes" class="com.trimax.its.transport.action.PeakHourAction"
+			method="CreateAjaxPeakHour">
+
+		</action>
+		<!-- <docking history check start> -->
+		<action name="GetVehicleStopNameshow"
+			class="com.trimax.its.vehicle.action.DockingHistoryAction" method="getBusStopDropshow">
+
+		</action>
+		<!-- <docking history check end> -->
+		
+		 <action name="getVehicleDockingReport" class="com.trimax.its.vehicle.action.VehicleDockingReportAction"
+			method="getVehicleDockingReport">
+			<result name="success" type="tiles">ViewVehicleDockingReport</result>
+		</action> 
+		<action name="getDepotList" class="com.trimax.its.vehicle.action.VehicleDockingReportAction"
+			method="getDepotList">
+		</action>
+		 <action name="getVehicleDockingReportList" class="com.trimax.its.vehicle.action.VehicleDockingReportAction"
+			method="getVehicleDockingDataForReport">
+		</action>    
+		 <action name="fleetInsert" class="com.api.parsing.depot.ParsingXml" method="fleetInsert">
+		 <result name="success" type="tiles">ShowVehicle</result>
+		</action>     
+		
+<!-- 		vehicle status -->
+
+
+           <action name="vehiclestatusdisplay" class="com.trimax.its.vehicle.action.VehicleStatusAction" method="vehicleStatus">
+		    <result name="success" type="tiles">vehicleStatus</result>
+		   </action>    
+
+          <action name="getDepot" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularDepot">
+		</action>
+		<action name="getLiveVehicle1" class="com.trimax.its.vehicle.action.VehicleStatusAction"
+			method="getPerticularVehicle">
+		</action>
+		<action name="vehicleStatussave" class="com.trimax.its.vehicle.action.VehicleStatusAction" method="vehicleStatusSave">
+		 <result name="success" type="redirectAction">vehiclestatusdisplay</result>
+ 		
+		</action>    
+		   <action name="getCWPlaceDropdown" class="com.trimax.its.vehicle.action.VehicleStatusAction"
+			method="getCWPlaces">
+		</action>
+		
+		   <action name="getStatus" class="com.trimax.its.vehicle.action.VehicleStatusAction"
+			method="getVehicleStatusList">
+		</action>
+		
+		
+	
+<!-- end -->
+		
+		
+		
+		<action name="ServiceTaxTypeList" class="com.trimax.its.vehicle.action.ServiceTaxTypeList">
+			<result name="success" type="tiles">ServiceTaxTypeList</result>
+			<result name="input" type="tiles">ServiceTaxTypeList</result>
+
+		</action>
+		
+		<action name="ServiceTaxTypeListAjax" class="com.trimax.its.vehicle.action.ServiceTaxTypeList"
+			method="getServiceTaxTypeRecordsList">
+<!-- 			<result name="success" type="tiles">ServiceTaxTypeList</result> -->
+		</action>
+		
+		<action name="CreateServiceTaxType" class="com.trimax.its.vehicle.action.ServiceTaxTypeList"
+			method="createServiceTaxType">
+			<result name="success" type="tiles">CreateServiceTaxType</result>
+		</action>
+
+		<action name="SaveServiceTaxType" class="com.trimax.its.vehicle.action.ServiceTaxTypeList"
+			method="saveNewServiceTaxType">
+			<result name="success" type="tiles">ServiceTaxTypeList</result>
+			<result name="fail" type="tiles">CreateServiceTaxType</result>
+			<result name="input" type="tiles">CreateServiceTaxType</result>
+		</action>
+		
+	<action name="EditServiceTaxTypeList" class="com.trimax.its.vehicle.action.ServiceTaxTypeList"
+			method="editServiceTaxType">
+			<result name="success" type="tiles">EditServiceTaxType</result>
+		</action>
+
+		<action name="saveEditServiceTaxTypeAction" class="com.trimax.its.vehicle.action.ServiceTaxTypeList"
+			method="saveEditedServiceTaxTypeDetails">
+			<result name="success" type="chain">ServiceTaxTypeList</result>
+			<result name="fail" type="tiles">EditServiceTaxType</result>
+			<result name="input" type="tiles">EditServiceTaxType</result>
+		</action>
+		
+		
+		<action name="DeleteServiceTaxTypeList" class="com.trimax.its.vehicle.action.ServiceTaxTypeList"
+			method="deleteServiceTaxType">
+			<result name="success" type="chain">ServiceTaxTypeList</result>
+			<result name="fail" type="chain">ServiceTaxTypeList</result>
+		</action>
+		
+		
+		<action name="SystemHealthCheck" class="com.trimax.its.report.action.SystemHealthCheckReportAction">
+			<result name="success" type="tiles">SystemHealthCheckReport
+			</result>
+		</action>
+		<action name="getSystemHealthDetails" class="com.trimax.its.report.action.SystemHealthCheckReportAction"
+			method="getSystemHealthData">
+		</action>
+			<action name="getLiveVehicleData" class="com.trimax.its.report.action.SystemHealthCheckReportAction"
+			method="getVehicle">
+<!-- 			<result name="success" type="chain">EtmDeviceHistory</result> -->
+		</action>
+		
+<!-- 		Brand Service by Aditi  -->
+
+		<action name="BrandTypeServiceLimit" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction">
+			<result name="success" type="tiles">BrandTypeServiceLimit</result>
+			<result name="input" type="tiles">BrandTypeServiceLimit</result>
+		</action>
+		
+		<action name="BrandTypeServiceLimitAjax" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="getServiceLimitData">
+		</action>
+		
+		<action name="CreateBrandService" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="createBrandServiceLimit">
+			<result name="success" type="tiles">CreateBrandService</result>
+		</action>
+
+		<action name="saveEditBrandService" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="saveEditBrandService">
+			<result name="success" type="tiles">BrandTypeServiceLimit</result>
+			<result name="fail" type="tiles">CreateBrandService</result>
+			<result name="input" type="tiles">CreateBrandService</result>
+		</action>
+
+		<action name="EditBrandService" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="EditBrandServiceValue">
+			<result name="success" type="tiles">EditBrandService</result>
+		</action>
+
+		<action name="EditBrandServiceData" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="editBrandServiceDataValue">
+			<result name="success" type="tiles">BrandTypeServiceLimit</result>
+			<result name="fail" type="tiles">EditBrandService</result>
+			<result name="input" type="tiles">EditBrandService</result>
+		</action>
+		
+		<action name="DeleteBrandService" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="deleteBrandType">
+			<result name="success" type="chain">BrandTypeServiceLimit</result>
+			<result name="fail" type="chain">BrandTypeServiceLimit</result>
+		</action>
+		
+<!-- 		Vehicle Device Relation from VTS -->
+		<action name="VehicleDeviceRelation" class="com.trimax.its.vehicle.action.VehicleDeviceRelationAction">
+			<result name="success" type="tiles">VehicleDeviceRelationFromVTS</result>
+			<result name="input" type="tiles">VehicleDeviceRelationFromVTS</result>
+
+		</action>
+		<action name="VehicleDeviceRelationMappingAjax" class="com.trimax.its.vehicle.action.VehicleDeviceRelationAction"
+			method="getVehicleDeviceMapping">
+			<result name="success" type="tiles">VehicleDeviceRelationFromVTS</result>
+		</action>
+<!-- 		<action name="syncVehicleDeviceRelationToVTS" class="com.trimax.its.vehicle.action.VehicleDeviceRelationAction" -->
+<!-- 		method="syncData"> -->
+<!-- 		</action> -->
+		
+
+<!-- 		happy hour added by itishree -->
+
+		
+		
+		 <action name="HappyHours" class="com.trimax.its.transport.action.HappyHourAction"	method="viewHappyHour">
+			<result name="success" type="tiles">HappyHourlist</result>		
+			
+		</action>
+		<action name="cancleHappyHours" class="com.trimax.its.transport.action.HappyHourAction" method="cancleHappyCreation">
+			<result name="success" type="tiles">HappyHourlist</result>		
+			
+		</action>
+		<action name="HappyHourListAction" class="com.trimax.its.transport.action.HappyHourAction" method="displayHappyhour">
+		</action>
+
+		<action name="createHappyHour" class="com.trimax.its.transport.action.HappyHourAction" method="createHappyHour">
+			<result name="success" type="tiles">createHappyhour</result>
+		</action>
+
+		<action name="createHappyHourAction" class="com.trimax.its.transport.action.HappyHourAction" method="addHappyHour">
+			<result name="success" type="tiles">HappyHourlist</result>
+			<result name="input" type="tiles">createHappyhour</result>
+		</action>
+
+		<action name="ModifyHappyHourDetails" class="com.trimax.its.transport.action.HappyHourAction"	method="editHappyHour">
+			<result name="success" type="tiles">happyHourEdit</result>
+		</action>
+
+		<action name="addEditHappyHourAction" class="com.trimax.its.transport.action.HappyHourAction"	method="addeditedHappyHour">
+			<result name="success" type="tiles">HappyHourlist</result>
+			<result name="input" type="tiles">happyHourEdit</result>
+		</action>
+
+		<action name="deleteHappyHour" class="com.trimax.its.transport.action.HappyHourAction" method="deleteHappyHourAction">
+			<result name="success" type="tiles">HappyHourlist</result>
+		</action> 
+		<!-- 		end -->
+		<action name="getDailyScheduleMapping" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction" >
+			<result name="success" type="tiles">DailyScheduleMapping</result>
+		</action>
+		
+		<action name="AjaxDailyScheduleMapping" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction" method="getDailyScheduleView">
+			<result name="success" type="tiles">DailyScheduleMappingView</result>
+		</action>
+		
+
+
+        <action name="dailyScheduleMapping" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction">
+			<result name="success" type="tiles">DailyScheduleMappingView</result>
+			<result name="input" type="tiles">DailyScheduleMappingView</result>
+		</action>
+		<action name="dailyScheduleMappingAjaxServiceCall" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction"
+			method="getDailySchedule">
+			<result name="success" type="chain">DailyScheduleMappingView</result>
+			<result name="fail" type="redirectAction">getDailyScheduleMapping</result>
+		</action>
+		
+		<action name="getDepotForScheduleMapping" class="com.trimax.its.vehicle.action.ScheduleMappingAction"
+			method="getDepotListForMapping">
+		</action>
+		<action name="getAllDataFromScheduleMapping" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction"
+			method="insertingData">
+		</action>
+		
+		<action name="EditDailyScheduleMapping" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction"
+			method="editDailyScheduleMappimg">
+			
+			<result name="success" type="tiles">EditDailyScheduleMapping</result>
+			<result name="input" type="tiles">EditDailyScheduleMapping</result>
+		</action>
+		
+		<action name="SaveDailyEditScheduleMapping" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction"
+			method="saveEditDailyScheduleMapping">
+<!-- 			<result name="success" type="tiles">DailyScheduleMappingView</result> -->
+			<result name="success" type="redirectAction">AjaxDailyScheduleMapping</result>
+			<result name="fail" type="tiles">EditDailyScheduleMapping</result>
+			<result name="input" type="tiles">EditDailyScheduleMapping</result>
+ 		</action>
+		
+		<action name="AjaxValidateVehicleNo" class="com.trimax.its.vehicle.action.DailyScheduleMappingAction"
+			method="validateVehicleNo">
+		</action>
+		<action name="getScheduleVehicleComparison" class="com.trimax.its.report.action.ScheduleVehicleComaprisonReport">
+		<result name="success" type="tiles">ScheduleVehicleComparison</result>
+		</action>
+			<action name="AjaxScheduleVehicleComparison" class="com.trimax.its.report.action.ScheduleVehicleComaprisonReport"
+			method="getModifiedSchedule">
+		</action>
+		
+		
+		<action name="AjaxScheduleVehicleDetails" class="com.trimax.its.report.action.ScheduleVehicleComaprisonReport"
+			method="getComparisonData">
+<!-- 			<result name="success" type="tiles">ScheduleVehicleDetails</result> -->
+		</action>
+		
+		<action name="VTUHealthCheck" class="com.trimax.its.report.action.VTUHealthCheckReportAction">
+			<result name="success" type="tiles">VTUHealthCheckReport
+			</result>
+		</action>
+		 <action name="AjaxGetHealthDevices"
+        class="com.trimax.its.report.action.VTUHealthCheckReportAction" method="getSystemHealthData">
+       	</action> 
+       	
+       	<action name="getcwsanddwsReport" class="com.trimax.its.vts.report.action.CWSAndDWSReport">
+		<result name="success" type="tiles">CWSAndDWSReport</result>
+		</action>
+		 <action name="getAjaxcwsanddwsReport"
+        class="com.trimax.its.vts.report.action.CWSAndDWSReport" method="getCwsAndDwsReport">
+       	</action> 
+       	
+		
+	</package>
+
+</struts>
+	

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/7110/its/src/com/trimax/its/customer/action
+END
+CustomerSummaryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/7110/its/src/com/trimax/its/customer/action/CustomerSummaryAction.java
+END
+CustomerComplaint.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7061/its/src/com/trimax/its/customer/action/CustomerComplaint.java
+END
+CustomerSummary.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/7051/its/src/com/trimax/its/customer/action/CustomerSummary.java
+END
+CustomerFeedBack.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/7060/its/src/com/trimax/its/customer/action/CustomerFeedBack.java
+END
+ComplaintAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/7052/its/src/com/trimax/its/customer/action/ComplaintAction.java
+END

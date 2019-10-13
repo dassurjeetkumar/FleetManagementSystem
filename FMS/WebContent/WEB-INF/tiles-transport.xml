@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+   <definition name="baseLayout" template="/layout/baselayout.jsp">
+      <put-attribute name="layoutId"  value=""/>
+      <put-attribute name="js"  value="/layout/js.jsp"/>
+      <put-attribute name="css"  value="/layout/css.jsp"/>
+      <put-attribute name="title"  value=""/>
+      <put-attribute name="header" value="/layout/header.jsp"/>
+      <put-attribute name="menu"   value="/layout/menu.jsp"/>
+      <put-attribute name="content"   value=""/>
+      <put-attribute name="footer"   value="/layout/footer.jsp"/>
+   </definition>
+	
+	<definition name="loginbaseLayout" template="/layout/loginBaselayout.jsp">
+	  <put-attribute name="layoutId"  value=""/>
+      <put-attribute name="js"  value="/layout/js.jsp"/>
+      <put-attribute name="css"  value="/layout/css.jsp"/>
+	  <put-attribute name="title"  value=""/>
+      <put-attribute name="content"   value=""/>
+      
+   </definition>
+   
+    <definition name="Schedule" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Details"/>
+      <put-attribute name="layoutId"  value="schedule"/>
+      <put-attribute name="content"   value="/transport/schedule.jsp"/>      
+   </definition>
+   
+   
+   
+   <definition name="FormFour" extends="baseLayout">
+   	<put-attribute name="layoutId"  value="FormFour"/>	
+      <put-attribute name="title"  value="Form 4"/>
+      <put-attribute name="content"   value="/transport/formFour.jsp"/>      
+   </definition>
+   
+   
+   <definition name="CreateSchedule" extends="baseLayout">
+      <put-attribute name="title"  value="Create Schedule"/>
+      <put-attribute name="layoutId"  value="createschedule"/>
+      <put-attribute name="content"   value="/transport/createSchedule.jsp"/>      
+   </definition>
+   
+   <definition name="Trips" extends="baseLayout">
+      <put-attribute name="title"  value="Create Trips"/>
+      <put-attribute name="layoutId"  value="createtrips"/>
+      <put-attribute name="content"   value="/transport/trips.jsp"/>      
+   </definition>
+   
+  
+  
+   
+  
+   </tiles-definitions>

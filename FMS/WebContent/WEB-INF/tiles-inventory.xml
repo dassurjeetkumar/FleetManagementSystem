@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="ViewTicketStock" extends="baseLayout">
+		<put-attribute name="title" value="View Stock" />
+		<put-attribute name="content" value="/inventory/stockView.jsp" />
+	</definition>
+
+	<definition name="ViewAutomaticIssue" extends="baseLayout">
+		<put-attribute name="title" value="View Stock" />
+		<put-attribute name="content" value="/inventory/automaticIssuePage.jsp" />
+	</definition>
+
+
+	<definition name="voucherlist" extends="baseLayout">
+		<put-attribute name="title" value="View Ticket Inventory" />
+		<put-attribute name="layoutId" value="editFloor" />
+		<put-attribute name="content" value="/Ticketing/TicketVouncherShow.jsp" />
+	</definition>
+
+	<definition name="voucherlistmanual" extends="baseLayout">
+		<put-attribute name="title" value="View Ticket Inventory" />
+		<put-attribute name="layoutId" value="editFloor" />
+		<put-attribute name="content" value="/Ticketing/showVouncherDetails.jsp" />
+	</definition>
+	
+	<definition name="ViewDayWiseStock" extends="baseLayout">
+		<put-attribute name="title" value="Stock Entry Report" />
+		<put-attribute name="content" value="/inventory/dayWiseStock.jsp"/>
+	</definition>
+	
+	<definition name="VoucherReceive" extends="baseLayout">
+		<put-attribute name="title" value="Voucher Receive" />
+		<put-attribute name="content" value="/inventory/voucherReceive.jsp"/>
+	</definition>
+	
+</tiles-definitions>   

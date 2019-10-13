@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/its/!svn/ver/7418/its/WebContent/route
+END
+routeViewTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/5241/its/WebContent/route/routeViewTemplate.jsp
+END
+CopyrouteMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/6686/its/WebContent/route/CopyrouteMap.jsp
+END
+busstopWiseRouteView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/4919/its/WebContent/route/busstopWiseRouteView.jsp
+END
+VehicleToPlot.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/6432/its/WebContent/route/VehicleToPlot.jsp
+END
+EditRouteName.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/7418/its/WebContent/route/EditRouteName.jsp
+END
+BusStopWiseTravelDurationDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6395/its/WebContent/route/BusStopWiseTravelDurationDetails.jsp
+END
+ViewrouteMapPis1.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/6974/its/WebContent/route/ViewrouteMapPis1.jsp
+END
+TicketInventory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5800/its/WebContent/route/TicketInventory.jsp
+END
+tripWiseDurationReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/6380/its/WebContent/route/tripWiseDurationReport.jsp
+END
+routeMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/6674/its/WebContent/route/routeMap.jsp
+END
+FormOneReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/6294/its/WebContent/route/FormOneReport.jsp
+END
+LinearRouteTrackingPlanner.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/6069/its/WebContent/route/LinearRouteTrackingPlanner.jsp
+END
+IssueTicketInventory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/5798/its/WebContent/route/IssueTicketInventory.jsp
+END
+ViewrouteMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/6682/its/WebContent/route/ViewrouteMap.jsp
+END
+routeViewText.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/7418/its/WebContent/route/routeViewText.jsp
+END
+linearRouteTracking.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6672/its/WebContent/route/linearRouteTracking.jsp
+END
+FormTwoReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/6293/its/WebContent/route/FormTwoReport.jsp
+END
+NewFile.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/5185/its/WebContent/route/NewFile.jsp
+END
+RouteWiseTripTimePlanning.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/6969/its/WebContent/route/RouteWiseTripTimePlanning.jsp
+END
+EditrouteMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/6703/its/WebContent/route/EditrouteMap.jsp
+END
+editviewRoutePis.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/5797/its/WebContent/route/editviewRoutePis.jsp
+END
+RouteWiseTripTimePlanningFrequency.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/6494/its/WebContent/route/RouteWiseTripTimePlanningFrequency.jsp
+END
+ViewrouteMapPis.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5803/its/WebContent/route/ViewrouteMapPis.jsp
+END
+RouteWiseTripReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6288/its/WebContent/route/RouteWiseTripReport.jsp
+END

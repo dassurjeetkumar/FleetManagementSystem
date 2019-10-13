@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="passengercategory" extends="struts-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+				<global-results>
+			<result name="welcome" type="tiles">login</result>
+				<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+		<action name="viewPassengerCategory"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction"
+			method="showPassengerCategory">
+			<result name="success" type="tiles">PassengerCategory</result>
+		</action>
+		<action name="PassengerCategoryViewAction"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction">
+
+		</action>
+
+		<action name="createPassengerCategory"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction"
+			method="createPassengerCategory">
+			<result name="success" type="tiles">CreatePassengerCategory
+			</result>
+		</action>
+		<action name="createPassengerCategoryAction"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction"
+			method="createPassengerCategoryAction">
+			<result name="input" type="tiles">CreatePassengerCategory</result>
+			<result name="success" type="tiles">PassengerCategory</result>
+		</action>
+
+		<action name="editPassengerCategory"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction"
+			method="editPassengercategory">
+			<result name="success" type="tiles">EditPassengerCategory</result>
+		</action>
+		<action name="editPassengerCategoryAction"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction"
+			method="addeditedPassengerCategory">
+			<result name="input" type="tiles">EditPassengerCategory</result>
+			<result name="success" type="tiles">PassengerCategory</result>
+		</action>
+
+		<action name="deletePassengerCategory"
+			class="com.trimax.its.passengercategory.action.PassengerCategoryAction"
+			method="deletePassengerCategoryAction">
+			<result name="success" type="tiles">PassengerCategory</result>
+		</action>
+	
+
+
+	</package>
+</struts>
+		

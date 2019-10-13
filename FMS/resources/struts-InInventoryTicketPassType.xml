@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="InventoryTicketPassType" extends="struts-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+		<action name="ViewInventoryTicketPassType"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="viewInventoryPass">
+
+			<result name="success" type="tiles">ViewInventoryTicketPassType</result>
+		</action>
+		<action name="viewInventoryTicketPassTypeId"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction">
+
+		</action>
+
+
+         <action name="CreateInventoryTicketPassType"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="createInventoryPass">
+			<result name="success" type="tiles">CreateInventoryTicketPassType</result>
+		</action>
+		
+		<action name="createInventoryTicketPassTypeAction"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="createInventoryTicketPassType">
+			<result name="input" type="tiles">CreateInventoryTicketPassType</result>
+			<result name="success" type="tiles">InventoryTicketPassList</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="viewInventoryTicketPassTypeList"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="showInventoryTicketPassType">
+			<result name="success" type="redirectAction">ViewInventoryTicketPassType</result>
+		</action>
+		
+		<action name="editInventoryTicketPassType"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="editInventoryTicketPassType">
+			<result name="success" type="tiles">editInventoryTicketPassType</result>
+		</action>
+		
+		<action name="addEditedInventoryTicketPassType"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="addeditedInventoryTicketPassType">
+
+			<result name="input" type="tiles">editInventoryTicketPassType</result>
+			<result name="success" type="chain">ViewInventoryTicketPassType</result>
+		</action>
+
+		<action name="deleteInventoryTicketPassType"
+			class="com.trimax.its.inventoryticketpasstype.action.InventoryTicketPassTypeAction"
+			method="deleteInventoryTicketPassType">
+			<result name="success" type="tiles">ViewInventoryTicketPassType</result>
+			<result name="input" type="tiles">ViewInventoryTicketPassType</result>
+		</action>
+		
+
+	</package>
+</struts>

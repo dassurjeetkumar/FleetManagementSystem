@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/5342/its/src/com/trimax/its/route/model
+END
+TrunkFeederMapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/2868/its/src/com/trimax/its/route/model/TrunkFeederMapping.java
+END
+RoutePlatformRel.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/629/its/src/com/trimax/its/route/model/RoutePlatformRel.java
+END
+Floor.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/4453/its/src/com/trimax/its/route/model/Floor.java
+END
+Bay.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/4453/its/src/com/trimax/its/route/model/Bay.java
+END
+BusStopRoutePoint.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4897/its/src/com/trimax/its/route/model/BusStopRoutePoint.java
+END
+Route.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/5326/its/src/com/trimax/its/route/model/Route.java
+END
+RoutePoint.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/5342/its/src/com/trimax/its/route/model/RoutePoint.java
+END
+BusStopRouteInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/4897/its/src/com/trimax/its/route/model/BusStopRouteInfo.java
+END
+RouteType.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/5214/its/src/com/trimax/its/route/model/RouteType.java
+END
+Platform.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/4453/its/src/com/trimax/its/route/model/Platform.java
+END
+RouteMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/5342/its/src/com/trimax/its/route/model/RouteMap.java
+END

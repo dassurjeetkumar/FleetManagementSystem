@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/7072/its/src/com/trimax/its/utility/dao
+END
+UserGroupDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/3828/its/src/com/trimax/its/utility/dao/UserGroupDao.java
+END
+PageRoleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/3673/its/src/com/trimax/its/utility/dao/PageRoleDao.java
+END
+RoleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/3899/its/src/com/trimax/its/utility/dao/RoleDao.java
+END
+AccessRightsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/7072/its/src/com/trimax/its/utility/dao/AccessRightsDao.java
+END
+GroupMasterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/3898/its/src/com/trimax/its/utility/dao/GroupMasterDao.java
+END
+PageMasterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/4317/its/src/com/trimax/its/utility/dao/PageMasterDao.java
+END

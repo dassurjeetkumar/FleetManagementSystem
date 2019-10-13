@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/its/!svn/ver/7380/its/WebContent/layout
+END
+content.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/2012/its/WebContent/layout/content.jsp
+END
+js.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/its/!svn/ver/7327/its/WebContent/layout/js.jsp
+END
+footervts.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/1631/its/WebContent/layout/footervts.jsp
+END
+baselayout.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/61/its/WebContent/layout/baselayout.jsp
+END
+vtureport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/5980/its/WebContent/layout/vtureport.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/7380/its/WebContent/layout/footer.jsp
+END
+header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/7015/its/WebContent/layout/header.jsp
+END
+menu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/its/!svn/ver/6250/its/WebContent/layout/menu.jsp
+END
+css.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/its/!svn/ver/4794/its/WebContent/layout/css.jsp
+END
+loginBaselayout.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/5980/its/WebContent/layout/loginBaselayout.jsp
+END

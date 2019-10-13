@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/5224/its/WebContent/transport/caseType
+END
+caseTypeList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/5224/its/WebContent/transport/caseType/caseTypeList.jsp
+END
+editCaseType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/5224/its/WebContent/transport/caseType/editCaseType.jsp
+END
+createCaseType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/5224/its/WebContent/transport/caseType/createCaseType.jsp
+END

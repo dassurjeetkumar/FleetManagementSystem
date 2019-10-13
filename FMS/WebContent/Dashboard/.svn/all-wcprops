@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/its/!svn/ver/6766/its/WebContent/Dashboard
+END
+createDashboard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/4985/its/WebContent/Dashboard/createDashboard.jsp
+END
+editDashboard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/5005/its/WebContent/Dashboard/editDashboard.jsp
+END
+activeDashboard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6766/its/WebContent/Dashboard/activeDashboard.jsp
+END
+CreateUserDashBoardMapping.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5726/its/WebContent/Dashboard/CreateUserDashBoardMapping.jsp
+END
+createDashboadAssignChart.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4985/its/WebContent/Dashboard/createDashboadAssignChart.jsp
+END
+DashBoardList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/4991/its/WebContent/Dashboard/DashBoardList.jsp
+END
+CreateDashboardName.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/5005/its/WebContent/Dashboard/CreateDashboardName.jsp
+END

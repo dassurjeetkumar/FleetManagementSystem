@@ -1,0 +1,10 @@
+#XML request data file path
+XMLErrorDataFilePath=/var/www/html/BMTC/log/error
+
+#log file path
+DBExceptionLogFilePath=/var/www/html/BMTC/log
+commonLogFilePath=/var/www/html/BMTC/log
+vtsParameter=1
+
+#application version
+current_app_version=1.3

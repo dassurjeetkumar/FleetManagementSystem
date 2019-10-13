@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/its/!svn/ver/5224/its/WebContent/fare/luggagetype
+END
+viewLuggageType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/5224/its/WebContent/fare/luggagetype/viewLuggageType.jsp
+END
+addLuggageType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/5224/its/WebContent/fare/luggagetype/addLuggageType.jsp
+END
+editLuggageType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/5224/its/WebContent/fare/luggagetype/editLuggageType.jsp
+END

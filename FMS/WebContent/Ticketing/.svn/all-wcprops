@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/its/!svn/ver/6196/its/WebContent/Ticketing
+END
+stockEntrySuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/4755/its/WebContent/Ticketing/stockEntrySuccess.jsp
+END
+ViewTicketInventory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/5812/its/WebContent/Ticketing/ViewTicketInventory.jsp
+END
+DeleteStock.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/2251/its/WebContent/Ticketing/DeleteStock.jsp
+END
+EditStock.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4472/its/WebContent/Ticketing/EditStock.jsp
+END
+TicketVouncherShow.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/4967/its/WebContent/Ticketing/TicketVouncherShow.jsp
+END
+EditDenomination.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/6196/its/WebContent/Ticketing/EditDenomination.jsp
+END
+EditTicketBag.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/5808/its/WebContent/Ticketing/EditTicketBag.jsp
+END
+ReceiveStock.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/4494/its/WebContent/Ticketing/ReceiveStock.jsp
+END
+ViewTicketBag.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/5224/its/WebContent/Ticketing/ViewTicketBag.jsp
+END
+StockEntry.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/5811/its/WebContent/Ticketing/StockEntry.jsp
+END
+IssueStock.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/5809/its/WebContent/Ticketing/IssueStock.jsp
+END
+CreateTicketBag.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/5807/its/WebContent/Ticketing/CreateTicketBag.jsp
+END
+showVouncherDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/5363/its/WebContent/Ticketing/showVouncherDetails.jsp
+END
+CreateDenomination.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/6196/its/WebContent/Ticketing/CreateDenomination.jsp
+END
+Denomination.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/6196/its/WebContent/Ticketing/Denomination.jsp
+END
+IssueTicket.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5810/its/WebContent/Ticketing/IssueTicket.jsp
+END

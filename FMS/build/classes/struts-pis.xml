@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.multipart.maxSize" value="2147483647" /> 
+	<package name="pis" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+
+		<action name="index">
+			<result type="redirect">actionPis</result>
+		</action>
+		<action name="actionPis" class="com.trimax.its.pis.action.showPISAction">
+			<result name="success">/pages/pis/index.html</result>
+		</action>
+		<action name="getPisData" class="com.trimax.its.pis.action.GetPISDataAction"
+			method="getPISData">
+		</action>
+		<action name="downloadFile" class="com.trimax.its.pis.action.DownloadFileAction">
+
+		</action>
+		<action name="getLoc" class="com.trimax.its.pis.action.GetPISDataAction"
+			method="getLoc"></action>
+		<!-- Getting Platform data with respect to selected location -->
+		<action name="getPf" class="com.trimax.its.pis.action.GetPISDataAction"
+			method="getPf"></action>
+
+		<!-- <action name="pisliveBusTracking" class="com.trimax.its.pis.action.LiveBusTrackingAction"
+			method="getDeviation">
+			<result name="success" type="tiles">PisBusTracking</result>
+		</action> -->
+		<!--Start Of Display Mapping -->
+		<action name="viewPisDisplayMapping" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="viewPisDisplayMapping">
+			<result name="success" type="tiles">ViewPisDisplayMapping</result>
+		</action>
+		<action name="saveDisplayMapping" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="saveDisplayMappingDetails">
+			<result name="success" type="tiles">ViewPisDisplayMapping</result>
+			<result name="input" type="tiles">CreatePisDisplayMapping</result>
+		</action>
+		<action name="findFloorNameAction" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="getBusStationFloorName">
+
+
+		</action>
+		<action name="findBayNameAction" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="getFloorBayName">
+
+
+		</action>
+		<action name="findPlatformNameAction" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="getBayPlatFormName">
+
+
+		</action>
+		
+		<action name="findDisplayUnitNameAction" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="getPlatFormDisplayUnitName">
+
+
+		</action>
+		
+		
+		
+		<action name="showDisplayMappingList" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="showDisplayMappingList">
+
+		</action>
+		<action name="findAllBusStationAction" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="getBusStation">
+		</action>
+		<action name="createPisDisplayMapping" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="createPisDisplayMapping">
+			<result name="success" type="tiles">CreatePisDisplayMapping</result>
+		</action>
+		<action name="editPisDisplayMappingDetails" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="editPisDisplayMappingDetails">
+			<result name="success" type="tiles">ViewPisDisplayMapping</result>
+			<result name="input" type="tiles">EditPisDisplayMapping</result>
+		</action>
+
+		<action name="deleteDisolayMapping" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="deleteDisolayMappingData">
+			<result name="success" type="tiles">ViewPisDisplayMapping</result>
+		</action>
+		<action name="editPisDisplayMapping" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="editPisDisplayMapping">
+			<result name="success" type="tiles">EditPisDisplayMapping</result>
+		</action>
+		<!--End Of Display Mapping -->
+		
+		<!--Start Of Scroll Message -->
+		<action name="viewPisScrollMessage" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="viewPisScrollMessage">
+			<result name="success" type="tiles">ViewPisScrollMessage</result>
+		</action>
+
+		<action name="showScrollMessageList" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="showScrollMessageList">
+
+		</action>
+
+		<action name="createPisScrollMessage" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="createScrollMessage">
+			<result name="success" type="tiles">CreatePisScrollMessage</result>
+		</action>
+		<action name="saveScrollMessage" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="saveScrollMessage">
+			<result name="success" type="tiles">ViewPisScrollMessage</result>
+			<result name="input" type="tiles">CreatePisScrollMessage</result>
+		</action>
+
+		<action name="deleteScrollMessage" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="deleteScrollMessage">
+		  	<result name="success" type="tiles">ViewPisScrollMessage</result>
+		</action>
+		<action name="updateScrollMessage" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="updateScrollMessage">
+			<result name="success" type="tiles">ViewPisScrollMessage</result>
+			<result name="input" type="tiles">EditPisScrollMessage</result>
+		</action>
+		<action name="editPisScrollMessage" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="editScrollMessage">
+			<result name="success" type="tiles">EditPisScrollMessage</result>
+		</action>  
+		<action name="findDisplayUnitAction" class="com.trimax.its.pis.action.PisScrollMessage"
+			method="findDisplayUnit">
+
+
+		</action>
+		<action name="findDisplayUnitNameAfterSubmit" class="com.trimax.its.pis.action.PisDisplayMapping"
+			method="findDisplayUnitNameAfterSubmit">
+
+
+		</action>
+		<!--End Of Display Mapping -->
+		
+		<!--Start Of Display Unit -->
+		
+		<action name="viewDisplayUnit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="viewDisplayUnit">
+			<result name="success" type="tiles">ViewDisplayUnit</result>
+		</action>
+		
+		<action name="showDisplayUnitList" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="getDisplayUnitList">
+			<result name="success" type="tiles">ViewDisplayUnit</result>
+		</action>
+		<action name="createDisplayUnit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="createDisplayUnit">
+			<result name="success" type="tiles">CreatePisDisplayUnit</result>
+		</action>
+		<action name="saveDisplayUnit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="saveDisplayUnitData">
+			<result name="success" type="tiles">ViewDisplayUnit</result>
+			<result name="input" type="tiles">CreatePisDisplayUnit</result>
+		</action>
+		<action name="editDisplayUnit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="editDisplayUnit">
+			<result name="success" type="tiles">EditPisDisplayUnit</result>
+		</action>
+		<action name="editDisplayUnitData" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="saveUpdatedDisplayUnit">
+			<result name="success" type="tiles">ViewDisplayUnit</result>
+			<result name="input" type="tiles">EditPisDisplayUnit</result>
+		</action>
+		
+			<action name="deleteDisplayUnit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="deleteDisplayUnit">
+			<result name="success" type="tiles">ViewDisplayUnit</result>
+		</action>
+		
+		<action name="findFloorNameAfterSubmit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="findFloorNameAfterSubmit">
+
+
+		</action>
+		
+		<action name="findBayNameAfterSubmit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="findBayNameAfterSubmit">
+
+
+		</action>
+		<action name="findPlatformNameAfterSubmit" class="com.trimax.its.pis.action.DisplayUnitAction"
+			method="findPlatformNameAfterSubmit">
+
+
+		</action>
+		
+		<!--End Of Display Unit -->
+		
+		<action name="uploadfileform" class="com.trimax.its.pis.action.PisUploadFileAction"
+			method="showPisUploadFile">
+			<result name="success" type="tiles">ViewPisUploadFile</result>
+		</action>
+		<action name="uploadfile" class="com.trimax.its.pis.action.PisUploadFileAction"
+			method="savePisUploadFile">
+			
+						<result name="success" type="tiles">ViewPisUploadFile</result>
+						<result name="input" type="tiles">ViewPisUploadFile</result>
+		</action>
+		
+		<action name="customerView" class="com.trimax.its.pis.action.PISCustomerAction"
+			method="view">
+			<result name="view" type="tiles">ShowCustList</result>
+		</action>
+		
+		<action name="customerList" class="com.trimax.its.pis.action.PISCustomerAction">
+			<result name="view" type="tiles">ShowCustList</result>
+		</action>
+		
+		<action name="AddCustomerAction" class="com.trimax.its.pis.action.PISCustomerAction" method="add">
+			<result name="add" type="tiles">addCustomer</result>
+		</action>
+		
+		<action name="DeleteCustomerAction" class="com.trimax.its.pis.action.PISCustomerAction" method="delete">
+			<result name="success" type="tiles">ShowCustList</result>
+		</action>
+		
+		<action name="EditCustomerAction" class="com.trimax.its.pis.action.PISCustomerAction" method="edit">
+			<result name="edit" type="tiles">editCustomer</result>
+		</action>
+		
+		<action name="SaveCustomerAction" class="com.trimax.its.pis.action.PISCustomerAction" method="Add">
+			<result name="input" type="tiles">addCustomer</result>
+			<result name="success" type="tiles">ShowCustList</result>
+		</action>
+		
+		<action name="UpdateCustomerAction" class="com.trimax.its.pis.action.PISCustomerAction" method="update">
+			<result name="input" type="tiles">editCustomer</result>
+			<result name="success" type="tiles">ShowCustList</result>
+		</action>
+		
+		<action name="playListView" class="com.trimax.its.pis.action.PlayListAction"
+			method="view">
+			<result name="view" type="tiles">ShowPlayList</result>
+		</action>
+		
+		<action name="playListList" class="com.trimax.its.pis.action.PlayListAction">
+			<result name="view" type="tiles">ShowPlayList</result>
+		</action>
+		
+		<action name="AddPlayListAction" class="com.trimax.its.pis.action.PlayListAction" method="add">
+			<result name="add" type="tiles">addPlayList</result>
+		</action>
+		
+		<action name="DeletePlayListAction" class="com.trimax.its.pis.action.PlayListAction" method="delete">
+			<result name="success" type="tiles">ShowPlayList</result>
+		</action>
+		
+		<action name="EditPlayListAction" class="com.trimax.its.pis.action.PlayListAction" method="edit">
+			<result name="edit" type="tiles">editPlayList</result>
+		</action>
+		
+		<action name="SavePlayListAction" class="com.trimax.its.pis.action.PlayListAction" method="Add">
+			<result name="input" type="tiles">addPlayList</result>
+			<result name="success" type="tiles">ShowPlayList</result>
+		</action>
+		
+		<action name="UpdatePlayListAction" class="com.trimax.its.pis.action.PlayListAction" method="update">
+			<result name="input" type="tiles">editPlayList</result>
+			<result name="success" type="tiles">ShowPlayList</result>
+		</action>
+
+		<!--Start of Template -->
+		<action name="viewPisTemplate" class="com.trimax.its.pis.action.PisTemplateMasterAction" method="viewPisTemplate">
+			<result name="success" type="tiles">ViewTemplate</result>
+		</action>
+
+		<action name="viewPisTemplateList" class="com.trimax.its.pis.action.PisTemplateMasterAction">
+
+		</action>
+		
+		<action name="createPisTemplate" class="com.trimax.its.pis.action.PisTemplateMasterAction" method="createPisTemplate">
+			<result name="success" type="tiles">CreateTemplate</result>
+
+		</action>
+		 <action name="createPisTemplateAction" class="com.trimax.its.pis.action.PisTemplateMasterAction" method="createPisTemplateAction">
+			<result name="input" type="tiles">CreateTemplate</result>
+			<result name="success" type="tiles">ViewTemplate</result>
+
+		</action> 
+		
+		<action name="editPisTemplate" class="com.trimax.its.pis.action.PisTemplateMasterAction" method="editPisTemplate">
+			<result name="success" type="tiles">EditTemplate</result>
+
+		</action>
+		<action name="editPisTemplateAction" class="com.trimax.its.pis.action.PisTemplateMasterAction" method="editPisTemplateAction">
+			<result name="input" type="tiles">EditTemplate</result>
+			<result name="success" type="tiles">ViewTemplate</result>
+
+		</action> 
+		
+		<action name="deletePisTemplate" class="com.trimax.its.pis.action.PisTemplateMasterAction" method="deletePisTemplate">
+			<result name="input" type="tiles">ViewTemplate</result>
+			<result name="success" type="tiles">ViewTemplate</result> 
+
+		</action> 
+		<!--End of Template -->
+		
+		<action name="getAdverList" class="com.trimax.its.pis.action.PlayListAction" method="getAdverList">
+		</action>
+
+	</package>
+</struts>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/its/!svn/ver/5224/its/WebContent/memo
+END
+memoList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/5224/its/WebContent/memo/memoList.jsp
+END
+EditMemo.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/5224/its/WebContent/memo/EditMemo.jsp
+END
+CreateMemo.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/5224/its/WebContent/memo/CreateMemo.jsp
+END

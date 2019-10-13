@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="breaktype" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			
+		
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+		<exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+		
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+		<action name="breaktype" class="com.trimax.its.breaktype.action.BreakTypeAction">
+
+		</action>
+		<action name="breaktypeview" class="com.trimax.its.breaktype.action.BreakTypeAction"
+			method="viewBreaktype">
+			<result name="success" type="tiles">viewBreaktype</result>
+		</action>
+		<action name="createBreaktypepage" class="com.trimax.its.breaktype.action.BreakTypeAction"
+			method="viewcreatePage">
+			<result name="success" type="tiles">createBreaktype</result>
+		</action>
+		<action name="editbreaktype" class="com.trimax.its.breaktype.action.BreakTypeAction"
+			method="vieweditPage">
+			<result name="success" type="tiles">editBreaktype</result>
+		</action>
+		<action name="createBreakTypeAction" class="com.trimax.its.breaktype.action.BreakTypeAction"
+			method="createBreakTypeAction">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="tiles">viewBreaktype</result>
+			<result name="input" type="tiles">createBreaktype</result>
+			<result name="invalid.token" type="tiles">viewBreaktype</result>
+	
+		</action>
+		<action name="addeditedbreaktype" class="com.trimax.its.breaktype.action.BreakTypeAction"
+			method="addeditedbreaktype">
+			<result name="input" type="tiles">editBreaktype</result>
+			<result name="success" type="tiles">viewBreaktype</result>
+		</action>
+		<action name="deletebreaktype" class="com.trimax.its.breaktype.action.BreakTypeAction"
+			method="deletebreaktype">
+
+			<result name="success" type="tiles">viewBreaktype</result>
+		</action>
+
+<action name="sheduleTypeview" class="com.trimax.its.transport.action.ScheduleTypeAction" >
+     
+    </action>
+    <action name="sheduleTypeAction" class="com.trimax.its.transport.action.ScheduleTypeAction" method="showschedule">
+     <result name="success" type="tiles">viewscheduleType</result>
+    </action>
+	</package>
+</struts>
+		

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/its/!svn/ver/5270/its/WebContent/accountHead
+END
+viewAccountHead.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/5270/its/WebContent/accountHead/viewAccountHead.jsp
+END
+addAccountHead.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/5270/its/WebContent/accountHead/addAccountHead.jsp
+END
+editAccountHead.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/5270/its/WebContent/accountHead/editAccountHead.jsp
+END

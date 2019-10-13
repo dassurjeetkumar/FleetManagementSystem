@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/its/!svn/ver/5326/its/WebContent/holiday
+END
+HolidayMasterList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/5325/its/WebContent/holiday/HolidayMasterList.jsp
+END
+CreateHolidayMaster.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/5325/its/WebContent/holiday/CreateHolidayMaster.jsp
+END
+EditHolidayMaster.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/5326/its/WebContent/holiday/EditHolidayMaster.jsp
+END

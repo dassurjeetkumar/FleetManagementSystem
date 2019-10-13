@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="line_sector" extends="struts-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+		<!-- <global-exception-mappings>
+
+  			 <exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+ <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+ 
+  		 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+  		   		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" /> 
+  		 
+  		  <exception-mapping exception="java.lang.Exception" result="welcome" /> 
+		</global-exception-mappings> -->	
+		
+		
+		<action name="viewlinesector"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="viewLine">
+
+			<result name="success" type="tiles">lineData</result>
+		</action>
+		<action name="viewLineData"
+			class="com.trimax.its.linesector.action.LineSectorAction">
+
+		</action>
+
+		<action name="CreateLineSector"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="createLine">
+			<result name="success" type="tiles">CreateLineSector</result>
+		</action>
+
+		<action name="createLineAction"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="createLineAction">
+			<result name="input" type="tiles">CreateLineSector</result>
+			<result name="success" type="tiles">lineList</result>
+		</action>
+
+		<action name="viewLineSectorList"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="showLineSector">
+			<result name="success" type="redirectAction">viewlinesector</result>
+		</action>
+		<action name="editLineSector"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="editLineSector">
+			<result name="success" type="tiles">editLineSector</result>
+		</action>
+		<action name="addEditedLineSector"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="addeditedline">
+
+			<result name="input" type="tiles">editLineSector</result>
+			<result name="success" type="chain">viewlinesector</result>
+		</action>
+
+		<action name="deleteLineSector"
+			class="com.trimax.its.linesector.action.LineSectorAction"
+			method="deleteLineSectorAction">
+			<result name="success" type="tiles">lineData</result>
+			<result name="input" type="tiles">lineData </result>
+		</action>
+
+	</package>
+</struts>

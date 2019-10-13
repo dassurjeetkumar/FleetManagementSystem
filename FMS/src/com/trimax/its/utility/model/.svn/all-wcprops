@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/3704/its/src/com/trimax/its/utility/model
+END
+AccessRights.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/2326/its/src/com/trimax/its/utility/model/AccessRights.java
+END
+Role.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/2286/its/src/com/trimax/its/utility/model/Role.java
+END
+GroupRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/1330/its/src/com/trimax/its/utility/model/GroupRole.java
+END
+PageRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/1330/its/src/com/trimax/its/utility/model/PageRole.java
+END
+MenuPageRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/1387/its/src/com/trimax/its/utility/model/MenuPageRole.java
+END
+UserGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/1374/its/src/com/trimax/its/utility/model/UserGroup.java
+END
+Group_Master.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/2286/its/src/com/trimax/its/utility/model/Group_Master.java
+END
+Page_Master.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/3704/its/src/com/trimax/its/utility/model/Page_Master.java
+END

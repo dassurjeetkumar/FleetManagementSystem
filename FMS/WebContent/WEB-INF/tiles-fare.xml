@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+	<definition name="FareChartCopy" extends="baseLayout">
+      <put-attribute name="title"  value="Fare Chart"/>
+      <put-attribute name="layoutId"  value="FareChartCopy"/>
+      <put-attribute name="content"   value="/fare/copyFareChartMaster.jsp"/>      
+   </definition>
+
+   <definition name="FareChart" extends="baseLayout">
+      <put-attribute name="title"  value="Fare Chart"/>
+      <put-attribute name="layoutId"  value="FareChart"/>
+      <put-attribute name="content"   value="/fare/farechartMaster.jsp"/>      
+   </definition>
+   
+   <definition name="EditFareChartMaster" extends="baseLayout">
+      <put-attribute name="title"  value="EditChartMaster"/>
+      <put-attribute name="layoutId"  value="Edit FareChart Master"/>
+      <put-attribute name="content"   value="/fare/fareChartMasterEdit.jsp"/>      
+   </definition>
+   
+   <definition name="CreateFareChart" extends="baseLayout">
+      <put-attribute name="title"  value="createChart"/>
+      <put-attribute name="layoutId"  value="CreateFareChart"/>
+      <put-attribute name="content"   value="/fare/createFareChartMaster.jsp"/>      
+   </definition>
+
+	<definition name="FareChartTri" extends="baseLayout">
+      <put-attribute name="title"  value="Fare Chart"/>
+      <put-attribute name="layoutId"  value="CreateFareChart"/>
+      <put-attribute name="content"   value="/fare/fareChartTri.jsp"/>      
+   </definition>
+   
+   <definition name="RateMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Rate Master"/>
+      <put-attribute name="layoutId"  value="RateMaster"/>
+      <put-attribute name="content"   value="/fare/rateMaster.jsp"/>      
+   </definition>
+   
+   <definition name="RateMasterAdd" extends="baseLayout">
+      <put-attribute name="title"  value="Rate Master"/>
+      <put-attribute name="layoutId"  value="RateMasterAdd"/>
+      <put-attribute name="content"   value="/fare/rateMasterAdd.jsp"/>      
+   </definition>
+   
+   <definition name="RateMasterEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Rate Master"/>
+      <put-attribute name="layoutId"  value="RateMasterAdd"/>
+      <put-attribute name="content"   value="/fare/rateMasterEdit.jsp"/>      
+   </definition>
+   
+ <!--   <definition name="RateMasterDetail" extends="baseLayout">
+      <put-attribute name="title"  value="Rate Master"/>
+      <put-attribute name="layoutId"  value="RateMasterAdd"/>
+      <put-attribute name="content"   value="/fare/rateMasterDetail.jsp"/>      
+   </definition> -->
+   
+   <definition name="RateMasterDetailEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Rate Master"/>
+      <put-attribute name="layoutId"  value="RateMasterAdd"/>
+      <put-attribute name="content"   value="/fare/rateMasterDetailEdit.jsp"/>      
+   </definition>
+   
+   <definition name="viewPassRate" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Rate Master"/>
+      <put-attribute name="layoutId"  value="viewPassRate"/>
+      <put-attribute name="content"   value="/pass/viewPass.jsp"/>      
+   </definition>
+   
+   <definition name="addPassRate" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Rate Master Add"/>
+      <put-attribute name="layoutId"  value="addPassRate"/>
+      <put-attribute name="content"   value="/pass/addPass.jsp"/>       
+   </definition>
+   
+   <definition name="editPassRate" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Rate Master Edit"/>
+      <put-attribute name="layoutId"  value="editPassRate"/>
+      <put-attribute name="content"   value="/pass/editPass.jsp"/>       
+   </definition>
+   
+   <definition name="viewPassType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Type"/>
+      <put-attribute name="layoutId"  value="viewPassType"/>
+      <put-attribute name="content"   value="/pass/viewPassType.jsp"/>      
+   </definition>
+   
+   <definition name="addPassType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Type Add"/>
+      <put-attribute name="layoutId"  value="addPassType"/>
+      <put-attribute name="content"   value="/pass/addPassType.jsp"/>       
+   </definition>
+   
+   <definition name="editPassType" extends="baseLayout">
+      <put-attribute name="title"  value="Pass Type Edit"/>
+      <put-attribute name="layoutId"  value="editPassType"/>
+      <put-attribute name="content"   value="/pass/editPassType.jsp"/>       
+   </definition>
+   
+ 
+   <definition name="viewPassengerType" extends="baseLayout">
+      <put-attribute name="title"  value="Passenger Type"/>
+      <put-attribute name="layoutId"  value="viewPassengerType"/>
+      <put-attribute name="content"   value="/fare/passengertype/viewPassenger.jsp"/>      
+   </definition>
+   
+   <definition name="addPassengerType" extends="baseLayout">
+      <put-attribute name="title"  value="Passenger Type Add"/>
+      <put-attribute name="layoutId"  value="addPassengerType"/>
+      <put-attribute name="content"   value="/fare/passengertype/addPassenger.jsp"/>       
+   </definition>
+   
+   <definition name="editPassengerType" extends="baseLayout">
+      <put-attribute name="title"  value="Passenger Type Edit"/>
+      <put-attribute name="layoutId"  value="editPassengerType"/>
+      <put-attribute name="content"   value="/fare/passengertype/editPassenger.jsp"/>       
+   </definition>
+   
+   <definition name="viewConcession" extends="baseLayout">
+      <put-attribute name="title"  value="Concession"/>
+      <put-attribute name="layoutId"  value="viewConcession"/>
+      <put-attribute name="content"   value="/fare/concession/viewConcession.jsp"/>      
+   </definition>
+   
+   <definition name="addConcession" extends="baseLayout">
+      <put-attribute name="title"  value="Concession Add"/>
+      <put-attribute name="layoutId"  value="addConcession"/>
+      <put-attribute name="content"   value="/fare/concession/addConcession.jsp"/>       
+   </definition>
+   
+   <definition name="editConcession" extends="baseLayout">
+      <put-attribute name="title"  value="Concession Edit"/>
+      <put-attribute name="layoutId"  value="editConcession"/>
+      <put-attribute name="content"   value="/fare/concession/editConcession.jsp"/>       
+   </definition>
+   
+  
+   <definition name="viewLuggageType" extends="baseLayout">
+      <put-attribute name="title"  value="Luggage Type"/>
+      <put-attribute name="layoutId"  value="viewLuggageType"/>
+      <put-attribute name="content"   value="/fare/luggagetype/viewLuggageType.jsp"/>      
+   </definition>
+   
+   <definition name="addLuggageType" extends="baseLayout">
+      <put-attribute name="title"  value="Luggage Type Add"/>
+      <put-attribute name="layoutId"  value="addLuggageType"/>
+      <put-attribute name="content"   value="/fare/luggagetype/addLuggageType.jsp"/>       
+   </definition>
+   
+   <definition name="editLuggageType" extends="baseLayout">
+      <put-attribute name="title"  value="Luggage Type Edit"/>
+      <put-attribute name="layoutId"  value="editLuggageType"/>
+      <put-attribute name="content"   value="/fare/luggagetype/editLuggageType.jsp"/>       
+   </definition>
+   
+ 
+   <definition name="viewRevenueType" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue Type"/>
+      <put-attribute name="layoutId"  value="viewRevenueType"/>
+      <put-attribute name="content"   value="/fare/revenuetype/viewRevenueType.jsp"/>      
+   </definition>
+   
+   <definition name="addRevenueType" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue Type Add"/>
+      <put-attribute name="layoutId"  value="addRevenueType"/>
+      <put-attribute name="content"   value="/fare/revenuetype/addRevenueType.jsp"/>       
+   </definition>
+   
+   <definition name="editRevenueType" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue Type Edit"/>
+      <put-attribute name="layoutId"  value="editRevenueType"/>
+      <put-attribute name="content"   value="/fare/revenuetype/editRevenueType.jsp"/>       
+   </definition>
+   
+   
+   <definition name="viewPenaltyTicket" extends="baseLayout">
+      <put-attribute name="title"  value="Penalty Ticket Type"/>
+      <put-attribute name="layoutId"  value="viewPenaltyTicket"/>
+      <put-attribute name="content"   value="/fare/penaltyticket/viewPenaltyTicket.jsp"/>      
+   </definition>
+   
+   <definition name="addPenaltyTicket" extends="baseLayout">
+      <put-attribute name="title"  value="Penalty Ticket Type Add"/>
+      <put-attribute name="layoutId"  value="addPenaltyTicket"/>
+      <put-attribute name="content"   value="/fare/penaltyticket/addPenaltyTicket.jsp"/>       
+   </definition>
+   
+   <definition name="editPenaltyTicket" extends="baseLayout">
+      <put-attribute name="title"  value="Penalty Ticket Type Edit"/>
+      <put-attribute name="layoutId"  value="editPenaltyTicket"/>
+      <put-attribute name="content"   value="/fare/penaltyticket/editPenaltyTicket.jsp"/>       
+   </definition>
+   
+   <definition name="hourlyChart" extends="baseLayout">
+      <put-attribute name="title"  value="Hourly Chart"/>
+      <put-attribute name="layoutId"  value="hourlyFare"/>
+      <put-attribute name="content"   value="/fare/hourlyFare/hourlyChart.jsp"/>      
+   </definition>
+   <definition name="NonFlexiFareChartTri" extends="baseLayout">
+      <put-attribute name="title"  value="Fare Chart"/>
+      <put-attribute name="layoutId"  value="CreateFareChart"/>
+      <put-attribute name="content"   value="/fare/NonFlexiFare.jsp"/>      
+   </definition>
+   <definition name="bankRemittanceDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Bank Remittance Details"/>
+      <put-attribute name="content"   value="/fare/bankRemittanceDetails.jsp"/>      
+   </definition>
+   <definition name="CreateBankRemittanceDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Create Bank Remittance Details"/>
+      <put-attribute name="content"   value="/fare/CreateBankRemittanceDetails.jsp"/>      
+   </definition>
+   <definition name="EditBankRemittanceDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Bank Remittance Details"/>
+      <put-attribute name="content"   value="/fare/EditBankRemittanceDetails.jsp"/>      
+   </definition>
+   
+   <definition name="ViewSpecialPassTicketDetails" extends="baseLayout">
+      <put-attribute name="title"  value="View Special Pass Ticket Details"/>
+      <put-attribute name="content"   value="/fare/ViewSpecialPassTicketDetails.jsp"/>      
+   </definition>
+   <definition name="CreateSpecialPassTicketview" extends="baseLayout">
+      <put-attribute name="title"  value="Create Special Pass Ticket Details"/>
+      <put-attribute name="content"   value="/fare/CreateSpecialPassTicketview.jsp"/>      
+   </definition>
+   <definition name="EditSpecialPassTicketview" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Special Pass Ticket view"/>
+      <put-attribute name="content"   value="/fare/EditSpecialPassTicketview.jsp"/>      
+   </definition>
+   <definition name="ViewTollPassTicketDetails" extends="baseLayout">
+      <put-attribute name="title"  value="View Toll Pass Ticket Details"/>
+      <put-attribute name="content"   value="/fare/ViewTollPassTicketDetails.jsp"/>      
+   </definition>
+   <definition name="CreateTollPassTicketview" extends="baseLayout">
+      <put-attribute name="title"  value="Create Toll Pass Ticket Details"/>
+      <put-attribute name="content"   value="/fare/CreateTollPassTicketview.jsp"/>      
+   </definition>
+   <definition name="EditTollPassTicketview" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Toll Pass Ticket view"/>
+      <put-attribute name="content"   value="/fare/EditTollPassTicketview.jsp"/>      
+   </definition>
+</tiles-definitions>

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/7272/its/src/com/trimax/its/fare/action
+END
+TollPassTicketAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/5604/its/src/com/trimax/its/fare/action/TollPassTicketAction.java
+END
+BankRemittanceDetailsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/its/!svn/ver/5302/its/src/com/trimax/its/fare/action/BankRemittanceDetailsAction.java
+END
+RevenueTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4365/its/src/com/trimax/its/fare/action/RevenueTypeAction.java
+END
+SpecialPassTicketAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/5335/its/src/com/trimax/its/fare/action/SpecialPassTicketAction.java
+END
+PenaltyTicketAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/4365/its/src/com/trimax/its/fare/action/PenaltyTicketAction.java
+END
+ConcessionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/4365/its/src/com/trimax/its/fare/action/ConcessionAction.java
+END
+PassengerTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/4365/its/src/com/trimax/its/fare/action/PassengerTypeAction.java
+END
+RateMasterAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6687/its/src/com/trimax/its/fare/action/RateMasterAction.java
+END
+FareChartMasterAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7272/its/src/com/trimax/its/fare/action/FareChartMasterAction.java
+END
+RateMasterAjaxAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/4015/its/src/com/trimax/its/fare/action/RateMasterAjaxAction.java
+END
+LuggageTypeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4365/its/src/com/trimax/its/fare/action/LuggageTypeAction.java
+END

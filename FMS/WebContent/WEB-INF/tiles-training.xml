@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   <tiles-definitions>
+   
+	
+<!-- 	start Training Master -->
+  <definition name="ViewTrainingListDetails" extends="baseLayout">
+     	<put-attribute name="title"  value="Training"/>
+ 		<put-attribute name="content"  value="/training/TrainingList.jsp"/>      	
+    </definition>
+    <definition name="CreateTrainingview" extends="baseLayout">
+      <put-attribute name="title"  value="Create Training"/>
+      <put-attribute name="content"  value="/training/createtraining.jsp"/>      
+    </definition>
+    
+     <definition name="showEditTraining" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Training"/>
+    <put-attribute name="content"   value="/training/EditTraining.jsp"/>
+     </definition>
+     
+<!--   End Training Master -->
+
+<!-- 	start Training Type Master -->
+  <definition name="ViewTrainingTypeListDetails" extends="baseLayout">
+     	<put-attribute name="title"  value="Training Type"/>
+ 		<put-attribute name="content"  value="/training/TrainingTypeList.jsp"/>      	
+    </definition>
+    <definition name="CreateTrainingTypeview" extends="baseLayout">
+      <put-attribute name="title"  value="Create Training Type"/>
+      <put-attribute name="content"  value="/training/createtrainingtype.jsp"/>      
+    </definition>
+    
+     <definition name="showEditTrainingType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Training"/>
+    <put-attribute name="content"   value="/training/EditTrainingType.jsp"/>
+     </definition>
+     
+<!--   End Training Type -->
+   
+   </tiles-definitions>

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service
+END
+GetPISDetailsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/GetPISDetailsResponse.java
+END
+GetPISDataResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/2589/its/src/com/trimax/its/pis/service/GetPISDataResponse.java
+END
+GetPISDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/GetPISDetails.java
+END
+GetPISData.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/2589/its/src/com/trimax/its/pis/service/GetPISData.java
+END
+WsPis.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/WsPis.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/ObjectFactory.java
+END
+GetDirResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/2589/its/src/com/trimax/its/pis/service/GetDirResponse.java
+END
+GetDir.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/2589/its/src/com/trimax/its/pis/service/GetDir.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/2589/its/src/com/trimax/its/pis/service/package-info.java
+END
+WsPis_Service.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/2589/its/src/com/trimax/its/pis/service/WsPis_Service.java
+END
+GetPIS.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/GetPIS.java
+END
+GetPISConfigurationResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/GetPISConfigurationResponse.java
+END
+GetPISConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/3213/its/src/com/trimax/its/pis/service/GetPISConfiguration.java
+END

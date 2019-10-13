@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="reports" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+        <!-- <global-exception-mappings>
+        <exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+        <action name="showBusstop" class="com.trimax.its.report.action.BusStopAction" 
+		method="getShowBusstop">
+			<result name="success" type="tiles">showBusstop</result>
+		</action>
+	 	<action name="showBusstopList" class="com.trimax.its.report.action.BusStopAction" method="getBusstoplist">
+		</action>
+			<action name="excelfile" class="com.trimax.its.report.action.BusStopAction" method="getExcel">
+		</action>
+			<action name="pdffile" class="com.trimax.its.report.action.BusStopAction" method="getPDF">
+		</action> 
+		
+		<!-- Birt Master report -->
+<!-- 		<action name="ReportAction" class="com.trimax.its.report.action.ReportAction"> -->
+<!-- 		  <result name="view"  type="tiles">viewMasterReport</result> -->
+<!--      	  <result name="add"   type="tiles">addMasterReport</result> -->
+<!--      	  <result name="edit"  type="tiles">editMasterReport</result> -->
+<!--      	    <result name="home"  type="tiles">index</result> -->
+<!--      	  <result name="birt">http://localhost:57908/viewer/frameset</result> -->
+<!-- 		</action> -->
+
+<action name="viewMasterReportList" class="com.trimax.its.report.action.ReportAction" method="view">
+ <result name="view"  type="tiles">viewMasterReport</result>
+ </action> 
+ <action name="viewDetails" class="com.trimax.its.report.action.ReportAction">
+<!--  <result name="view"  type="tiles">viewMasterReport</result> -->
+ </action> 
+<action name="generateReport" class="com.trimax.its.report.action.ReportAction" method="generateReport">
+<result name="birt">/Reports/ReportViewer.jsp</result>
+</action>
+<action name="generateLineReport" class="com.trimax.its.report.action.ReportAction" method="generateLineReport">
+<result name="birt">/Reports/ReportViewer.jsp</result>
+</action>
+<action name="CustomReportAction" class="com.trimax.its.report.action.ReportAction" method="getCustomReport">
+<result name="birt">/Reports/ReportViewer.jsp</result>
+</action>
+<action name="search" class="com.trimax.its.report.action.ReportAction" method="getFilterReport">
+<result name="birt">/Reports/ReportViewer.jsp</result>
+</action>
+<action name="AggregationReport" class="com.trimax.its.report.action.ReportAction" method="getAggregationReport">
+<result name="birt">/Reports/ReportViewer.jsp</result>
+</action>
+<action name="homeMenu" class="com.trimax.its.report.action.ReportAction" method="homeMenu">
+<result name="home" type="tiles">index</result> 
+</action>
+
+<!-- Start Report Master -->
+<action name="viewReportMasterList" class="com.trimax.its.reportmaster.action.ReportMasterAction">
+
+</action>
+
+<action name="viewReportMaster" class="com.trimax.its.reportmaster.action.ReportMasterAction" method="viewReportMaster">
+ <result name="success" type="tiles">viewReportMaster</result>
+</action> 
+
+<action name="createReportMaster" class="com.trimax.its.reportmaster.action.ReportMasterAction" method="createReportMaster">
+<result name="success" type="tiles">createReportMaster</result>
+</action>
+
+<action name="createReportMasterAction" class="com.trimax.its.reportmaster.action.ReportMasterAction" method="createReportMasterAction">
+<result name="success" type="tiles">viewReportMaster</result>
+<result name="input" type="tiles">createReportMaster</result>
+</action>
+
+<action name="editReportMaster" class="com.trimax.its.reportmaster.action.ReportMasterAction" method="editReportMaster">
+<result name="success" type="tiles">editReportMaster</result>
+</action>
+
+<action name="editReportMasterAction" class="com.trimax.its.reportmaster.action.ReportMasterAction" method="editReportMasterAction">
+<result name="success" type="tiles">viewReportMaster</result>
+<result name="input" type="tiles">editReportMaster</result>
+</action>
+
+<action name="deleteReportMaster" class="com.trimax.its.reportmaster.action.ReportMasterAction" method="deleteReportMasterAction">
+<result name="success" type="tiles">viewReportMaster</result>
+</action>
+
+<action name="emailConfigurationView" class="com.trimax.its.reportmaster.action.EmailMasterAction" method="emailConfigurationView">
+<result name="success" type="tiles">emailConfiguration</result>
+</action>
+
+<action name="createEmailConfiguration" class="com.trimax.its.reportmaster.action.EmailMasterAction" method="createEmailConfiguration">
+<result name="success" type="tiles">viewReportMaster</result>
+</action>
+     <!-- report format done for 16 reports -->
+     
+     <action name="DatewiseRevenueDetailed" class="com.trimax.its.reportmaster.action.DatewiseRevenueDetailed">
+       <result name="success" type="tiles">DatewiseRevenueDetailed</result>
+     </action>
+     <action name="AjaxDatewiseRevenueDetailed" class="com.trimax.its.reportmaster.action.DatewiseRevenueDetailed" method="DatewiseRevenueDetailed">
+     </action>
+     
+     
+     <action name="RevenueSummaryReport" class="com.trimax.its.report.action.RevenueSummaryReport">
+			<result name="success" type="tiles">RevenueSummaryReport</result>
+	</action>
+	<action name="AjaxRevenueSummaryReport" class="com.trimax.its.report.action.RevenueSummaryReport" method="RevenueSummaryReport">
+     </action>
+     
+     <action name="ProgressiveKMReport" class="com.trimax.its.report.action.ProgressiveKMReport">
+			<result name="success" type="tiles">ProgressiveKMReport</result>
+	</action>
+	<action name="AjaxProgressiveKMReport" class="com.trimax.its.report.action.ProgressiveKMReport" method="ProgressiveKMReport">
+     </action>
+     <action name="AjaxVehicleNo" class="com.trimax.its.report.action.ProgressiveKMReport" method="getVehicle">
+     </action>
+     
+     <action name="DailyVehiclePosition" class="com.trimax.its.report.action.DailyVehiclePosition">
+			<result name="success" type="tiles">DailyVehiclePosition</result>
+	</action>
+	<action name="AjaxDailyVehiclePosition" class="com.trimax.its.report.action.DailyVehiclePosition" method="DailyVehiclePosition">
+     </action>
+     
+       <action name="KMPLDriverWise" class="com.trimax.its.report.action.KMPLDriverWise">
+			<result name="success" type="tiles">KMPLDriverWise</result>
+	</action>
+	<action name="AjaxKMPLDriverWise" class="com.trimax.its.report.action.KMPLDriverWise" method="KMPLDriverWise">
+     </action>
+     <action name="getDriverTokenNo" class="com.trimax.its.report.action.KMPLDriverWise" method="getDriverTokenDetail">
+	</action>
+<!--      end of 16 report formats -->
+
+<!-- End Report Master -->
+
+	<action name="createEmailConfiguration" class="com.trimax.its.reportmaster.action.EmailMasterAction" method="createEmailConfiguration">
+		<result name="success" type="tiles">viewReportMaster</result>
+	</action>
+
+ <action name="EarlyArrivalDetailedReport" class="com.trimax.its.report.action.EarlyArrivalDetailedReportAction">
+			<result name="success" type="tiles">EarlyArrivalDetailedReport</result>
+	</action>
+	<action name="AjaxEarlyArrivalDetailed" class="com.trimax.its.report.action.EarlyArrivalDetailedReportAction" method="AjaxEarlyArrivalDetailed">
+	</action>
+	<action name="EarlyArrivalSummaryReport" class="com.trimax.its.report.action.EarlyArrivalSummaryReportAction">
+			<result name="success" type="tiles">EarlyArrivalSummaryReport</result>
+	</action>
+	<action name="AjaxEarlyArrivalSummary" class="com.trimax.its.report.action.EarlyArrivalSummaryReportAction" method="AjaxEarlyArrivalSummary">
+	</action>
+	
+	<action name="ScheduleOperationRevenueReport" class="com.trimax.its.report.action.ScheduleOperationRevenueReportAction">
+			<result name="success" type="tiles">ScheduleOperationRevenueReport</result>
+	</action>
+	<action name="AjaxSchedueloperationRevenueReport" class="com.trimax.its.report.action.ScheduleOperationRevenueReportAction" method="AjaxSchedueloperationRevenueReport">
+	</action>
+	
+	<action name="KMPLVehicleWise" class="com.trimax.its.report.action.KMPLVehicleWiseReportAction">
+			<result name="success" type="tiles">KMPLVehicleWise</result>
+	</action>
+	<action name="getVehicle" class="com.trimax.its.report.action.KMPLVehicleWiseReportAction" method="getVehicle">
+	</action>
+	<action name="AjaxKMPLVehicleWiseReport" class="com.trimax.its.report.action.KMPLVehicleWiseReportAction" method="AjaxKMPLVehicleWiseReport">
+	</action>
+	
+	<action name="LateDepartureSummary" class="com.trimax.its.report.action.LateDepartureSummaryReportAction">
+			<result name="success" type="tiles">LateDepartureSummaryReport</result>
+	</action>
+	<action name="AjaxLateDepartureSummary" class="com.trimax.its.report.action.LateDepartureSummaryReportAction" method="AjaxLateDepartureSummary">
+	</action>
+	
+	<action name="CrewandStaffPosition" class="com.trimax.its.report.action.CrewandStaffPositionReportAction">
+			<result name="success" type="tiles">CrewandStaffPositionReport</result>
+	</action>
+	<action name="AjaxCrewandStaffPosition" class="com.trimax.its.report.action.CrewandStaffPositionReportAction" method="AjaxCrewandStaffPosition">
+	</action>
+	
+	
+		
+		
+		<!-- 		license Expiredcrew -->
+		<action name="LicenseExpiredAction"
+			class="com.trimax.its.report.action.LicenseExpiredCrewReport">
+			<result name="success" type="tiles">LicenseExpiredCrewReport</result>
+		</action>
+		
+			 <action name="getDepotName" class="com.trimax.its.report.action.LicenseExpiredCrewReport" method="getPerticularDepotName">
+       </action>
+       
+       
+		<action name="LicenseExpireCrewReport"	class="com.trimax.its.report.action.LicenseExpiredCrewReport" method="LicenseCrewReportMethod">
+		</action>
+		
+		
+		
+		
+		
+		<!-- 		Fitness certiFicate expiry Report -->
+		<action name="FitnessCertificateExpiredAction"
+			class="com.trimax.its.report.action.FitnessCertificateExpiredReport">
+			<result name="success" type="tiles">FitnessCertificateExpiredReport</result>
+		</action>
+		
+			 <action name="getDepotName" class="com.trimax.its.report.action.FitnessCertificateExpiredReport" method="getPerticularDepotName">
+       </action>
+       
+       
+		<action name="FitnesscertiFicateexpiryReport"	class="com.trimax.its.report.action.FitnessCertificateExpiredReport" method="FitnessCertificateExpiredReportMethod">
+		</action>
+		
+		<action name="cashRemitanceReportPage"	class="com.trimax.its.report.action.CashRemitanceReport">
+			<result name="success" type="tiles">cashRemitanceReportPage</result>
+		</action>
+		
+		<action name="cashRemitanceReportAjax"	class="com.trimax.its.report.action.CashRemitanceReport" method="getcashRemitancePageAjax">
+		</action>
+		
+		<action name="TicketConsumptionStatement" class="com.trimax.its.report.action.TicketConsumptionStatementAction" method="">
+			<result name="success" type="tiles">TicketConsumptionStatement</result>
+		</action>
+		
+		<action name="getTicketConsumptionStatement" class="com.trimax.its.report.action.TicketConsumptionStatementAction" method="getTicketConsumptionStatement">
+			<result name="success" type="tiles">TicketConsumptionStatement</result>
+		</action>
+		
+		<action name="TicketConsumptionStatementMonthlyPass" class="com.trimax.its.report.action.TicketConsumptionStatementMonthlyPassAction" method="">
+			<result name="success" type="tiles">TicketConsumptionStatementMonthlyPass</result>
+		</action>
+		
+
+		<!-- 		ETMWise Ticket Sale Details -->
+		<action name="ETMWiseTicketSaleDetailsReport" 
+		class="com.trimax.its.report.action.ETMWiseTicketSaleDetailsReport" >
+		<result name="success" type="tiles">ETMWiseTicketSaleDetailsReport</result>
+		</action>
+		<action name="AjaxETMWiseTicketSaleDetailsReport" 
+		class="com.trimax.its.report.action.ETMWiseTicketSaleDetailsReport" method="AjaxETMWiseTicketSaleDetailsReport">
+		</action>
+
+		
+		
+        <action name="SeniorcitizenETMticketconsumptionreport" class="com.trimax.its.report.action.SeniorcitizenETMticketconsumptionreport" method="">
+			<result name="success" type="tiles">SeniorcitizenETMticketconsumptionreport</result>
+		</action>
+        <action name="AjaxSeniorcitizenETMticketconsumptionreport"
+        class="com.trimax.its.report.action.SeniorcitizenETMticketconsumptionreport" method="AjaxSeniorcitizenETMticketconsumptionreport">
+        </action>
+        
+
+<!--         <action name="Dailypassconsumptionreport" class="com.trimax.its.report.action.Dailypassconsumptionreport" > -->
+<!-- 			<result name="success" type="tiles">Dailypassconsumptionreport</result> -->
+<!-- 		</action> -->
+<!--         <action name="AjaxDailypassconsumptionreport" -->
+<!--         class="com.trimax.its.report.action.Dailypassconsumptionreport" method="AjaxDailypassconsumptionreport"> -->
+<!--         </action> -->
+
+        <action name="Dailypassconsumptionreport" class="com.trimax.its.report.action.Dailypassconsumptionreport" >    
+			<result name="success" type="tiles">Dailypassconsumptionreport</result>
+		</action>
+        <action name="AjaxDailypassconsumptionreport"
+        class="com.trimax.its.report.action.Dailypassconsumptionreport" method="AjaxDailypassconsumptionreport">
+        </action>
+
+        
+
+<!--         <action name="Denominationwiseticketconsumptionstatment" class="com.trimax.its.report.action.Denominationwiseticketconsumptionstatment" > -->
+<!-- 			<result name="success" type="tiles">Denominationwiseticketconsumptionstatment</result> -->
+<!-- 		</action> -->
+<!--         <action name="AjaxDenominationwiseticketconsumptionstatment" -->
+<!--         class="com.trimax.its.report.action.Denominationwiseticketconsumptionstatment" method="AjaxDenominationwiseticketconsumptionstatment"> -->
+<!--         </action> -->
+
+        <action name="Denomwiseticketconsumstmt" class="com.trimax.its.report.action.Denominationwiseticketconsumptionstatment" >
+			<result name="success" type="tiles">Denominationwiseticketconsumptionstatment</result>
+		</action>
+        <action name="AjaxDenominationwiseticketconsumptionstatment"
+        class="com.trimax.its.report.action.Denominationwiseticketconsumptionstatment" method="AjaxDenominationwiseticketconsumptionstatment">
+        </action>
+
+        
+
+<!--          <action name="SummaryofDenominationwiseticketconsumptionstatment" class="com.trimax.its.report.action.SummaryofDenominationwiseticketconsumptionstatment" > -->
+<!-- 			<result name="success" type="tiles">SummaryofDenominationwiseticketconsumptionstatment</result> -->
+<!-- 		</action> -->
+<!--         <action name="AjaxSummaryofDenominationwiseticketconsumptionstatment" -->
+<!--         class="com.trimax.its.report.action.SummaryofDenominationwiseticketconsumptionstatment" method="AjaxSummaryofDenominationwiseticketconsumptionstatment"> -->
+<!--         </action> -->
+
+<!-- SummaryofDenomwiseticketstmt -->
+         <action name="SummaryofDenomwiseticketstmt" class="com.trimax.its.report.action.SummaryofDenominationwiseticketconsumptionstatment" >
+			<result name="success" type="tiles">SummaryofDenominationwiseticketconsumptionstatment</result>
+		</action>
+        <action name="AjaxSummaryofDenominationwiseticketconsumptionstatment"
+        class="com.trimax.its.report.action.SummaryofDenominationwiseticketconsumptionstatment" method="AjaxSummaryofDenominationwiseticketconsumptionstatment">
+        </action>
+
+        
+<!--   Revenuegrowthreport -->
+          <action name="Revenuegrowthreport" class="com.trimax.its.report.action.Revenuegrowthreport" >
+			<result name="success" type="tiles">Revenuegrowthreport</result>
+		</action>
+        <action name="AjaxRevenuegrowthreport"
+        class="com.trimax.its.report.action.Revenuegrowthreport" method="AjaxRevenuegrowthreport">
+        </action>
+
+
+         
+
+  
+<!--    Nooftripswith0revenue -->
+
+          <action name="Nooftripswith0revenue" class="com.trimax.its.report.action.Nooftripswith0revenue" >
+			<result name="success" type="tiles">Nooftripswith0revenue</result>
+		</action>
+        <action name="AjaxNooftripswith0revenue"
+        class="com.trimax.its.report.action.Nooftripswith0revenue" method="AjaxNooftripswith0revenue">
+        </action>  
+
+
+<!--      TICKET DATA CIMPARISION REPORT  --> 
+<!--          <action name="ticketdatacomparision" class="com.trimax.its.report.action.ticketdatacomparision" > -->
+<!-- 			<result name="success" type="tiles">ticketdatacomparision</result> -->
+<!-- 		</action> -->
+<!--         <action name="Ajaxticketdatacomparision" -->
+<!--         class="com.trimax.its.report.action.ticketdatacomparision" method="Ajaxticketdatacomparision"> -->
+<!--         </action>  -->
+        
+
+<!--      ETM & Online Revenue Mismatch Report REPORT   -->
+         <action name="Etmandonlinerevenuemismatch" class="com.trimax.its.report.action.Etmandonlinerevenuemismatch">
+			<result name="success" type="tiles">Etmandonlinerevenuemismatch</result>
+		</action>
+        <action name="AjaxEtmandonlinerevenuemismatch"
+        class="com.trimax.its.report.action.Etmandonlinerevenuemismatch" method="AjaxEtmandonlinerevenuemismatch">
+        </action> 
+
+        
+<!--         ShowTripdetailsAll -->
+        <action name="ShowTripdetailsAll"
+        class="com.trimax.its.report.action.Nooftripswith0revenue" method="ShowTripdetailsAll">
+        <result name="success">/Reports/ShowTripdetailsAll.jsp</result>
+        </action>   
+
+
+
+
+<!--          <action name="pispage" -->
+<!--         class="com.trimax.its.report.action.pispage" method="pispage"> -->
+<!--         <result name="success">/Reports/pispage.jsp</result> -->
+<!--         </action>  -->
+
+        
+
+          <action name="driverWiseKMPLReportITS"
+        class="com.trimax.its.report.action.DriverWiseKMPLReportITS" >
+       	<result name="success" type="tiles">DriverWiseKMPLReportITS</result>
+        </action>   
+          <action name="AjaxdriverWiseKMPLReportITS"
+        class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="driverWiseKMPLReportITS">
+       	<result name="success" type="tiles">DriverWiseKMPLReportITS</result>
+        </action>   
+
+         <action name="getALLdetails"
+        class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="driverWiseKMPLDetailsReportITS">
+       	<result name="success" type="tiles">DriverWiseKMPLDetailsReportITS</result>
+        </action> 
+        <action name="getALLdetails2" class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="getALLdetails1">
+		</action>
+		<action name="getdepotdetails" class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="getdepotdetails">
+		<result name="success" type="tiles">DriverKmplDepotWise</result></action>
+		<action name="getdepotdetails1" class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="getdepotdetails1">
+		</action>
+		<action name="getdetailsname" class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="getdetailsname">
+		<result name="success" type="tiles">DriverKmplDetails</result></action>
+		<action name="getdetailsname1" class="com.trimax.its.report.action.DriverWiseKMPLReportITS" method="getdetailsname1">
+		</action>
+         <action name="vehiclewiseKMPLReportITS"
+        class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" >
+       	<result name="success" type="tiles">VehiclewiseKMPLReportITS</result>
+        </action>   
+          <action name="AjaxvehiclewiseKMPLReportITS"
+        class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="vehiclewiseKMPLReportITS">
+       	<result name="success" type="tiles">VehiclewiseKMPLReportITS</result>
+        </action>   
+
+
+         <action name="getVehicleDivisionDetails"
+        class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="getVehicleDivisionDetails">
+       	<result name="success" type="tiles">VehicleDivisionWiseKMPLReportITS</result>
+        </action> 
+         <action name="getdivisiondetails2" class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="getdivisiondetails1">
+		</action>
+		<action name="getdepotvehicledetails" class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="getdepotvehicledetails">
+		<result name="success" type="tiles">VehicleKmplDepotWise</result></action>
+		<action name="getdepotvehicledetails1" class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="getdepotvehicledetails1">
+		</action>
+		<action name="getvehicledetailsname" class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="getvehicledetailsname">
+		<result name="success" type="tiles">VehicleKmplDetails</result></action>
+		<action name="getvehicledetailsname1" class="com.trimax.its.report.action.VehiclewiseKMPLReportITS" method="getvehicledetailsname1">
+		</action>
+         <action name="cancelledKMReportITS"
+        class="com.trimax.its.report.action.CancelledKMReportITS" >
+       	<result name="success" type="tiles">CancelledKMReportITS</result>
+        </action>   
+          <action name="AjaxcancelledKMReportITS"
+        class="com.trimax.its.report.action.CancelledKMReportITS" method="cancelledKMReportITS">
+       	<result name="success" type="tiles">CancelledKMReportITS</result>
+        </action>   
+       
+        <action name="getCancelledDivisionDetails"
+        class="com.trimax.its.report.action.CancelledKMReportITS" method="getCancelledDivisionDetails">
+       	<result name="success" type="tiles">CancelledDivisionWiseKMReportITS</result>
+        </action> 
+         <action name="getcanceldivisiondetails2" class="com.trimax.its.report.action.CancelledKMReportITS" method="getcanceldivisiondetails1">
+		</action>
+		<action name="getcancelldepotvehicledetails" class="com.trimax.its.report.action.CancelledKMReportITS" method="getcancelldepotvehicledetails">
+		<result name="success" type="tiles">CancelledKmDepotWise</result></action>
+		<action name="getcancelldepotvehicledetails1" class="com.trimax.its.report.action.CancelledKMReportITS" method="getcancelldepotvehicledetails1">
+		</action>
+		<action name="getcancelleddetailsname" class="com.trimax.its.report.action.CancelledKMReportITS" method="getcancelleddetailsname">
+		<result name="success" type="tiles">CancelledKmDetails</result></action>
+		<action name="getcancelleddetailsname1" class="com.trimax.its.report.action.CancelledKMReportITS" method="getcancelleddetailsname1">
+		</action>
+		
+		  <action name="VehicleDeviceOnline"
+        class="com.trimax.its.report.action.VehicleDeviceOnline" >
+       	<result name="success" type="tiles">VehicleDeviceOnline</result>
+        </action>   
+          <action name="AjaxvehicleDeviceOnline"
+        class="com.trimax.its.report.action.VehicleDeviceOnline" method="vehicleDeviceOnline">
+       	<result name="success" type="tiles">VehicleDeviceOnline</result>
+        </action>   
+          <action name="ETMDeviceOnline"
+        class="com.trimax.its.report.action.ETMDeviceOnline" >
+       	<result name="success" type="tiles">ETMDeviceOnline</result>
+        </action>   
+          <action name="AjaxETMDeviceOnline"
+        class="com.trimax.its.report.action.ETMDeviceOnline" method="etmDeviceOnline">
+       	<result name="success" type="tiles">ETMDeviceOnline</result>
+        </action>   
+         <action name="DailyEtmCount"
+        class="com.trimax.its.report.action.DailyEtmCount" >
+       	<result name="success" type="tiles">DailyEtmCount</result>
+        </action>   
+          <action name="AjaxDailyEtmCount"
+        class="com.trimax.its.report.action.DailyEtmCount" method="getetmusagedetails">
+       	<result name="success" type="tiles">DailyEtmCount</result>
+        </action>  
+         <action name="DepotWiseRevenue"
+        class="com.trimax.its.report.action.DepotWiseRevenue" >
+       	<result name="success" type="tiles">DepotWiseRevenue</result>
+        </action> 
+        <action name="AjaxDepotDataRevenue"
+        class="com.trimax.its.report.action.DepotWiseRevenue" method="depotDataRevenueReport">
+       	</action>   
+		
+		
+		<action name="conductorlicenseexpiryIts" 
+		class="com.trimax.its.report.action.ConductorLicenseExpiryReportActionIts" >
+		<result name="success" type="tiles">ConductorLicenseExpiryReportIts</result>
+		</action>
+		<action name="AjaxconductorlicenseexpiryIts" 
+		class="com.trimax.its.report.action.ConductorLicenseExpiryReportActionIts" method="getconductorlicenseexpiry">
+		</action>
+		<action name="driverlicenseexpiryIts" 
+		class="com.trimax.its.report.action.DriverLicenseExpiryReportActionIts" >
+		<result name="success" type="tiles">DriverLicenseExpiryReportIts</result>
+		</action>
+		<action name="AjaxdriverlicenseexpiryIts" 
+		class="com.trimax.its.report.action.DriverLicenseExpiryReportActionIts" method="getdriverlicenseexpiry">
+		</action>
+		<action name="vehiclelicenseexpiryIts" 
+		class="com.trimax.its.report.action.VehicleLicenseExpiryReportActionIts" >
+		<result name="success" type="tiles">VehicleLicenseExpiryReportIts</result>
+		</action>
+		<action name="AjaxvehiclelicenseexpiryIts" 
+		class="com.trimax.its.report.action.VehicleLicenseExpiryReportActionIts" method="getvehiclelicenseexpiry">
+		</action>
+			 <action name="getDepot" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularDepot">
+		</action>
+		
+		<action name="conductorlicenserenewIts" 
+		class="com.trimax.its.report.action.ConductorLicenseRenewReportActionIts" >
+		<result name="success" type="tiles">ConductorLicenseRenewReportIts</result>
+		</action>
+		<action name="AjaxconductorlicenserenewIts" 
+		class="com.trimax.its.report.action.ConductorLicenseRenewReportActionIts" method="getconductorlicenserenew">
+		</action>
+		<action name="driverlicenserenewIts" 
+		class="com.trimax.its.report.action.DriverLicenseRenewReportActionIts" >
+		<result name="success" type="tiles">DriverLicenseRenewReportIts</result>
+		</action>
+		<action name="AjaxdriverlicenserenewIts" 
+		class="com.trimax.its.report.action.DriverLicenseRenewReportActionIts" method="getdriverlicenserenew">
+		</action>
+		<action name="vehiclelicenserenewIts" 
+		class="com.trimax.its.report.action.VehicleLicenseRenewReportActionIts" >
+		<result name="success" type="tiles">VehicleLicenseRenewReportIts</result>
+		</action>
+		<action name="AjaxvehiclelicenserenewIts" 
+		class="com.trimax.its.report.action.VehicleLicenseRenewReportActionIts" method="getvehiclelicenserenew">
+		</action>
+			
+      <action name="conductordriverchecklist" 
+		class="com.trimax.its.report.action.ConductorDriverCheckList" >
+		<result name="success" type="tiles">ConductorDriverCheckList</result>
+		</action>
+		<action name="AjaxConductorDriverCheckList" 
+		class="com.trimax.its.report.action.ConductorDriverCheckList" method="getConductorDriverCheckList">
+		</action>
+
+		  <action name="EarlyDutyEndFromHalting" class="com.trimax.its.report.action.EarlyDutyEndFromHaltLocAction" >
+          <result name="success" type="tiles">EarlyDutyEndFromHalting</result>
+	      </action>
+	      <action name="AjaxEarlyDutyEndData" class="com.trimax.its.report.action.EarlyDutyEndFromHaltLocAction" method="getEarlyDutyEndFromHaltingLoc">
+	     </action>
+		<action name="getCausewisedeadKilometerReport" class="com.trimax.its.report.action.CauseWiseDeadKilometerReport" >
+		<result name="success" type="tiles">CausewisedeadKilometerReport</result>
+		</action>
+		<action name="AjaxCausewisedeadKilometerReport" class="com.trimax.its.report.action.CauseWiseDeadKilometerReport" method="getCausewiseDeadkilometer" >
+		</action>
+		<action name="getIssueRegisterReport" class="com.trimax.its.report.action.IssueRegisterReport" >
+		<result name="success" type="tiles">issuestatement</result>
+		</action>
+		<action name="AjaxmonthlyTicketIssue" class="com.trimax.its.report.action.IssueRegisterReport" method="getmonthlyTicketIssue" >
+		</action>
+
+		
+		  
+	  <action name="getCausewisedeadKilometerReport" class="com.trimax.its.report.action.CauseWiseDeadKilometerReport" >
+		<result name="success" type="tiles">CausewisedeadKilometerReport</result>
+		</action>
+		<action name="AjaxCausewisedeadKilometerReport" class="com.trimax.its.report.action.CauseWiseDeadKilometerReport" method="getCausewiseDeadkilometer" >
+		</action>
+		<action name="getIssueRegisterReport" class="com.trimax.its.report.action.IssueRegisterReport" >
+		<result name="success" type="tiles">issuestatement</result>
+		</action>
+		<action name="AjaxmonthlyTicketIssue" class="com.trimax.its.report.action.IssueRegisterReport" method="getmonthlyTicketIssue" >
+		</action>
+
+		<action name="sttwoits" class="com.trimax.its.report.action.STTwoReportActionForIts">
+			<result name="success" type="tiles">STTwoReportITS</result>
+		</action>
+		<action name="getsttwoReportIts"	class="com.trimax.its.report.action.STTwoReportActionForIts" method="getSTTwoReport">
+		</action>
+		<action name="getScheduleFromDepot"	class="com.trimax.its.report.action.STTwoReportActionForIts" method="getScheduleNo">
+		</action>
+		<action name="getShifttypeForSt2"	class="com.trimax.its.report.action.STTwoReportActionForIts" method="getShiftType">
+		</action>
+		
+	<action name="DayWiseTripOperatedReport" class="com.trimax.its.report.action.TripOperatedReport">
+			<result name="success" type="tiles">DayWiseTripOperatedReport</result>
+		</action>
+		<action name="getTripOperatedReportAjax"	class="com.trimax.its.report.action.TripOperatedReport" method="showTripOperatedReport">
+		</action>
+		<action name="getScheduleNoForDepotWise"	class="com.trimax.its.report.action.TripOperatedReport" method="getScheduleNoForDepotWise">
+		</action>
+		 <action name="ThreeCodeReport" 
+		class="com.trimax.its.report.action.ThreeCodeReportAction" >
+		<result name="success" type="tiles">ThreeCodeReportITS</result>
+		</action>
+		<action name="AjaxThreeCode" 
+		class="com.trimax.its.report.action.ThreeCodeReportAction" method="getThreeCode">
+		</action>
+		
+		 <action name="dailyPassSaleReport" 
+		class="com.trimax.its.report.action.DailyPassSaleReportAction" >
+		<result name="success" type="tiles">DailyPassSaleReport</result>
+		</action>
+		<action name="AjaxDailyPassSale" 
+		class="com.trimax.its.report.action.DailyPassSaleReportAction" method="getdailyPassSale">
+		</action>
+		<action name="getPassFromDepot" 
+		class="com.trimax.its.report.action.DailyPassSaleReportAction" method="passtypeForIts">
+		</action>
+		
+		<action name="DayWiseTripReportForITS"	class="com.trimax.its.report.action.DayWiseTripReportActionForITS">
+			<result name="success" type="tiles">DayWiseTripReportITS</result>
+		</action>
+		
+		<action name="AjaxDayWiseTripReportITS"	class="com.trimax.its.report.action.DayWiseTripReportActionForITS" method="getDayWiseTripReportITS">
+		</action>
+		<action name="getScheduleForDayWise"	class="com.trimax.its.report.action.DayWiseTripReportActionForITS" method="getScheduleForTripTiming">
+		</action>
+
+		<action name="getDepotFormVReport"	class="com.trimax.its.report.action.DepotFormVReport" >
+		<result name="success" type="tiles">DepotFormVReport</result>
+		</action>
+		<action name="AjaxgetCityDayoutReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCityDayoutData"></action>
+		<action name="AjaxgetCityNightoutReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCityNightoutData"></action>
+		<action name="AjaxgetGeneralShiftoutReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCityGeneralShiftData"></action>
+		<action name="AjaxgetNightServiceReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCityNightServiceData"></action>
+		<action name="AjaxgetSubdayoutReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCitySubDayoutData"></action>
+	    <action name="AjaxgetSubnightoutReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCitySubNightoutData"></action>
+		<action name="AjaxgetSuburbangeneralshiftReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCitySubUrbanGeneralShiftData"></action>
+		<action name="AjaxgetSuburbanNightServiceReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getCitySubUrbanNightServiceData"></action>
+	    <action name="AjaxgetsummaryOfDepotReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getSummaryOfEachDepotData"></action>
+	    <action name="AjaxgetvehicleUtilizationReport"	class="com.trimax.its.report.action.DepotFormVReport" method="getVehicleUtilizationData"></action>
+		
+		
+		<action name="getWeeklyReport"	class="com.trimax.its.report.action.WeeklyReport" >
+		<result name="success" type="tiles">WeeklyReport</result>
+		</action>
+		<action name="AjaxgetWeeklyReport"	class="com.trimax.its.report.action.WeeklyReport" method="getweeklyData"></action>
+		
+		<action name="getDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" >
+		<result name="success" type="tiles">DivisionWiseWeeklyReport</result>
+		</action>
+			<action name="AjaxNorthDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" method="getNorthDivisionWiseWeeklyReport"></action>
+			<action name="AjaxSouthDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" method="getSouthDivisionWiseWeeklyReport"></action>
+		<action name="AjaxEastDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" method="getEastDivisionWiseWeeklyReport"></action>
+		<action name="AjaxWestDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" method="getWestDivisionWiseWeeklyReport"></action>
+		<action name="AjaxCentralDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" method="getCentralDivisionWiseWeeklyReport"></action>
+		<action name="AjaxScheduleAbstractDivisionWiseWeeklyReport"	class="com.trimax.its.report.action.DivisionWiseWeeklyReport" method="getScheduleAbstractDivisionWiseWeeklyReport"></action>
+		
+		<action name="getDepotWiseScheduleListReport"	class="com.trimax.its.report.action.DepotWiseScheduleInformationListReport" >
+		<result name="success" type="tiles">DepotWiseScheduleListReport</result>
+		</action>
+		<action name="AjaxgetDepotWiseScheduleListReport"	class="com.trimax.its.report.action.DepotWiseScheduleInformationListReport" method="getDepotWiseScheduleListReport"></action>
+		
+		<action name="getSListReport"	class="com.trimax.its.report.action.SListReport" >
+		<result name="success" type="tiles">SListReport</result>
+		</action>
+		<action name="AjaxgetSListReport"	class="com.trimax.its.report.action.SListReport" method="getS_ListReport"></action>
+		
+		<action name="getVolvoSchAndKmsReport"	class="com.trimax.its.report.action.VolvoSchAndKMSReport" >
+		<result name="success" type="tiles">VolvoSchAndKmsReport</result>
+		</action>
+		<action name="AjaxVolvoServiceReport"	class="com.trimax.its.report.action.VolvoSchAndKMSReport" method="getVolvoSchAndKMSReport"></action>
+		<action name="AjaxVolvoServiceDataReport"	class="com.trimax.its.report.action.VolvoSchAndKMSReport" method="getVolvoSchAndKMSDataReport"></action>
+		<action name="AjaxCoronaServiceReport"	class="com.trimax.its.report.action.VolvoSchAndKMSReport" method="getCoronaServiceReport"></action>
+		<action name="AjaxCoronaServiceDataReport"	class="com.trimax.its.report.action.VolvoSchAndKMSReport" method="getCoronaServiceDetailReport"></action>
+		
+		<action name="getTypeOfServiceReport"	class="com.trimax.its.report.action.TypeOfServicesReport" >
+		<result name="success" type="tiles">TypeOfServiceReport</result>
+		</action>
+		<action name="AjaxTypeOfServiceReport"	class="com.trimax.its.report.action.TypeOfServicesReport" method="getTypeOfService"></action>
+		<action name="AjaxTypeOfServiceDataReport"	class="com.trimax.its.report.action.TypeOfServicesReport" method="getTypeOfServiceData"></action>
+		<action name="AjaxCategoryOfServiceReport"	class="com.trimax.its.report.action.TypeOfServicesReport" method="getCategoryOfServices"></action>
+		<action name="AjaxCategoryOfServiceDataReport"	class="com.trimax.its.report.action.TypeOfServicesReport" method="getCategoryOfServicesData"></action>
+		<action name="AjaxCategoryOfServiceDataSummaryReport"	class="com.trimax.its.report.action.TypeOfServicesReport" method="getCategoryOfServicesDataSummary"></action>
+		
+		<action name="getYearWiseScheduleReport"	class="com.trimax.its.report.action.YearWiseScheduleReport" >
+		<result name="success" type="tiles">YearWiseScheduleReport</result>
+		</action>
+		<action name="AjaxDetailsOfSchedulesReport"	class="com.trimax.its.report.action.YearWiseScheduleReport" method="getYearWiseSchedule"></action>
+		<action name="AjaxDetailsOfSchedulesDataReport"	class="com.trimax.its.report.action.YearWiseScheduleReport" method="getYearWiseScheduleData"></action>
+		
+		<action name="getCrewPositionReport"	class="com.trimax.its.report.action.CrewPositionReport" >
+		<result name="success" type="tiles">CrewpositionReport</result>
+		</action>
+		<action name="AjaxCentralOfficeReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getCentralOfficeData"></action>
+		<action name="AjaxNorthReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getNorthDivisionData"></action>
+		<action name="AjaxSouthDivisionReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getSouthDivisionData"></action>
+		<action name="AjaxSouthDivisionDataReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getSouthDivisionSummaryData"></action>
+		
+		<action name="AjaxEastDivisionReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getEastDivisionData"></action>
+		<action name="AjaxEastDivisionDataReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getEastDivisionSummaryData"></action>
+		
+		<action name="AjaxWestDivisionReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getWestDivisionData"></action>
+		<action name="AjaxWestDivisionDataReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getWestDivisionSummaryData"></action>
+		
+		<action name="AjaxVolvoDivisionReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getVolvoDivisionData"></action>
+		<action name="AjaxVolvoDivisionDataReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getVolvoDivisionSummaryData"></action>
+		<action name="AjaxSummaryDivisionReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getSummaryDivisionData"></action>
+		
+		<action name="getNorthDivisionReport"	class="com.trimax.its.report.action.NorthDivisionReport" >
+		<result name="success" type="tiles">NorthDivisionReport</result>
+		</action>
+				<action name="AjaxNorthDivisionReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionForm_vData"></action>
+				<action name="AjaxNorthDivisionKilometersReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionKilometerData"></action>
+		<action name="AjaxNorthDivisionTripReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionTripData"></action>
+		<action name="AjaxNorthDivisionFormDataReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionMonthData"></action>
+		<action name="AjaxNorthDivisionFormSummaryReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionSummaryData"></action>
+		<action name="AjaxNorthDivisionKilomiterSummaryReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionKilometerSummary"></action>
+		<action name="AjaxNorthDivisionTripSummaryReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionTripSummary"></action>
+		<action name="AjaxNorthDivisionCrewSummaryReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionCrewSummary"></action>
+		<action name="AjaxNorthDivisionSummaryDataReport"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionSummary"></action>
+		<action name="AjaxNorthDivisionSummary1Report"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionSummary1"></action>
+		<action name="AjaxNorthDivisionSummary2Report"	class="com.trimax.its.report.action.NorthDivisionReport" method="getNorthDivisionSummary2"></action>
+		
+		
+		<action name="getSouthDivisionReport"	class="com.trimax.its.report.action.SouthDivisionReport" >
+		<result name="success" type="tiles">SouthDivisionReport</result>
+		</action>
+				<action name="AjaxSouthDivisionReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionForm_vData"></action>
+				<action name="AjaxSouthDivisionKilometersReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionKilometerData"></action>
+		<action name="AjaxSouthDivisionTripReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionTripData"></action>
+		<action name="AjaxSouthDivisionFormDataReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionMonthData"></action>
+		<action name="AjaxSouthDivisionFormSummaryReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionSummaryData"></action>
+		<action name="AjaxSouthDivisionKilomiterSummaryReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionKilometerSummary"></action>
+		<action name="AjaxSouthDivisionTripSummaryReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionTripSummary"></action>
+		<action name="AjaxSouthDivisionCrewSummaryReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionCrewSummary"></action>
+		<action name="AjaxSouthDivisionSummaryDataReport"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionSummary"></action>
+		<action name="AjaxSouthDivisionSummary1Report"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionSummary1"></action>
+		<action name="AjaxSouthDivisionSummary2Report"	class="com.trimax.its.report.action.SouthDivisionReport" method="getSouthDivisionSummary2"></action>
+		
+		
+		<action name="getEastDivisionReport"	class="com.trimax.its.report.action.EastDivisionReport" >
+		<result name="success" type="tiles">EastDivisionReport</result>
+		</action>
+				<action name="AjaxEastDivisionReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionForm_vData"></action>
+				<action name="AjaxEastDivisionKilometersReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionKilometerData"></action>
+		<action name="AjaxEastDivisionTripReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionTripData"></action>
+		<action name="AjaxEastDivisionFormDataReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionMonthData"></action>
+		<action name="AjaxEastDivisionFormSummaryReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionSummaryData"></action>
+		<action name="AjaxEastDivisionKilomiterSummaryReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionKilometerSummary"></action>
+		<action name="AjaxEastDivisionTripSummaryReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionTripSummary"></action>
+		<action name="AjaxEastDivisionCrewSummaryReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionCrewSummary"></action>
+		<action name="AjaxEastDivisionSummaryDataReport"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionSummary"></action>
+		<action name="AjaxEastDivisionSummary1Report"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionSummary1"></action>
+		<action name="AjaxEastDivisionSummary2Report"	class="com.trimax.its.report.action.EastDivisionReport" method="getEastDivisionSummary2"></action>
+		
+		<action name="getWestDivisionReport"	class="com.trimax.its.report.action.WestDivisionReport" >
+		<result name="success" type="tiles">WestDivisionReport</result>
+		</action>
+				<action name="AjaxWestDivisionReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionForm_vData"></action>
+				<action name="AjaxWestDivisionKilometersReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionKilometerData"></action>
+		<action name="AjaxWestDivisionTripReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionTripData"></action>
+		<action name="AjaxWestDivisionFormDataReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionMonthData"></action>
+		<action name="AjaxWestDivisionFormSummaryReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionSummaryData"></action>
+		<action name="AjaxWestDivisionKilomiterSummaryReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionKilometerSummary"></action>
+		<action name="AjaxWestDivisionTripSummaryReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionTripSummary"></action>
+		<action name="AjaxWestDivisionCrewSummaryReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionCrewSummary"></action>
+		<action name="AjaxWestDivisionSummaryDataReport"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionSummary"></action>
+		<action name="AjaxWestDivisionSummary1Report"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionSummary1"></action>
+		<action name="AjaxWestDivisionSummary2Report"	class="com.trimax.its.report.action.WestDivisionReport" method="getWestDivisionSummary2"></action>
+		
+		<action name="getVolvoDivisionReport"	class="com.trimax.its.report.action.VolvoDivisionReport" >
+		<result name="success" type="tiles">VolvoDivisionReport</result>
+		</action>
+				<action name="AjaxVolvoDivisionReport"	class="com.trimax.its.report.action.VolvoDivisionReport" method="getVolvoDivisionForm_vData"></action>
+				<action name="AjaxVolvoDivisionMonthReport"	class="com.trimax.its.report.action.VolvoDivisionReport" method="getVolvoDivisionForm_vData1"></action>
+				<action name="AjaxVolvoDivisionKilometersReport"	class="com.trimax.its.report.action.VolvoDivisionReport" method="getVolvoDivisionKilometerData"></action>
+		<action name="AjaxVolvoDivisionTripReport"	class="com.trimax.its.report.action.VolvoDivisionReport" method="getVolvoDivisionTripData"></action>
+		<action name="AjaxVolvoDivisionFormDataReport"	class="com.trimax.its.report.action.VolvoDivisionReport" method="getVolvoDivisionMonthData"></action>
+		
+		<action name="getForm_VReport"	class="com.trimax.its.report.action.Form_V_Report" >
+		<result name="success" type="tiles">Form_V_Report</result>
+		</action>
+				<action name="AjaxFormVDivisionReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionForm_vData"></action>
+				<action name="AjaxFormVDivisionKilometersReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionKilometerData"></action>
+		<action name="AjaxFormVDivisionTripReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionTripData"></action>
+		<action name="AjaxFormVDivisionFormDataReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionMonthData"></action>
+		<action name="AjaxFormVDivisionFormSummaryReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionSummaryData"></action>
+		<action name="AjaxFormVDivisionKilomiterSummaryReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionKilometerSummary"></action>
+		<action name="AjaxFormVDivisionTripSummaryReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionTripSummary"></action>
+		<action name="AjaxFormVDivisionCrewSummaryReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionCrewSummary"></action>
+		<action name="AjaxFormVDivisionSummaryDataReport"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionSummary"></action>
+		<action name="AjaxFormVDivisionSummary1Report"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionSummary1"></action>
+		<action name="AjaxFormVDivisionSummary2Report"	class="com.trimax.its.report.action.Form_V_Report" method="getForm_VDivisionSummary2"></action>
+		
+		
+<!-- 		Early duty start from halting location report -->
+		 <action name="EarlyDutyStartFromHalting" class="com.trimax.its.report.action.EarlyDutyStartFromHaltingAction" >
+          <result name="success" type="tiles">EarlyDutyStartFromHalting</result>
+	      </action>
+	      <action name="AjaxEarlyDutyStartFromHalt" class="com.trimax.its.report.action.EarlyDutyStartFromHaltingAction" method="getEarlyDutyStartFromHalting">
+	     </action>
+		
+		<action name="LateDutyStartFromHalting" class="com.trimax.its.report.action.LateDutyStartFromHaltAction" >
+          <result name="success" type="tiles">LateDutyStartFromHalting</result>
+	      </action>
+	      <action name="AjaxLateDutyStartFromHalting" class="com.trimax.its.report.action.LateDutyStartFromHaltAction" method="getLateDutyStartFromHalting">
+	     </action>
+	     
+	      <action name="EarlyDutyEndFromHalting" class="com.trimax.its.report.action.EarlyDutyEndFromHaltLocAction" >
+          <result name="success" type="tiles">EarlyDutyEndFromHalting</result>
+	      </action>
+	      <action name="AjaxEarlyDutyEndData" class="com.trimax.its.report.action.EarlyDutyEndFromHaltLocAction" method="getEarlyDutyEndFromHaltingLoc">
+	     </action>
+		
+		
+
+		<action name="DepotwiseScheduleSummary" class="com.trimax.its.report.action.DepotWiseScheduleSummaryReport" >
+          <result name="success" type="tiles">DepotwiseScheduleSummary</result>
+	      </action>
+	      <action name="AjaxDepotwiseScheduleSummary" class="com.trimax.its.report.action.DepotWiseScheduleSummaryReport" method="getDepotwiseScheduleSummary">
+	     </action>
+		
+		<action name="scheduleweekdaywiserevenuereport"	class="com.trimax.its.report.action.ScheduleWeekDayWiseRevenueReport">
+			<result name="success" type="tiles">ScheduleWeekDayWiseRevenueReport</result>
+		</action>
+		
+		<action name="AjaxScheduleweekdaywiserevenue"	class="com.trimax.its.report.action.ScheduleWeekDayWiseRevenueReport" method="getScheduleweekdaywiserevenue">
+		</action>
+		<action name="tripwiseweekdayrevenuereport"	class="com.trimax.its.report.action.TripWiseWeekDayRevenueReport">
+			<result name="success" type="tiles">TripWiseWeekDayRevenueReport</result>
+		</action>
+		
+		<action name="AjaxTripWiseWeekDayRevenue"	class="com.trimax.its.report.action.TripWiseWeekDayRevenueReport" method="getTripWiseWeekDayRevenue">
+		</action>
+		<action name="getScheduleFromDepotforTripWise"	class="com.trimax.its.report.action.TripWiseWeekDayRevenueReport" method="getScheduleNo">
+		</action>
+		<action name="getShifttypeFromDepot"	class="com.trimax.its.report.action.TripWiseWeekDayRevenueReport" method="getShiftType">
+		</action>
+		<action name="getScheduleTypeFromDepotforTripWise"	class="com.trimax.its.report.action.TripWiseWeekDayRevenueReport" method="getScheduleType">
+		</action>
+		
+		<action name="peaknonpeakhourrunningreportforits"	class="com.trimax.its.report.action.PeakNonPeakHourRunningReport">
+			<result name="success" type="tiles">PeakNonPeakHourRunningReportForIts</result>
+		</action>
+		
+		<action name="AjaxPeakNonPeakHourRunning"	class="com.trimax.its.report.action.PeakNonPeakHourRunningReport" method="getPeakNonPeakHourRunningReport">
+		</action>
+		
+		<action name="scheduleweekdaywiserevenuereportforridership"	class="com.trimax.its.report.action.ScheduleWeekDayWiseRevenueReportRiderShip">
+			<result name="success" type="tiles">ScheduleWeekDayWiseRevenueReportRiderShip</result>
+		</action>
+		
+		<action name="AjaxScheduleweekdaywiserevenueridership"	class="com.trimax.its.report.action.ScheduleWeekDayWiseRevenueReportRiderShip" method="getScheduleweekdaywiserevenueridership">
+		</action>
+		
+		<action name="tripwiseweekdayrevenueridership"	class="com.trimax.its.report.action.TripWiseWeekDayRiderShipReport">
+			<result name="success" type="tiles">TripWiseWeekDayRidershipReport</result>
+		</action>
+		
+		<action name="AjaxTripWiseWeekDayRidership"	class="com.trimax.its.report.action.TripWiseWeekDayRiderShipReport" method="getTripWiseWeekDayRiderShip">
+		</action>
+		<action name="getScheduleWiseEPKMReport"	class="com.trimax.its.report.action.ScheduleWiseEPKMReport">
+			<result name="success" type="tiles">ScheduleWiseEPKMReport</result>
+		</action>
+		<action name="AjaxScheduleWiseEPKMReport"	class="com.trimax.its.report.action.ScheduleWiseEPKMReport" method="getScheduleWiseReport">
+		</action>
+		<action name="getSchedule"	class="com.trimax.its.report.action.ScheduleWiseEPKMReport" method="getScheduledata">
+		</action>
+		
+
+		<action name="getConductorWiseEPKMReport"	class="com.trimax.its.report.action.ConductorWiseEPKMReport">
+			<result name="success" type="tiles">ConductorWiseEPKMReport</result>
+		</action>
+		<action name="AjaxConductorWiseEPKMReport"	class="com.trimax.its.report.action.ConductorWiseEPKMReport" method="getConductorWiseData">
+		</action>
+		<action name="getConductorToken"	class="com.trimax.its.report.action.ConductorWiseEPKMReport" method="getConductordata">
+		</action>
+
+		<action name="tripwiseweekdaycummulativerevenue"	class="com.trimax.its.report.action.TripWiseWeekDayCummulativeReport">
+			<result name="success" type="tiles">TripWiseWeekDayCummulativeReport</result>
+		</action>
+		
+		<action name="AjaxTripWiseWeekDayCummulative"	class="com.trimax.its.report.action.TripWiseWeekDayCummulativeReport" method="getTripWiseWeekDayCummulative">
+		</action>
+		<action name="AlertTripwiserevenuecummulative"	class="com.trimax.its.report.action.TripWiseWeekDayCummulativeReport" method="getAlertTripwiserevenuecummulative">
+		</action>
+		<action name="getShiftWiseEPKMReport"	class="com.trimax.its.report.action.ShiftWiseEPKMReport">
+			<result name="success" type="tiles">ShiftWiseEPKMReport</result>
+		</action>
+		<action name="AjaxShiftWiseEPKMReport"	class="com.trimax.its.report.action.ShiftWiseEPKMReport" method="getShiftWiseData">
+		</action>
+		<action name="getScheduleTypes"	class="com.trimax.its.report.action.ShiftWiseEPKMReport" method="getScheduleTypeData">
+		</action>
+		
+
+			<action name="TripWiseRunningTime" class="com.trimax.its.report.action.TripWiseRunningTimeReportAction" >
+		
+		<result name="success" type="tiles">TripWiseRunningTime</result>
+		</action>
+			<action name="getTripWiseRunningTimeData" 
+		class="com.trimax.its.report.action.TripWiseRunningTimeReportAction" method="getTripRunningData">
+		</action>
+			<action name="getScheduleDetailsForReport" 
+		class="com.trimax.its.report.action.TripWiseRunningTimeReportAction" method="getScheduleDetails">
+		</action>
+			<action name="getScheduleListForTrip" 
+		class="com.trimax.its.report.action.TripWiseRunningTimeReportAction" method="getScheduleListData">
+		</action>
+		
+		
+		<action name="getManualOperated"	class="com.trimax.its.report.action.ManualOperatedReportAction">
+			<result name="success" type="tiles">ManualOperated</result>
+		</action>
+		<action name="AjaxManualOperated"	class="com.trimax.its.report.action.ManualOperatedReportAction" method="getManualOperated">
+		</action>
+		<action name="getConductorWiseThreeCodeCount"	class="com.trimax.its.report.action.ConductorWiseThreeCodeCountAction">
+			<result name="success" type="tiles">ConductorWiseThreeCodeCount</result>
+		</action>
+		<action name="AjaxConductorWiseThreeCodeCount"	class="com.trimax.its.report.action.ConductorWiseThreeCodeCountAction" method="getConductorWiseThreeCodeCount">
+		</action>
+			<action name="conductorwisedetails" class="com.trimax.its.report.action.ConductorWiseThreeCodeCountAction" method="getViewConductorthrecodeDetails">
+			<result name="success" type="tiles">ViewConductorWiseThreeCodeCountDetails</result>
+		</action>
+		<action name="getajaxconductordetails" class="com.trimax.its.report.action.ConductorWiseThreeCodeCountAction" method="getajaxconductordetails">
+			</action>
+		
+		<action name="getSpecialPassTicketReport"	class="com.trimax.its.report.action.SpecialPassTicketReport">
+			<result name="success" type="tiles">SpecialPassTicketReport</result>
+		</action>
+		<action name="AjaxSpecialPassTicketReport"	class="com.trimax.its.report.action.SpecialPassTicketReport" method="getSpecialPassReport">
+		</action>
+       <action name="getScheduleWisePercentETM"	class="com.trimax.its.report.action.ScheduleWisePercentETMAction">
+			<result name="success" type="tiles">ScheduleWisePercentETM</result>
+		</action>
+		<action name="AjaxScheduleWisePercentETM"	class="com.trimax.its.report.action.ScheduleWisePercentETMAction" method="getScheduleWisePercentETM">
+		</action>
+		 <action name="getConductorWisePercentETM"	class="com.trimax.its.report.action.ConductorWisePercentETMAction">
+			<result name="success" type="tiles">ConductorWisePercentETM</result>
+		</action>
+		<action name="AjaxConductorWisePercentETM"	class="com.trimax.its.report.action.ConductorWisePercentETMAction" method="getConductorWisePercentETM">
+		</action>
+		
+					<action name="TripWiseOperationReport" 
+		class="com.trimax.its.report.action.TripWiseTripOperationReportAction" >
+		<result name="success" type="tiles">TripWiseOperationReport</result>
+		</action>
+			<action name="getTripWiseTripData" 
+		class="com.trimax.its.report.action.TripWiseTripOperationReportAction" method="getTripOperationData">
+		</action>
+			<action name="getScheduleListForTrip" 
+		class="com.trimax.its.report.action.TripWiseTripOperationReportAction" method="getScheduleListData">
+		</action>
+		
+		
+
+         <action name="tripwiseabstractreport"	class="com.trimax.its.report.action.TripWiseAbstractReport">
+			<result name="success" type="tiles">TripWiseAbstractReport</result>
+		</action>
+		
+		<action name="AjaxTripWiseAbstractReport"	class="com.trimax.its.report.action.TripWiseAbstractReport" method="getTripWiseAbstractReport">
+		</action>
+		    <action name="tripwisecancelleddetailedreport"	class="com.trimax.its.report.action.TripWiseCancelledDetailedReport">
+			<result name="success" type="tiles">TripWiseCancelledDetailedReport</result>
+		</action>
+		
+		<action name="AjaxTripWiseCancelledDetailedReport"	class="com.trimax.its.report.action.TripWiseCancelledDetailedReport" method="getTripWiseCancelledDetailedReport">
+		</action>
+		<action name="getScheduleFromDepotForTrip"	class="com.trimax.its.report.action.TripWiseCancelledDetailedReport" method="getScheduleNo">
+		</action>
+		   <action name="daywisecancellationreport"	class="com.trimax.its.report.action.DayWiseCancellationReport">
+			<result name="success" type="tiles">DayWiseCancellationReport</result>
+		</action>
+		
+		<action name="AjaxDayWiseCancellationReport"	class="com.trimax.its.report.action.DayWiseCancellationReport" method="getDayWiseCancellationReport">
+		</action>
+		 <action name="schedulewiseaveragerevenuereport"	class="com.trimax.its.report.action.ScheduleWiseAverageRevenueReport">
+			<result name="success" type="tiles">ScheduleWiseAverageRevenueReport</result>
+		</action>
+		
+		<action name="AjaxScheduleWiseAverageRevenueReport"	class="com.trimax.its.report.action.ScheduleWiseAverageRevenueReport" method="getScheduleWiseAverageRevenueReport">
+		</action>
+		
+		 <action name="routewiseschedulerevenuereport"	class="com.trimax.its.report.action.RouteWiseScheduleRevenueReport">
+			<result name="success" type="tiles">RouteWiseScheduleRevenueReport</result>
+		</action>
+		
+		<action name="AjaxRouteWiseScheduleRevenueReport"	class="com.trimax.its.report.action.RouteWiseScheduleRevenueReport" method="getRouteWiseScheduleRevenueReport">
+		</action>
+		<action name="getScheduleNoBasedOnDivision"	class="com.trimax.its.report.action.RouteWiseScheduleRevenueReport" method="getDepotWiseScheduleListReport"></action>
+		
+		<action name="ETMEODReport"	class="com.trimax.its.report.action.ETMEODReport">
+			<result name="success" type="tiles">ETMEODReport</result>
+		</action>
+		<action name="AjaxETMEODReport"	class="com.trimax.its.report.action.ETMEODReport" method="getETMEODReport">
+		</action>
+		 <action name="getDepotForMIS" class="com.trimax.its.report.action.TripWiseWeekDayRevenueReport"
+			method="getPerticularDepotForDepot">
+		</action>
+		<action name="smartCardPassReport" class="com.trimax.its.smartcard.action.smartCardPass">
+		<result name="success" type="tiles">smartCardPassReport</result>
+		</action>
+		<action name="AjaxsmartCardPassreport" class="com.trimax.its.smartcard.action.smartCardPass" method="getsmartCardPassReport">
+		</action>
+		<action name="smartCardTopUpReport" class="com.trimax.its.smartcard.action.smartCardTopUp">
+		<result name="success" type="tiles">smartCardTopUpReport</result>
+		</action>
+		<action name="AjaxsmartCardTopUpreport" class="com.trimax.its.smartcard.action.smartCardTopUp" method="getsmartCardTopUpReport">
+		</action>
+		<action name="absentismReport" class="com.trimax.its.report.action.AbsenteeismReport">
+		<result name="success" type="tiles">AbsenteeismReport</result>
+		</action>
+		<action name="AjaxAbsenteeismReport" class="com.trimax.its.report.action.AbsenteeismReport" method="getAbsenteeismReport">
+		</action>
+		<action name="monthlyTicketReceiptstmt" class="com.trimax.its.report.action.MonthlyTicketReceiptStmt">
+		<result name="success" type="tiles">MonthlyTicketReceiptStmt</result>
+		</action>
+		<action name="AjaxmonthlyTicketReceiptstmt" class="com.trimax.its.report.action.MonthlyTicketReceiptStmt" method="getMonthlyTicketReceiptstmtc">
+		</action>
+		<action name="scheduleWiseEarning" class="com.trimax.its.report.action.ScheduleWiseEarningAction">
+		<result name="success" type="tiles">ScheduleWiseEarning</result>
+		</action>
+		<action name="AjaxScheduleWiseEarning" class="com.trimax.its.report.action.ScheduleWiseEarningAction" method="getScheduleWiseEarning">
+		</action>
+		<action name="conductorWiseEarning" class="com.trimax.its.report.action.ConductorWiseEarningAction">
+		<result name="success" type="tiles">ConductorWiseEarning</result>
+		</action>
+		<action name="AjaxConductorWiseEarning" class="com.trimax.its.report.action.ConductorWiseEarningAction" method="getConductorWiseEarning">
+		</action>
+	    <action name="getScheduleForScheduleEarning"	class="com.trimax.its.report.action.ScheduleWiseEarningAction" method="getScheduledataEarning">
+		</action>
+		<action name="getTokenNo"	class="com.trimax.its.report.action.ConductorWiseEarningAction" method="getTokenNoForConductor">
+		</action>
+		
+		<action name="getRouteWisePassengerCount"	class="com.trimax.its.report.action.RouteWisePassengerCountReport">
+			<result name="success" type="tiles">RouteWisePassengerCountReport</result>
+		</action>
+		
+		<action name="AjaxRouteWisePassengerCountReport"	class="com.trimax.its.report.action.RouteWisePassengerCountReport" method="RouteWisePassengerCount">
+		</action>
+		<action name="getsmartcardexceptionReport"	class="com.trimax.its.report.action.SmartCardExceptionReport">
+			<result name="success" type="tiles">SmartCardException</result>
+		</action>
+		<action name="AjaxSmartCardExceptionReport"	class="com.trimax.its.report.action.SmartCardExceptionReport" method="getsmartcardexception">
+			
+		</action>
+		<action name="AxisSettlementExceptionReport"	class="com.trimax.its.report.action.AxiesSettlementReport">
+			<result name="success" type="tiles">AxiesSettlementReport</result>
+		</action>
+		<action name="AjaxAxiesSettlementReport"	class="com.trimax.its.report.action.AxiesSettlementReport" method="getAxisSettlementReport">
+		</action>
+		<action name="getFormFourDetailsReport"	class="com.trimax.its.report.action.FormFourDetailsReport">
+			<result name="success" type="tiles">FormFourDetailsReport</result>
+		</action>
+		<action name="AjaxFormFourDetailsReport"	class="com.trimax.its.report.action.FormFourDetailsReport" method="getfoumfourdetails">
+		</action>
+			<action name="getDepotwiseSummeryofCardandCashTrasationReport"	class="com.trimax.its.report.action.DepotwiseSummeryofCardandCashTrasationReport">
+			<result name="success" type="tiles">DepotwiseSummeryofCardandCashTrasationReport</result>
+		</action>
+		<action name="AjaxDepotwiseSummeryofCardandCashTrasationReport"	class="com.trimax.its.report.action.DepotwiseSummeryofCardandCashTrasationReport" method="getcardandcashtrasation">
+		</action>
+
+		<action name="actiontotakenbasedonitsreports"	class="com.trimax.its.report.action.ActiontoTakenBasedonITSReports">
+		
+			<result name="success" type="tiles">ActiontoTakenBasedonITSReports</result>
+		</action>
+		<action name="Ajaxgetdepot"	class="com.trimax.its.report.action.ActiontoTakenBasedonITSReports" method="getPerticularDepot">
+	    </action>
+		<action name="Ajaxgetemplyeename"	class="com.trimax.its.report.action.ActiontoTakenBasedonITSReports" method="getemplyeename">
+	    </action>
+	    <action name="Ajaxgettokenno"	class="com.trimax.its.report.action.ActiontoTakenBasedonITSReports" method="gettokenno">
+	    </action>
+      <action name="Ajaxsaveactiontakenits"	class="com.trimax.its.report.action.ActiontoTakenBasedonITSReports" method="saveaction">
+               <result name="success" type="redirectAction">actiontotakenbasedonitsreports</result> 
+	    </action>
+		<action name="getDenominationWiseHourlyCountReport"	class="com.trimax.its.report.action.DenominationWiseHourlyCountReport">
+			<result name="success" type="tiles">DenominationWiseDetailsReport</result>
+		</action>
+		<action name="AjaxDenominationWiseHourlyCountReport"	class="com.trimax.its.report.action.DenominationWiseHourlyCountReport" method="getDenominationWiseHourlyCount">
+		</action>
+		
+			<action name="getActionTakenReport"	class="com.trimax.its.report.action.ActionTakenReport">
+			<result name="success" type="tiles">actiontakenreport</result>
+		</action>
+		<action name="AjaxActionTakenReport"	class="com.trimax.its.report.action.ActionTakenReport" method="getreportdepotwise">
+		</action>
+          <action name="tripwisepassengercount"	class="com.trimax.its.report.action.TripWisePassengerCount">
+			<result name="success" type="tiles">TripWisePassengerCount</result>
+		</action>
+		<action name="Ajaxgetdepot"	class="com.trimax.its.report.action.TripWisePassengerCount" method="getDepot">
+		</action>
+		<action name="Ajaxgetshift"	class="com.trimax.its.report.action.TripWisePassengerCount" method="getShiftType">
+		</action>
+		<action name="AjaxgetSchedule"	class="com.trimax.its.report.action.TripWisePassengerCount" method="getScheduleNo">
+		</action>
+			<action name="AjaxTripWisePassengerCount"	class="com.trimax.its.report.action.TripWisePassengerCount" method="getTripWisePassengerCount">
+		</action>
+		<action name="AlertTripwiserepassenger"	class="com.trimax.its.report.action.TripWisePassengerCount" method="getAlertTripwiserepasenger">
+		</action>
+		 <action name="Queryformissinglatedeparture"	class="com.trimax.its.report.action.QueryForMissingLateDeparture">
+			<result name="success" type="tiles">QueryForMissingLateDeparture</result>
+		</action>
+		<action name="AjaxgetDepotfrommissinglatedeparture"	class="com.trimax.its.report.action.QueryForMissingLateDeparture" method="getDepot">
+		</action>
+		<action name="savemissinglatedeparture"  class="com.trimax.its.report.action.QueryForMissingLateDeparture" method="savemissinglate">
+		 <result name="success" type="redirectAction">Queryformissinglatedeparture</result> 
+		</action>
+		<action name="missingearlyarrival"	class="com.trimax.its.report.action.MissingEarlyArrival">
+			<result name="success" type="tiles">MissingEarlyArrival</result>
+		</action>
+		<action name="AjaxgetDepotfrommissingearlyarrival"	class="com.trimax.its.report.action.MissingEarlyArrival" method="getDepot">
+		</action>
+		<action name="savemissingearlyarrival" class="com.trimax.its.report.action.MissingEarlyArrival" method="savemissingearly">
+		<result name="success" type="redirectAction">missingearlyarrival</result> 
+		</action>
+<!--  average runnig time formate report -->
+		<action name="AverageRunningTimeFormat"	class="com.trimax.its.report.action.AverageRunningTimeFormat">
+			<result name="success" type="tiles">averagerunningtimeformate</result>
+		</action>
+		<action name="BusStopFixedSourceRoute"	class="com.trimax.its.report.action.AverageRunningTimeFormat" method="getBusStopFixedSource">
+		</action>
+		<action name="BusStopFixedDestRoute"	class="com.trimax.its.report.action.AverageRunningTimeFormat" method="getBusStopFixedDest">
+		</action>
+		<action name="getroutedata"	class="com.trimax.its.report.action.AverageRunningTimeFormat" method="getRouteListData">
+		</action>
+		<action name="showaveragerunnigtimeformate"	class="com.trimax.its.report.action.AverageRunningTimeFormat" method="getaveragerunnigtimedata">
+		</action>
+		<action name="getAveragerunnigHeaderData"	class="com.trimax.its.report.action.AverageRunningTimeFormat" method="header">
+		</action>
+			<action name="getforallDeviceData" class="com.trimax.its.device.action.ShowDeviceDashboardAction"
+			method="getAllDeviceDetails">
+		</action>
+        <action name="ReasonForNrdReport"	class="com.trimax.its.report.action.ReasonForNRD">
+			<result name="success" type="tiles">REASONFORNRDREPORT</result>
+		</action>
+		<action name="AjexnrdgetDepot"	class="com.trimax.its.report.action.ReasonForNRD" method="getDepot">
+		</action>
+			<action name="AjaxGetNrdSubReason"	class="com.trimax.its.report.action.ReasonForNRD" method="getNrdSubReason">
+		</action>
+		
+		<action name="getvehiclefornrd"	class="com.trimax.its.report.action.ReasonForNRD" method="getVehicle">
+		</action>
+		<action name="getdatafornrdsave"	class="com.trimax.its.report.action.ReasonForNRD" method="getdataforshow">
+		<!-- <result name="success" type="redirectAction">ReasonForNrdReport</result> --> 
+		</action>
+		<action name="savereasonnrd"	class="com.trimax.its.report.action.ReasonForNRD" method="savenrd">
+		</action>
+		<action name="getAxiesSettlementReport" class="com.trimax.its.report.action.AxisSettlementException">
+		<result name="success" type="tiles">AxisSettlementException</result> 
+		</action>
+		<action name="AjexAxisSettlementExceptionReport"	class="com.trimax.its.report.action.AxisSettlementException" method="getAxisSettlementReport">
+		</action>
+		<action name="Alertdepotwiseaxissettlementreport"	class="com.trimax.its.report.action.AxisSettlementException" method="getdepotwisedata">
+		</action>
+		 <action name="NRDReasonReport"	class="com.trimax.its.report.action.NRDReasonReport">
+			<result name="success" type="tiles">NRDREASONREPORT</result>
+		</action>
+		<action name="getDepotfornrdreason"	class="com.trimax.its.report.action.NRDReasonReport" method="getDepot">
+		</action>
+		<action name="getnrdreason"	class="com.trimax.its.report.action.NRDReasonReport" method="getnrdreason">
+		</action>
+		<action name="savereasoninreasonnrd"	class="com.trimax.its.report.action.NRDReasonReport" method="savenrd">
+		</action>
+		
+		
+		<action name="AjaxcrewpositionReport"	class="com.trimax.its.report.action.CrewPositionReport" method="getCrewPositionData"></action>
+		<action name="getdriveconddetails"	class="com.trimax.its.report.action.CrewPositionReport" method="getdriveconddetails">
+		<result name="success" type="tiles">getDriverConductordetails</result>
+		</action>
+		<action name="getDriverConductordetails1"
+			class="com.trimax.its.report.action.CrewPositionReport" method="getDriverConductordetails1">
+		</action>
+		
+		<action name="gettotaldriveconddetails"	class="com.trimax.its.report.action.CrewPositionReport" method="gettotaldriveconddetails">
+		<result name="success" type="tiles">getTotalDriverConductordetails</result>
+		</action>
+		<action name="getTotalDriverConductordetails1"
+			class="com.trimax.its.report.action.CrewPositionReport" method="getTotalDriverConductordetails1">
+		</action>
+		
+		
+		<action name="getDepotForCrewPosition" class="com.trimax.its.report.action.CrewPositionReport"
+			method="getDepotForCrewPosition">
+		</action>
+		<action name="getDepotInOut"	class="com.trimax.its.report.action.DeoptInOut">
+			<result name="success" type="tiles">depotinout</result>
+		</action>
+		<action name="Ajaxdepotinout"	class="com.trimax.its.report.action.DeoptInOut" method="getdepotinout"></action>
+	<action name="EmployeeStatus"	class="com.trimax.its.report.action.EmployeeStatus">
+			<result name="success" type="tiles">EmployeeStatuschange</result>
+		</action>
+		<action name="ajaxemplgetdepot"	class="com.trimax.its.report.action.EmployeeStatus" method="getPerticularDepot"></action>
+		<action name="ajaxemptokenno"	class="com.trimax.its.report.action.EmployeeStatus" method="gettokenno"></action>
+		<action name="ajaxstatusempname"	class="com.trimax.its.report.action.EmployeeStatus" method="getemplyeename"></action>
+		<action name="ajaxempdesg"	class="com.trimax.its.report.action.EmployeeStatus" method="getempdesg"></action>
+		<action name="ajaxupdatestatusemp"	class="com.trimax.its.report.action.EmployeeStatus" method="updateempstatus">
+		<result name="success" type="redirectAction">EmployeeStatus</result> 
+		</action>
+
+	<action name="smspageforemployee" class="com.trimax.its.usermanagement.action.SMSPageAction">
+			<result name="Success" type="tiles">SMSPageEmployee</result>
+		</action>
+		<action name="SMSForDriver" class="com.trimax.its.usermanagement.action.SMSPageAction" method="SMSForDriver">
+		</action>
+		<action name="SMSForConductor" class="com.trimax.its.usermanagement.action.SMSPageAction" method="SMSForConductor">
+		</action>
+		<action name="SMSForConductorDriver" class="com.trimax.its.usermanagement.action.SMSPageAction" method="SMSForConductorDriver">
+		</action>
+		<action name="SendSMSForemployee" class="com.trimax.its.usermanagement.action.SMSPageAction" method="SendSms">
+		<result name="Success" type="tiles">SMSPageEmployee</result>
+		</action>
+  
+   <action name="smspageforAll" class="com.trimax.its.usermanagement.action.SmsSendToAllAction">
+			<result name="Success" type="tiles">SMSPageForAll</result>
+		</action>
+		<action name="getAllDepot" class="com.trimax.its.usermanagement.action.SmsSendToAllAction" method="getAllDepot">
+		</action>
+  <action name="SMSForAllType" class="com.trimax.its.usermanagement.action.SmsSendToAllAction" method="SMSForAllDesignation">
+		</action>
+  <action name="SendSMSForAllEmployee" class="com.trimax.its.usermanagement.action.SmsSendToAllAction" method="SendSmsForAllType">
+		<result name="Success" type="redirectAction">smspageforAll</result>
+		</action>
+		
+		<action name="ReconTicketSale"	class="com.trimax.its.report.action.ReconTicketSale">
+			<result name="success" type="tiles">ReconOfTicketSale</result>
+		</action>
+		<action name="ajaxgetrecon"	class="com.trimax.its.report.action.ReconTicketSale" method="getreconticketsale"></action>
+		
+		<action name="getEmployeeDesignation" class="com.trimax.its.usermanagement.action.SmsSendToAllAction" method="getDesignationType">
+		</action>
+		
+		<action name="dailyreconreport"	class="com.trimax.its.report.action.Acc66AxisSettlementReport">
+			<result name="success" type="tiles">AccAxis</result>
+		</action>
+		<action name="ajaxgetaccaxis"	class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getaccaxiscomp"></action>
+		<action name="ajaxgetaccaxissettlediffdate"	class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getsettlementdiffdate"></action>
+		<action name="ajaxgetdepotwiseaccaxisnotsameday" class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getdepotwisesettlediffdate"></action>
+		<action name="ajaxgetnotsettleaccamt" class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getnotsettleamnt"></action>
+		<action name="ajaxgetdepotwisenotsettlement" class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getdepotwisenotsettleamt"></action>
+
+        <action name="ajaxgetdepotwiseaccaxis"	class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getaccaxiscompdepotwise"></action>
+		<action name="ajaxgetdeponotsettamt"	class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getaccaxiscompdepotnotsettamt"></action>
+		 <action name="getacc66HeaderData"	class="com.trimax.its.report.action.Acc66AxisSettlementReport" method="getheader"></action>
+		<action name="AccAmoutsettleDiffDate"	class="com.trimax.its.report.action.AccAmoutsettleDiffDate">
+			<result name="success" type="tiles">AccAmountSettleDiff</result>
+		</action>
+		<action name="ajaxgetaccdiffsett"	class="com.trimax.its.report.action.AccAmoutsettleDiffDate" method="getaccnotsettdate"></action>
+        <action name="ajaxgetdepotwiseaccdiffsett"	class="com.trimax.its.report.action.AccAmoutsettleDiffDate" method="getdepotwiseaccnotsettdate"></action>
+		<action name="reconsummaryreport"	class="com.trimax.its.report.action.DailyAccAxisSettlementSummary">
+			<result name="success" type="tiles">dailyaccaxissummaryreport</result>
+		</action>
+		<action name="ajaxgetaccamoutpendingsettlement"	class="com.trimax.its.report.action.DailyAccAxisSettlementSummary" method="getpendingamount"></action>
+		<action name="ajaxgetdepotwiseaccaxisdata"	class="com.trimax.its.report.action.DailyAccAxisSettlementSummary" method="getdepotwise"></action>
+		<action name="ajaxreconheader"	class="com.trimax.its.report.action.DailyAccAxisSettlementSummary" method="getheader"></action>
+		<action name="ajaxgetaccamoutsummarynotamt"	class="com.trimax.its.report.action.DailyAccAxisSettlementSummary" method="depotwisenotsettleamt"></action>
+		
+		<action name="getDailyetmgprscount"	class="com.trimax.its.etm.action.DailyEtmGprsCountReport">
+			<result name="success" type="tiles">DailyEtmGprsCount</result>
+		</action>
+		<action name="AjaxgetEtmGprsCount"	class="com.trimax.its.etm.action.DailyEtmGprsCountReport" method="getDailyetmGprsCount"></action>
+		
+		<!-- 		Acc-66 in its by itishree -->
+		<action name="GetCollDataIts"
+			class="com.trimax.its.report.action.CollectionReportIts" >
+			<result name="success" type="tiles">CollectionReportIts</result>
+		</action>
+		<action name="getCollectionDetailsIts"	class="com.trimax.its.report.action.CollectionReportIts" method="CollectionDetailsActionIts">			
+		</action>
+		<!-- end by itishree -->
+		<action name="getDailyRevenueForAllDepot"	class="com.trimax.its.revenuesector.action.DailyRevenueForAllDepot">
+			<result name="success" type="tiles">DailyRevenueForAllDepot</result>
+		</action>
+		<action name="AjaxDailyRevenueForAllDepot"	class="com.trimax.its.revenuesector.action.DailyRevenueForAllDepot" method="getDailyRevenueForDepot"></action>
+		
+		<action name="getDepotWiseAndCauseWiseSummaryReport"	class="com.trimax.its.device.action.DepotWiseAndCauseWiseSummary">
+			<result name="success" type="tiles">DepotWiseAndCauseWiseSummary</result>
+		</action>
+		<action name="AjaxDepotWiseAndCauseWiseSummaryReport"	class="com.trimax.its.device.action.DepotWiseAndCauseWiseSummary" method="getDepotwiseAndCausewiseSummary"></action>
+	
+
+   	<action name="KMPLScheduleWiseNewReport" 
+		class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction" >
+		<result name="success" type="tiles">KMPLScheduleWiseNewReport</result>
+		</action>
+			<action name="getKMPLScheduleWiseNewReport" 
+		class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction" method="getKMPLScheduleWiseNewReportData">
+		</action>		
+			<action name="getScheduleList" 
+		class="com.trimax.its.report.action.OperatedScheduledKm" method="getScheduleListData">
+		</action>
+		
+		<action name="getScheduleDropdownList" 
+		class="com.trimax.its.report.action.OperatedScheduledKm" method="getScheduleDropdown">
+		</action>
+		
+		<!-- 		Depot Wise cummulative revenue by itishree -->
+		<action name="depotWiseCummulativeRev"
+			class="com.trimax.its.report.action.DepotWiseCummulativeRevenue" >
+			<result name="success" type="tiles">DepotWiseCummulativeRevenue</result>
+		</action>
+		<action name="getDepotWiseCummulativeRevenue"	class="com.trimax.its.report.action.DepotWiseCummulativeRevenue" method="depotWiseCummulativeRevenue">			
+		</action>
+		<!-- end by itishree -->
+		
+		   	<action name="KMPLVehicleWiseNewReport" 
+		class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction" >
+		<result name="success" type="tiles">KMPLVehicleWiseNewReport</result>
+		</action>
+			<action name="getKMPLVehicleWiseNewReport" 
+		class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction" method="getKMPLVehicleWiseNewData">
+		</action>		
+		
+		<action name="getDepotVehicles" class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction"
+			method="getPerticularVehicles">
+		</action>
+
+		
+			<action name="KMPLDriverWiseNewReport" 
+		class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction" >
+		<result name="success" type="tiles">KMPLDriverWiseNewReport</result>
+		</action>
+			<action name="getKMPLDriverWiseNewReport" 
+		class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction" method="getKMPLDriverWiseNewData">
+		</action>	
+		
+		<action name="vehWiseKMPLData" class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction"
+			method="getKMPLVehWiseDetails">
+			<result name="success" type="tiles">vehWiseKMPLData</result>
+		</action>	
+			<action name="scheduleWiseKMPLData" class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction"
+			method="getKMPLScheduleWiseDetails">
+			<result name="success" type="tiles">scheduleWiseKMPLData</result>
+		</action>
+		
+		<action name="getDepotDriver" class="com.trimax.its.report.action.NewKMPLVehicleWiseReportAction"
+			method="getDepotDriverList">
+		</action>
+	
+		<action name="axissettlementdetailreport"	class="com.trimax.its.report.action.AxisSettlementDetailReport">
+			<result name="success" type="tiles">AxisSettlementDetail</result>
+		</action>
+			<action name="getaxissettlementdetailreport"	class="com.trimax.its.report.action.AxisSettlementDetailReport" method="getAxisSettlementReport">
+		</action>
+<action name="servicewiseroute"	class="com.trimax.its.report.action.ServiceWiseRouteList">
+			<result name="success" type="tiles">ServiceWiseRouteListDetails</result>
+		</action>
+			<action name="ajaxgetserviceroutelist"	class="com.trimax.its.report.action.ServiceWiseRouteList" method="getdata">
+		</action>
+		<action name="formfivereport"	class="com.trimax.its.report.action.formfive">
+			<result name="success" type="tiles">FormFiveReportJsp</result>
+		</action>
+		<action name="ajaxgetformfivedata"	class="com.trimax.its.report.action.formfive" method="getdata">
+		</action>
+		<action name="classcificationofklms"	class="com.trimax.its.report.action.ClsOfKlms">
+			<result name="success" type="tiles">classificationklms</result>
+		</action>
+		<action name="ajaxgetclsklmsdata"	class="com.trimax.its.report.action.ClsOfKlms" method="getdata">
+		</action>
+		<action name="classcificationoftrips"	class="com.trimax.its.report.action.ClsOfTrips">
+			<result name="success" type="tiles">classificationtrips</result>
+		</action>
+		<action name="ajaxgetclstripdata"	class="com.trimax.its.report.action.ClsOfTrips" method="getdata">
+		</action>
+		<action name="birtdepotwiserevenue"	class="com.trimax.its.report.action.BirtDepotWiseRev" method="getrevreport">
+			<result name="birt">/Reports/birtdepotrev.jsp</result>
+			
+		</action>
+		<action name="birtschedule"	class="com.trimax.its.report.action.BirtSchedule" method="getscheduledata">
+			<result name="birt">/Reports/birtschedule.jsp</result>
+			</action>
+			<action name="birtdivrev"	class="com.trimax.its.report.action.BirtDivRev" method="getrevdata">
+			<result name="birt">/Reports/birtdivrev.jsp</result>
+			</action>
+			
+			<action name="birtdayrev"	class="com.trimax.its.report.action.BirtDayWiseRev" method="getrevdata">
+			<result name="birt">/Reports/birtdayrev.jsp</result>
+			</action>
+			<action name="birtlatedeparture"	class="com.trimax.its.report.action.BirtLateDeparture" method="getrevdata">
+			<result name="birt">/Reports/birtlatedepar.jsp</result>
+			</action>
+						<action name="birtearlyarrival"	class="com.trimax.its.report.action.BirtEarlyArrival" method="getrevdata">
+			<result name="birt">/Reports/birtearlyarrival.jsp</result>
+			</action>
+								<action name="birtrevenuetarget"	class="com.trimax.its.report.action.BirtRevenueTarget" method="getrevreport">
+			<result name="birt">/Reports/birtrevenuetarget.jsp</result>
+			</action>
+			<action name="birtdaywiserevmonths"	class="com.trimax.its.report.action.BirtDayWiseRevMonths" method="getrevdata">
+			<result name="birt">/Reports/birtdaywiserevmonths.jsp</result>
+			</action>
+		<action name="birtcomptwomonths"	class="com.trimax.its.report.action.BirtCompTwoMonths" method="getrevdata">
+			<result name="birt">/Reports/birtcomptwomonths.jsp</result>
+			</action>
+	
+			
+<!-- 			gopinath code  -->
+
+	<action name="ETMhourlycountreport"	class="com.trimax.its.report.action.ETMhourlycountreport">
+			<result name="success" type="tiles">ETMhourlycountreport</result>
+		</action>
+		<action name="AjaxETMhourlycountreport"	class="com.trimax.its.report.action.ETMhourlycountreport" method="getETMhourlycountreport">
+		</action>
+		<action name="getDeviceList"	class="com.trimax.its.report.action.ETMhourlycountreport" method="getDeviceForDepot">
+		</action>
+
+	<!-- 			gopinath code  ends -->
+			
+			
+			<!--      Customer feedback and complaint -->
+       <action name="getCustomerFeedBack" class="com.trimax.its.customer.action.CustomerFeedBack">
+			<result name="success" type="tiles">CustomerFeedBackView</result>
+		</action>
+		<action name="AjaxFeedBack" class="com.trimax.its.customer.action.CustomerFeedBack" method="getFeedBackview"> 
+ 		</action>
+ 		
+ 		
+ 		 <action name="getCustomerComplaint" class="com.trimax.its.customer.action.CustomerComplaint">
+			<result name="success" type="tiles">CustomerComplaintView</result>
+		</action>
+		<action name="AjaxCustomerComplaint" class="com.trimax.its.customer.action.CustomerComplaint" method="getCustomerComplaintview"> 
+ 		</action>
+ 		
+ 		 <action name="getCustomerSummary" class="com.trimax.its.customer.action.CustomerSummaryAction">
+			<result name="success" type="tiles">CustomerSummaryView</result>
+		</action>
+		<action name="AjaxCustomerSummary" class="com.trimax.its.customer.action.CustomerSummaryAction" method="getCustomerSummaryview"> 
+ 		</action>
+ 		
+<!--       end of Customer feedback and complaint -->			
+			
+			<action name="birtcustfeedback"	class="com.trimax.its.report.action.BirtCustFeedback" method="getrevdata">
+			<result name="birt">/Reports/birtcustfeedback.jsp</result>
+			</action>
+			<action name="birtcustresponse"	class="com.trimax.its.report.action.BirtCustResponse" method="getrevdata">
+			<result name="birt">/Reports/birtCustResponse.jsp</result>
+			</action>
+			<action name="birtcustrating"	class="com.trimax.its.report.action.BirtCustRating" method="getrevdata">
+			<result name="birt">/Reports/birtCustRating.jsp</result>
+			</action>
+			
+			<action name="birtcompyearly"	class="com.trimax.its.report.action.BirtCompYearly" method="getrevdata">
+			<result name="birt">/Reports/birtcompyearly.jsp</result>
+			</action>
+			<action name="lmsdata"	class="com.trimax.its.report.action.lmsdata">
+			<result name="success" type="tiles">LmsData</result>
+			</action>
+			<action name="Ajaxlmsdata" class="com.trimax.its.report.action.lmsdata" method="getdata"> 
+ 		</action>
+ 		<action name="getlmsHeaderData" class="com.trimax.its.report.action.lmsdata" method="header"> 
+ 		</action>
+
+ 		<action name="crewandvehicleutill"	class="com.trimax.its.report.action.CrewAndVehicleUtill">
+			<result name="success" type="tiles">crewvehicleutill</result>
+		</action>
+		<action name="ajaxgetvandcutil" class="com.trimax.its.report.action.CrewAndVehicleUtill" method="getdata"> 
+ 		</action>
+
+ 		<action name="manualscheduleoperatereport"	class="com.trimax.its.report.action.ManualScheduleOperatedAction">
+			<result name="success" type="tiles">ManualScheduleOperated</result>
+		</action>
+		
+		<action name="Ajaxmanuallyoperateschedule"	class="com.trimax.its.report.action.ManualScheduleOperatedAction" method="getManuallyOperateSchedule">
+		</action>
+		<action name="CummulativeDepotRevenue"
+        class="com.trimax.its.report.action.DepotWiseRevenueCummulative" >
+       	<result name="success" type="tiles">CummulativeDepotWiseRevenue</result>
+        </action> 
+        <action name="AjaxCummulativeDepotRevenue"
+        class="com.trimax.its.report.action.DepotWiseRevenueCummulative" method="depotCummulativeDepotRevenueReport">
+       	</action>  
+        <action name="daillyactiveetmdata"
+        class="com.trimax.its.report.action.DaillyActiveEtmData" >
+       	<result name="success" type="tiles">etmactivedata</result>
+        </action> 
+         <action name="ajaxgetactiveetmdata"
+        class="com.trimax.its.report.action.DaillyActiveEtmData" method="getdata">
+       	</action> 
+         <action name="vehiclemappingstatus"
+        class="com.trimax.its.report.action.VehicleMappingStatus" >
+       	<result name="success" type="tiles">vehiclemappingstatus</result>
+        </action>
+        <action name="ajaxgetvehmappdata"
+        class="com.trimax.its.report.action.VehicleMappingStatus" method="getdata">
+       	</action>
+       	 <action name="ajaxgetvehmappdepotdata"
+        class="com.trimax.its.report.action.VehicleMappingStatus" method="getdepotdata">
+       	</action>
+       	
+       	<action name="Etmwisedenomination"
+			class="com.trimax.its.report.action.EtmWiseDenomination" >
+ 			<result name="success" type="tiles">EtmWiseDenomination</result>
+		</action>
+
+		<action name="AjaxEtmWiseDenomination"	class="com.trimax.its.report.action.EtmWiseDenomination" 
+				method="getEtmWiseDenomination">
+		</action>
+		<action name="getETMNoForETMWise"	class="com.trimax.its.report.action.EtmWiseDenomination" 
+				method="getETMNoForETMWise">
+		</action>
+		
+<!-- 		Employee Duty Rota created by Itishree -->
+		<action name="employeeDutyType"
+	class="com.trimax.its.report.action.EmployeeDutyTypeAction">
+	<result name="success" type="tiles">EmployeeDutyType</result></action>
+	<action name="getEmployeeDutyTypeList"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="getEmployeeDutyTypeList"></action>
+	<action name="saveDutyTypeEmployee"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="saveDutyTypeEmployee">
+		<result name="success" type="tiles">EmployeeDutyTypeView</result> </action>
+	<action name="employeeDutyTypeview"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="viewEmployeeDuty">
+		<result name="success" type="tiles">EmployeeDutyTypeView</result> </action>
+
+	<action name="employeeDutyTypeviewList"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="viewEmployeeDutyList"></action>
+	<action name="editemployeeDutyType"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="editEmployeeDuty">
+		<result name="success" type="tiles">EditEmployeeDutyType</result>
+		<result name="false" type="tiles">EmployeeDutyTypeView</result></action>
+	<action name="SaveEditEmployeeduty"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="SaveEditEmployeeduty">
+		<result name="success" type="tiles">EmployeeDutyTypeView</result>
+	</action>
+
+<!-- gopinatha code for Employee default  -->
+	<action name="Employeedefault"
+	class="com.trimax.its.report.action.Employeedefault">
+	<result name="success" type="tiles">EmployeeDefaultView</result></action>
+	<action name="getEmployeeDefaultTypeList"
+		class="com.trimax.its.report.action.Employeedefault" method="getEmployeeDefaultTypeList"></action>
+	<action name="saveDefaultemployee"
+		class="com.trimax.its.report.action.Employeedefault" method="saveDefaultemployee">
+		<result name="success" type="tiles">Employeedefault</result> </action>
+	<action name="employeeDefaultviewList"
+		class="com.trimax.its.report.action.Employeedefault" method="viewemployeeDefaultviewList"></action>
+	<action name="editemployeeDefault"
+		class="com.trimax.its.report.action.Employeedefault" method="editemployeeDefault">
+		<result name="success" type="tiles">EditEmployeeDefault</result>
+		<result name="false" type="tiles">EmployeeDefaultView</result></action>
+	<action name="SaveeditemployeeDefault"
+		class="com.trimax.its.report.action.EmployeeDutyTypeAction" method="SaveEditEmployeeduty">
+		<result name="success" type="tiles">EmployeeDefaultView</result>
+	</action>
+
+
+<!-- gopinatha code for Employee default  -->
+
+
+
+<!-- 	Student Information details -->
+	<action name="getstudentDetailview"
+		class="com.trimax.its.vts.report.action.StudentInformationDetails">
+		<result name="success" type="tiles">StudentDetailView</result>
+	</action>
+
+	<action name="AjaxstudentDetailview"
+		class="com.trimax.its.vts.report.action.StudentInformationDetails"
+		method="getStudentDetailsReport">
+
+	</action>
+
+<!-- 	Vehicle Mismatch From ETM to Schedule by Aditi -->
+	<action name="VehicleMismatchFromETMToSchedule"
+		class="com.trimax.its.vts.action.vehicleFromETMAndSchedule">
+		<result name="success" type="tiles">VehicleMismatchFromETMToSchedule
+		</result>
+	</action>
+
+	<action name="getVehicleMismatchFromETMToSchedule"
+		class="com.trimax.its.vts.action.vehicleFromETMAndSchedule" method="vehicleMismatchFromETMToScheduleReport">
+	</action>
+		
+			<action name="studentpasscount"
+		class="com.trimax.its.report.action.StudentPassCount">
+		<result name="success" type="tiles">studentpasscountt
+		</result>
+	</action>
+		<action name="ajaxgetstudentcount"
+		class="com.trimax.its.report.action.StudentPassCount" method="getdata">
+	</action>
+
+		<action name="editstudentpassdetails" class="com.trimax.its.vts.report.action.StudentInformationDetails" method="editStudentDetails">
+		<result name="success" type="tiles">StudentpassEdit</result>
+	</action>
+	<action name="savestudentpassdetails" class="com.trimax.its.vts.report.action.StudentInformationDetails" method="saveStudentDetails">
+		<result name="success" type="chain">StudentpassdetailsAction</result>
+	</action>
+	
+		<action name="gprsdetailreport"     class="com.trimax.its.report.action.GprsDetailReport">
+		<result name="success" type="tiles">gprsdetailreport
+		</result>
+	</action>
+		<action name="ajaxgetdataforgprs"
+		class="com.trimax.its.report.action.GprsDetailReport" method="getdata">
+	</action>
+			<action name="ajaxgetdepotwiserevcount" class="com.trimax.its.report.action.GprsDetailReport" method="getdepotdata">
+		</action>
+
+			<action name="syncrevenueinfo"     class="com.trimax.its.report.action.Syncrevenueinfo">
+		<result name="success" type="tiles">syncrevenueinfo
+		</result>
+	</action>
+			<action name="ajaxgetsyncrevenueinfo" class="com.trimax.its.report.action.Syncrevenueinfo" method="getdata">
+		</action>
+
+		<action name="StudentpassdetailsAction" class="com.trimax.its.vts.report.action.StudentInformationDetails" method="StudentDetails">
+		<result name="success" type="tiles">StudentDetailView</result>
+	</action>
+	
+	<action name="StudentpasscashAction" class="com.trimax.its.vts.report.action.StudentPassCashCollection" >
+		<result name="success" type="tiles">StudentCashCollection</result>
+	</action>
+<action name="AjaxStudentcashdetailsReport" class="com.trimax.its.vts.report.action.StudentPassCashCollection" method="cashcollection" >
+		
+	</action>
+	<action name="sttwo" class="com.trimax.its.report.action.STTWO" >
+		<result name="success" type="tiles">STTWO</result>
+	</action>
+		<action name="stone" class="com.trimax.its.report.action.STONE" >
+		<result name="success" type="tiles">STONE</result>
+	</action>
+	
+		<action name="stoneits" class="com.trimax.its.report.action.STONEITS" >
+		<result name="success" type="tiles">STONEITS</result>
+	</action>
+		<action name="charted" class="com.trimax.its.report.action.ChartedRevenue" >
+		<result name="success" type="tiles">ChartedRevenue</result>
+		  <result name="redir" type="redirectAction">charted</result>
+	</action>
+	
+		<action name="chartedview" class="com.trimax.its.report.action.ChartedRevenueview" >
+		<result name="success" type="tiles">ChartedRevenueview</result>
+	</action>
+		<action name="dedicatedview" class="com.trimax.its.report.action.DedicatedView" >
+		<result name="success" type="tiles">Dedicatedview</result>
+	</action>
+		<action name="ccrevenueview" class="com.trimax.its.report.action.CCRevenueView" >
+		<result name="success" type="tiles">ccrevenueview</result>
+		
+	</action>
+	
+	<action name="getDepotData" class="com.trimax.its.report.action.VehicleLocationReportAction"
+			method="getPerticularDepot">
+		</action>
+	
+	<action name="AjaxSaveNotMappedReason"
+        class="com.trimax.its.report.action.VehicleMappingStatus" method="InsertReasonForNotMapped">
+       	</action>
+       	<action name="getCasualContractDetail" class="com.trimax.its.report.action.CasualContractDetailsReport" >
+		<result name="success" type="tiles">CasualContractDetails</result>
+		  <result name="redir" type="redirectAction">getCasualContractDetail</result>
+	</action>
+	
+		<action name="getScheduleMappingNew" class="com.trimax.its.report.action.ScheduleMappingNew" >
+		<result name="success" type="tiles">ScheduleMappingNew</result>
+		 <result name="redir" type="redirectAction">getScheduleMappingView</result>
+		 
+	</action>
+			<action name="dedicated" class="com.trimax.its.report.action.Dedicated" >
+		<result name="success" type="tiles">DedicatedRevenue</result>
+		  <result name="redir" type="redirectAction">dedicated</result>
+	</action>
+	
+	<action name="getScheduleMappingView" class="com.trimax.its.report.action.ScheduleMappingNew" method="getScheduleMappingview">
+		<result name="success" type="tiles">ScheduleMappingView</result>
+		 <result name="redir" type="redirectAction">getScheduleMappingNew</result>
+		 
+	</action>
+	
+	<action name="ScheduleMappingListViewAjax" class="com.trimax.its.report.action.ScheduleMappingNew"
+			method="getScheduleMappingRecordsList">
+			<result name="success" type="chain">getScheduleMappingView</result>
+		</action>
+		
+		<action name="getDeleteScheduleMapping" class="com.trimax.its.report.action.ScheduleMappingNew"
+			method="deleteScheduleMapping">
+			<result name="success" type="chain">getScheduleMappingView</result>
+			<result name="fail" type="chain">getScheduleMappingView</result>
+		</action> 
+	<action name="logsheetdashbord" class="com.trimax.its.report.action.LogSheetDashbord">
+			<result name="success" type="tiles">logsheetdashbordd</result>
+		</action>
+		<action name="etmdailypass" class="com.trimax.its.report.action.EtmDailyPass">
+			<result name="success" type="tiles">etmdailypasss</result>
+		</action>
+		<action name="axisreconview" class="com.trimax.its.report.action.AxisReconView">
+			<result name="success" type="tiles">axisreconview</result>
+		</action>
+		
+		</package>
+</struts>
+		

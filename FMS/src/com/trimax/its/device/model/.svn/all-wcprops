@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/3818/its/src/com/trimax/its/device/model
+END
+SimVtu.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/1003/its/src/com/trimax/its/device/model/SimVtu.java
+END
+RFIDCard.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/2683/its/src/com/trimax/its/device/model/RFIDCard.java
+END
+DeviceHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/2569/its/src/com/trimax/its/device/model/DeviceHistory.java
+END
+DeviceOrg.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/1003/its/src/com/trimax/its/device/model/DeviceOrg.java
+END
+MaintenanceType.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/2104/its/src/com/trimax/its/device/model/MaintenanceType.java
+END
+Battery.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/1894/its/src/com/trimax/its/device/model/Battery.java
+END
+DataCard.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/1993/its/src/com/trimax/its/device/model/DataCard.java
+END
+Simcard.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/3021/its/src/com/trimax/its/device/model/Simcard.java
+END
+Device.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/3818/its/src/com/trimax/its/device/model/Device.java
+END
+Device_Type.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/1304/its/src/com/trimax/its/device/model/Device_Type.java
+END
+BatteryDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/994/its/src/com/trimax/its/device/model/BatteryDevice.java
+END
+UserDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/423/its/src/com/trimax/its/device/model/UserDevice.java
+END

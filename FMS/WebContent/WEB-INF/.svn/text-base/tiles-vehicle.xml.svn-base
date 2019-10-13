@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+
+   <!-- <definition name="baseLayout" template="/layout/baselayout.jsp">
+      <put-attribute name="layoutId"  value=""/>
+      <put-attribute name="js"  value="/layout/js.jsp"/>
+      <put-attribute name="css"  value="/layout/css.jsp"/>
+      <put-attribute name="title"  value=""/>
+      <put-attribute name="header" value="/layout/header.jsp"/>
+      <put-attribute name="menu"   value="/layout/menu.jsp"/>
+      <put-attribute name="content"   value=""/>
+      <put-attribute name="footer"   value="/layout/footer.jsp"/>
+   </definition>
+	
+	<definition name="loginbaseLayout" template="/layout/loginBaselayout.jsp">
+	  <put-attribute name="layoutId"  value=""/>
+      <put-attribute name="js"  value="/layout/js.jsp"/>
+      <put-attribute name="css"  value="/layout/css.jsp"/>
+	  <put-attribute name="title"  value=""/>
+      <put-attribute name="content"   value=""/>
+      
+   </definition> -->
+   
+    <definition name="ShowVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="layoutId"  value="vehicleMaster"/>
+      <put-attribute name="content"  value="/vehicle/showVehicle.jsp"/>      
+   </definition>
+   
+   <definition name="EditVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+       <put-attribute name="layoutId"  value="vehicleMaster"/>
+      <put-attribute name="content"  value="/vehicle/editVehicle.jsp"/>      
+   </definition>
+   
+   <definition name="VehicleType" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Type List"/>
+      <put-attribute name="layoutId"  value="vehicleTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/vehicleTypeList.jsp"/>      
+   </definition>
+   
+   <definition name="CreateVehicleType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Vehicle Type"/>
+      <put-attribute name="layoutId"  value="vehicleTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createVehicleType.jsp"/>      
+   </definition>
+   
+    <definition name="EditVehicleType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Vehicle Type"/>
+      <put-attribute name="layoutId"  value="vehicleTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editVehicleType.jsp"/>      
+   </definition>
+   
+   <definition name="CreateNewVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="layoutId"  value="vehicleMaster"/>
+      <put-attribute name="content"  value="/vehicle/createVehicle.jsp"/>      
+   </definition>
+   
+   <definition name="OrgAllocation" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/organisationAllocationOfVehicle.jsp"/>      
+   </definition>
+	
+	<definition name="DeviceALloacation" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/deviceAllocation.jsp"/>      
+   </definition>
+	
+	<definition name="ScrapVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/scrapVehicle.jsp"/>      
+   	</definition>
+	
+   <definition name="ServiceTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Service Type List"/>
+      <put-attribute name="layoutId"  value="serviceTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/serviceTypeList.jsp"/>      
+   </definition>
+
+    <definition name="EditServiceType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Service Type"/>
+      <put-attribute name="layoutId"  value="serviceTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editServiceType.jsp"/>      
+    </definition>
+   
+	<definition name="CreateNewServiceType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Servcie Type"/>
+      <put-attribute name="layoutId"  value="serviceTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createServiceType.jsp"/>      
+    </definition>
+    
+    <!--     Service Tax -->
+    <definition name="ServiceTypeTaxList" extends="baseLayout">
+      <put-attribute name="title"  value="Service Tax "/>
+      <put-attribute name="layoutId"  value="serviceTaxMaster"/>
+      <put-attribute name="content"  value="/vehicle/ServiceTypeTaxList.jsp"/>      
+   </definition>
+
+    <definition name="EditTaxOfServiceType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Service Tax"/>
+      <put-attribute name="layoutId"  value="serviceTaxMaster"/>
+      <put-attribute name="content"  value="/vehicle/EditTaxOfServiceType.jsp"/>      
+    </definition>
+   
+	<definition name="CreateNewServiceTax" extends="baseLayout">
+      <put-attribute name="title"  value="Create Service Tax"/>
+      <put-attribute name="layoutId"  value="serviceTaxMaster"/>
+      <put-attribute name="content"  value="/vehicle/CreateNewServiceType.jsp"/>      
+    </definition>
+<!-- end of Service Tax -->
+   
+    <definition name="MakeTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Make Type List"/>
+      <put-attribute name="layoutId"  value="makeTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/makeTypeList.jsp"/>      
+    </definition>
+    <definition name="EditMakeType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Make Type"/>
+      <put-attribute name="layoutId"  value="makeTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editMakeType.jsp"/>      
+    </definition>
+   
+    <definition name="CreateNewMakeType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Make Type"/>
+      <put-attribute name="layoutId"  value="makeTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createMakeType.jsp"/>      
+    </definition>
+    
+    <definition name="ScheduleMappingList" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Mapping List"/>
+      <put-attribute name="layoutId"  value="scheduleMappingMaster"/>
+      <put-attribute name="content"  value="/vehicle/ScheduleMappingList.jsp"/>      
+    </definition>
+    
+    <definition name="OnlineETMAvailabilityList" extends="baseLayout">
+      <put-attribute name="title"  value="Online ETM Availability List"/>
+      <put-attribute name="layoutId"  value="OnlineETMAvailability"/>
+      <put-attribute name="content"  value="/vehicle/ShowETMAvailabilityList.jsp"/>      
+    </definition>
+    
+     <definition name="EditScheduleMapping" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Schedule Mapping"/>
+      <put-attribute name="layoutId"  value="scheduleMappingMaster"/>
+      <put-attribute name="content"  value="/vehicle/EditScheduleMapping.jsp"/>      
+    </definition>
+    
+    <definition name="CreateScheduleMapping" extends="baseLayout">
+      <put-attribute name="title"  value="Create Schedule Mapping"/>
+      <put-attribute name="layoutId"  value="scheduleMappingMaster"/>
+      <put-attribute name="content"  value="/vehicle/CreateScheduleMapping.jsp"/>      
+    </definition>
+   
+	<definition name="ModelTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Model Type List"/>
+      <put-attribute name="layoutId"  value="modelTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/modelTypeList.jsp"/>      
+    </definition>
+    
+    <definition name="EditModelType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Model Type"/>
+      <put-attribute name="layoutId"  value="modelTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editModelType.jsp"/>      
+    </definition>
+   
+    <definition name="CreateNewModelType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Model Type"/>
+      <put-attribute name="layoutId"  value="modelTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createModelType.jsp"/>      
+    </definition>
+    
+    <definition name="BrandTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Brand Type List"/>
+      <put-attribute name="layoutId"  value="brandTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/brandTypeList.jsp"/>      
+    </definition>
+    
+    <definition name="EditBrandType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Brand Type"/>
+      <put-attribute name="layoutId"  value="brandTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editBrandType.jsp"/>      
+    </definition>
+   
+    <definition name="CreateNewBrandType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Brand Type"/>
+      <put-attribute name="layoutId"  value="brandTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createBrandType.jsp"/>      
+    </definition>
+    
+    
+    <definition name="DockingTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Docking Type List"/>
+      <put-attribute name="layoutId"  value="dockingTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/dockingTypeList.jsp"/>      
+    </definition>
+    
+    <definition name="EditDockingType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Docking Type"/>
+      <put-attribute name="layoutId"  value="dockingTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editDockingType.jsp"/>      
+    </definition>
+   
+    <definition name="CreateNewDockingType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Docking Type"/>
+      <put-attribute name="layoutId"  value="dockingTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createDockingType.jsp"/>      
+    </definition>
+    
+   <!--  <definition name="DockingTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/viewDockingType.jsp"/>      
+    </definition>
+    <definition name="CreateDockingType" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/createDockingType.jsp"/>      
+    </definition>
+    <definition name="EditDockingType" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/editDockingType.jsp"/>      
+    </definition> -->
+    
+    
+ 	<definition name="TransferVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/transferVehicle.jsp"/>      
+    </definition>
+    
+    <definition name="FcRenewVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="content"  value="/vehicle/fcRenewVehicle.jsp"/>      
+    </definition>
+    
+    <definition name="DockingVehicle" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="layoutId"  value="dockingVehicleMaster"/>
+      <put-attribute name="content"  value="/vehicle/dockingVehicle.jsp"/>      
+    </definition>
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 	<definition name="AccidentTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="layoutId"  value="accidentTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/viewAccidentType.jsp"/>      
+    </definition>
+    <definition name="CreateAccidentTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Management"/>
+      <put-attribute name="layoutId"  value="accidentTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createviewAccidentType.jsp"/>      
+    </definition>
+    
+   <!--  <definition name="BreakdownTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="BreakDownType List"/>
+      <put-attribute name="content"  value="/vehicle/breakDownType.jsp"/>      
+    </definition>
+    
+     <definition name="CreateBreakdownTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Create BreakDownType List"/>
+      <put-attribute name="content"  value="/vehicle/createBreakDownType.jsp"/>      
+    </definition>
+    
+
+    <definition name="viewBreakdownType" extends="baseLayout">
+      <put-attribute name="title"  value="Create BreakDownType List"/>
+      <put-attribute name="content"  value="/vehicle/createBreakDownType.jsp"/>      
+    </definition> -->
+    
+    
+     <definition name="ShowBreakdowntypelist" extends="baseLayout">
+      <put-attribute name="title"  value="BreakDownType List"/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/breakdowntypelist.jsp"/>      
+    </definition>
+    
+      <definition name="ShowBreakdowntype" extends="baseLayout">
+      <put-attribute name="title"  value="Create BreakDownType "/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createBreakdownType.jsp"/>      
+    </definition>
+    
+      <definition name="AddBreakdowntype" extends="baseLayout">
+      <put-attribute name="title"  value=" BreakDownType List"/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/breakdowntypelist.jsp"/>      
+    </definition>
+    
+        <definition name="ErrorBreakdowntype" extends="baseLayout">
+      <put-attribute name="title"  value="Create BreakDownType "/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createBreakdownType.jsp"/>      
+    </definition>
+    
+   
+    
+    <definition name="DeletedBreakdowntypeDetails" extends="baseLayout">
+      <put-attribute name="title"  value="BreakDownType List"/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/breakdowntypelist.jsp"/>      
+    </definition>
+ 
+ 
+   <definition name="EditBreakdowntypeDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Edit BreakDownType List"/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editBreakdownType.jsp"/>      
+    </definition>
+    
+     <definition name="UpdateBreakdowntypeDetails" extends="baseLayout">
+      <put-attribute name="title"  value="BreakDownType List"/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/breakdowntypelist.jsp"/>      
+    </definition>
+  
+    
+    
+     <definition name="ErrorUpdateBreakdowntypeDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Edit BreakDownType List"/>
+      <put-attribute name="layoutId"  value="breakDownTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editBreakdownType.jsp"/>      
+    </definition>
+    
+    <definition name="VehicleCategoryList" extends="baseLayout">
+		<put-attribute name="title"  value="Vehicle Category"/>
+		<put-attribute name="layoutId"  value="vehicleCategoryMaster"/>
+      	<put-attribute name="content"  value="/vehicle/showVehicleCategoryList.jsp"/>      
+    </definition>
+    
+    <definition name="CreateVehicleCategory" extends="baseLayout">
+		<put-attribute name="title"  value="Vehicle Category"/>
+		<put-attribute name="layoutId"  value="vehicleCategoryMaster"/>
+      	<put-attribute name="content"  value="/vehicle/createVehicleCategory.jsp"/>      
+    </definition>
+    
+     <definition name="DockingHistoryList" extends="baseLayout">
+		<put-attribute name="title"  value="View Docking History"/>
+		<put-attribute name="layoutId"  value="dockingHistoryMaster"/>
+      	<put-attribute name="content"  value="/vehicle/showDockingHistoryList.jsp"/>      
+    </definition> 
+    <definition name="ViewBreakDownHistory" extends="baseLayout">
+		<put-attribute name="title"  value="View BreakDownHistory"/>
+      	<put-attribute name="content"  value="/vehicle/viewBreakDownHistory.jsp"/>      
+    </definition>
+    <definition name="CreateBreakDownHistory" extends="baseLayout">
+		<put-attribute name="title"  value="Create BreakDownHistory"/>
+      	<put-attribute name="content"  value="/vehicle/createBreakDownHistory.jsp"/>      
+    </definition>
+    
+      <definition name="EditBreakDownHistory" extends="baseLayout">
+		<put-attribute name="title"  value="Edit BreakDownHistory"/>
+      	<put-attribute name="content"  value="/vehicle/editBreakDownHistory.jsp"/>      
+    </definition>
+    
+    <!-- Start Component Type-->
+    <definition name="ComponentType" extends="baseLayout">
+		<put-attribute name="title"  value="Component Type"/>
+		<put-attribute name="layoutId"  value="componentTypeMaster"/>
+      	<put-attribute name="content"  value="/vehicle/componentType.jsp"/>      
+    </definition>
+    
+    <definition name="CreateComponentType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Component Type"/>
+      <put-attribute name="layoutId"  value="componentTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/createComponentType.jsp"/>      
+   </definition>
+   
+    <definition name="updateComponentType" extends="baseLayout">
+      <put-attribute name="title"  value=" Edit Component Type"/>
+      <put-attribute name="layoutId"  value="componentTypeMaster"/>
+      <put-attribute name="content"  value="/vehicle/editComponentType.jsp"/>      
+   </definition>
+    <!-- End Component Type-->
+    
+	 <!--    NEW VehicleDefectList-->
+
+	 <definition name="VehicleDefectList" extends="baseLayout">
+     	<put-attribute name="title"  value="Vehicle Defects"/>
+     	<put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+ 		<put-attribute name="content"  value="/vehicle/showVehicleDefectsList.jsp"/>      	
+    </definition>
+    
+    <definition name="CreateVehicleDefectsview" extends="baseLayout">
+      <put-attribute name="title"  value="Create Vehicle Defects"/>
+      <put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+      <put-attribute name="content"  value="/vehicle/createviewVehicleDefect.jsp"/>      
+    </definition>
+    
+     <definition name="DeleteVehicleDefect" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Defects"/>
+      <put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+      <put-attribute name="content"   value="/vehicle/showVehicleDefectsList.jsp"/>  
+   </definition>
+   
+    <definition name="showEditVehicleDefect" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Vehicle Defect"/>
+      <put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+      <put-attribute name="content"   value="/vehicle/editVehicleDefect.jsp"/>  
+   </definition>
+   
+     <definition name="UpdateDefect" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Defect List"/>
+      <put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+      <put-attribute name="content"   value="/vehicle/showVehicleDefectsList.jsp"/>  
+   </definition>
+   
+   <definition name="ErrorAddUserDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Show User"/>
+      <put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+      <put-attribute name="content"   value="/vehicle/createviewVehicleDefect.jsp"/>  
+   </definition>
+<!--     End VehicleDefectList -->
+
+
+<!--     rajesh tiles start -->
+ <definition name="complaintListtile" extends="baseLayout">
+		<put-attribute name="title"  value=" Complaint "/>
+		<put-attribute name="layoutId"  value="complaintMaster"/>
+      	<put-attribute name="content"  value="/vehicle/complaintList.jsp"/>      
+    </definition>
+    
+    
+    
+     <definition name="createcomplaint" extends="baseLayout">
+      <put-attribute name="title"  value="Create Complaint"/>
+      <put-attribute name="layoutId"  value="complaintMaster"/>
+      <put-attribute name="content"  value="/vehicle/createComplaint.jsp"/>      
+   </definition>
+   
+   
+   <definition name="complaintadd" extends="baseLayout">
+      <put-attribute name="title"  value="View"/>
+      <put-attribute name="layoutId"  value="complaintMaster"/>
+      <put-attribute name="content"   value="/vehicle/complaintList.jsp"/>      
+   </definition>
+   
+<!--    //complaint delete -->
+<definition name="complaintdelete" extends="baseLayout">
+      <put-attribute name="title"  value="View"/>
+      <put-attribute name="layoutId"  value="complaintMaster"/>
+      <put-attribute name="content"   value="/vehicle/complaintList.jsp"/>      
+  </definition>
+   
+   
+<!--    editpage call -->
+
+ <definition name="complaintEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Complaint"/>
+      <put-attribute name="layoutId"  value="complaintMaster"/>
+      <put-attribute name="content"   value="/vehicle/complaintEdit.jsp"/>      
+   </definition>
+
+<definition name="complaintUpdate" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Complaint"/>
+      <put-attribute name="layoutId"  value="complaintMaster"/>
+      <put-attribute name="content"   value="/vehicle/complaintList.jsp"/>      
+   </definition>
+
+<!-- end -->
+
+ <!--    NEW Vehicle Maintenance-->
+	<definition name="VehiclemaintenanceList" extends="baseLayout">
+     	<put-attribute name="title"  value="Vehicle Maintenance"/>
+     	<put-attribute name="layoutId"  value="vehicleMaintenanceMaster"/>
+ 		<put-attribute name="content"  value="/vehicle/vehicleMaintenanceList.jsp"/>      	
+    </definition>
+    
+    
+     <definition name="CreateVehicleMaintenance" extends="baseLayout">
+      <put-attribute name="title"  value="Create Vehicle Maintenance"/>
+      <put-attribute name="layoutId"  value="vehicleMaintenanceMaster"/>
+      <put-attribute name="content"  value="/vehicle/createVehicleMaintenance.jsp"/>      
+    </definition>
+   
+    <definition name="showEditVehicleMaintenance" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Vehicle Maintenance"/>
+      <put-attribute name="layoutId"  value="vehicleMaintenanceMaster"/>
+      <put-attribute name="content"   value="/vehicle/editVehicleMaintenance.jsp"/>  
+   </definition>
+   
+<!--     End Vehicle Maintenance  -->
+	<definition name="ViewBreakDownHistory" extends="baseLayout">
+		<put-attribute name="title"  value="View BreakDownHistory"/>
+		<put-attribute name="layoutId"  value="breakDownHistoryMaster"/>
+      	<put-attribute name="content"  value="/vehicle/viewBreakDownHistory.jsp"/>      
+    </definition>
+    <definition name="CreateBreakDownHistory" extends="baseLayout">
+		<put-attribute name="title"  value="Create BreakDownHistory"/>
+		<put-attribute name="layoutId"  value="breakDownHistoryMaster"/>
+      	<put-attribute name="content"  value="/vehicle/createBreakDownHistory.jsp"/>      
+    </definition>
+    <definition name="EditBreakDownHistory" extends="baseLayout">
+		<put-attribute name="title"  value="Edit BreakDownHistory"/>
+		<put-attribute name="layoutId"  value="breakDownHistoryMaster"/>
+      	<put-attribute name="content"  value="/vehicle/editBreakDownHistory.jsp"/>      
+    </definition>
+
+
+<!--    peak hour start -->
+ <definition name="PeakHourlist" extends="baseLayout">
+      <put-attribute name="title"  value="Peak Hours"/>
+       <put-attribute name="content"   value="/transport/PeakHourList.jsp"/>      
+   </definition>
+
+<definition name="createpeakhour" extends="baseLayout">
+      <put-attribute name="title"  value="Create Peak Hours"/>
+      <put-attribute name="content"  value="/transport/createPeakHour.jsp"/>      
+   </definition>
+   
+   <definition name="peakHourAdd" extends="baseLayout">
+      <put-attribute name="title"  value="Add Peak Hours"/>
+      <put-attribute name="content"  value="/transport/PeakHourList.jsp"/>      
+   </definition>
+   
+<definition name="peakHourEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Peak Hours"/>
+      <put-attribute name="content"  value="/transport/editPeakHour.jsp"/>   
+   </definition>
+   
+   <definition name="createpeakhourRateMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Rate Master Detail"/>
+      <put-attribute name="content"  value="/transport/rateMasterDetailsNew.jsp"/>      
+   </definition>
+<!-- peak hour end -->
+<!-- dock history start -->
+
+	<definition name="createdochistory" extends="baseLayout">
+      <put-attribute name="title"  value="Create Docking History"/>
+      <put-attribute name="layoutId"  value="dockingHistoryMaster"/>
+      <put-attribute name="content"  value="/vehicle/createDockingHistory.jsp"/>      
+   </definition>
+   
+	<definition name="docklist" extends="baseLayout">
+      <put-attribute name="title"  value="Docking History List"/>
+      <put-attribute name="layoutId"  value="dockingHistoryMaster"/>
+      <put-attribute name="content"  value="/vehicle/showDockingHistoryList.jsp"/>      
+   </definition>
+   
+   <definition name="dockingEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Docking History"/>
+      <put-attribute name="layoutId"  value="dockingHistoryMaster"/>
+      <put-attribute name="content"  value="/vehicle/editDockingHistory.jsp"/>      
+   </definition>
+   
+    <definition name="CreateVehicleDefectsviewdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Create Vehicle Defects"/>
+      <put-attribute name="layoutId"  value="vehicleDefectMaster"/>
+      <put-attribute name="content"  value="/vehicle/createviewVehicleDefect.jsp"/>      
+    </definition>
+   
+    <!-- Start of Vehicle Docking Report-->
+     <definition name="ViewVehicleDockingReport" extends="baseLayout">
+      <put-attribute name="title"  value="View Vehicle Docking Report"/>
+      <put-attribute name="layoutId"  value="View Vehicle Docking Report"/>
+      <put-attribute name="content"   value="/pages/vts/vehicleDockingReport.jsp"/>      
+   </definition>
+   
+<!-- doc history end -->
+ <definition name="cancelationcause" extends="baseLayout">
+      <put-attribute name="title"  value="Cause For Cancellation"/>
+      <put-attribute name="layoutId"  value="CauseCanclatn"/>
+      <put-attribute name="content"   value="/vehicle/createCauseForCancellation.jsp"/>      
+   </definition>
+    <definition name="extrakmcause" extends="baseLayout">
+      <put-attribute name="title"  value="Reason For Extra KM"/>
+      <put-attribute name="layoutId"  value="extraKM"/>
+      <put-attribute name="content"   value="/vehicle/createReasonForExtraKM.jsp"/>      
+   </definition>
+   <definition name="CreateCancleCuse" extends="baseLayout">
+      <put-attribute name="title"  value="Create Cause For Cancellation"/>
+      <put-attribute name="layoutId"  value="Create Cause For Cancellation"/>
+      <put-attribute name="content"   value="/vehicle/createCancleCause.jsp"/>      
+   </definition>
+   <definition name="CreateExtraKm" extends="baseLayout">
+      <put-attribute name="title"  value="Create Reason For Extra KM"/>
+      <put-attribute name="layoutId"  value="Create Reason For Extra KM"/>
+      <put-attribute name="content"   value="/vehicle/createCauseExtraKM.jsp"/>      
+   </definition>
+<definition name="EditCanclCause" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Cancellation Type"/>
+      <put-attribute name="layoutId"  value="CauseCanclatn"/>
+      <put-attribute name="content"  value="/vehicle/editCancellationType.jsp"/>      
+   </definition>
+   <definition name="EditExtaKm" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Extra KM Type"/>
+      <put-attribute name="layoutId"  value="CauseExtrakm"/>
+      <put-attribute name="content"  value="/vehicle/editExtraKmType.jsp"/>      
+   </definition>
+   
+    <definition name="vehicleStatus" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Status Display"/>
+      <put-attribute name="content"  value="/vehicle/vehicleStatus.jsp"/>      
+   </definition>
+   
+     <definition name="ServiceTaxTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="Service Tax Type List Display"/>
+      <put-attribute name="content"  value="/vehicle/serviceTaxTypeList.jsp"/>      
+   </definition>
+    <definition name="CreateServiceTaxType" extends="baseLayout">
+      <put-attribute name="title"  value="Service Tax Type List Display"/>
+      <put-attribute name="content"  value="/vehicle/createServiceTaxType.jsp"/>      
+   </definition>
+    <definition name="EditServiceTaxType" extends="baseLayout">
+      <put-attribute name="title"  value="Service Tax Type List Display"/>
+      <put-attribute name="content"  value="/vehicle/editServiceTaxTypeList.jsp"/>      
+   </definition>
+      
+       <definition name="SystemHealthCheckReport" extends="baseLayout">
+      <put-attribute name="title"  value="VTS System/Health Check"/>
+      <put-attribute name="content"  value="/vehicle/ShowSystemHealthList.jsp"/>      
+   </definition>
+   
+    <definition name="BrandTypeServiceLimit" extends="baseLayout">
+      <put-attribute name="title"  value="Brand Service"/>
+      <put-attribute name="layoutId"  value="BrandService"/>
+      <put-attribute name="content"  value="/vehicle/ShowBrandService.jsp"/>      
+    </definition>
+    
+     <definition name="CreateBrandService" extends="baseLayout">
+      <put-attribute name="title"  value="Create Brand Service"/>
+      <put-attribute name="layoutId"  value="BrandService"/>
+      <put-attribute name="content"  value="/vehicle/createBrandService.jsp"/>      
+    </definition>
+    
+      <definition name="EditBrandService" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Brand Service"/>
+      <put-attribute name="layoutId"  value="BrandService"/>
+      <put-attribute name="content"  value="/vehicle/editBrandService.jsp"/>      
+    </definition>
+    
+     <definition name="VehicleDeviceRelationFromVTS" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Device Relation"/>
+      <put-attribute name="layoutId"  value="VehicleDeviceRelation"/>
+      <put-attribute name="content"  value="/vehicle/ShowVehicleDeviceRelation.jsp"/>      
+    </definition>
+
+<!--    Happy hour start added by itishree -->
+ <definition name="HappyHourlist" extends="baseLayout">
+      <put-attribute name="title"  value="Happy Hours"/>
+       <put-attribute name="content"   value="/transport/HappyHourlist.jsp"/>      
+   </definition>
+
+<definition name="createHappyhour" extends="baseLayout">
+      <put-attribute name="title"  value="Create Happy Hours"/>
+      <put-attribute name="content"  value="/transport/createHappyhour.jsp"/>      
+   </definition>
+   
+<!--    <definition name="peakHourAdd" extends="baseLayout"> -->
+<!--       <put-attribute name="title"  value="Add Peak Hours"/> -->
+<!--       <put-attribute name="content"  value="/transport/PeakHourList.jsp"/>       -->
+<!--    </definition> -->
+   
+<definition name="happyHourEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Happy Hours"/>
+      <put-attribute name="content"  value="/transport/happyHourEdit.jsp"/>   
+   </definition>
+   
+   
+   
+<!--    <definition name="createpeakhourRateMaster" extends="baseLayout"> -->
+<!--       <put-attribute name="title"  value="Edit Rate Master Detail"/> -->
+<!--       <put-attribute name="content"  value="/transport/rateMasterDetailsNew.jsp"/>       -->
+<!--    </definition> -->
+<!-- Happy hour end -->
+
+<definition name="DailyScheduleMapping" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Schedule Mapping"/>
+      <put-attribute name="layoutId"  value="DailyScheduleMapping"/>
+      <put-attribute name="content"  value="/vehicle/DailyScheduleMapping.jsp"/>      
+    </definition>
+    <definition name="DailyScheduleMappingView" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Schedule Mapping"/>
+      <put-attribute name="layoutId"  value="DailyScheduleMapping"/>
+      <put-attribute name="content"  value="/vehicle/DailyScheduleMappingView.jsp"/>      
+    </definition>
+  
+ <definition name="EditDailyScheduleMapping" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Daily Schedule Mapping"/>
+      <put-attribute name="layoutId"  value="EditDailyScheduleMapping"/>
+      <put-attribute name="content"  value="/vehicle/EditDailyScheduleMapping.jsp"/>      
+    </definition>
+    
+    <definition name="ScheduleVehicleComparison" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Vehicle Comparison"/>
+      <put-attribute name="layoutId"  value="ScheduleVehicleComparison"/>
+      <put-attribute name="content"  value="/vehicle/VehicleComparizoneReport.jsp"/>      
+    </definition>
+     <definition name="ScheduleVehicleDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Vehicle Comparison"/>
+      <put-attribute name="layoutId"  value="ScheduleVehicleComparison"/>
+      <put-attribute name="content"  value="/vehicle/ScheduleVehicleDetails.jsp"/>      
+    </definition>
+    
+       <definition name="VTUHealthCheckReport" extends="baseLayout">
+      <put-attribute name="title"  value="VTS System/VTS Health Check"/>
+      <put-attribute name="content"  value="/vehicle/ShowVTUHealthList.jsp"/>      
+   </definition>
+   
+   <definition name="CWSAndDWSReport" extends="baseLayout">
+      <put-attribute name="title"  value="CWS And DWS Report"/>
+      <put-attribute name="layoutId"  value="CWSAndDWSReport"/>
+      <put-attribute name="content"  value="/Reports/CwsAndDwsReport.jsp"/>      
+    </definition>
+
+</tiles-definitions>

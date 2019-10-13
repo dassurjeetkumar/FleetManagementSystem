@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/its/!svn/ver/7170/its/WebContent/VtsReport
+END
+TripwiseLateArrival.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/6453/its/WebContent/VtsReport/TripwiseLateArrival.jsp
+END
+TripwiseEarlyDeparture.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/6455/its/WebContent/VtsReport/TripwiseEarlyDeparture.jsp
+END
+dailyCheckList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/7170/its/WebContent/VtsReport/dailyCheckList.jsp
+END
+TripwiseEarlyArrival.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6455/its/WebContent/VtsReport/TripwiseEarlyArrival.jsp
+END
+TripwiseLateDepature.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6455/its/WebContent/VtsReport/TripwiseLateDepature.jsp
+END

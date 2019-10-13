@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   <tiles-definitions>
+   
+	
+<!-- 	startHoliday Master -->
+  <definition name="ViewHolidayTypesListDetails" extends="baseLayout">
+     	<put-attribute name="title"  value="Holiday Type"/>
+ 		<put-attribute name="content"  value="/holiday/holidayType/HolidayTypeList.jsp"/>      	
+    </definition>
+    <definition name="CreateHolidayTypeview" extends="baseLayout">
+      <put-attribute name="title"  value="Create Holiday Type"/>
+      <put-attribute name="content"  value="/holiday/holidayType/CreateHolidayType.jsp"/>      
+    </definition>
+    
+     <definition name="showEditHolidayType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Holiday Type"/>
+    <put-attribute name="content"   value="/holiday/holidayType/EditHolidayType.jsp"/>
+     </definition>
+     
+     <definition name="DeleteHolydayType" extends="baseLayout">
+      <put-attribute name="title"  value="Holiday Type"/>
+    <put-attribute name="content"   value="/holiday/holidayType/HolidayTypeList.jsp"/>  
+   </definition>  
+   <definition name="ViewHolidayMasterListDetails" extends="baseLayout">
+     	<put-attribute name="title"  value="Holiday Master"/>
+ 		<put-attribute name="content"  value="/holiday/HolidayMasterList.jsp"/>      	
+    </definition>
+    <definition name="CreateHolidayMasterview" extends="baseLayout">
+     	<put-attribute name="title"  value="Create Holiday Master"/>
+ 		<put-attribute name="content"  value="/holiday/CreateHolidayMaster.jsp"/>      	
+    </definition>
+    <definition name="EditHolidayMasterview" extends="baseLayout">
+     	<put-attribute name="title"  value="Edit Holiday Master"/>
+ 		<put-attribute name="content"  value="/holiday/EditHolidayMaster.jsp"/>      	
+    </definition>
+<!--   End Holiday Type -->
+   
+   </tiles-definitions>

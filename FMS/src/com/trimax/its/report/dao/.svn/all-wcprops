@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/7235/its/src/com/trimax/its/report/dao
+END
+ScheduleWiseOperaDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/6668/its/src/com/trimax/its/report/dao/ScheduleWiseOperaDataDao.java
+END
+ReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/3527/its/src/com/trimax/its/report/dao/ReportDao.java
+END
+BusStopReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6668/its/src/com/trimax/its/report/dao/BusStopReportDao.java
+END
+ZeroKMDevicesReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7235/its/src/com/trimax/its/report/dao/ZeroKMDevicesReportDao.java
+END
+CancellationKMReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6971/its/src/com/trimax/its/report/dao/CancellationKMReportDao.java
+END
+VehicleLocationDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/6121/its/src/com/trimax/its/report/dao/VehicleLocationDataDao.java
+END
+ZeroLatLongDevicesReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/its/!svn/ver/7235/its/src/com/trimax/its/report/dao/ZeroLatLongDevicesReportDao.java
+END
+EmployeeDutyTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/7212/its/src/com/trimax/its/report/dao/EmployeeDutyTypeDAO.java
+END
+TicketConsumptionStatementMonthlyPassDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/its/!svn/ver/5394/its/src/com/trimax/its/report/dao/TicketConsumptionStatementMonthlyPassDAO.java
+END
+TicketConsumptionStatementDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/its/!svn/ver/5394/its/src/com/trimax/its/report/dao/TicketConsumptionStatementDAO.java
+END
+EPKMReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/7193/its/src/com/trimax/its/report/dao/EPKMReportDao.java
+END
+CashRemittanceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6550/its/src/com/trimax/its/report/dao/CashRemittanceDao.java
+END

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+   
+   <definition name="device" extends="baseLayout">
+      <put-attribute name="title"  value="view Device"/>
+      <put-attribute name="layoutId"  value="view Device"/>
+      <put-attribute name="content"   value="/device/viewDevice.jsp"/>   
+         
+   </definition>
+   <definition name="deviceCreate" extends="baseLayout">
+      <put-attribute name="title"  value="Create device"/>
+      <put-attribute name="layoutId"  value="Create Device"/>
+      <put-attribute name="content"   value="/device/createDevice.jsp"/>   
+         
+   </definition>
+   <definition name="deviceEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Device Type"/>
+      <put-attribute name="layoutId"  value="Edit Device Type"/>
+      <put-attribute name="content"   value="/device/editdeviceType.jsp"/>      
+   </definition>
+	<definition name="deviceType" extends="baseLayout">
+      <put-attribute name="title"  value="View Device Type"/>
+      <put-attribute name="layoutId"  value="View Device Type"/>
+      <put-attribute name="content"   value="/device/device.jsp"/>      
+   </definition>
+    <definition name="createPage" extends="baseLayout">
+      <put-attribute name="title"  value="Create Device Type"/>
+      <put-attribute name="layoutId"  value="Create Device Type"/>
+      <put-attribute name="content"   value="/device/createdeviceType.jsp"/>      
+   </definition>
+   
+   <definition name="Editdevice" extends="baseLayout">
+      <put-attribute name="title"  value="Edit device"/>
+      <put-attribute name="layoutId"  value="Edit device"/>
+      <put-attribute name="content"   value="/device/editDevice.jsp"/>   
+         
+   </definition>
+   <definition name="showDeviceHistory" extends="baseLayout">
+      <put-attribute name="title"  value="view DeviceHistory"/>
+      <put-attribute name="content"   value="/device/deviceHistory.jsp"/>   
+         
+   </definition>
+   
+   <!--  Start Battery  -->
+   <definition name="BatteryList" extends="baseLayout">
+      <put-attribute name="title"  value="View Battery"/>
+      <put-attribute name="layoutId"  value="View Battery"/>
+      <put-attribute name="content"   value="/device/batteryList.jsp"/>   
+   </definition>
+      
+   <definition name="CreateBattery" extends="baseLayout">
+      <put-attribute name="title"  value="Create Battery"/>
+      <put-attribute name="layoutId"  value="Create Battery"/>
+      <put-attribute name="content"   value="/device/createBattery.jsp"/>   
+   </definition>
+   <definition name="EditBattery" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Battery"/>
+      <put-attribute name="layoutId"  value="Edit Battery"/>
+      <put-attribute name="content"   value="/device/editBattery.jsp"/>   
+   </definition>
+   
+   <!--  End Battery  -->
+   
+   
+    <definition name="SimList" extends="baseLayout">
+      <put-attribute name="title"  value="SimCard View"/>
+      <put-attribute name="content"   value="/device/simList.jsp"/>   
+   </definition>
+    <definition name="CreateSimCard" extends="baseLayout">
+      <put-attribute name="title"  value="Create SimCard"/>
+      <put-attribute name="layoutId"  value="view"/>
+      <put-attribute name="content"   value="/device/createSim.jsp"/>   
+   </definition>
+   <definition name="EditSim" extends="baseLayout">
+      <put-attribute name="title"  value="Edit SimCard"/>
+      <put-attribute name="layoutId"  value="view"/>
+      <put-attribute name="content"   value="/device/editSim.jsp"/>   
+   </definition>
+   
+<!--   Start Data Card -->
+
+	<definition name="DataCardList" extends="baseLayout">
+     	<put-attribute name="title"  value="Data Card"/>
+ 		<put-attribute name="content"  value="/device/datacardlist.jsp"/>      	
+    </definition>
+    
+    
+     <definition name="CreateDataCard" extends="baseLayout">
+      <put-attribute name="title"  value="Create Data Card"/>
+      <put-attribute name="content"  value="/device/createdatacard.jsp"/>      
+    </definition>
+    
+    <definition name="showEditDataCard" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Data Card"/>
+    <put-attribute name="content"   value="/device/editdatacard.jsp"/>  
+   </definition>
+<!-- End Data Card -->
+
+<!--   Start RFID Card -->
+
+	<definition name="RFIDCardList" extends="baseLayout">
+     	<put-attribute name="title"  value="RFID Card"/>
+ 		<put-attribute name="content"  value="/device/rfidcardlist.jsp"/>      	
+    </definition>
+    
+    <definition name="CreateRFIDCard" extends="baseLayout">
+      <put-attribute name="title"  value="Create RFID Card"/>
+      <put-attribute name="content"  value="/device/createrfidcard.jsp"/>      
+    </definition>
+    
+     <definition name="showEditRFIDCard" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Data Card"/>
+    <put-attribute name="content"   value="/device/editrfidcard.jsp"/>  
+   </definition>
+    
+ <!-- End RFID Card -->   
+ 
+ <!--   Start Maintenance Type -->
+
+	<definition name="MaintenanceTypeList" extends="baseLayout">
+     	<put-attribute name="title"  value="Maintenance Type"/>
+ 		<put-attribute name="content"  value="/device/MaintenanceTypelist.jsp"/>      	
+    </definition>
+    
+     <definition name="CreateMaintenanceType" extends="baseLayout">
+      <put-attribute name="title"  value="Create Maintenance Type"/>
+      <put-attribute name="content"  value="/device/createmaintenancetype.jsp"/>      
+    </definition>
+    
+    <definition name="showEditMaintenanceType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Maintenance Type"/>
+    <put-attribute name="content"   value="/device/editmaintenancetype.jsp"/>  
+   </definition>
+   
+    <definition name="EtmDeviceHistory" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Device History"/>
+      <put-attribute name="layoutId"  value="Etm Device History"/>
+      <put-attribute name="content"   value="/device/EtmDeviceHistory.jsp"/>      
+   </definition>
+   <definition name="SaveDeviceHistory" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Device History"/>
+      <put-attribute name="layoutId"  value="Etm Device History"/>
+      <put-attribute name="content"   value="/device/EtmDeviceHistory.jsp"/>      
+   </definition>
+   <definition name="EtmDeviceHistoryView" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Device History View"/>
+      <put-attribute name="layoutId"  value="Etm Device History View"/>
+      <put-attribute name="content"   value="/device/ViewetmdeviceHistory.jsp"/>      
+   </definition>
+   <definition name="EtmDeviceHistoryEdit" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Device History Edit"/>
+      <put-attribute name="layoutId"  value="Etm Device History Edit"/>
+      <put-attribute name="content"   value="/device/EditEtmDeviceHistory.jsp"/>      
+   </definition>
+    <definition name="EtmDeviceHistoryReport" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Device History Report"/>
+      <put-attribute name="layoutId"  value="Etm Device History Report"/>
+      <put-attribute name="content"   value="/device/EtmDeviceHistoryReport.jsp"/>      
+   </definition>
+    <definition name="serviceTicketToCompany" extends="baseLayout">
+      <put-attribute name="title"  value="Service Ticket To Company"/>
+      <put-attribute name="layoutId"  value="Service Ticket To Company"/>
+      <put-attribute name="content"   value="/device/ServiceTicketToCompany.jsp"/>      
+   </definition>
+   <definition name="serviceTicketToPickUp" extends="baseLayout">
+      <put-attribute name="title"  value="Service Ticket To Company"/>
+      <put-attribute name="layoutId"  value="Service Ticket To Company"/>
+      <put-attribute name="content"   value="/device/serviceTicketToPickUp.jsp"/>      
+   </definition>
+   <definition name="serviceTicketToCompanyduplicate" extends="baseLayout">
+      <put-attribute name="title"  value="Service Ticket To Print"/>
+      <put-attribute name="layoutId"  value="Service Ticket To Print"/>
+      <put-attribute name="content"   value="/device/serviceTicketToCompanyduplicate.jsp"/>      
+   </definition>
+   <definition name="ResolveETMVerifone" extends="baseLayout">
+      <put-attribute name="title"  value="Resolve ETM Verifone"/>
+      <put-attribute name="layoutId"  value="Resolve ETM Verifone"/>
+      <put-attribute name="content"   value="/device/ResolveETMVerifone.jsp"/>      
+   </definition>
+   <definition name="serviceTicketToCompanyEtmDuplicate" extends="baseLayout">
+      <put-attribute name="title"  value="Service Ticket To Company"/>
+      <put-attribute name="layoutId"  value="Service Ticket To Company"/>
+      <put-attribute name="content"   value="/device/serviceTicketToCompanyEtmDuplicate.jsp"/>      
+   </definition>
+   
+     <definition name="EtmPickFromDepot" extends="baseLayout">
+      <put-attribute name="title"  value="Emt Pick Form Depot"/>
+      <put-attribute name="layoutId"  value="Emt Pick Form Depot"/>
+      <put-attribute name="content"   value="/device/etmpickformdepot.jsp"/>      
+   </definition>
+    
+<!--      <definition name="ETMReceivedbyDepot" extends="baseLayout"> -->
+<!--       <put-attribute name="title"  value="ETM Received by Depot"/> -->
+<!--       <put-attribute name="layoutId"  value="ETM Received by Depot"/> -->
+<!--       <put-attribute name="content"   value="/device/ETMReceivedbyDepot.jsp"/>       -->
+<!--    </definition> -->
+  <!--   Start  Maintenance Type -->
+<!--   Customer FeedBack and Complaint -->
+
+ <definition name="CustomerFeedBackView" extends="baseLayout">
+      <put-attribute name="title"  value="Customer FeedBack View"/>
+      <put-attribute name="layoutId"  value="Customer FeedBack View"/>
+      <put-attribute name="content"   value="/customer/CustomerFeedBackView.jsp"/>      
+   </definition>
+   
+    <definition name="CustomerComplaintView" extends="baseLayout">
+      <put-attribute name="title"  value="Customer Complaint View"/>
+      <put-attribute name="layoutId"  value="Customer Complaint View"/>
+      <put-attribute name="content"   value="/customer/CustomerComplaintView.jsp"/>      
+   </definition>
+    <definition name="CustomerSummaryView" extends="baseLayout">
+      <put-attribute name="title"  value="Customer Summary View"/>
+      <put-attribute name="layoutId"  value="Customer Summary View"/>
+      <put-attribute name="content"   value="/customer/summary.jsp"/>      
+   </definition>
+   
+   <definition name="EtmnotResolvedtrimax" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Resolve"/>
+      <put-attribute name="layoutId"  value="Etm Resolve"/>
+      <put-attribute name="content"   value="/device/etmreslovetrimax.jsp"/>      
+   </definition>
+   
+    <definition name="ReceviedFromVerifone" extends="baseLayout">
+      <put-attribute name="title"  value="Verifone To Fme"/>
+      <put-attribute name="layoutId"  value="Verifone To Fme"/>
+      <put-attribute name="content"   value="/device/etmreceivedfromverifone.jsp"/>      
+   </definition>
+
+
+	<definition name="ReportOfDevice" extends="baseLayout">
+		<put-attribute name="title"  value="Etm Device History Report"/>
+        <put-attribute name="layoutId"  value="Etm Device History Report"/>
+        <put-attribute name="content"   value="/device/reportOfDevice.jsp"/>  
+	</definition>
+	
+	<definition name="EtmReceviedFromTrimax" extends="baseLayout">
+      <put-attribute name="title"  value="Received from trimax"/>
+      <put-attribute name="layoutId"  value="Received from trimax"/>
+      <put-attribute name="content"   value="/device/etmreceivedfromtrimax.jsp"/> 
+	</definition>
+   	<definition name="EtmResolve" extends="baseLayout">
+      <put-attribute name="title"  value="Etm Resolve"/>
+      <put-attribute name="layoutId"  value="Etm Resolve"/>
+      <put-attribute name="content"   value="/device/etmresolved.jsp"/> 
+	</definition>
+	  	<definition name="DepotAndCauseSummary" extends="baseLayout">
+      <put-attribute name="title"  value="Depot And Cause Summary"/>
+      <put-attribute name="layoutId"  value="Depot And Cause Summary"/>
+      <put-attribute name="content"   value="/device/depotandcausesummary.jsp"/> 
+	</definition>
+	 	<definition name="etmwisestatusreport" extends="baseLayout">
+      <put-attribute name="title"  value="etm wise status"/>
+      <put-attribute name="layoutId"  value="etm wise status"/>
+      <put-attribute name="content"   value="/device/etmwisestatus.jsp"/> 
+	</definition>
+		<definition name="causewiseetmhistoryreport" extends="baseLayout">
+      <put-attribute name="title"  value="Cause Etm History"/>
+      <put-attribute name="layoutId"  value="Cause Etm History"/>
+      <put-attribute name="content"   value="/device/causewiseetmhistory.jsp"/> 
+	</definition>
+	<definition name="etmrepairstatusreport" extends="baseLayout">
+      <put-attribute name="title"  value="ETM Repair Status"/>
+      <put-attribute name="layoutId"  value="ETM Repair Status"/>
+      <put-attribute name="content"   value="/device/etmrepairstatus.jsp"/> 
+	</definition>
+		<definition name="resolvedetmreport" extends="baseLayout">
+      <put-attribute name="title"  value="Resolved Etm"/>
+      <put-attribute name="layoutId"  value="Resolved Etm"/>
+      <put-attribute name="content"   value="/device/resolvedetmreport.jsp"/> 
+	</definition>
+	<definition name="verifonepending" extends="baseLayout">
+      <put-attribute name="title"  value="veri pend"/>
+      <put-attribute name="layoutId"  value="veri pend"/>
+      <put-attribute name="content"   value="/device/verifonepending.jsp"/> 
+	</definition>
+	    <definition name="manualschedulecount" extends="baseLayout">
+      <put-attribute name="title"  value="manual sch count"/>
+      <put-attribute name="layoutId"  value="manual sch count"/>
+      <put-attribute name="content"   value="/Reports/manualschcount.jsp"/>      
+   </definition>
+       <definition name="conductoretmuse" extends="baseLayout">
+      <put-attribute name="title"  value="conductor etm use"/>
+      <put-attribute name="layoutId"  value="conductor etm use"/>
+      <put-attribute name="content"   value="/Reports/ConductorEtmUseage.jsp"/>      
+   </definition>
+   </tiles-definitions>

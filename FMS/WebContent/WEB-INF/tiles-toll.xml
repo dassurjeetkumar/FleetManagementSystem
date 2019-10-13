@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+<tiles-definitions>
+   <definition name="viewTollFee"	extends="baseLayout">
+      <put-attribute name="title"  	value="Toll Fee"/>
+      <put-attribute name="layoutId"  value="TollFee"/>
+      <put-attribute name="content"   value="/tollFee/viewTollfee.jsp"/>   
+   </definition>
+   <definition name="addTollFee" extends="baseLayout">
+      <put-attribute name="title"  value="Toll Fee Add"/>
+      <put-attribute name="layoutId"  value="addTollFee"/>
+      <put-attribute name="content"   value="/tollFee/addTollfee.jsp"/>       
+   </definition>
+   
+   <definition name="editTollFee" extends="baseLayout">
+      <put-attribute name="title"  value="Toll Fee Edit"/>
+      <put-attribute name="layoutId"  value="editTollFee"/>
+      <put-attribute name="content"   value="/tollFee/editTollfee.jsp"/>       
+   </definition>
+   <definition name="copyTollFee" extends="baseLayout">
+      <put-attribute name="title"  value="Toll Fee Copy"/>
+      <put-attribute name="layoutId"  value="copyTollFee"/>
+      <put-attribute name="content"   value="/tollFee/copyTollfee.jsp"/>       
+   </definition>
+    <definition name="showBusStop" extends="baseLayout">
+      <put-attribute name="title"  value="Bus Stop "/>
+      <put-attribute name="layoutId"  value="showBusStop"/>
+      <put-attribute name="content"   value="/tollFee/addTollfee.jsp"/>      
+   </definition>
+</tiles-definitions>

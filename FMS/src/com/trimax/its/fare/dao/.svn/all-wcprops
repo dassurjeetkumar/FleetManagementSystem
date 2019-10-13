@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/its/!svn/ver/7304/its/src/com/trimax/its/fare/dao
+END
+FareChartMasterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/7304/its/src/com/trimax/its/fare/dao/FareChartMasterDao.java
+END
+RateMasterDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/6687/its/src/com/trimax/its/fare/dao/RateMasterDAO.java
+END
+ConcessionDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/4244/its/src/com/trimax/its/fare/dao/ConcessionDao.java
+END
+PassengerTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/4244/its/src/com/trimax/its/fare/dao/PassengerTypeDao.java
+END
+PenaltyTicketDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/4244/its/src/com/trimax/its/fare/dao/PenaltyTicketDao.java
+END
+RevenueTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/4244/its/src/com/trimax/its/fare/dao/RevenueTypeDao.java
+END
+SpecialPassTicketDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/5467/its/src/com/trimax/its/fare/dao/SpecialPassTicketDao.java
+END
+TollPassTicketDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/5946/its/src/com/trimax/its/fare/dao/TollPassTicketDao.java
+END
+bankRemmitanceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/5301/its/src/com/trimax/its/fare/dao/bankRemmitanceDao.java
+END
+LuggageTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/4244/its/src/com/trimax/its/fare/dao/LuggageTypeDao.java
+END

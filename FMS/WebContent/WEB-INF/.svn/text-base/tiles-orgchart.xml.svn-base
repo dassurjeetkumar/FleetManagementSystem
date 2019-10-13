@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+   
+   <definition name="orgchart" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/showCorporation.jsp"/>      
+   </definition>
+   <definition name="createorgchart" extends="baseLayout">
+      <put-attribute name="title"  value="Create Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/createorgchart.jsp"/>      
+   </definition>
+   <definition name="editorgchart" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/editorgchart.jsp"/>      
+   </definition>
+   <definition name="divisions" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/showDivisions.jsp"/>      
+   </definition>
+   <definition name="createdivision" extends="baseLayout">
+      <put-attribute name="title"  value="Create Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/createDepots.jsp"/>      
+   </definition>
+   
+   
+   <definition name="depots" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/showDepots.jsp"/>      
+   </definition>
+   <definition name="createdepot" extends="baseLayout">
+      <put-attribute name="title"  value="Create Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/createBusStation.jsp"/>      
+   </definition>
+   
+   <definition name="busstation" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/showBusStation.jsp"/>      
+   </definition>
+   <definition name="createbusstation" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/CreateBussations.jsp"/>      
+   </definition>
+   
+   <definition name="editdivision" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/editDivision.jsp"/>      
+   </definition>
+   
+    <definition name="editdepots" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/editDepots.jsp"/>      
+   </definition>
+   
+   <definition name="editbusstations" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/editBusStations.jsp"/>      
+   </definition>
+   <definition name="showOrgType" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/viewOrgType.jsp"/>      
+   </definition>
+   
+   <definition name="createOrgType" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/createOrgType.jsp"/>      
+   </definition>
+   <definition name="editOrgType" extends="baseLayout">
+      <put-attribute name="title"  value="Organisation Chart"/>
+      <put-attribute name="content"  value="/orgchart/editOrgType.jsp"/>      
+   </definition>
+  
+   </tiles-definitions>

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/6196/its/src/com/trimax/doa/ticketing/model
+END
+TicketInventory.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/5168/its/src/com/trimax/doa/ticketing/model/TicketInventory.java
+END
+DenominationType.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/6196/its/src/com/trimax/doa/ticketing/model/DenominationType.java
+END
+TicketBagMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/2426/its/src/com/trimax/doa/ticketing/model/TicketBagMaster.java
+END
+Snippet.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/1132/its/src/com/trimax/doa/ticketing/model/Snippet.java
+END
+TicketTypeManual.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/1905/its/src/com/trimax/doa/ticketing/model/TicketTypeManual.java
+END
+TicketInventoryIssue.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/5458/its/src/com/trimax/doa/ticketing/model/TicketInventoryIssue.java
+END
+RevenueType.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/1249/its/src/com/trimax/doa/ticketing/model/RevenueType.java
+END
+TicketInventoryLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/2929/its/src/com/trimax/doa/ticketing/model/TicketInventoryLog.java
+END
+TicketInvoiceMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/3305/its/src/com/trimax/doa/ticketing/model/TicketInvoiceMaster.java
+END
+TicketInventoryMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/4721/its/src/com/trimax/doa/ticketing/model/TicketInventoryMaster.java
+END
+TicketInvoiceDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/1132/its/src/com/trimax/doa/ticketing/model/TicketInvoiceDetails.java
+END

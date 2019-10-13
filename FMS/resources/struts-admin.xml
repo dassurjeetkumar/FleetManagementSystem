@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="admin" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	     <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+  		 
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+		
+		<action name="addVendorDetails" class="com.trimax.its.action.VendorAction"
+			method="addVendorDetails">
+			<!-- <interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+			<result name="success" type="tiles">ViewVendorList</result>
+			<result name="error" type="tiles">ErrorInAddVendor</result>
+			<!-- <result name="invalid.token" type="chain">ShowVendorList</result> -->
+		</action>
+
+
+		<action name="ShowVendor" class="com.trimax.its.action.VendorAction" method="getDisplayVendor">
+			<result name="success" type="tiles">CreateVendor</result>
+		</action>
+		
+		
+		<action name="ShowVendorAjax" class="com.trimax.its.action.VendorAction"
+			method="getVendorlistDetails">
+			
+		</action>
+		
+
+		<action name="ShowVendorList" class="com.trimax.its.action.VendorAction"
+			method="execute">
+				<result name="input" type="tiles">ViewVendorList</result>
+			<result name="success" type="tiles">ViewVendorList</result>
+		</action>
+
+		<action name="DeleteRecord" class="com.trimax.its.action.VendorAction"
+			method="getInactiveRecord">
+			<result name="success" type="tiles">DeleteVendorList</result>
+		</action>
+
+
+		<action name="ModifyVendorDetails" class="com.trimax.its.action.VendorAction"
+			method="getValuefromId">
+			<result name="success" type="tiles">EditRecord</result>
+			
+		</action>
+
+		<action name="EditVendorDetails" class="com.trimax.its.action.VendorAction"
+			method="modifyVendor">
+		 	<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> 
+			<result name="success" type="tiles">ViewVendorList</result>
+			<result name="error" type="tiles">ErrorInUpdate</result>
+			<result name="input" type="tiles">EditRecord</result>
+		  <result name="invalid.token" type="chain">ViewVendorList</result> 
+		</action>
+
+		<action name="ShowEmployeeTypeList" 
+			class="com.trimax.its.usermanagement.action.EmployeeTypeAction"  method="execute">
+			<result name="success" type="tiles">EmployeeTypeList</result>
+		</action>
+		
+		
+		
+		<action name="ShowEmployeeTypeAjax" 
+			class="com.trimax.its.usermanagement.action.EmployeeTypeAction" method="getDisplayEmployeetypelist"  >
+			
+		</action> 
+		
+		
+
+		<action name="ShowEmployeeType" class="com.trimax.its.usermanagement.action.EmployeeTypeAction" method="getDisplayEmployeetype">
+		
+			<result name="success" type="tiles">ShowEmployeeType</result>
+			
+		</action> 
+
+
+		
+
+		 <action name="AddEmployeeType"
+			class="com.trimax.its.usermanagement.action.EmployeeTypeAction"
+			method="getAddEmployeetype">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="tiles">AddEmployeeType</result>
+			<result name="error" type="tiles">ErrorEmployeeType</result>
+			<result name="invalid.token" type="tiles">EmployeeTypeList</result>
+		</action> 
+
+		 <action name="DeleteEmployeeTypeRecord"
+			class="com.trimax.its.usermanagement.action.EmployeeTypeAction"
+			method="getInactiveRecord">
+			<result name="success" type="tiles">DeleteEmployeeType</result>
+		</action>
+
+<!--
+		<action name="ModifyEmployeeTypeDetails"
+			class="com.trimax.its.usermanagement.action.EmployeeTypeAction"
+			method="getEmployeeTypeDetailsFromId">
+			<result name="success" type="tiles">DisplayModifyEmployeeTypeDetails</result>
+			
+		</action>
+
+		<action name="UpdateEmployeeTypeDetails"
+			class="com.trimax.its.usermanagement.action.EmployeeTypeAction"
+			method="modifyEmployeeTypeRecord">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="tiles">UpdateEmployeeTypeDetails</result>
+			<result name="error" type="tiles">ErrorModifyEmployeeType</result>
+			<result name="invalid.token" type="tiles">EmployeeTypeList</result>
+		</action>
+
+
+		<action name="ShowEmployeeList"
+			class="com.trimax.its.usermanagement.action.EmployeeAction" method="getEmployeeList">
+			<result name="input" type="tiles">ShowEmployeeList</result>
+			<result name="success" type="tiles">ShowEmployeeList</result>
+		</action> -->
+
+
+
+		<!-- <action name="ShowEmployee"
+			class="com.trimax.its.usermanagement.action.EmployeeAction" method="getDisplayEmployee">
+			<result name="success" type="tiles">ShowEmployee</result>
+		</action>
+ -->
+
+
+		<!-- action name="AddEmployeeDetails" class="com.trimax.its.usermanagement.action.EmployeeAction" 
+			method="getAddEmployeeDetails"> <result name="input" type="tiles">AddEmployeeTest</result> 
+			<result name="success" type="tiles">AddEmployeeTest</result> </action -->
+
+
+		<!-- action name="ShowEmployeeTypeListDetails" class="com.trimax.its.usermanagement.action.EmployeeAction" 
+			method="addempdetails"> <result name="input" type="tiles">AddEmployeeTest</result> 
+			<result name="success" type="tiles">AddEmployeeTest</result> </action -->
+
+		<!-- <action name="ShowEmployeeTypeListDetails"
+			class="com.trimax.its.usermanagement.action.EmployeeAction" method="addempdetails">
+			<result name="input" type="tiles">AddEmployeeTest</result>
+			<result name="success" type="tiles">AddEmployeeTest</result>
+		</action> -->
+
+		<!-- <action name="ModifyEmployeeDetails"
+			class="com.trimax.its.usermanagement.action.EmployeeAction" method="getEmployeeDetailsFromId">
+			<result name="success" type="tiles">EditEmployee</result>
+		</action> -->
+
+
+		<!-- <action name="updateEmployeeDetails"
+			class="com.trimax.its.usermanagement.action.EmployeeAction" method="getupdateDetails">
+			<result name="success" type="tiles">UpdateEmployee</result>
+		</action> -->
+
+		 <action name="ShowRole" class="com.trimax.its.utility.action.RoleAction">
+			<result name="success" type="tiles">RoleAction</result>
+		</action>
+		<action name="ShowRoleAction" class="com.trimax.its.utility.action.RoleAction"
+			method="showRole">
+			<result name="success" type="tiles">RoleAction</result>
+
+		</action>
+		<action name="createRole" class="com.trimax.its.utility.action.RoleAction"
+	method="createRole">
+			<result name="success" type="tiles">CreateRoleAction</result>
+
+		</action>
+		<action name="createRoleAction" class="com.trimax.its.utility.action.RoleAction"
+			method="createRoleAction">
+			<result name="input" type="tiles">CreateRoleAction</result>
+			<result name="success" type="tiles">RoleAction</result>
+
+		</action> 
+		<action name="editRole" class="com.trimax.its.utility.action.RoleAction"
+			method="editRole">
+			<result name="scuuess" type="tiles">editPage</result>
+		</action>
+
+
+		<action name="addeditedRole" class="com.trimax.its.utility.action.RoleAction"
+			method="addeditedRole">
+			<result name="success" type="tiles">UpdateRoleAction</result>
+			<result name="input" type="tiles">fail</result> 
+			
+		</action>
+
+ 
+     <action name="page" class="com.trimax.its.utility.action.PageAction">
+           
+			<result name="success" type="tiles">AddPage</result>
+    </action>
+    
+    <action name="pageView" class="com.trimax.its.utility.action.PageAction" method="addPage">
+          
+			<result name="success" type="tiles">AddPage</result>
+    </action>
+    
+    <action name="user_group" class="com.trimax.its.utility.action.UserGroupAction">
+          
+			<result name="success" type="tiles">GroupMap</result>
+    </action>
+     
+    <action name="usergroup" class="com.trimax.its.utility.action.UserGroupAction" method="viewUserGroup">
+          
+			<result name="success" type="tiles">GroupMap</result>
+    </action>
+     
+    <action name="userGroupMap" class="com.trimax.its.utility.action.UserGroupAction" method="mapUserGroup">
+              
+			<result name="success" type="tiles">GroupMap</result>
+    </action>
+    
+    <action name="getGroup" class="com.trimax.its.utility.action.UserGroupAction" method="getAllGroup">
+            <result name="success" type="tiles">viewGroupRole</result>
+    </action>
+    <action name="findGroupIdAction" class="com.trimax.its.utility.action.GroupRoleAction" method="getAllGroupNameId">
+            <result name="success" type="tiles">viewGroupRole</result>
+    </action>
+    <action name="getRoleListDetails" class="com.trimax.its.utility.action.GroupRoleAction" method="getAllRole">
+        
+    </action>
+    
+     <action name="findParentIdAction" class="com.trimax.its.utility.action.PageAction" method="getParentid">
+            <result name="input" type="tiles">CreatePage</result>
+			<result name="success" type="tiles">CreatePage</result>
+    </action>
+    <action name="findPageType" class="com.trimax.its.utility.action.PageAction" method="getPageType">
+         <result name="success">/createNewPage.jsp</result>   
+    </action>
+    <action name="findLevelAction" class="com.trimax.its.utility.action.PageAction" method="getLevel">
+            <result name="input" type="tiles">FindParentId</result>
+			<result name="success" type="tiles">FindParentId</result>
+    </action>
+    <action name="findSequenceAction" class="com.trimax.its.utility.action.PageAction" method="getSequence">
+            <result name="input" type="tiles">FindParentId</result>
+			<result name="success" type="tiles">FindParentId</result>
+    </action>
+     <action name="createPage" class="com.trimax.its.utility.action.PageAction" method="ceatePage">
+            <result name="input" type="tiles">CreatePage</result>
+			<result name="success" type="tiles">CreatePage</result>
+    </action>
+    <action name="addNew" class="com.trimax.its.utility.action.PageAction" method="savePageDetails">
+            <result name="input" type="tiles">CreatePage</result>
+			<result name="success" type="tiles">AddPage</result>
+    </action>
+    <action name="editPageData" class="com.trimax.its.utility.action.PageAction" method="editPageDetails">
+            <result name="input" type="tiles">EditPage</result>
+			<result name="success" type="tiles">AddPage</result>
+    </action>
+    
+     <action name="editAddPage" class="com.trimax.its.utility.action.PageAction" method="editAddPage">
+            <result name="input" type="tiles">EditPage</result>
+			<result name="success" type="tiles">EditPage</result>
+    </action>
+   
+     <action name="viewGroup" class="com.trimax.its.utility.action.GroupAction" method="viewGroup">
+            
+			<result name="success" type="tiles">AddGroup</result>
+    </action>
+    
+     <action name="group" class="com.trimax.its.utility.action.GroupAction">
+            
+			<result name="success" type="tiles">AddGroup</result>
+    </action>
+    
+     <action name="findUserIdAction" class="com.trimax.its.utility.action.UserGroupAction" method="findUserId">
+            
+			<result name="success" type="tiles">UserGroupMap</result>
+    </action>
+    
+    <action name="createGroup" class="com.trimax.its.utility.action.GroupAction" method="addGroup">
+            
+			<result name="success" type="tiles">CreateGroup</result>
+    </action>
+    
+    <action name="createGroupView" class="com.trimax.its.utility.action.GroupAction">
+            
+			<result name="success" type="tiles">AddGroup</result>
+    </action>
+   
+     <action name="addNewGroup" class="com.trimax.its.utility.action.GroupAction" method="saveGroupDetails">
+            <result name="error" type="tiles">CreateGroup</result>
+			<result name="success" type="tiles">AddGroup</result>
+    </action>
+     <action name="editGroupPage" class="com.trimax.its.utility.action.GroupAction" method="editGroup">
+            <result name="input" type="tiles">EditGroup</result>
+	 		<result name="success" type="tiles">EditGroup</result>
+    </action>
+    <action name="findGroupIdAction" class="com.trimax.its.utility.action.GroupAction" method="findGroupID">
+            
+			<result name="success" type="tiles">UserGroupMap</result>
+    </action>
+    <action name="editGroupDetails" class="com.trimax.its.utility.action.GroupAction" method="editGroupDetails">
+            <result name="error" type="tiles">EditGroup</result>
+			<result name="success" type="tiles">AddGroup</result>
+    </action>
+     <action name="grouprole" class="com.trimax.its.utility.action.GroupRoleAction" method="getGroupRole">
+            <result name="success" type="tiles">viewGroupRole</result>
+    </action> 
+    
+   <!--  <action name="ModifyEmployeeDetails" class="com.trimax.its.usermanagement.action.EmployeeAction" method="getEmployeeDetailsFromId">
+            <result name="success" type="tiles">EditEmployee</result>
+    </action> -->
+    
+    
+   <!--   <action name="updateEmployeeDetails" class="com.trimax.its.usermanagement.action.EmployeeAction" method="getupdateDetails">
+            <result name="success" type="tiles">UpdateEmployee</result>
+    </action> -->
+   
+   <!-- 	<action name="addeditedRole" class="com.trimax.its.utility.action.RoleAction"
+			method="addeditedRole">
+			
+			<result name="inputt" type="tiles">editPage</result>
+			
+			<result name="success" type="tiles">RoleAction</result>
+		</action> -->
+		<action name="pagerole" class="com.trimax.its.utility.action.RoleAction"
+			method="pageRoleDisplay">
+			<result name="success" type="tiles">viewpagerole</result>
+		</action>
+		<action name="RoleAjaxAction" class="com.trimax.its.utility.action.RoleAction"
+			method="getRoleName">
+			<result name="success" type="tiles">viewpagerole</result>
+		</action>
+		<action name="PageRoleAjaxAction" class="com.trimax.its.utility.action.RoleAction"
+			method="pageRoleView">
+			<result name="success" type="tiles">viewpagerole</result>
+		</action>
+		<action name="activateRole" class="com.trimax.its.utility.action.RoleAction"
+			method="activeRole">
+					<result name="input" type="tiles">RoleAction</result>
+			<result name="success" type="tiles">RoleAction</result>
+		</action>
+
+	
+		<action name="activegroup" class="com.trimax.its.utility.action.GroupRoleAction"
+			method="activeGroupRole">
+			<result name="success" type="tiles">viewGroupRole</result>
+		</action>
+		
+		
+		
+		<!-- Designation Start -->
+
+	 <action name="ShowDesignationlist" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="execute">
+	  
+      	<result name="success" type="tiles">Designationlist</result>
+    	</action>
+    	 <action name="ShowDesignationlistAjax" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="getListAjax">
+	  
+      	
+    	</action>
+    	
+    	
+    	
+ 
+    	
+		<action name="ShowDesignationType" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="showDesigationType">
+            <result name="input" type="tiles">ShowDesignationType</result>
+			<result name="success" type="tiles">ShowDesignationType</result>
+    </action>
+    
+	 <action name="AddDesignationType" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="addDesignationType">
+	    <interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+           	<result name="success" type="tiles">Designationlist</result>
+		<!-- <result name="error" type="tiles">ShowDesignationType</result> -->
+		<result name="input" type="tiles">ShowDesignationType</result>
+			<result name="error" type="tiles">ErrorAddDesignationtype</result>
+			
+    </action>
+    
+ <action name="ModifyDesignation" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="edit">
+       
+            <result name="input" type="tiles">ModifyDesignationtype</result>
+			<result name="success" type="tiles">ModifyDesignationtype</result>
+		
+    </action>
+    
+     <action name="UpdateDesignationType" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="updateDesignation">
+       <interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+        <result name="success" type="tiles">Designationlist</result>
+		  <result name="error" type="tiles">ErrorUpdateDesignationtype</result>
+		  <result name="invalid.token" type="tiles">Designationlist</result>
+    </action>
+	
+	  <action name="DeleteDesignationTypeRecord" class="com.trimax.its.usermanagement.action.DesignationTypeAction" method="deleteDesignation">
+        <result name="success" type="chain">ShowDesignationlist</result>
+		 
+    </action>
+	
+	
+	<!-- Designation End -->
+	<action name="ShowUserList" class="com.trimax.its.usermanagement.action.UserAction"
+			method="execute">
+				<result name="input" type="tiles">showUserListDetails</result>
+			<result name="success" type="tiles">showUserListDetails</result>
+		</action>
+	<action name="showUserListAjax" class="com.trimax.its.usermanagement.action.UserAction" method="getUSerListDetails">
+       
+		 
+    </action>
+		
+
+		
+		<action name="ShowUser" class="com.trimax.its.usermanagement.action.UserAction"
+			method="getDisplayUser">
+				<result name="input" type="tiles">showCreateUser</result>
+			<result name="success" type="tiles">showCreateUser</result>
+		</action>
+		
+		
+			
+		<action name="addUserDetails" class="com.trimax.its.usermanagement.action.UserAction"
+			method="addUserDetails">
+		<!-- 	<interceptor-ref name="defaultStack"></interceptor-ref>  -->
+			<result name="input" type="tiles">AddUserDetails</result>
+			<result name="success" type="tiles">AddUserDetails</result>
+			<result name="error" type="tiles">ErrorAddUserDetails</result>
+			<!-- <result name="invalid.token" type="tiles">showBreakdowntypeList</result>   -->
+		</action>
+		
+		<action name="ModifyUserDetails" class="com.trimax.its.usermanagement.action.UserAction"
+			method="getEditDetails">
+				<result name="input" type="tiles">showEditUser</result>
+			<result name="success" type="tiles">showEditUser</result>
+		</action>
+		
+		
+		
+			<action name="updateUserDetails" class="com.trimax.its.usermanagement.action.UserAction"
+			method="updateUserDetails">
+			<result name="input" type="tiles">UpdateUser</result>
+			<result name="success" type="tiles">UpdateUser</result>
+				<result name="error" type="tiles">ErrorUpdateUserDetails</result>
+		</action>
+		
+		<action name="DeleteUserDetails" class="com.trimax.its.usermanagement.action.UserAction"
+			method="deleteUserDetails">
+			<result name="input" type="tiles">DeleteUser</result>
+			<result name="success" type="tiles">DeleteUser</result>
+		</action>
+	
+	
+	<action name="GetRolelist" class="com.trimax.its.utility.action.GroupRoleAction"
+			method="getRole">
+			   <result name="success"  type="tiles">Rolelist</result>
+		
+		</action>
+		
+		
+		<action name="getDeleteRole" class="com.trimax.its.utility.action.GroupRoleAction" method="deleterole">
+			  
+		
+		</action>
+		<action name="addGroupRole" class="com.trimax.its.utility.action.GroupRoleAction" method="getAddRoleToGroup">
+			  
+		
+		</action>
+		
+		
+		
+		 <action name="addPageAccess" class="com.trimax.its.utility.action.PageRoleAction" method="getDisplayRolePage">
+			   <result name="success"  type="tiles">PageRoleList</result>
+		
+		</action>
+	
+		<action name="PageRoleDetails" class="com.trimax.its.utility.action.PageRoleAction" method="pageRoleList">
+			  
+		
+		</action>
+		
+		
+		
+		<action name="GetPagelist" class="com.trimax.its.utility.action.PageRoleAction" method="getPagelist">
+			  
+		
+		</action>
+		
+		
+		
+		<action name="addPageRoledetails" class="com.trimax.its.utility.action.RoleAction" method="getAddPagesRole">
+			  
+		
+		</action>
+		<action name="getDeleteRolePagedetails" class="com.trimax.its.utility.action.RoleAction" method="getdeletePageRole">
+			  
+		
+		</action>
+		
+		
+
+
+		
+		<action name="UserRolePageDetails" class="com.trimax.its.usermanagement.action.UserAction" method="pageRoleListForUserRole">
+			  
+		
+		</action>
+		
+		
+			<action name="addUserRolePagedetails" class="com.trimax.its.usermanagement.action.UserAction" method="getAddUserRolePage">
+			  
+		
+		</action>
+			<action name="getDeleteUserRolePagedetails" class="com.trimax.its.usermanagement.action.UserAction" method="getDeleteUserRolePage">
+			  
+		
+		</action>
+		
+	
+		<action name="showUserRolePageAccess" class="com.trimax.its.usermanagement.action.UserAction" method="displayusrrolepageaccess">
+			   <result name="success"  type="tiles">UserRolePageAccess</result>
+		
+		</action>
+		<action name="getDesignationFromEmployee" class="com.trimax.its.usermanagement.action.UserAction" method="getdesignationemloyee">
+			  
+		
+		</action>
+		
+		 <action name="DeleteroleRecord" class="com.trimax.its.utility.action.RoleAction" method="deleteRole">
+			   <result name="success"  type="tiles">DeleteRole</result>
+		
+		</action>
+		
+		
+		
+		 <action name="deletePage" class="com.trimax.its.utility.action.PageAction" method="deletePage">
+			   <result name="success"  type="tiles">DeletePage</result>
+		
+		</action>
+		
+		
+		
+		
+		
+		 <action name="ShowEmployeeAjax" class="com.trimax.its.usermanagement.action.EmployeeAction" method="getEmployeelistDetails">
+			 
+		
+		</action>
+		
+		 <action name="ShowEmployeeListDetails" class="com.trimax.its.usermanagement.action.EmployeeAction">
+			 <result name="Success"  type="tiles">emplist</result>
+			 
+		
+    </action>
+    <!--  added by rama -->
+    
+    <action name="createEmployee" class="com.trimax.its.usermanagement.action.EmployeeAction"
+			method="viewcreatePage">
+			<result name="success" type="tiles">createEmp</result>
+		</action>
+		<action name="editEmployee" class="com.trimax.its.usermanagement.action.EmployeeAction"
+			method="vieweditPage">
+			<result name="success" type="tiles">editEmp</result>
+		</action>
+		<action name="createEmployeeAction" class="com.trimax.its.usermanagement.action.EmployeeAction"
+			method="createEmployee">
+			
+			<result name="success" type="tiles">emplist</result>
+			<result name="input" type="tiles">createEmp</result>
+		 	
+	
+		</action>
+		<action name="findUnitName1"
+			class="com.trimax.its.usermanagement.action.EmployeeAction" method="getUnitName">
+			<result name="input" type="tiles">createEmp</result>
+
+		</action>
+<!-- 		<action name="editEmployeeAction" class="com.trimax.its.usermanagement.action.EmployeeAction" -->
+<!-- 			method="editEmployee"> -->
+<!-- 			<result name="input" type="tiles">editEmp</result> -->
+<!-- 			<result name="success" type="tiles">emplist</result> -->
+			
+<!-- 		</action> -->
+		<action name="editEmployeeAction" class="com.trimax.its.usermanagement.action.EmployeeAction"
+			method="editEmployeeAction">
+			<result name="input" type="tiles">editEmp</result>
+			<result name="success" type="tiles">emplist</result>
+			
+		</action>
+		 <!--  ended by rama-->
+		
+		 <action name="findUnitNameActionForUser" class="com.trimax.its.usermanagement.action.UserAction"  method="getUnitNameForUser">
+			<!--  <result name="Success"  type="tiles">emplist</result> -->
+		
+		</action>
+		
+		<action name="findAllOrgTypeDetailsAction" class="com.trimax.its.usermanagement.action.UserAction"  method="getOrgTypeForUser">
+			<!--  <result name="Success"  type="tiles">emplist</result> -->
+		
+		</action>
+		
+		
+		<action name="getInactiveForInformation" class="com.trimax.its.utility.action.RoleAction"  method="getRoleDetails">
+			
+		</action>
+		<action name="getInactiveForGroup" class="com.trimax.its.utility.action.GroupAction"  method="getGroupDetailsForInactive">
+			
+		</action>
+		
+			<action name="getInactiveForPage" class="com.trimax.its.utility.action.PageAction"  method="getPageDetailsForInactive">
+			
+		</action>
+		
+		<action name="getDesignationFromUser" class="com.trimax.its.usermanagement.action.UserAction"  method="getedituserdetails">
+			
+		</action>
+		
+		
+		
+		<action name="createBataConfig" class="com.trimax.its.usermanagement.action.BataConfigDetailAction">
+			<result name="success" type="tiles">displaybataconfig</result>
+		</action>
+		
+			<action name="batalistdetails" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="getprepare">
+			
+		</action>
+		
+	
+		
+		<action name="showBataConfig" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="showbataconfigdetails">
+			<result name="success" type="tiles">createbataconfigdetails</result>
+		</action>
+		
+
+		
+			<action name="addBataConfigDetails" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="getAddBataConfig">
+			<result name="success" type="tiles">addbataconfigdetails</result>
+			<result name="error" type="tiles">erroraddbataconfigdetails</result>
+			<result name="input" type="tiles">erroraddbataconfigdetails</result>
+		</action>
+		
+		
+	<!-- 	<action name="addBataConfigDetails" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="getAddBataConfig">
+			<result name="success" type="tiles">addbataconfigdetails</result>
+			<result name="error" type="tiles">erroraddbataconfigdetails</result>
+		</action> -->
+		
+		
+		
+		<action name="editBataConfig" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="getEditDetails">
+			<result name="success" type="tiles">editbataconfigdetails</result>
+			<!-- <result name="error" type="tiles">erroraddbataconfigdetails</result> -->
+		</action>
+		
+		
+		<action name="updateBataConfigDetails" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="getUpdateBata">
+			<result name="success" type="tiles">updatebataconfigdetails</result>
+			<result name="error" type="tiles">erroupdateconfigdetails</result>
+			<result name="input" type="tiles">erroupdateconfigdetails</result>
+		</action>
+		
+		
+		
+		
+		<action name="deleteBataConfig" class="com.trimax.its.usermanagement.action.BataConfigDetailAction" method="deletedRecordBata">
+			<result name="success" type="tiles">deleteBataConfig</result>
+		
+		</action>
+		
+	
+		
+		
+		<action name="viewWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showWeeklyChart">
+			<result name="success" type="tiles">WeeklyChart</result>
+		</action>
+
+		<action name="viewWeeklyChartAction"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="viewWeeklyChartList">
+
+		</action>
+	<!-- 	
+		<action name="createWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showScheduleList">
+			<result name="success" type="tiles">CreateWeeklyChart</result>
+		</action>
+
+		<action name="FormFourViewlistforweekly"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showFormFourList">
+			<result name="success">/weeklyChart/weeklyChartAjax.jsp</result>
+		</action> -->
+
+		<!-- <action name="saveWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="createWeeklyChart">
+			<result name="input" type="tiles">CreateWeeklyChart</result>
+			<result name="success" type="tiles">WeeklyChart</result>
+		</action> -->
+
+		<action name="editWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="editWeeklyChart">
+			<result name="success" type="tiles">EditWeeklyChart</result>
+		</action>
+		<!-- <action name="findAllSchedule"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="getScheduleName">
+			<result name="success" type="tiles">EditWeeklyChart</result>
+		</action> -->
+		<!-- <action name="editFormFourView"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="editWeeklyChartList">
+
+		</action> -->
+		<action name="addEditWeeklyChartAction"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="addEditWeeklyChart">
+            <result name="input" type="tiles">EditWeeklyChart</result>
+			<result name="success" type="tiles">WeeklyChart</result>
+		</action>
+		<action name="FormFourViewForEdit"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showWeeklyList">
+			<result name="success">/weeklyChart/editAjaxWeeklyChart.jsp</result>
+		</action>
+		<action name="GetPagelistForUser"   class="com.trimax.its.utility.action.PageRoleAction" method="getpagelistdetailsforuser">
+		
+		</action>
+		
+		<action name="parentpagelistActionDetails" class="com.trimax.its.utility.action.PageAction" method="pagelistdetails">
+		
+		</action>
+		
+		
+		
+		<action name="parentiddetails" class="com.trimax.its.utility.action.PageAction" method="iddetails">
+		
+		</action>
+		 <action name="AjaxPageRoleAction" class="com.trimax.its.utility.action.PageRoleAction" method="getPageRoleDetailsDisplayData">
+			   <result name="success"  type="tiles">PageRoleListDisplay</result>
+			</action>
+			
+			<action name="addMultiplePageRoledetails" class="com.trimax.its.utility.action.PageRoleAction" method="saveMultiplePageRole">
+			<result name="success"  type="tiles">PageRoleList</result>
+		</action>
+		<action name="cancelMultiplePageRoledetails" class="com.trimax.its.utility.action.PageRoleAction" method="cancelMultiplePageRole">
+			<result name="success"  type="tiles">PageRoleList</result>
+		</action>
+			
+	</package>
+</struts>

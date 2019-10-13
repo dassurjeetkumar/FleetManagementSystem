@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="inventory" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="securityInterceptor" class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="itsStack" />
+
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+		</global-results>
+
+       <action name="ViewTicketStock" class="com.trimax.its.inventory.action.StockViewAction" method="getAllList"> 
+       		<result name="success" type="tiles">ViewTicketStock</result>
+       </action>
+       
+        <action name="GetTicketStockByDate" class="com.trimax.its.inventory.action.StockViewAction" method="getAllListOfParticularDate"> 
+       		<result name="success" type="tiles">ViewTicketStock</result>
+       </action>
+       
+       <action name="AutomaticIssue" class="com.trimax.its.inventory.action.AutomaticIssueAction"> 
+       		<result name="success" type="tiles">ViewAutomaticIssue</result>
+       		<result name="input" type="tiles">ViewAutomaticIssue</result>
+       		<result name="fail" type="tiles">ViewAutomaticIssue</result>
+       </action>
+       
+       <action name="normalTicketsByNoOfBooks" class="com.trimax.its.inventory.action.AutomaticIssueAction" method="getNormalTicketsByNoOfBooks"> 
+       		<result name="success" type="tiles">ViewAutomaticIssue</result>
+       </action>
+       
+       <action name="luggageTicketsByNoOfBooks" class="com.trimax.its.inventory.action.AutomaticIssueAction" method="getLuggageTicketsByNoOfBooks"> 
+       		<result name="success" type="tiles">ViewAutomaticIssue</result>
+       </action>
+       
+       <action name="passTypeTicketsByNoOfBooks" class="com.trimax.its.inventory.action.AutomaticIssueAction" method="getPassTypeTicketsByNoOfBooks"> 
+       		<result name="success" type="tiles">ViewAutomaticIssue</result>
+       </action>
+       
+       <action name="getPassDay" class="com.trimax.its.inventory.action.AutomaticIssueAction" method="getPassDay"> 
+       		<result name="success" type="tiles">ViewAutomaticIssue</result>
+       </action>
+       
+       <action name="SaveAutomaticIssue" class="com.trimax.its.inventory.action.AutomaticIssueAction" method="saveAutomaticIssueTickets"> 
+       		<result name="success" type="tiles">voucherlist</result>
+       		<result name="input" type="tiles">AutomaticIssue</result>
+       		<result name="fail" type="tiles">AutomaticIssue</result>
+       </action>
+       
+       <action name="getDepotNameForStock" class="com.trimax.its.inventory.action.StockViewAction" method="getPerticularDepotName">
+       
+       </action>
+       
+       <action name="issueStock"
+			class="com.trimax.its.inventory.action.InventoryIssueAction" method="issueStock">
+			<result name="success" type="tiles">IssueStock</result>
+			<result name="input" type="tiles">IssueStock</result>
+		</action>
+		
+      	<action name="issueStockdata" class="com.trimax.its.inventory.action.InventoryIssueAction" method="issuedStockData">
+		</action>
+		
+		<action name="issuePassStock" class="com.trimax.its.inventory.action.InventoryIssueAction" method="issuedPassStockData">
+		</action>
+		
+		<action name="issueLuggageStock" class="com.trimax.its.inventory.action.InventoryIssueAction" method="issuedLuggageStockData">
+		</action>
+		<action name="issueTSheetStock" class="com.trimax.its.inventory.action.InventoryIssueAction" method="issuedTSheetStockData">
+		</action>
+       
+		<action name="saveIssueStock" class="com.trimax.its.inventory.action.InventoryIssueAction" method="saveissueStock">
+			<result name="success" type="chain">viewVouncherlist</result>
+			<result name="input" type="tiles">IssueStock</result>
+			<result name="fail" type="tiles">IssueStock</result>
+		</action>
+		
+		<action name="viewVouncherlist"
+			class="com.trimax.its.inventory.action.VoucherAction" method="VoucherShow">
+			<result name="success" type="tiles">voucherlist</result>
+		</action>
+
+		<action name="viewticketVouncherRecords"
+			class="com.trimax.its.inventory.action.VoucherAction" method="getVoucherDetails">
+		</action>
+
+		<action name="viewVouncherlistmanual"
+			class="com.trimax.its.inventory.action.VoucherAction" method="VoucherDetailsShow">
+			<result name="success" type="tiles">voucherlistmanual</result>
+		</action>
+
+		<action name="viewticketVouncherRecordsManual"
+			class="com.trimax.its.inventory.action.VoucherAction" method="getVoucherManual">
+		</action>
+
+		<action name="viewticketVouncherRecordsPass"
+			class="com.trimax.its.inventory.action.VoucherAction" method="getVoucherPass">
+		</action>
+
+		<action name="viewticketVouncherRecordsLuggage"
+			class="com.trimax.its.inventory.action.VoucherAction" method="getVoucherluggage">
+		</action>
+		<action name="viewticketVouncherRecordsTsheet"
+			class="com.trimax.its.inventory.action.VoucherAction" method="getVoucherTsheet">
+		</action>
+		 <action name="getDepotNameForIssue" class="com.trimax.its.inventory.action.InventoryIssueAction" method="getPerticularDepotName">
+       
+       </action>
+		<action name="TicketsEditAjax"
+			class="com.trimax.its.inventory.action.EditTicketsPriorityAction">
+		</action>
+		
+		<action name="TicketingAjaxAction"
+			class="com.trimax.its.inventory.action.EditTicketsPriorityAction" method="editStockData">
+		</action>
+
+		<action name="PassEditAjaxAction"
+			class="com.trimax.its.inventory.action.EditTicketsPriorityAction" method="editPassData">
+		</action>
+		
+		<action name="LuggageEditAjaxAction"
+			class="com.trimax.its.inventory.action.EditTicketsPriorityAction" method="editLUggageData">
+		</action>
+		
+		<action name="editStock"
+			class="com.trimax.its.inventory.action.EditTicketsPriorityAction" method="editStock">
+			<result name="success" type="tiles">EditStock</result>
+			<result name="input" type="tiles">EditStock</result>
+		</action>
+		
+		<action name="deleteCheckedStock" class="com.trimax.its.inventory.action.DeleteStockAction" method="deleteCheckedStock">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+		
+		<action name="dayWiseStock" class="com.trimax.its.inventory.action.DayWiseStockAction" method="viewStock"> 
+       		<result name="success" type="tiles">ViewDayWiseStock</result>
+       </action>
+       
+       <action name="getReferenceNumber" class="com.trimax.its.inventory.action.DayWiseStockAction" method="referenceNumberList">
+       </action>
+       
+       <action name="getStockEntryRecords" class="com.trimax.its.inventory.action.DayWiseStockAction" method="getAllList"> 
+       		<result name="success" type="tiles">ViewDayWiseStock</result>
+       </action>
+       
+       <action name="VoucherReceive" class="com.trimax.its.inventory.action.VoucherReceiveAction" method="getDivisions"> 
+       		<result name="success" type="tiles">VoucherReceive</result>
+       </action>
+       
+       <action name="GetDepots" class="com.trimax.its.inventory.action.VoucherReceiveAction" method="getUnitNames"> 
+       </action>
+       
+       <action name="GetVouchersOfDepot" class="com.trimax.its.inventory.action.VoucherReceiveAction" method="getVouchersOfDepot"> 
+       </action>
+       
+       <action name="AcceptVoucher" class="com.trimax.its.inventory.action.VoucherReceiveAction" method="acceptVoucher"> 
+       </action>
+       
+       <action name="RejectVoucher" class="com.trimax.its.inventory.action.VoucherReceiveAction" method="rejectVoucher"> 
+       </action>
+       
+        <action name="VoucherDetails" class="com.trimax.its.inventory.action.VoucherReceiveAction" method="voucherDetails"> 
+       </action>
+       
+	</package>
+</struts>
+	

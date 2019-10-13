@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   <tiles-definitions>
+    <definition name="showBusstop" extends="baseLayout">
+      <put-attribute name="title"  value="Report"/>
+      <put-attribute name="content"   value="/Reports/BusstopReport.jsp"/>
+   </definition>
+   
+   <definition name="addMasterReport" extends="baseLayout">
+      <put-attribute name="title"  value="Master Report"/>
+      <put-attribute name="layoutId"  value="addMasterReport"/>
+      <put-attribute name="content"   value="/Reports/masterReport.jsp"/>      
+   </definition>
+   
+   <definition name="viewMasterReport" extends="baseLayout">
+      <put-attribute name="title"  value="Master Report"/>
+      <put-attribute name="layoutId"  value="addMasterReport"/>
+      <put-attribute name="content"   value="/Reports/masterReport.jsp"/>      
+   </definition>
+   
+   <definition name="viewReportMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Report Master"/>
+      <put-attribute name="layoutId"  value="Report Master"/>
+      <put-attribute name="content"   value="/reportMaster/viewReportMaster.jsp"/>      
+   </definition>
+   
+    <definition name="createReportMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Create Report Master"/>
+      <put-attribute name="layoutId"  value="Create Report Master"/>
+      <put-attribute name="content"   value="/reportMaster/createReportMaster.jsp"/>      
+   </definition>
+   
+    <definition name="editReportMaster" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Report Master"/>
+      <put-attribute name="layoutId"  value="Edit Report Master"/>
+      <put-attribute name="content"   value="/reportMaster/editReportMaster.jsp"/>      
+   </definition>
+   
+   <definition name="emailConfiguration" extends="baseLayout">
+      <put-attribute name="title"  value="Email Configuration"/>
+      <put-attribute name="layoutId"  value="Email Configuration"/>
+      <put-attribute name="content"   value="/reportMaster/createEmailConfiguration.jsp"/>      
+   </definition>
+   <definition name="EarlyArrivalDetailedReport" extends="baseLayout">
+      <put-attribute name="title"  value="Early Arrival Detailed Report"/>
+      <put-attribute name="content"   value="/Reports/EarlyArrivalDetailedReport.jsp"/>
+   </definition>
+    <definition name="EarlyArrivalSummaryReport" extends="baseLayout">
+      <put-attribute name="title"  value="Early Arrival Summary Report"/>
+      <put-attribute name="content"   value="/Reports/EarlyArrivalSummaryReport.jsp"/>
+   </definition>
+
+<!--    start of 16 report formats -->
+
+   <definition name="DatewiseRevenueDetailed" extends="baseLayout">
+      <put-attribute name="title"  value="Date wise Revenue Detailed"/>
+      <put-attribute name="content"   value="/reportMaster/DatewiseRevenueDetailed.jsp"/>      
+   </definition>
+   
+    <definition name="RevenueSummaryReport" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue Summary Report"/>
+      <put-attribute name="content"   value="/Reports/RevenueSummaryReport.jsp"/>      
+   </definition>
+    <definition name="ProgressiveKMReport" extends="baseLayout">
+      <put-attribute name="title"  value="Progressive KM Report"/>
+      <put-attribute name="content"   value="/Reports/ProgressiveKMReport.jsp"/>      
+   </definition>
+   <definition name="DailyVehiclePosition" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Vehicle Position"/>
+      <put-attribute name="content"   value="/Reports/DailyVehiclePosition.jsp"/>      
+   </definition>
+    <definition name="KMPLDriverWise" extends="baseLayout">
+      <put-attribute name="title"  value="KMPL Driver Wise"/>
+      <put-attribute name="content"   value="/Reports/KMPLDriverWise.jsp"/>      
+   </definition>
+   
+<!--    end -->
+
+   
+   <definition name="ScheduleOperationRevenueReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Operation Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleOperationRevenueReport.jsp"/>
+   </definition>
+     <definition name="KMPLVehicleWise" extends="baseLayout">
+      <put-attribute name="title"  value="KMPL VehicleWise Report"/>
+      <put-attribute name="content"   value="/Reports/KMPLVehicleWiseReport.jsp"/>
+   </definition>
+   
+   <definition name="LateDepartureSummaryReport" extends="baseLayout">
+      <put-attribute name="title"  value="Late Departure Summary Report"/>
+      <put-attribute name="content"   value="/Reports/LateDepartureSummaryReport.jsp"/>
+   </definition>
+<definition name="CrewandStaffPositionReport" extends="baseLayout">
+      <put-attribute name="title"  value="Crew and Staff Position Report"/>
+      <put-attribute name="content"   value="/Reports/CrewandStaffPositionReport.jsp"/>
+   </definition>
+   
+   	<!-- 		license Expiredcrew -->
+	<definition name="LicenseExpiredCrewReport" extends="baseLayout">
+		<put-attribute name="title" value="License Expired Crew Report" />
+		<put-attribute name="content"
+			value="/Reports/LicenseExpiredCrewReport.jsp" />
+	</definition>
+	
+	
+	<!-- 		Fitness certiFicate expiry Report -->
+	<definition name="FitnessCertificateExpiredReport" extends="baseLayout">
+		<put-attribute name="title" value="Fitness Certificate Expired  Report" />
+		<put-attribute name="content"
+			value="/Reports/fitnesscertificateexpiryeeport.jsp" />
+	</definition>
+	
+	<definition name="cashRemitanceReportPage" extends="baseLayout">
+		<put-attribute name="title" value="Cash Remitance Report" />
+		<put-attribute name="content"
+			value="/Reports/cashRemitanceReportPage.jsp" />
+	</definition>
+
+   <definition name="TicketConsumptionStatement" extends="baseLayout">
+      <put-attribute name="title"  value="Ticket Consumption Statement"/>
+      <put-attribute name="layoutId"  value="Email Configuration"/>
+      <put-attribute name="content"   value="/Reports/ticketConsumptionStatement.jsp"/>      
+   </definition>
+   
+   <definition name="TicketConsumptionStatementMonthlyPass" extends="baseLayout">
+      <put-attribute name="title"  value="Monthly Pass Consumption Statement"/>
+      <put-attribute name="layoutId"  value="Email Configuration"/>
+      <put-attribute name="content"   value="/Reports/ticketConsumptionStatementMonthlyPass.jsp"/>      
+   </definition>
+
+
+ <!-- Senior Citizen ETM Ticket consumption Report -->
+     <definition name="SeniorcitizenETMticketconsumptionreport" extends="baseLayout">
+      <put-attribute name="title"  value="Senior citizen ETM ticket consumption report"/>
+       <put-attribute name="layoutId"  value="Senior citizen ETM ticket consumption"/>
+      <put-attribute name="content"  value="/Reports/SeniorcitizenETMticketconsumptionreport.jsp"/>     
+   </definition>
+
+
+
+  
+   <!-- Daily pass consumption report-->
+     <definition name="Dailypassconsumptionreport" extends="baseLayout">
+      <put-attribute name="title"  value="Daily pass consumption report"/>
+       <put-attribute name="layoutId"  value="Daily pass consumption report"/>
+      <put-attribute name="content"  value="/Reports/Dailypassconsumptionreport.jsp"/>     
+   </definition>   
+
+    <!-- Denomination wise ticket consumption statement-->
+     <definition name="Denominationwiseticketconsumptionstatment" extends="baseLayout">
+      <put-attribute name="title"  value="Denomination wise ticket consumption statment"/>
+       <put-attribute name="layoutId"  value="Denomination wise ticket consumptionstatment"/>
+      <put-attribute name="content"  value="/Reports/Denominationwiseticketconsumptionstatment.jsp"/>     
+   </definition>    
+   
+    <!-- Summary of Denomination wise ticket consumption statement-->
+     <definition name="SummaryofDenominationwiseticketconsumptionstatment" extends="baseLayout">
+      <put-attribute name="title"  value="Summary of Denomination wise ticket consumption statment"/>
+       <put-attribute name="layoutId"  value="Summary of Denomination wise ticket consumption statment"/>
+      <put-attribute name="content"  value="/Reports/SummaryofDenominationwiseticketconsumptionstatment.jsp"/>     
+   </definition>    
+   
+<!--    Revenue growth report  -->
+     <definition name="Revenuegrowthreport" extends="baseLayout">
+      <put-attribute name="title"  value="Revenue growth report"/>
+       <put-attribute name="layoutId"  value="Revenue growth report"/>
+      <put-attribute name="content"  value="/Reports/Revenuegrowthreport.jsp"/>     
+   </definition>   
+    
+   
+<!--    No of trips with 0 revenue  -->
+    <definition name="Nooftripswith0revenue" extends="baseLayout">
+      <put-attribute name="title"  value="No of trips with 0 revenue"/>
+       <put-attribute name="layoutId"  value="No of trips with 0 revenue"/>
+       <put-attribute name="content"  value="/Reports/Nooftripswith0revenue.jsp"/>     
+        </definition>  
+        
+         <definition name="ShowTripdetailsAll" extends="loginbaseLayout">
+      <put-attribute name="title"  value="Show Trip details All"/>
+       <put-attribute name="content"  value="/Reports/ShowTripdetailsAll.jsp"/>     
+        </definition>   
+  
+  <definition name="DriverWiseKMPLReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Driver Wise KMPL Report ITS"/>
+      <put-attribute name="content"   value="/Reports/DriverWiseKMPLReportITS.jsp"/>      
+   </definition>
+    <definition name="DriverWiseKMPLDetailsReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Driver Wise KMPL Report ITS"/>
+      <put-attribute name="content"   value="/Reports/DriverWiseKMPLDetailsReportITS.jsp"/>      
+   </definition>
+     <definition name="DriverKmplDepotWise" extends="baseLayout">
+      <put-attribute name="title"  value="Driver Wise KMPL Report ITS"/>
+      <put-attribute name="content"   value="/Reports/DriverKmplDepotWise.jsp"/>      
+   </definition>
+    <definition name="DriverKmplDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Driver Wise KMPL Report ITS"/>
+      <put-attribute name="content"   value="/Reports/DriverKmplDetails.jsp"/>      
+   </definition>
+    <definition name="VehiclewiseKMPLReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle wise KMPL Report"/>
+      <put-attribute name="content"   value="/Reports/VehiclewiseKMPLReportITS.jsp"/>      
+   </definition>
+     <definition name="VehicleDivisionWiseKMPLReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle wise KMPL Report"/>
+      <put-attribute name="content"   value="/Reports/VehicleDivisionWiseKMPLReportITS.jsp"/>      
+   </definition>
+    <definition name="VehicleKmplDepotWise" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Wise KMPL Report ITS"/>
+      <put-attribute name="content"   value="/Reports/VehicleKmplDepotWise.jsp"/>      
+   </definition>
+    <definition name="VehicleKmplDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Wise KMPL Report ITS"/>
+      <put-attribute name="content"   value="/Reports/VehicleKmplDetails.jsp"/>      
+   </definition>
+   <definition name="CancelledKMReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Cancelled KM Report"/>
+      <put-attribute name="content"   value="/Reports/CancelledKMReportITS.jsp"/>      
+   </definition>
+    <definition name="CancelledDivisionWiseKMReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Cancelled KM Report"/>
+      <put-attribute name="content"   value="/Reports/CancelledDivisionWiseKMReportITS.jsp"/>      
+   </definition>
+   <definition name="CancelledKmDepotWise" extends="baseLayout">
+      <put-attribute name="title"  value="Cancelled KM Report"/>
+      <put-attribute name="content"   value="/Reports/CancelledKmDepotWise.jsp"/>      
+   </definition>
+     <definition name="CancelledKmDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Cancelled KM Report"/>
+      <put-attribute name="content"   value="/Reports/CancelledKmDetails.jsp"/>      
+   </definition>
+   <definition name="VehicleDeviceOnline" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle Device Online Report"/>
+      <put-attribute name="content"   value="/Reports/VehicleDeviceOnline.jsp"/>      
+   </definition>
+     <definition name="ETMDeviceOnline" extends="baseLayout">
+      <put-attribute name="title"  value="ETM Device Online Report"/>
+      <put-attribute name="content"   value="/Reports/ETMDeviceOnline.jsp"/>      
+   </definition>
+     <definition name="DailyEtmCount" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Etm Count Report"/>
+      <put-attribute name="content"   value="/Reports/DailyEtmCount.jsp"/>      
+   </definition>
+
+
+   
+    <definition name="ScheduleTripWiseRevenue" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Trip Wise Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleTripwiseRevenu.jsp"/>      
+   </definition>
+   
+   
+     <definition name="EarlyDutyEndFromHalting" extends="baseLayout">
+      <put-attribute name="title"  value="Early Duty End From Halting Location"/>
+      <put-attribute name="content"   value="/Reports/ShowEarlyDutyEndFromHalt.jsp"/>      
+   </definition>
+   
+
+
+
+   <definition name="DepotWiseRevenue" extends="baseLayout">
+      <put-attribute name="title"  value="Depot Wise Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/DepotWiseRevenue.jsp"/>      
+   </definition>
+
+     <definition name="ConductorLicenseExpiryReportIts" extends="baseLayout">
+      <put-attribute name="title"  value="Conductor License Expiry Report "/>
+      <put-attribute name="content"   value="/Reports/ConductorLicenseExpiryReportIts.jsp"/>      
+   </definition>
+     <definition name="DriverLicenseExpiryReportIts" extends="baseLayout">
+      <put-attribute name="title"  value="Driver License Expiry Report"/>
+      <put-attribute name="content"   value="/Reports/DriverLicenseExpiryReportIts.jsp"/>      
+   </definition>
+     <definition name="VehicleLicenseExpiryReportIts" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle License Expiry Report"/>
+      <put-attribute name="content"   value="/Reports/VehicleLicenseExpiryReportIts.jsp"/>      
+   </definition>
+   
+    <definition name="ConductorLicenseRenewReportIts" extends="baseLayout">
+      <put-attribute name="title"  value="Conductor License Renew Report "/>
+      <put-attribute name="content"   value="/Reports/ConductorLicenseRenewReportIts.jsp"/>      
+   </definition>
+     <definition name="DriverLicenseRenewReportIts" extends="baseLayout">
+      <put-attribute name="title"  value="Driver License Renew Report"/>
+      <put-attribute name="content"   value="/Reports/DriverLicenseRenewReportIts.jsp"/>      
+   </definition>
+     <definition name="VehicleLicenseRenewReportIts" extends="baseLayout">
+      <put-attribute name="title"  value="Vehicle License Renew Report"/>
+      <put-attribute name="content"   value="/Reports/VehicleLicenseRenewReportIts.jsp"/>      
+   </definition>
+    <definition name="ConductorDriverCheckList" extends="baseLayout">
+      <put-attribute name="title"  value="Conductor Driver CheckList Report"/>
+      <put-attribute name="content"   value="/Reports/ConductorDriverCheckList.jsp"/>      
+   </definition>
+
+
+	<definition name="issuestatement" extends="baseLayout">
+      <put-attribute name="title"  value="Issue Statement Report"/>
+      <put-attribute name="content"   value="/Reports/issuestatement.jsp"/>      
+   </definition>
+   
+   <definition name="STTwoReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="ST Two Report Report"/>
+      <put-attribute name="content"   value="/Reports/STTwoReportITS.jsp"/>      
+   </definition>
+   <definition name="DayWiseTripOperatedReport" extends="baseLayout">
+      <put-attribute name="title"  value="DayWise Trip Operated Report"/>
+      <put-attribute name="content"   value="/Reports/DayWiseTripOperatedReport.jsp"/>      
+   </definition>
+	 <definition name="ThreeCodeReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Three Code Report"/>
+      <put-attribute name="content"   value="/Reports/ThreeCodeReportITS.jsp"/>      
+   </definition>
+    <definition name="DailyPassSaleReport" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Pass Sale Report"/>
+      <put-attribute name="content"   value="/Reports/DailyPassSaleReport.jsp"/>      
+   </definition>
+	<definition name="DayWiseTripReportITS" extends="baseLayout">
+      <put-attribute name="title"  value="Day Wise Trip Report"/>
+      <put-attribute name="content"   value="/Reports/DayWiseTripReportITS.jsp"/>      
+   </definition>
+
+   <definition name="DepotFormVReport" extends="baseLayout">
+      <put-attribute name="title"  value="Depot Form V Report"/>
+      <put-attribute name="content"   value="/Reports/DepotForm_V.jsp"/>      
+   </definition>
+   <definition name="WeeklyReport" extends="baseLayout">
+      <put-attribute name="title"  value="Weekly Report"/>
+      <put-attribute name="content"   value="/Reports/WeeklyReports.jsp"/>      
+   </definition>
+    <definition name="DivisionWiseWeeklyReport" extends="baseLayout">
+      <put-attribute name="title"  value="Division Wise Weekly Report"/>
+      <put-attribute name="content"   value="/Reports/DivisionWiseWeekly.jsp"/>      
+   </definition>
+   <definition name="DepotWiseScheduleListReport" extends="baseLayout">
+      <put-attribute name="title"  value="Depot Wise Schedule List Report"/>
+      <put-attribute name="content"   value="/Reports/DepotWiseScheduleInformationlist.jsp"/>      
+   </definition>
+   <definition name="SListReport" extends="baseLayout">
+      <put-attribute name="title"  value="S List Report"/>
+      <put-attribute name="content"   value="/Reports/S_ListReport.jsp"/>      
+   </definition>
+   <definition name="VolvoSchAndKmsReport" extends="baseLayout">
+      <put-attribute name="title"  value="Volvo Sch And Kms Report"/>
+      <put-attribute name="content"   value="/Reports/Volvo_SchAndKMS.jsp"/>      
+   </definition>
+    <definition name="TypeOfServiceReport" extends="baseLayout">
+      <put-attribute name="title"  value="Type Of Service Report"/>
+      <put-attribute name="content"   value="/Reports/TypeOfService1.jsp"/>      
+   </definition>
+   <definition name="YearWiseScheduleReport" extends="baseLayout">
+      <put-attribute name="title"  value="Year Wise Schedule Report"/>
+      <put-attribute name="content"   value="/Reports/YearWiseSchedule.jsp"/>      
+   </definition>
+    <definition name="CrewpositionReport" extends="baseLayout">
+      <put-attribute name="title"  value="Crew Position Report"/>
+      <put-attribute name="content"   value="/Reports/CrewPosition.jsp"/>      
+   </definition>
+   
+   <definition name="getDriverConductordetails" extends="baseLayout">
+		<put-attribute name="title" value="Crew Position Report Details" />
+		<put-attribute name="content" value="/Reports/getDriverConductordetails.jsp" />
+	</definition>
+	 <definition name="getTotalDriverConductordetails" extends="baseLayout">
+		<put-attribute name="title" value="Crew Position Report Details" />
+		<put-attribute name="content" value="/Reports/getTotalDriverConductordetails.jsp" />
+	</definition>
+   <definition name="NorthDivisionReport" extends="baseLayout">
+      <put-attribute name="title"  value="North Division Report"/>
+      <put-attribute name="content"   value="/Reports/NorthDivision.jsp"/>      
+   </definition>
+    <definition name="SouthDivisionReport" extends="baseLayout">
+      <put-attribute name="title"  value="South Division Report"/>
+      <put-attribute name="content"   value="/Reports/SouthDivision.jsp"/>      
+   </definition>
+    <definition name="EastDivisionReport" extends="baseLayout">
+      <put-attribute name="title"  value="East Division Report"/>
+      <put-attribute name="content"   value="/Reports/EastDivision.jsp"/>      
+   </definition>
+   <definition name="WestDivisionReport" extends="baseLayout">
+      <put-attribute name="title"  value="West Division Report"/>
+      <put-attribute name="content"   value="/Reports/WestDivision.jsp"/>      
+   </definition>
+   <definition name="VolvoDivisionReport" extends="baseLayout">
+      <put-attribute name="title"  value="Volvo Division Report"/>
+      <put-attribute name="content"   value="/Reports/VolvoDivision.jsp"/>      
+   </definition>
+   <definition name="Form_V_Report" extends="baseLayout">
+      <put-attribute name="title"  value="Form V Report"/>
+      <put-attribute name="content"   value="/Reports/Form_V_Report.jsp"/>      
+   </definition>
+   
+   <!-- 		Early duty start from halting location report -->
+   
+    <definition name="EarlyDutyStartFromHalting" extends="baseLayout">
+      <put-attribute name="title"  value="Early Duty Start From Halting"/>
+      <put-attribute name="content"   value="/Reports/ShowEarlyDutyStartFromHalt.jsp"/>      
+   </definition>
+   
+    <definition name="LateDutyStartFromHalting" extends="baseLayout">
+      <put-attribute name="title"  value="Late Duty Start From Halting"/>
+      <put-attribute name="content"   value="/Reports/ShowLateDutyStartFromHalt.jsp"/>      
+   </definition>
+   
+   <definition name="ScheduleWeekDayWiseRevenueReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Week Day Wise Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleWeekDayWiseRevenueReport.jsp"/>      
+   </definition>
+    <definition name="TripWiseWeekDayRevenueReport" extends="baseLayout">
+      <put-attribute name="title"  value="Trip Wise Week Day Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/TripWiseWeekDayRevenueReport.jsp"/>      
+   </definition>
+     <definition name="PeakNonPeakHourRunningReportForIts" extends="baseLayout">
+      <put-attribute name="title"  value="Peak NonPeak Hour Running Report"/>
+      <put-attribute name="content"   value="/Reports/PeakNonPeakHourRunningReport.jsp"/>      
+   </definition>
+
+ <definition name="ScheduleWeekDayWiseRevenueReportRiderShip" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule WeekDay Wise Revenue RiderShip Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleWeekDayWiseRevenueReportRiderShip.jsp"/>      
+   </definition>
+    <definition name="TripWiseWeekDayRidershipReport" extends="baseLayout">
+      <put-attribute name="title"  value="Trip Wise Week Day RiderShip Report"/>
+      <put-attribute name="content"   value="/Reports/TripWiseWeekDayRidershipReport.jsp"/>      
+   </definition>
+    <definition name="DepotwiseScheduleSummary" extends="baseLayout">
+      <put-attribute name="title"  value="Depot Wise Schedule Summary Report"/>
+      <put-attribute name="content"   value="/Reports/DepotwiseScheduleSummaryReport.jsp"/>      
+   </definition>
+    <definition name="ScheduleWiseEPKMReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Wise EPKM Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleWiseEPKMStatement.jsp"/>      
+   </definition>
+
+   <definition name="ConductorWiseEPKMReport" extends="baseLayout">
+      <put-attribute name="title"  value="Conductor Wise EPKM Report"/>
+      <put-attribute name="content"   value="/Reports/ConductorWiseEPKMStatement.jsp"/>      
+   </definition>
+     <definition name="TripWiseWeekDayCummulativeReport" extends="baseLayout">
+      <put-attribute name="title"  value="TripWise WeekDay Cummulative Report"/>
+      <put-attribute name="content"   value="/Reports/TripWiseWeekDayCummulativeReport.jsp"/>      
+   </definition>
+<definition name="ShiftWiseEPKMReport" extends="baseLayout">
+      <put-attribute name="title"  value="Shift Wise EPKM Report"/>
+      <put-attribute name="content"   value="/Reports/ShiftWiseEPKMStatement.jsp"/>      
+   </definition>
+
+   
+    <definition name="TripWiseRunningTime" extends="baseLayout">
+		<put-attribute name="title" value="Trip Wise Running Time Report " />
+		<put-attribute name="layoutId" value="TripWiseRunningTimeReport" />
+		<put-attribute name="content" value="/Reports/TripWiseRunningReport.jsp" />
+	</definition>
+
+   <definition name="ManualOperated" extends="baseLayout">
+      <put-attribute name="title"  value="Manual Operated Report"/>
+      <put-attribute name="content"   value="/Reports/ManualOperatedReport.jsp"/>      
+   </definition>
+   <definition name="ConductorWiseThreeCodeCount" extends="baseLayout">
+      <put-attribute name="title"  value="Conductor Wise ThreeCode Count"/>
+      <put-attribute name="content"   value="/Reports/ConductorWiseThreeCodeCount.jsp"/>      
+   </definition>
+   <definition name="ViewConductorWiseThreeCodeCountDetails" extends="baseLayout">
+   	  	<put-attribute name="title"  value="Conductor Wise ThreeCode Count"/>
+   		<put-attribute name="content"  value="/Reports/ConductorWiseThreeCodeCountDetails.jsp"/>      
+	</definition>
+    <definition name="SpecialPassTicketReport" extends="baseLayout">
+      <put-attribute name="title"  value="Special Pass Ticket Report"/>
+      <put-attribute name="content"   value="/Reports/SpecialPassTicketStatement.jsp"/>      
+   </definition>
+    <definition name="ScheduleWisePercentETM" extends="baseLayout">
+      <put-attribute name="title"  value="ScheduleWise Percent ETM Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleWisePercentETM.jsp"/>      
+   </definition>
+    <definition name="ConductorWisePercentETM" extends="baseLayout">
+      <put-attribute name="title"  value="ConductorWise Percent ETM Report"/>
+      <put-attribute name="content"   value="/Reports/ConductorWisePercentETM.jsp"/>      
+   </definition>
+    <definition name="TripWiseAbstractReport" extends="baseLayout">
+      <put-attribute name="title"  value="TripWise Abstract Report"/>
+      <put-attribute name="content"   value="/Reports/TripWiseAbstractReport.jsp"/>      
+   </definition>
+     <definition name="TripWiseCancelledDetailedReport" extends="baseLayout">
+      <put-attribute name="title"  value="TripWise Cancelled Detailed Report"/>
+      <put-attribute name="content"   value="/Reports/TripWiseCancelledDetailedReport.jsp"/>      
+   </definition>
+  <definition name="DayWiseCancellationReport" extends="baseLayout">
+      <put-attribute name="title"  value="DayWise Cancellation Report"/>
+      <put-attribute name="content"   value="/Reports/DayWiseCancellationReport.jsp"/>      
+   </definition>
+   <definition name="ScheduleWiseAverageRevenueReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Wise Average Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/ScheduleWiseAverageRevenueReport.jsp"/>      
+   </definition>
+
+     <definition name="TripWiseOperationReport" extends="baseLayout">
+      <put-attribute name="title"  value="Trip wise % Report"/>
+      <put-attribute name="content"   value="/Reports/TripWiseTripOperationDetails.jsp"/>      
+   </definition>
+
+    <definition name="RouteWiseScheduleRevenueReport" extends="baseLayout">
+      <put-attribute name="title"  value="RouteWise Schedule Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/RouteWiseScheduleRevenueReport.jsp"/>      
+   </definition>
+   <definition name="ETMEODReport" extends="baseLayout">
+      <put-attribute name="title"  value="ETM EOD Report"/>
+      <put-attribute name="content"   value="/Reports/ETMEODReport.jsp"/>      
+   </definition>
+   <definition name="smartCardPassReport" extends="baseLayout">
+   <put-attribute name="title" value="Smart card Pass Report"/>
+   <put-attribute name="content" value="/smartcard/smartCardPass.jsp"/>
+   </definition>
+   <definition name="smartCardTopUpReport" extends="baseLayout">
+   <put-attribute name="title" value="Smart card Top Up Report"/>
+   <put-attribute name="content" value="/smartcard/smartCardTopUp.jsp"/>
+   </definition>
+    <definition name="AbsenteeismReport" extends="baseLayout">
+      <put-attribute name="title"  value="Absenteeism Report"/>
+      <put-attribute name="content"   value="/Reports/AbsenteeismReport.jsp"/>      
+   </definition>
+     <definition name="MonthlyTicketReceiptStmt" extends="baseLayout">
+      <put-attribute name="title"  value="Monthly Ticket Receipt Stmt"/>
+      <put-attribute name="content"   value="/Reports/MonthlyTicketReceiptStmt.jsp"/>      
+   </definition>
+     <definition name="ScheduleWiseEarning" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Wise Earning"/>
+      <put-attribute name="content"   value="/Reports/ScheduleWiseEarning.jsp"/>      
+   </definition>
+   <definition name="ConductorWiseEarning" extends="baseLayout">
+      <put-attribute name="title"  value="Conductor Wise Earning"/>
+      <put-attribute name="content"   value="/Reports/ConductorWiseEarning.jsp"/>      
+   </definition>
+    <definition name="RouteWisePassengerCountReport" extends="baseLayout">
+      <put-attribute name="title"  value="Route Wise Passenger Count Report"/>
+      <put-attribute name="content"   value="/Reports/RouteWisePassengerCountReport.jsp"/>      
+   </definition>
+   <definition name="SmartCardException" extends="baseLayout">
+      <put-attribute name="title"  value="Smart Card Exception Report"/>
+      <put-attribute name="content"   value="/Reports/SmartCardException.jsp"/>      
+   </definition>
+   
+    <definition name="AxiesSettlementReport" extends="baseLayout">
+      <put-attribute name="title"  value="Axis Settlement Exception Report"/>
+      <put-attribute name="content"   value="/Reports/AxiesStalemateReport.jsp"/>      
+   </definition>
+    <definition name="FormFourDetailsReport" extends="baseLayout">
+      <put-attribute name="title"  value="Form Four Details Report"/>
+      <put-attribute name="content"   value="/Reports/Form-four-details Report.jsp"/>      
+   </definition>
+     <definition name="DepotwiseSummeryofCardandCashTrasationReport" extends="baseLayout">
+      <put-attribute name="title"  value="CardandCashTrasationReport"/>
+      <put-attribute name="content"   value="/Reports/depotwise summery of cash and card trasations.jsp"/>      
+   </definition>
+
+     <definition name="ActiontoTakenBasedonITSReports" extends="baseLayout">
+      <put-attribute name="title"  value="Action on Its Reports"/>
+      <put-attribute name="layoutId"  value="ActiontoTakenBasedonITSReports"/>
+      <put-attribute name="content"   value="/Reports/actiontakenonits.jsp"/>      
+   </definition>
+   <definition name="actiontakenreport" extends="baseLayout">
+      <put-attribute name="title"  value="Action Taken Reports"/>
+      <put-attribute name="content"   value="/Reports/actiontakenreportjsp.jsp"/>      
+   </definition>
+
+    <definition name="DenominationWiseDetailsReport" extends="baseLayout">
+      <put-attribute name="title"  value="Denomination Wise Details Report"/>
+      <put-attribute name="content"   value="/Reports/DenominationWiseHourlyCount.jsp"/>      
+   </definition>
+   
+         <!-- 			gopinath code  -->
+      
+      <definition name="ETMhourlycountreport" extends="baseLayout">
+      <put-attribute name="title"  value="ETM hourly count report"/>
+      <put-attribute name="content"   value="/Reports/ETMhourlycountreport.jsp"/>        
+   </definition>
+       
+        <!-- 			gopinath code  ends -->
+   
+   <definition name="TripWisePassengerCount" extends="baseLayout">
+      <put-attribute name="title"  value="Trip Wise Passenger count"/>
+      <put-attribute name="content"   value="/Reports/TripWisePassengerCount.jsp"/>      
+   </definition>
+    <definition name="QueryForMissingLateDeparture" extends="baseLayout">
+      <put-attribute name="title"  value="Missing Late Departure"/>
+      <put-attribute name="content"   value="/Reports/queryformissinglatedeparture.jsp"/>      
+   </definition>
+  <definition name="MissingEarlyArrival" extends="baseLayout">
+      <put-attribute name="title"  value="Missing Early Arrival"/>
+      <put-attribute name="content"   value="/Reports/missingearlyarrival.jsp"/>      
+   </definition>
+    <definition name="averagerunningtimeformate" extends="baseLayout">
+      <put-attribute name="title"  value="Average Running Time Format"/>
+      <put-attribute name="content"   value="/Reports/averagerunningtime.jsp"/>      
+   </definition>
+    <definition name="REASONFORNRDREPORT" extends="baseLayout">
+      <put-attribute name="title"  value="REASON FOR NRD REPORT"/>
+      <put-attribute name="content"   value="/Reports/reasonfornrd.jsp"/>      
+   </definition>
+   <definition name="AxisSettlementException" extends="baseLayout">
+      <put-attribute name="title"  value="Axis Settlement"/>
+      <put-attribute name="content"   value="/Reports/axissettlementexception.jsp"/>      
+   </definition>
+   <definition name="NRDREASONREPORT" extends="baseLayout">
+      <put-attribute name="title"  value="NRD Reason Report"/>
+      <put-attribute name="content"   value="/Reports/nrdreasonreport.jsp"/>      
+   </definition>
+      <definition name="depotinout" extends="baseLayout">
+      <put-attribute name="title"  value="Depot In Out Report"/>
+      <put-attribute name="content"   value="/Reports/Depotinout.jsp"/>      
+   </definition>
+   <definition name="EmployeeStatuschange" extends="baseLayout">
+      <put-attribute name="title"  value="Employee Status"/>
+      <put-attribute name="content"   value="/Reports/employeestatus.jsp"/>      
+   </definition>
+   <definition name="ReconOfTicketSale" extends="baseLayout">
+      <put-attribute name="title"  value="Recon Ticket Sale"/>
+      <put-attribute name="content"   value="/Reports/reconticketsale.jsp"/>      
+   </definition>
+   <definition name="AccAxis" extends="baseLayout">
+      <put-attribute name="title"  value="Acc66-Axis"/>
+      <put-attribute name="content"   value="/Reports/Acc66AxisSettlement.jsp"/>      
+   </definition>
+   <definition name="AccAmountSettleDiff" extends="baseLayout">
+      <put-attribute name="title"  value="Acc-Amount-Settlement"/>
+      <put-attribute name="content"   value="/Reports/accamoutsettlementdiffdate.jsp"/>      
+   </definition>
+    <definition name="dailyaccaxissummaryreport" extends="baseLayout">
+      <put-attribute name="title"  value="Acc-Axis-Summary"/>
+      <put-attribute name="content"   value="/Reports/accaxissummary.jsp"/>      
+   </definition>
+    <definition name="DailyEtmGprsCount" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Etm Gprs Count"/>
+      <put-attribute name="content"   value="/device/DailyEtmGprsCount.jsp"/>      
+   </definition>
+<!-- 	   Acc-66 by itishree -->
+	   <definition name="CollectionReportIts" extends="baseLayout">
+		<put-attribute name="title" value="Daily Revenue Collection Statement For Its" />
+		<put-attribute name="content" value="/Reports/CollectionDetailsIts.jsp" />
+ 	</definition>
+ 	 <definition name="DailyRevenueForAllDepot" extends="baseLayout">
+		<put-attribute name="title" value="Daily Revenue For All Depot" />
+		<put-attribute name="content" value="/Reports/DailyRevenueForAllDepot.jsp" />
+ 	</definition>
+ 	<definition name="DepotWiseAndCauseWiseSummary" extends="baseLayout">
+		<put-attribute name="title" value="Depot Wise And Cause Wise Summary" />
+		<put-attribute name="content" value="/device/DepotWiseAndCauseWiseSummary.jsp" />
+ 	</definition>
+ 	
+ 	     <definition name="KMPLScheduleWiseNewReport" extends="baseLayout">
+      <put-attribute name="title"  value="KMPL ScheduleWise Report"/>
+      <put-attribute name="content"   value="/Reports/NewKMPLSchWiseReport.jsp"/>
+   </definition>
+   
+   
+     <definition name="KMPLVehicleWiseNewReport" extends="baseLayout">
+      <put-attribute name="title"  value="KMPL Vehicle Wise Report"/>
+      <put-attribute name="content"   value="/Reports/NewKMPLVehicleWiseReport.jsp"/>
+   </definition>
+   <definition name="KMPLDriverWiseNewReport" extends="baseLayout">
+      <put-attribute name="title"  value="KMPL Driver Wise Report"/>
+      <put-attribute name="content"   value="/Reports/NewKMPLDriverWiseReport.jsp"/>
+   </definition>
+   
+
+ 	  <definition name="AxisSettlementDetail" extends="baseLayout">
+      <put-attribute name="title"  value="AxisSettlement"/>
+      <put-attribute name="content"   value="/Reports/AxisSettlementDetails.jsp"/>
+   </definition>
+     	<definition name="vehWiseKMPLData" extends="vtureport" >
+		<put-attribute name="title" value="View VehicleWise KMPL Details" />
+		<put-attribute name="content" value="/pages/vts/showKMPLVehWiseDetails.jsp" />
+	</definition>
+	
+	<definition name="scheduleWiseKMPLData" extends="vtureport" >
+		<put-attribute name="title" value="View ScheduleWise KMPL Details" />
+		<put-attribute name="content" value="/pages/vts/showKMPLScheduleWiseDetails.jsp" />
+	</definition>
+ 	
+ 	 <definition name="DepotWiseCummulativeRevenue" extends="baseLayout">
+      <put-attribute name="title"  value="Depot Wise Cummulative Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/DepotWiseCummulativeRevenue.jsp"/>
+   </definition>
+   <definition name="ServiceWiseRouteListDetails" extends="baseLayout">
+      <put-attribute name="title"  value="ServiceWiseRouteList"/>
+      <put-attribute name="content"   value="/Reports/servicewisereport.jsp"/>
+   </definition>
+   <definition name="FormFiveReportJsp" extends="baseLayout">
+      <put-attribute name="title"  value="Form-V"/>
+      <put-attribute name="content"   value="/Reports/formfive.jsp"/>
+   </definition>
+   
+    <definition name="classificationklms" extends="baseLayout">
+      <put-attribute name="title"  value="Cls Klms"/>
+      <put-attribute name="content"   value="/Reports/ClsKlms.jsp"/>
+   </definition>
+    <definition name="classificationtrips" extends="baseLayout">
+      <put-attribute name="title"  value="Cls Trips"/>
+      <put-attribute name="content"   value="/Reports/ClsTrips.jsp"/>
+   </definition>
+     <definition name="LmsData" extends="baseLayout">
+      <put-attribute name="title"  value="Lms Data"/>
+      <put-attribute name="content"   value="/Reports/lmsdata.jsp"/>
+   </definition>
+    <definition name="crewvehicleutill" extends="baseLayout">
+      <put-attribute name="title"  value="veh crew util"/>
+      <put-attribute name="content"   value="/Reports/vehicleandcrewutil.jsp"/>
+   </definition>
+    <definition name="ManualScheduleOperated" extends="baseLayout">
+      <put-attribute name="title"  value="Manual Schedule Operated Report"/>
+      <put-attribute name="content"   value="/Reports/ManualScheduleOperated.jsp"/>      
+   </definition>
+	<!-- end by itishree -->
+	
+	<definition name="CummulativeDepotWiseRevenue" extends="baseLayout">
+      <put-attribute name="title"  value="Depot Wise Revenue Report"/>
+      <put-attribute name="content"   value="/Reports/CummulativeDepotWiseRevenue.jsp"/>      
+   </definition>
+	
+	<definition name="etmactivedata" extends="baseLayout">
+      <put-attribute name="title"  value="ETM DATA"/>
+      <put-attribute name="content"   value="/Reports/activeetmdata.jsp"/>      
+   </definition>
+   
+   <definition name="vehiclemappingstatus" extends="baseLayout">
+      <put-attribute name="title"  value="Veh Mapp Status"/>
+      <put-attribute name="content"   value="/Reports/vehiclemappingstatus.jsp"/>      
+   </definition>
+   
+   <definition name="StudentDetailView" extends="baseLayout">
+      <put-attribute name="title"  value="Student Detail View"/>
+      <put-attribute name="content"   value="/Reports/StudentInformationDetails.jsp"/>      
+   </definition>
+   
+   
+    <definition name="VehicleMismatchFromETMToSchedule" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/VehicleInETMAndSchedule.jsp" />
+
+    </definition>
+    <definition name="studentpasscountt" extends="baseLayout">
+        <put-attribute name="layoutId" value="Pass Count" />
+        <put-attribute name="title" value="Pass Count" />
+        <put-attribute name="content" value="/Reports/studentpasscount.jsp" />
+    </definition>
+
+
+
+     <definition name="StudentpassEdit" extends="baseLayout">
+        <put-attribute name="layoutId" value="Student Pass Edit" />
+        <put-attribute name="title" value="Student Pass Edit" />
+        <put-attribute name="content" value="/Reports/EditStudentPass.jsp" />
+    </definition>
+    
+      <definition name="gprsdetailreport" extends="baseLayout">
+        <put-attribute name="layoutId" value="gprs detail" />
+        <put-attribute name="title" value="gprs detail" />
+        <put-attribute name="content" value="/Reports/gprsdetail.jsp" />
+</definition>
+ <definition name="syncrevenueinfo" extends="baseLayout">
+        <put-attribute name="layoutId" value="sync and rev" />
+        <put-attribute name="title" value="sync and rev" />
+        <put-attribute name="content" value="/Reports/syncrevenueinfo.jsp" />
+</definition>
+
+<definition name="StudentCashCollection" extends="baseLayout">
+        <put-attribute name="layoutId" value="Student Cash Collection" />
+        <put-attribute name="title" value="Student Cash Collection" />
+        <put-attribute name="content" value="/Reports/StudentPassCashCollection.jsp" />
+    </definition>
+<definition name="STTWO" extends="baseLayout">
+        <put-attribute name="layoutId" value="sttwo" />
+        <put-attribute name="title" value="sttwo" />
+        <put-attribute name="content" value="/Reports/sttwo.jsp" />
+    </definition>
+    <definition name="STONE" extends="baseLayout">
+        <put-attribute name="layoutId" value="stone" />
+        <put-attribute name="title" value="stone" />
+        <put-attribute name="content" value="/Reports/stone.jsp" />
+    </definition>
+        <definition name="STONEITS" extends="baseLayout">
+        <put-attribute name="layoutId" value="stone" />
+        <put-attribute name="title" value="stone" />
+        <put-attribute name="content" value="/Reports/stoneits.jsp" />
+    </definition>
+            <definition name="ChartedRevenue" extends="baseLayout">
+        <put-attribute name="layoutId" value="charted rev" />
+        <put-attribute name="title" value="charted rev" />
+        <put-attribute name="content" value="/Reports/chartedrevenue.jsp" />
+    </definition>
+          <definition name="ChartedRevenueview" extends="baseLayout">
+        <put-attribute name="layoutId" value="charted rev" />
+        <put-attribute name="title" value="charted rev" />
+        <put-attribute name="content" value="/Reports/chartedrevenueview.jsp" />
+    </definition>
+          <definition name="Dedicatedview" extends="baseLayout">
+        <put-attribute name="layoutId" value="dedicated rev" />
+        <put-attribute name="title" value="dedicated rev" />
+        <put-attribute name="content" value="/Reports/dedicatedrevenueview.jsp" />
+    </definition>
+           <definition name="ccrevenueview" extends="baseLayout">
+        <put-attribute name="layoutId" value="cc revenue" />
+        <put-attribute name="title" value="cc revenue" />
+        <put-attribute name="content" value="/Reports/ccrevenueview.jsp" />
+    </definition>
+    
+    <definition name="CasualContractDetails" extends="baseLayout">
+        <put-attribute name="layoutId" value="CasualContractDetails" />
+        <put-attribute name="title" value="Casual Contract Details" />
+        <put-attribute name="content" value="/Reports/CasualContractdetails.jsp" />
+    </definition>
+    
+    <definition name="ScheduleMappingNew" extends="baseLayout">
+        <put-attribute name="layoutId" value="ScheduleMappingNew" />
+        <put-attribute name="title" value="Schedule Mapping New" />
+        <put-attribute name="content" value="/Reports/ScheduleMappingNew.jsp" />
+    </definition>
+        <definition name="DedicatedRevenue" extends="baseLayout">
+        <put-attribute name="layoutId" value="dedicated rev" />
+        <put-attribute name="title" value="dedicated rev" />
+        <put-attribute name="content" value="/Reports/dedicatedrevenue.jsp" />
+    </definition>
+    
+    <definition name="ScheduleMappingView" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Mapping View"/>
+      <put-attribute name="layoutId"  value="ScheduleMappingView"/>
+      <put-attribute name="content"  value="/vehicle/ScheduleMappingNewView.jsp"/>      
+    </definition>
+    
+    <definition name="logsheetdashbordd" extends="baseLayout">
+      <put-attribute name="title"  value="logsheetdashbord"/>
+      <put-attribute name="layoutId"  value="logsheetdashbord"/>
+      <put-attribute name="content"  value="/Reports/logsheetdashbord.jsp"/>      
+    </definition>
+    
+       <definition name="etmdailypasss" extends="baseLayout">
+      <put-attribute name="title"  value="etmdailypass"/>
+      <put-attribute name="layoutId"  value="etmdailypass"/>
+      <put-attribute name="content"  value="/Reports/etmdailypass.jsp"/>      
+    </definition>
+       <definition name="axisreconview" extends="baseLayout">
+      <put-attribute name="title"  value="axis recon"/>
+      <put-attribute name="layoutId"  value="axisrecon"/>
+      <put-attribute name="content"  value="/Reports/axisreconview.jsp"/>      
+    </definition>
+    
+</tiles-definitions>

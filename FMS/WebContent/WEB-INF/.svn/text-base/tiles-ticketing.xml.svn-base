@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+  <tiles-definitions>
+  
+   <definition name="ViewTicketBag" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editFloor"/>
+      <put-attribute name="content"   value="/Ticketing/ViewTicketInventory.jsp"/>       
+   </definition>
+   
+   <definition name="IssueTicketBag" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editFloor"/>
+      <put-attribute name="content"   value="/Ticketing/IssueTicket.jsp"/>       
+   </definition>
+   <definition name="StockEntrySuccess" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editFloor"/>
+      <put-attribute name="content"   value="/Ticketing/stockEntrySuccess.jsp"/>       
+   </definition>
+   <definition name="IssueStock" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editFloor"/>
+      <put-attribute name="content"   value="/Ticketing/IssueStock.jsp"/>       
+   </definition>
+    <definition name="EditStock" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editTicket"/>
+      <put-attribute name="content"   value="/Ticketing/EditStock.jsp"/>       
+   </definition>
+    <definition name="DeleteStock" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editTicket"/>
+      <put-attribute name="content"   value="/Ticketing/DeleteStock.jsp"/>       
+   </definition>
+    <definition name="ReceiveStock" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Inventory"/>
+      <put-attribute name="layoutId"  value="editTicket"/>
+      <put-attribute name="content"   value="/Ticketing/ReceiveStock.jsp"/>       
+   </definition>
+    <definition name="StockEntry" extends="baseLayout">
+      <put-attribute name="title"  value="Stock Entry"/>
+      <put-attribute name="layoutId"  value="stockentry"/>
+      <put-attribute name="content"   value="/Ticketing/StockEntry.jsp"/>     
+        
+     </definition>
+       <definition name="ShowTicketBag" extends="baseLayout">
+      <put-attribute name="title"  value="View Ticket Bag"/>
+      <put-attribute name="layoutId"  value="ViewTickInvDOA"/>
+      <put-attribute name="content"   value="/Ticketing/ViewTicketBag.jsp"/>        
+   </definition>
+   
+    <definition name="EditTicketBag" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Ticket Bag"/>
+      <put-attribute name="layoutId"  value="ViewTickInvDOA"/>
+      <put-attribute name="content"   value="/Ticketing/EditTicketBag.jsp"/>       
+   </definition>
+    <definition name="CreateTicketBag" extends="baseLayout">
+      <put-attribute name="title"  value="Create Ticket Bag"/>
+      <put-attribute name="layoutId"  value="ViewTickInvDOA"/>
+      <put-attribute name="content"   value="/Ticketing/CreateTicketBag.jsp"/>       
+   </definition>
+
+ <definition name="ViewDenomination" extends="baseLayout">
+      <put-attribute name="title"  value="View Denomination"/>
+      <put-attribute name="layoutId"  value="ViewTickInvDOA"/>
+      <put-attribute name="content"   value="/Ticketing/Denomination.jsp"/>       
+   </definition>
+   <definition name="CreateDenomination" extends="baseLayout">
+      <put-attribute name="title"  value="Create Denomination"/>
+      <put-attribute name="layoutId"  value="ViewTickInvDOA"/>
+      <put-attribute name="content"   value="/Ticketing/CreateDenomination.jsp"/>       
+   </definition>
+   
+   <definition name="EditDenomination" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Denomination"/>
+      <put-attribute name="layoutId"  value="ViewTickInvDOA"/>
+      <put-attribute name="content"   value="/Ticketing/EditDenomination.jsp"/>       
+   </definition>
+   
+   </tiles-definitions> 

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="pass" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 
+		</global-exception-mappings> -->	
+		
+
+		 <action name="PassRateAction" class="com.trimax.its.pass.action.PassRateAction">
+     	    <result name="view"  type="tiles">viewPassRate</result>
+     		<result name="add"  type="tiles">addPassRate</result>
+     		<result name="edit"  type="tiles">editPassRate</result>
+    	</action>
+   
+	   	<action name="AddPassRateAction" class="com.trimax.its.pass.action.PassRateAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewPassRate</result>
+	     <result name="input"  type="tiles">addPassRate</result>
+	     <result name="invalid.token" type="tiles">viewPassRate</result>
+	    </action>
+	    
+	    <action name="EditPassRateAction" class="com.trimax.its.pass.action.PassRateAction" method="update">
+	    <!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewPassRate</result>
+	     <result name="input"  type="tiles">editPassRate</result>
+	     <!-- <result name="invalid.token" type="tiles">viewPassRate</result> -->
+	    </action>
+	    
+	    <action name="DeletePassRateAction" class="com.trimax.its.pass.action.PassRateAction" method="delete">
+	     <result name="success" type="tiles">viewPassRate</result>
+	    </action>
+	    
+	    
+	    <action name="PassTypeAction" class="com.trimax.its.pass.action.PassTypeAction">
+     	    <result name="view"  type="tiles">viewPassType</result>
+     		<result name="add"  type="tiles">addPassType</result>
+     		<result name="edit"  type="tiles">editPassType</result>
+    	</action>
+   
+	   	<action name="AddPassTypeAction" class="com.trimax.its.pass.action.PassTypeAction" method="Add">
+	   	<!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewPassType</result>
+	     <result name="input"  type="tiles">addPassType</result>
+	     <!-- <result name="invalid.token" type="tiles">viewPassType</result> -->
+	    </action>
+	    
+	    <action name="EditPassTypeAction" class="com.trimax.its.pass.action.PassTypeAction" method="update">
+	    <!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewPassType</result>
+	     <result name="input"  type="tiles">editPassType</result>
+	     <!-- <result name="invalid.token" type="tiles">viewPassType</result> -->
+	    </action>
+	    
+	    <action name="DeletePassTypeAction" class="com.trimax.its.pass.action.PassTypeAction" method="delete">
+	     <result name="success" type="tiles">viewPassType</result>
+	    </action>
+	    
+	    <action name="PassIssuerTypeAction" class="com.trimax.its.pass.action.PassIssuerTypeAction" >
+	     <result name="success" type="tiles">PassIssuerType</result>
+	    </action>
+		<action name="passissueryypeviewAction" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="passissueryypeview"></action>
+		<action name="passsubtypeAction" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="getsubTypeDetails"></action>
+		
+		<action name="createpassissuer" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="createpassissuer">
+	     <result name="success" type="tiles">CreatePassIssuerType</result>
+	    </action>
+	    
+	    <action name="createPassIssuerTypeAction" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="savecreatepassissuer">
+	     	<result name="success" type="tiles">PassIssuerType</result>
+			<result name="input" type="tiles">CreatePassIssuerType</result>
+	    </action>
+		 <action name="editpassissuer" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassIssuerType</result>
+	     <result name="input"  type="tiles">editPassIssuerType</result>
+	    </action>
+	     <action name="editPassIssuerTypeAction" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="editPassIssuer">
+	     <result name="success" type="tiles">PassIssuerType</result>
+	     <result name="input"  type="tiles">editPassIssuerType</result>
+	    </action>
+	     <action name="deletepassissuer" class="com.trimax.its.pass.action.PassIssuerTypeAction" method="deletePassIssuerforsmartcard">
+	     <result name="success" type="tiles">PassIssuerType</result>
+	    </action>
+	    
+<!-- 	    PassType distance added by itishree -->
+
+
+        <action name="PassDistanceTypeAction" class="com.trimax.its.pass.action.PassDistanceTypeAction" >
+	     <result name="success" type="tiles">PassDistanceType</result>
+	    </action>
+		<action name="passdistnacetypeviewAction" class="com.trimax.its.pass.action.PassDistanceTypeAction" method="passdistnacetypeview"></action>
+		
+		<action name="createpassdistance" class="com.trimax.its.pass.action.PassDistanceTypeAction" method="createpassdistance">
+	     <result name="success" type="tiles">CreatePassDistanceType</result>
+	    </action>
+	    
+	    <action name="createPassDistanceTypeAction" class="com.trimax.its.pass.action.PassDistanceTypeAction" method="savecreatepassdistance">
+	     	<result name="success" type="tiles">PassDistanceType</result>
+			<result name="input" type="tiles">CreatePassDistanceType</result>
+	    </action>
+		 <action name="editpassdistance" class="com.trimax.its.pass.action.PassDistanceTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassDistanceType</result>
+	     <result name="input"  type="tiles">editPassDistanceType</result>
+	    </action>
+	     <action name="editPassDistanceTypeAction" class="com.trimax.its.pass.action.PassDistanceTypeAction" method="editPassDistance">
+	     <result name="success" type="tiles">PassDistanceType</result>
+	     <result name="input"  type="tiles">editPassDistanceType</result>
+	    </action>
+	     <action name="deletepassdistance" class="com.trimax.its.pass.action.PassDistanceTypeAction" method="deletePassDistanceforsmartcard">
+	     <result name="success" type="tiles">PassDistanceType</result>
+	    </action>
+<!-- ended by itishree -->
+
+<!-- 	    Pass Purchase type added by itishree -->
+
+
+        <action name="PassPurchaseTypeAction" class="com.trimax.its.pass.action.PassPurchaseTypeAction" >
+	     <result name="success" type="tiles">PassPurchaseType</result>
+	    </action>
+		<action name="passpurchasetypeviewAction" class="com.trimax.its.pass.action.PassPurchaseTypeAction" method="passpurchasetypeview"></action>
+		
+		<action name="createpasspurchase" class="com.trimax.its.pass.action.PassPurchaseTypeAction" method="createpasspurchase">
+	     <result name="success" type="tiles">CreatePassPurchaseType</result>
+	    </action>
+	    
+	    <action name="createPassPurchaseTypeAction" class="com.trimax.its.pass.action.PassPurchaseTypeAction" method="savecreatepasspurchase">
+	     	<result name="success" type="tiles">PassPurchaseType</result>
+			<result name="input" type="tiles">CreatePassPurchaseType</result>
+	    </action>
+		 <action name="editpasspurchase" class="com.trimax.its.pass.action.PassPurchaseTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassPurchaseType</result>
+	     <result name="input"  type="tiles">editPassPurchaseType</result>
+	    </action>
+	     <action name="editPassPurchaseTypeAction" class="com.trimax.its.pass.action.PassPurchaseTypeAction" method="editPassPurchase">
+	     <result name="success" type="tiles">PassPurchaseType</result>
+	     <result name="input"  type="tiles">editPassPurchaseType</result>
+	    </action>
+	     <action name="deletepasspurchase" class="com.trimax.its.pass.action.PassPurchaseTypeAction" method="deletePassPurchaseforsmartcard">
+	     <result name="success" type="tiles">PassPurchaseType</result>
+	    </action>
+<!-- ended by itishree -->
+
+
+<!-- 	    Pass Duration type added by itishree -->
+
+
+        <action name="PassDurationTypeAction" class="com.trimax.its.pass.action.PassDurationTypeAction" >
+	     <result name="success" type="tiles">PassDurationType</result>
+	    </action>
+		<action name="passdurationtypeviewAction" class="com.trimax.its.pass.action.PassDurationTypeAction" method="passdurationtypeview"></action>
+		
+		<action name="createpassduration" class="com.trimax.its.pass.action.PassDurationTypeAction" method="createpassduration">
+	     <result name="success" type="tiles">CreatePassDurationType</result>
+	    </action>
+	    
+	    <action name="createPassDurationTypeAction" class="com.trimax.its.pass.action.PassDurationTypeAction" method="savecreatepassduration">
+	     	<result name="success" type="tiles">PassDurationType</result>
+			<result name="input" type="tiles">CreatePassDurationType</result>
+	    </action>
+		 <action name="editpassduration" class="com.trimax.its.pass.action.PassDurationTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassDurationType</result>
+	     <result name="input"  type="tiles">editPassDurationType</result>
+	    </action>
+	     <action name="editPassDurationTypeAction" class="com.trimax.its.pass.action.PassDurationTypeAction" method="editPassDuration">
+	     <result name="success" type="tiles">PassDurationType</result>
+	     <result name="input"  type="tiles">editPassDurationType</result>
+	    </action>
+	     <action name="deletepassduration" class="com.trimax.its.pass.action.PassDurationTypeAction" method="deletePassDurationforsmartcard">
+	     <result name="success" type="tiles">PassDurationType</result>
+	    </action>
+<!-- ended by itishree -->
+
+<!-- 	    Pass Caste type added by itishree -->
+
+        <action name="PassCasteTypeAction" class="com.trimax.its.pass.action.CasteTypeAction" >
+	     <result name="success" type="tiles">PassCasteType</result>
+	    </action>
+		<action name="passCasteTypeActionviewAction" class="com.trimax.its.pass.action.CasteTypeAction" method="passCasteTypeActionview"></action>
+		
+		<action name="createpasscaste" class="com.trimax.its.pass.action.CasteTypeAction" method="createPassCaste">
+	     <result name="success" type="tiles">CreatePassCasteType</result>
+	    </action>
+	    
+	    <action name="createPassCasteTypeAction" class="com.trimax.its.pass.action.CasteTypeAction" method="savecreatepasscaste">
+	     	<result name="success" type="tiles">PassCasteType</result>
+			<result name="input" type="tiles">CreatePassCasteType</result>
+	    </action>
+		 <action name="editpasscaste" class="com.trimax.its.pass.action.CasteTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassCasteType</result>
+	     <result name="input"  type="tiles">editPassCasteType</result>
+	    </action>
+	     <action name="editPassCasteTypeAction" class="com.trimax.its.pass.action.CasteTypeAction" method="editPassCaste">
+	     <result name="success" type="tiles">PassCasteType</result>
+	     <result name="input"  type="tiles">editPassCasteType</result>
+	    </action>
+	     <action name="deletepasscaste" class="com.trimax.its.pass.action.CasteTypeAction" method="deletePassCasteforsmartcard">
+	     <result name="success" type="tiles">PassCasteType</result>
+	    </action>
+<!-- ended by itishree -->
+
+<!-- 	    Pass Caste type added by itishree -->
+
+        <action name="PassInstitutionTypeAction" class="com.trimax.its.pass.action.PassInstitutionTypeAction" >
+	     <result name="success" type="tiles">PassInstitutionType</result>
+	    </action>
+		<action name="passInstitutionTypeActionviewAction" class="com.trimax.its.pass.action.PassInstitutionTypeAction" method="passInstitutionTypeActionview"></action>
+		
+		<action name="createpassInstitution" class="com.trimax.its.pass.action.PassInstitutionTypeAction" method="createPassInstitution">
+	     <result name="success" type="tiles">CreatePassInstitutionType</result>
+	    </action>
+	    
+	    <action name="createPassInstitutionTypeAction" class="com.trimax.its.pass.action.PassInstitutionTypeAction" method="savecreatepassInstitution">
+	     	<result name="success" type="tiles">PassInstitutionType</result>
+			<result name="input" type="tiles">CreatePassInstitutionType</result>
+	    </action>
+		 <action name="editpassInstitution" class="com.trimax.its.pass.action.PassInstitutionTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassInstitutionType</result>
+	     <result name="input"  type="tiles">editPassInstitutionType</result>
+	    </action>
+	     <action name="editPassInstitutionTypeAction" class="com.trimax.its.pass.action.PassInstitutionTypeAction" method="editPassInstitution">
+	     <result name="success" type="tiles">PassInstitutionType</result>
+	     <result name="input"  type="tiles">editPassInstitutionType</result>
+	    </action>
+	     <action name="deletepassInstitution" class="com.trimax.its.pass.action.PassInstitutionTypeAction" method="deletePassInstitutionForPass">
+	     <result name="success" type="tiles">PassInstitutionType</result>
+	    </action>
+<!-- ended by itishree -->
+
+<!-- 	    Pass Counter Master added by itishree -->
+
+        <action name="PassCounterMaster" class="com.trimax.its.pass.action.PassCounterMasterAction" >
+	     <result name="success" type="tiles">PassCounterMasterView</result>
+	    </action>
+		<action name="PassCounterMasterviewAction" class="com.trimax.its.pass.action.PassCounterMasterAction" method="PassCounterMasterview"></action>
+		
+		<action name="createpassCounterMaster" class="com.trimax.its.pass.action.PassCounterMasterAction" method="createPassCounterMaster">
+	     <result name="success" type="tiles">CreatePassCounterMasterType</result>
+	    </action>
+	    
+	    <action name="createPassCounterMasterTypeAction" class="com.trimax.its.pass.action.PassCounterMasterAction" method="savecreatepassCounterMaster">
+	     	<result name="success" type="tiles">PassCounterMasterView</result>
+			<result name="input" type="tiles">CreatePassCounterMasterType</result>
+	    </action>
+		 <action name="editpassCounterMaster" class="com.trimax.its.pass.action.PassCounterMasterAction" method="edit">
+	     <result name="success" type="tiles">editPassCounterMasterType</result>
+	     <result name="input"  type="tiles">editPassCounterMasterType</result>
+	    </action>
+	     <action name="editPassCounterMasterTypeAction" class="com.trimax.its.pass.action.PassCounterMasterAction" method="editPassCounterMaster">
+	     <result name="success" type="tiles">PassCounterMasterView</result>
+	     <result name="input"  type="tiles">editPassCounterMasterType</result>
+	    </action>
+	     <action name="deletepassCounterMaster" class="com.trimax.its.pass.action.PassCounterMasterAction" method="deletePassCounterMasterForPass">
+	     <result name="success" type="tiles">PassCounterMasterView</result>
+	    </action>
+<!-- ended by itishree -->
+<!-- 	    Pass Issuer Center added by itishree -->
+
+        <action name="PassIssuerCenter" class="com.trimax.its.pass.action.PassIssuerCenterAction" >
+	     <result name="success" type="tiles">PassIssuerCenterView</result>
+	    </action>
+		<action name="PassIssuerCenterviewAction" class="com.trimax.its.pass.action.PassIssuerCenterAction" method="PassIssuerCenterview"></action>
+		
+		<action name="createpassIssuerCenter" class="com.trimax.its.pass.action.PassIssuerCenterAction" method="createPassIssuerCenter">
+	     <result name="success" type="tiles">CreatePassIssuerCenterType</result>
+	    </action>
+	    
+	    <action name="createPassIssuerCenterTypeAction" class="com.trimax.its.pass.action.PassIssuerCenterAction" method="savecreatepassIssuerCenter">
+	     	<result name="success" type="tiles">PassIssuerCenterView</result>
+			<result name="input" type="tiles">CreatePassIssuerCenterType</result>
+	    </action>
+		 <action name="editpassIssuerCenter" class="com.trimax.its.pass.action.PassIssuerCenterAction" method="edit">
+	     <result name="success" type="tiles">editPassIssuerCenterType</result>
+	     <result name="input"  type="tiles">editPassIssuerCenterType</result>
+	    </action>
+	     <action name="editPassIssuerCenterTypeAction" class="com.trimax.its.pass.action.PassIssuerCenterAction" method="editPassIssuerCenter">
+	     <result name="success" type="tiles">PassIssuerCenterView</result>
+	     <result name="input"  type="tiles">editPassIssuerCenterType</result>
+	    </action>
+	     <action name="deletepassIssuerCenter" class="com.trimax.its.pass.action.PassIssuerCenterAction" method="deletePassIssuerCenterForPass">
+	     <result name="success" type="tiles">PassIssuerCenterView</result>
+	    </action>
+<!-- ended by itishree -->
+
+<!-- 	    Pass SubType added by itishree -->
+
+        <action name="PassSubType" class="com.trimax.its.pass.action.PassSubTypeAction" >
+	     <result name="success" type="tiles">PassSubTypeView</result>
+	    </action>
+		<action name="PassSubTypeviewAction" class="com.trimax.its.pass.action.PassSubTypeAction" method="PassSubTypeview"></action>
+		
+		<action name="createPassSubTypeforPass" class="com.trimax.its.pass.action.PassSubTypeAction" method="createPassSubType">
+	     <result name="success" type="tiles">CreatePassSubType</result>
+	    </action>
+	    
+	    <action name="createPassSubTypeAction" class="com.trimax.its.pass.action.PassSubTypeAction" method="savecreatepassSubType">
+	     	<result name="success" type="tiles">PassSubTypeView</result>
+			<result name="input" type="tiles">CreatePassSubType</result>
+	    </action>
+		 <action name="editpassSubType" class="com.trimax.its.pass.action.PassSubTypeAction" method="edit">
+	     <result name="success" type="tiles">editPassSubType</result>
+	     <result name="input"  type="tiles">editPassSubType</result>
+	    </action>
+	     <action name="editPassSubTypeAction" class="com.trimax.its.pass.action.PassSubTypeAction" method="editPassSubType">
+	     <result name="success" type="tiles">PassSubTypeView</result>
+	     <result name="input"  type="tiles">editPassSubType</result>
+	    </action>
+	     <action name="deleteSubTypeaction" class="com.trimax.its.pass.action.PassSubTypeAction" method="deletePassSubType">
+	     <result name="success" type="tiles">PassSubTypeView</result>
+	    </action>
+<!-- ended by itishree -->
+	</package>
+</struts>

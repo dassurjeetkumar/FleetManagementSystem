@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="transport" extends="struts-default" namespace="/">
+    
+    <result-types>
+         <result-type name="tiles" 
+         class="org.apache.struts2.views.tiles.TilesResult" />
+      </result-types>
+       <interceptors>
+	<interceptor name="securityInterceptor" class="com.trimax.its.util.SecurityInterceptor"/>
+	
+	 <interceptor-stack name="itsStack">
+	 <interceptor-ref name="paramsPrepareParamsStack"/>
+	 	<interceptor-ref name="securityInterceptor"/>
+			 <interceptor-ref name="prepare"/>
+			<interceptor-ref name="validation">
+			
+     <param name="excludeMethods">input,back,cancel,browse</param>
+     </interceptor-ref>
+     
+     <interceptor-ref name="params">
+  <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+</interceptor-ref>
+     <interceptor-ref name="workflow">
+     <param name="excludeMethods">input,back,cancel,browse</param>
+     </interceptor-ref>
+     </interceptor-stack>
+	</interceptors>
+	<default-interceptor-ref name="itsStack" />
+	
+    <global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+	</global-results>
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+ 		 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+ 		 
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 	 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+     <action name="ShowBusStop" class="com.trimax.its.transport.action.BusStopsAction" > 
+    <result name="success"  type="tiles">BusStopText</result> 
+    </action> 
+    
+    <action name="EditBusStop" class="com.trimax.its.transport.action.BusStopsAction" method="edit">
+    <result name="input" type="tiles">BusStopEdit</result>
+    <result name="success" type="tiles">BusStopEdit</result>
+    </action>
+    
+    <action name="AddEditedBusStopMap" class="com.trimax.its.transport.action.BusStopsAction" method="addEditedMap">
+    <result name="input" type="chain">EditBusStop</result>
+    <result name="success" type="chain">ShowBusStop</result>
+    <result name="successmap" type="chain">SaveBusStopMap</result>
+    </action>
+    
+    <action name="AddEditedBusStop" class="com.trimax.its.transport.action.BusStopsAction" method="addEdited">
+    <result name="input" type="chain">EditBusStop</result>
+    <result name="success" type="chain">ShowBusStop</result>
+    <result name="successmap" type="chain">SaveBusStopMap</result>
+    </action>
+    
+    <action name="DeleteBusStop" class="com.trimax.its.transport.action.BusStopsAction" method="deleteBusStop">
+    <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    
+   <action name="SaveBusStopMap" class="com.trimax.its.transport.action.BusStopsAction" >
+    <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    <action name="SaveBusStopMapFence" class="com.trimax.its.transport.action.BusStopsAction" >
+    <result name="success"  type="tiles">BusStopMapFence</result>
+    </action>
+    
+     <action name="GetBusStopMap" class="com.trimax.its.transport.action.BusStopsAction" method="getBusStop">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    
+    <action name="GetBusStopDetail" class="com.trimax.its.transport.action.BusStopsAction" method="getBusStopDetail">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    
+    <action name="GetBusDropStop" class="com.trimax.its.transport.action.BusStopsAction" method="getBusStopDrop">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action>  
+    
+    <action name="CreateBusStop" class="com.trimax.its.transport.action.BusStopsAction" method="showMap">
+    <result name="success"  type="tiles">BusStopCreate</result>
+	</action>
+
+    <action name="GetBusStopMapLocate" class="com.trimax.its.transport.action.BusStopsAction" method="getBusStopLocate">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    
+     <action name="FormFour" class="com.trimax.its.transport.action.FormFourAction">
+        <result name="input" type="tiles">FormFour</result>  
+     <result name="success"  type="tiles">FormFour</result>
+     <interceptor-ref name="prepare"/>
+    </action>
+    
+    <action name="EditFormFour" class="com.trimax.its.transport.action.FormFourAction" method="editFormFour">
+        <result name="input" type="tiles">editFormFour</result>  
+     <result name="success"  type="tiles">editFormFour</result>
+     <interceptor-ref name="prepare"/>
+    </action>
+    
+    <action name="SaveEditFormFour" class="com.trimax.its.transport.action.FormFourAction" method="saveEditedFormFour">
+        <result name="input" type="tiles">editFormFour</result>  
+     <result name="success"  type="chain">EditTrips</result>
+     <result name="scheduleList"  type="chain">ShowScheduleDetails</result>
+     <!-- <interceptor-ref name="prepare"/> -->
+    </action>
+    
+    <action name="BusStopAjaxAction" class="com.trimax.its.transport.action.BusStopAjaxAction">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    
+    <action name="ShowScheduleDetails" class="com.trimax.its.transport.action.ScheduleAction">
+     <result name="success"  type="tiles">Schedule</result>
+     <result name="invalid.token" type="tiles">Schedule</result>
+    </action>
+    <action name="RationalizedSchedule" class="com.trimax.its.transport.action.ScheduleAction">
+     <result name="success"  type="tiles">RSchedule</result>
+     <result name="invalid.token" type="tiles">RSchedule</result>
+    </action>
+    <action name="RationalizedFormFour" class="com.trimax.its.transport.action.ScheduleAction">
+     <result name="success"  type="tiles">RFormFour</result>
+     <result name="invalid.token" type="tiles">RFormFour</result>
+    </action>
+    <action name="PartialFormFour" class="com.trimax.its.transport.action.ScheduleAction">
+     <result name="success"  type="tiles">PFormFour</result>
+     <result name="invalid.token" type="tiles">PFormFour</result>
+    </action>
+    
+    <action name="GetScheduleList" class="com.trimax.its.transport.action.ScheduleAction" method="getList">
+     <result name="success"  type="tiles">Schedule</result>
+    </action>
+    <action name="GetRationalizedScheduleList" class="com.trimax.its.transport.action.ScheduleAction" method="getRationalizedList">
+     <result name="success"  type="tiles">RSchedule</result>
+    </action>
+     <action name="GetRationalizedFormFourList" class="com.trimax.its.transport.action.ScheduleAction" method="getRationalizedFormIVList">
+     <result name="success"  type="tiles">RFormFour</result>
+    </action>
+    <action name="GetPartialFormIVList" class="com.trimax.its.transport.action.ScheduleAction" method="getPartialFormIVList">
+     <result name="success"  type="tiles">RFormFour</result>
+    </action>
+    
+     <action name="GetFormFourList" class="com.trimax.its.transport.action.ScheduleAction" method="getFormFourList">
+     <result name="success"  type="tiles">Schedule</result>
+    </action>
+    
+    <action name="CreateSchedule" class="com.trimax.its.transport.action.ScheduleAction" method="createSchedule">
+    <result name="input" type="tiles">CreateSchedule</result>  
+     <result name="success"  type="tiles">CreateSchedule</result>
+    </action>
+    
+    <action name="EditSchedule" class="com.trimax.its.transport.action.ScheduleAction" method="editSchedule">
+    <result name="input" type="tiles">EditSchedule</result>  
+     <result name="success"  type="tiles">EditSchedule</result>
+    </action>
+    
+    <action name="CopySchedule" class="com.trimax.its.transport.action.ScheduleAction" method="copySchedule">
+    <result name="input" type="tiles">copyschedule</result>  
+     <result name="success"  type="tiles">copyschedule</result>
+    </action>
+    
+    <action name="SaveCopySchedule" class="com.trimax.its.transport.action.ScheduleAction" method="saveCopySchedule">
+    <result name="input" type="tiles">copyschedule</result>  
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+    </action>
+    
+     <action name="CurtailSchedule" class="com.trimax.its.transport.action.ScheduleAction" method="curtailSchedule">
+    <result name="input" type="tiles">curtailschedule</result>  
+     <result name="success"  type="tiles">curtailschedule</result>
+    </action>
+    
+    <action name="SaveCurtailSchedule" class="com.trimax.its.transport.action.ScheduleAction" method="saveCurtailSchedule">
+    <result name="input" type="tiles">curtailschedule</result>  
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+    </action>
+    
+     <action name="FormFourView" class="com.trimax.its.transport.action.ScheduleAction" method="viewRelatedFormFour">
+    <result name="input" type="tiles">viewFormFour</result>  
+     <result name="success"  type="tiles">viewFormFour</result>
+    </action>
+    
+    
+    
+    <action name="SaveSchedule" class="com.trimax.its.transport.action.ScheduleAction" method="saveSchedule">
+     <result name="input" type="tiles">CreateSchedule</result>  
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+     <result name="invalid.token" type="chain">ShowScheduleDetails</result> 
+    </action>
+    
+    <action name="UpdateSchedule" class="com.trimax.its.transport.action.ScheduleAction" method="updateSchedule">
+    <result name="input" type="tiles">EditSchedule</result>  
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+     <result name="invalid.token" type="chain">ShowScheduleDetails</result>
+    </action>
+    
+    <action name="SaveFormFour" class="com.trimax.its.transport.action.FormFourAction" method="saveFormFour">
+    
+	<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+	<interceptor-ref name="params">
+  <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+</interceptor-ref>
+    <result name="input" type="tiles">FormFour</result>  
+     <result name="success"  type="redirect">Trip</result>
+     <result name="invalid.token" type="redirect">/Trip.action</result>
+   </action>
+   
+   
+   <action name="Trip" class="com.trimax.its.transport.action.TripAction">
+	<result name="input"  type="tiles">Trips</result>	
+     <result name="success"  type="tiles">Trips</result>
+     
+    </action>
+    
+    <action name="TripView" class="com.trimax.its.transport.action.TripsViewAction">
+	<result name="input"  type="tiles">viewtrips</result>	
+     <result name="success"  type="tiles">viewtrips</result>
+     
+    </action>
+    
+    <action name="SaveTripView" class="com.trimax.its.transport.action.TripsViewAction" method="saveTripView">
+	<result name="input"  type="tiles">viewtrips</result>	
+     <result name="success"  type="tiles">viewtrips</result>
+     
+    </action>
+    
+    <action name="DeleteFormFour" class="com.trimax.its.transport.action.TripsViewAction" method="deleteFormFour">
+	<result name="input"  type="tiles">viewtrips</result>	
+     <result name="success"  type="tiles">viewtrips</result>
+     
+    </action>
+    
+   <!--  <action name="SaveTripView" class="com.trimax.its.transport.action.TripsViewAction" method="saveTripView">
+	<result name="input"  type="tiles">viewtrips</result>	
+     <result name="success"  type="tiles">viewtrips</result>
+     
+    </action> -->
+    
+    <action name="GetDepot" class="com.trimax.its.transport.action.TripAjaxAction" method="getDepotData">
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+    
+    <action name="GetDeadStops" class="com.trimax.its.transport.action.TripAjaxAction" method="getDeadRouteStops">
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+    
+    <action name="GetRoute" class="com.trimax.its.transport.action.TripAjaxAction" method="getRoutes">
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+    
+    <action name="GetRouteById" class="com.trimax.its.transport.action.TripAjaxAction" method="getRoutesById">
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+    
+    <action name="GetDistance" class="com.trimax.its.transport.action.TripAjaxAction" method="getRouteDistance">
+    <result name="input" type="tiles">Trips</result>
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+    
+    <action name="GetGroupStops" class="com.trimax.its.transport.action.TripAjaxAction" method="getGroupStops">
+    <result name="input" type="tiles">Trips</result>
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+    
+    <action name="SaveTripDetails" class="com.trimax.its.transport.action.TripAction" method="saveTripDetails">
+    <result name="input" type="tiles">Trips</result>  
+     <result name="success"  type="redirect">SaveTripView</result>
+    </action>
+	
+	 <action name="EditTrips" class="com.trimax.its.transport.action.TripEditAction">
+    <result name="input" type="tiles">edittrips</result>
+     <result name="success"  type="tiles">edittrips</result>
+    </action> 
+    
+    <action name="saveEditTrips" class="com.trimax.its.transport.action.TripEditAction" method="saveEdited">
+    <result name="input" type="tiles">edittrips</result>
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+    </action> 
+    
+    <action name="GetBusStopRoute" class="com.trimax.its.transport.action.BusStopsAction" method="getBusStopRoute">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action> 
+ 
+     <action name="showShiftType" class="com.trimax.its.transport.action.ShiftTypeDetailsAction">
+    	<result name="success"  type="tiles">ShiftType</result>
+    </action>
+    <action name="ShiftType" class="com.trimax.its.transport.action.ShiftTypeDetailsAction" method="getShiftypelistDetails">
+
+     
+    </action>
+    
+    
+    
+    
+     <action name="createShiftType" class="com.trimax.its.transport.action.ShiftTypeDetailsAction" method="getdisplayShifttype">
+     <result name="success"  type="tiles">CreateShiftType</result>
+    </action>
+    
+    <action name="addNewShiftType" class="com.trimax.its.transport.action.ShiftTypeDetailsAction" method="getAddShifttype">
+            <result name="input" type="tiles">CreateShiftType</result>  
+            <result name="success"  type="tiles">ShiftType</result>
+           
+     </action>
+    
+    
+     <action name="editShiftType" class="com.trimax.its.transport.action.ShiftTypeDetailsAction" method="getEditDetails">
+     <result name="success"  type="tiles">EditShiftType</result>
+     </action>
+     
+      <action name="editShift" class="com.trimax.its.transport.action.ShiftTypeDetailsAction" method="getUpdateDetails">
+       <result name="input" type="tiles">EditShiftType</result>  
+     <result name="success"  type="tiles">ShiftType</result>
+     </action>
+    
+     <action name="deleteShiftType" class="com.trimax.its.transport.action.ShiftTypeDetailsAction" method="getDeletedShiftype">
+     <result name="success"  type="tiles">ShiftType</result>
+      </action>
+    
+
+    
+   
+      <action name="roadType" class="com.trimax.its.transport.action.RoadTypeAction" method="checkForShiftId">
+     <result name="success"  type="tiles">RoadType</result>
+    </action>
+     <action name="RoadType" class="com.trimax.its.transport.action.RoadTypeAction">
+   </action>
+    <action name="createRoadType" class="com.trimax.its.transport.action.RoadTypeAction" method="createRoadType">
+    
+     <result name="success"  type="tiles">CreateRoadType</result>
+    
+    </action>
+    
+    <action name="updateRoadType" class="com.trimax.its.transport.action.RoadTypeAction" method="updateRoadTypeDetails">
+     <!--  <interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+       <result name="input" type="tiles">EditRoadType</result>
+     <result name="success"  type="tiles">RoadType</result>
+<!--       <result name="invalid.token" type="tiles">RoadType</result>
+    --> </action>
+    <action name="saveRoadType" class="com.trimax.its.transport.action.RoadTypeAction" method="saveRoadTypeDetails">
+  <!--   <interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+     <result name="input" type="tiles">CreateRoadType</result>
+     <result name="success"  type="tiles">RoadType</result>
+     <!--  <result name="invalid.token" type="tiles">RoadType</result> -->
+    </action>
+    <action name="editRoadType" class="com.trimax.its.transport.action.RoadTypeAction" method="updateRoadType">
+     <result name="success"  type="tiles">EditRoadType</result>
+    </action>
+    
+    <action name="findRoadTypeIdAction" class="com.trimax.its.transport.action.RoadTypeAction" method="getRoadID">
+     <result name="success"  type="tiles">EditRoadType</result>
+    </action>
+     <action name="deleteRoadType" class="com.trimax.its.transport.action.RoadTypeAction" method="deleteRoadType">
+               <result name="success"  type="tiles">RoadType</result>
+       <result name="input" type="tiles">RoadType</result>  
+    </action> 
+    
+
+	<action name="AddStop" class="com.trimax.its.transport.action.BusStopsAction" method="addStop">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action>
+    
+
+    <action name="DeleteBusStopText" class="com.trimax.its.transport.action.BusStopsAction" method="deleteBusStopText">
+    <result name="success"  type="tiles">BusStopText</result>
+    </action>
+     
+
+    <action name="BusStopTypeAction" class="com.trimax.its.transport.action.BusStopTypeAction">
+     <result name="view"  type="tiles">viewBusStopType</result>
+     <result name="add"  type="tiles">addBusStopType</result>
+     <result name="edit"  type="tiles">editBusStopType</result>
+    </action>
+    
+    <action name="AddBusStopTypeAction" class="com.trimax.its.transport.action.BusStopTypeAction" method="Add">
+    <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+     <result name="success" type="tiles">viewBusStopType</result>
+     <result name="input"  type="tiles">addBusStopType</result>
+     <result name="invalid.token" type="tiles">viewBusStopType</result>
+    </action> 
+    
+    <action name="EditBusStopTypeAction" class="com.trimax.its.transport.action.BusStopTypeAction" method="update">
+    <!-- <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+     <result name="success" type="tiles">viewBusStopType</result>
+     <result name="input"  type="tiles">editBusStopType</result>
+     <!-- <result name="invalid.token" type="tiles">viewBusStopType</result> -->
+    </action>
+    
+    <action name="DeleteBusStopTypeAction" class="com.trimax.its.transport.action.BusStopTypeAction" method="delete">
+     <result name="success" type="tiles">viewBusStopType</result>
+    </action>
+    
+
+     
+    <action name="createScheduleType" class="com.trimax.its.transport.action.ScheduleTypeAction" method="showCreateschedule">
+     <result name="success" type="tiles">viewcreatescheduleType</result>
+    </action>
+    <action name="editscheduleType" class="com.trimax.its.transport.action.ScheduleTypeAction" method="editscheduleType">
+     <result name="success" type="tiles">viewEditscheduleType</result>
+    </action>
+    <action name="createscheduletype" class="com.trimax.its.transport.action.ScheduleTypeAction" method="createScheduletype">
+    <result name="input" type="tiles">viewcreatescheduleType</result>
+     <result name="success" type="tiles">viewscheduleType</result>
+    </action>
+    
+    <action name="getBrandType" class="com.trimax.its.transport.action.ScheduleAction" method="getBrandType">
+     <result name="success" type="tiles">viewcreatescheduleType</result>
+    </action>
+    
+    <action name="editscheduletypeAction" class="com.trimax.its.transport.action.ScheduleTypeAction" method="EditScheduletype">
+    <result name="input" type="tiles">viewEditscheduleType</result>
+     <result name="success" type="tiles">viewscheduleType</result>
+    </action>
+    
+    <action name="deletescheduleType" class="com.trimax.its.transport.action.ScheduleTypeAction" method="deletescheduleType">
+     <result name="success" type="tiles">viewscheduleType</result>
+    </action>
+    
+    <!-- <action name="FloorAction" class="com.trimax.its.route.action.FloorAction">
+     <result name="view"  type="tiles">viewFloor</result>
+     <result name="add"  type="tiles">addFloor</result>
+     <result name="edit"  type="tiles">editFloor</result>
+    </action>
+   
+   	<action name="AddFloorAction" class="com.trimax.its.route.action.FloorAction" method="Add">
+     <result name="success" type="tiles">viewFloor</result>
+     <result name="input"  type="tiles">addFloor</result>
+    </action>
+    
+    <action name="EditFloorAction" class="com.trimax.its.route.action.FloorAction" method="update">
+     <result name="success" type="tiles">viewFloor</result>
+     <result name="input"  type="tiles">editFloor</result>
+    </action>
+    
+    <action name="DeleteFloorAction" class="com.trimax.its.route.action.FloorAction" method="delete">
+     <result name="success" type="tiles">viewFloor</result>
+    </action> -->
+
+ 
+ 	<action name="TripTypeAction" class="com.trimax.its.transport.action.TripTypeAction">
+     <result name="view"  type="tiles">viewTripType</result>
+     <result name="add"  type="tiles">addTripType</result>
+     <result name="edit"  type="tiles">editTripType</result>
+    </action>
+   
+   	<action name="AddTripTypeAction" class="com.trimax.its.transport.action.TripTypeAction" method="Add">
+   	<interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+     <result name="success" type="tiles">viewTripType</result>
+     <result name="input"  type="tiles">addTripType</result>
+     <result name="invalid.token" type="tiles">viewTripType</result>
+    </action>
+    
+    <action name="EditTripTypeAction" class="com.trimax.its.transport.action.TripTypeAction" method="update">
+    <!-- <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+     <result name="success" type="tiles">viewTripType</result>
+     <result name="input"  type="tiles">editTripType</result>
+     <!-- <result name="invalid.token" type="tiles">viewTripType</result> -->
+    </action>
+    
+    <action name="DeleteTripTypeAction" class="com.trimax.its.transport.action.TripTypeAction" method="delete">
+     <result name="success" type="tiles">viewTripType</result>
+    </action>
+    
+    
+    <action name="TicketTypeAction2" class="com.trimax.its.transport.action.TicketTypeAction"></action>
+    
+    <action name="AddTicketTypeAction" class="com.trimax.its.transport.action.TicketTypeAction" method="Add">
+			<result name="success" type="tiles">viewTicketType</result>
+			<result name="input" type="tiles">addTicketType</result> 
+	</action>
+    
+    <action name="TicketTypeAction" class="com.trimax.its.transport.action.TicketTypeAction">
+     <result name="view"  type="tiles">viewTicketType</result>
+     <result name="add"  type="tiles">addTicketType</result>
+     <result name="edit"  type="tiles">editTicketType</result>
+    </action>
+   
+   <!-- 	<action name="AddTicketTypeAction" class="com.trimax.its.transport.action.TicketTypeAction" method="Add">
+     <result name="success" type="tiles">viewTicketType</result>
+     <result name="input"  type="tiles">addTicketType</result>
+    </action> -->
+    
+    <action name="EditTicketTypeAction" class="com.trimax.its.transport.action.TicketTypeAction" method="update">
+   <!--  <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+     <result name="success" type="tiles">viewTicketType</result>
+     <result name="input"  type="tiles">editTicketType</result>
+     <!-- <result name="invalid.token" type="tiles">viewTicketType</result> -->
+    </action>
+    
+    <action name="DeleteTicketTypeAction" class="com.trimax.its.transport.action.TicketTypeAction" method="delete">
+     <result name="success" type="tiles">viewTicketType</result>
+    </action>
+    
+    <action name="ShowBusStopGroup" class="com.trimax.its.transport.action.BusStopGroupAction" > 
+    <result name="success"  type="tiles">BusStopGroupText</result>
+    </action>
+    
+    <action name="BusStopGroupAjaxAction" class="com.trimax.its.transport.action.BusStopGroupAction" method="getViewData"> 
+    <result name="success"  type="tiles">BusStopGroupText</result>
+    </action>
+    
+    <action name="GetBusStopGroupMap" class="com.trimax.its.transport.action.BusStopGroupAction" method="getCreateMap"> 
+    <result name="success"  type="tiles">BusStopGroupCreateMap</result>
+    </action>
+    
+    <action name="SaveBusStopGroup" class="com.trimax.its.transport.action.BusStopGroupAction" method="saveBusStopGroup"> 
+    <result name="success"  type="tiles">BusStopGroupCreateMap</result>
+    </action>
+    
+    <action name="EditBusStopGroup" class="com.trimax.its.transport.action.BusStopGroupAction" method="getEditMap"> 
+    <result name="success"  type="tiles">BusStopGroupEditMap</result>
+    </action>
+    
+    <action name="GetBusStopGroupEditdata" class="com.trimax.its.transport.action.BusStopGroupAction" method="getBusStopGroupEditdata"> 
+    <result name="success"  type="tiles">BusStopGroupEditMap</result>
+    </action>
+    
+    <action name="EditBusStopGroupSave" class="com.trimax.its.transport.action.BusStopGroupAction" method="editBusStopGroup"> 
+    <result name="success"  type="tiles">BusStopGroupCreateMap</result>
+    </action>
+ 
+ 	<!--Start Case type Master   -->
+ 	
+ 		<action name="CaseTypeList" class="com.trimax.its.transport.action.CaseTypeAction">
+			<result name="success" type="tiles">CaseTypeList</result>
+		</action>
+			
+		<action name="CaseTypeListAjax" class="com.trimax.its.transport.action.CaseTypeAction" method="getCaseTypeRecordsList">
+			<result name="success" type="chain">CaseTypeList</result>
+			<result name="fail" type="tiles">CaseTypeList</result>
+		</action>
+				
+		<action name="EditCaseType" class="com.trimax.its.transport.action.CaseTypeAction" method="editCaseType">
+			<result name="success" type="tiles">EditCaseType</result>
+		</action>
+		
+		<action name="saveEditCaseTypeAction" class="com.trimax.its.transport.action.CaseTypeAction" method="saveEditedCaseTypeDetails">
+			<result name="success" type="chain">CaseTypeList</result>
+			<result name="fail" type="tiles">EditCaseType</result>
+			<result name="input" type="tiles">EditCaseType</result>
+		</action>
+		
+		<action name="CreateCaseType" class="com.trimax.its.transport.action.CaseTypeAction" method="createCaseType">
+			<result name="success" type="tiles">CreateNewCaseType</result>
+		</action>
+	
+		<action name="SaveCaseType" class="com.trimax.its.transport.action.CaseTypeAction" method="saveNewCaseType">
+			<result name="success" type="chain">CaseTypeList</result>
+			<result name="fail" type="tiles">CreateNewCaseType</result>
+			<result name="input" type="tiles">CreateNewCaseType</result>
+		</action>
+		
+		<action name="DeleteCaseType" class="com.trimax.its.transport.action.CaseTypeAction" method="deleteCaseType">
+			<result name="success" type="chain">CaseTypeList</result>
+			<result name="fail" type="chain">CaseTypeList</result>
+			<result name="input" type="chain">CaseTypeList</result>
+		</action>
+		
+		<action name="GetBusStopReloadRoute" class="com.trimax.its.transport.action.BusStopsAction" method="getBusStopReloadRoute">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action> 
+    
+    <action name="GetOrgList" class="com.trimax.its.transport.action.BusStopsAction" method="getOrgList">
+     <result name="success"  type="tiles">BusStopMap</result>
+    </action> 
+ 	
+ 	<!--EndCase type Master    -->
+ 	
+ 	<action name="SetDeleteStatus" class="com.trimax.its.transport.action.TripEditAction" method="setTripStatus">
+     <result name="success"  type="tiles">edittrips</result>
+    </action> 
+    
+    <action name="DeleteBusStopGroup" class="com.trimax.its.transport.action.BusStopGroupAction" method="getDeleteMap"> 
+    <result name="success"  type="tiles">BusStopGroupText</result>
+    </action>
+    
+    <action name="ActivateFormFour" class="com.trimax.its.transport.action.FormFourAction" method="activateFormFour">
+     <result name="success" type="redirectAction"> 
+     <param name="actionName">FormFourView</param>
+     </result>
+  
+    </action>
+<!--  rajesh   targetamount edit start -->
+
+
+ <action name="ScheduleServiceLimit" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction" method="getData">
+    <result name="success"  type="tiles">ScheduleServiceLimit</result>
+     </action>
+     
+     <action name="saveEditServiceLimit" class="com.trimax.its.vehicle.action.BrandTypeServiceLimitAction"
+			method="saveEditScheduleServiceLimit">
+		<result name="input" type="chain">ScheduleServiceLimit</result>
+			<result name="success" type="chain">ShowScheduleDetails</result>
+			<result name="fail" type="tiles">ScheduleServiceLimit</result>
+ 		</action>
+
+
+    <action name="EditTargetAmount" class="com.trimax.its.transport.action.ScheduleAction" method="editSchedule">
+    <result name="input" type="tiles">EditTargetAmountSchedule</result>  
+     <result name="success"  type="tiles">EditTargetAmountSchedule</result>
+     
+    </action>
+     <action name="UpdateTargetAmount" class="com.trimax.its.transport.action.ScheduleAction" method="updateTargetAmountSchedule">
+   	 <result name="input" type="tiles">EditTargetAmountSchedule</result>  
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+     <result name="invalid.token" type="chain">ShowScheduleDetails</result>
+    </action>
+    
+     <action name="UpdateTargetAmountchanges" class="com.trimax.its.transport.action.ScheduleAction" method="updateTargetAmountScheduleChanges">
+   	 <result name="input" type="tiles">EditTargetAmountSchedule</result>  
+     <result name="success"  type="chain">ShowScheduleDetails</result>
+     <result name="invalid.token" type="chain">ShowScheduleDetails</result>
+    </action>
+    
+    <action name="GetDeadRoute" class="com.trimax.its.transport.action.TripAjaxAction" method="getDeadRoutes">
+     <result name="success"  type="tiles">Trips</result>
+    </action>
+<!--     end -->
+<!--    check route exit start -->
+ <action name="checkRouteExitFare" class="com.trimax.its.transport.action.FormFourAction" method="checkRouteExit">
+ <result name="success"  type="tiles">FormFour</result>
+ </action>
+ <!--    check route exit  -->
+<!--  getserviceidbyscheduleid -->
+ <action name="getServiceidByscheduleid" class="com.trimax.its.transport.action.FormFourAction" method="getServiceidByscheduleId">
+ <result name="success"  type="tiles">FormFour</result>
+</action>
+<action name="getNuditoKannadaName" class="com.trimax.its.Conversion.NudiToKannadaConverter" >
+ <result name="success"  type="tiles">NuditoKannadaName</result>
+</action>
+<action name="GetNudiAjax" class="com.trimax.its.transport.action.BusStopsAction" method="getNudiName" >
+ 
+</action>
+
+<action name="getAllFormFourView" class="com.trimax.its.transport.action.ViewAllFormFourAction" >
+ <result name="success"  type="tiles">ViewAllFormFour</result>
+</action>
+<action name="getallformdepot" class="com.trimax.its.transport.action.ViewAllFormFourAction" method="getdepot">
+</action>
+<action name="AjaxgetAllFormFourView" class="com.trimax.its.transport.action.ViewAllFormFourAction" method="getAllFormFourDetails">
+ <result name="success"  type="tiles">ViewAllFormFourDetails</result>
+</action>
+<action name="AjaxgetAllfv" class="com.trimax.its.transport.action.ViewAllFormFourAction" method="showbyquery">
+</action>
+<!-- end -->
+
+<!-- Ticket sub type Added by Itishree -->
+<action name="TicketSubType" class="com.trimax.its.transport.action.TicketSubTypeAction" >
+	     <result name="success" type="tiles">TicketSubTypeTiles</result>
+	    </action>
+		<action name="TicketSubTypeviewAction" class="com.trimax.its.transport.action.TicketSubTypeAction" method="TicketSubTypeview"></action>
+		
+		<action name="createTicketSubType" class="com.trimax.its.transport.action.TicketSubTypeAction" method="createTicketSubType">
+	     <result name="success" type="tiles">CreateTicketSubType</result>
+	    </action>
+	    
+	    <action name="createTicketSubTypeAction" class="com.trimax.its.transport.action.TicketSubTypeAction" method="saveTicketSubType">
+	     	<result name="success" type="tiles">TicketSubTypeTiles</result>
+			<result name="input" type="tiles">CreateTicketSubType</result>
+	    </action>
+	    
+	     <action name="editTicketSubType" class="com.trimax.its.transport.action.TicketSubTypeAction" method="edit">
+	     <result name="success" type="tiles">editTicketSubType</result>
+	     <result name="input"  type="tiles">editTicketSubType</result>
+	    </action>
+	     <action name="editTicketSubTypeAction" class="com.trimax.its.transport.action.TicketSubTypeAction" method="editTicketSubType">
+	     <result name="success" type="tiles">TicketSubTypeTiles</result>
+	     <result name="input"  type="tiles">editTicketSubType</result>
+	    </action>
+	     <action name="deleteTicketSubType" class="com.trimax.its.transport.action.TicketSubTypeAction" method="deleteTicketSubType">
+	     <result name="success" type="tiles">TicketSubTypeTiles</result>
+	    </action>
+<!-- 	    end by Itishree -->
+    </package>
+    </struts>

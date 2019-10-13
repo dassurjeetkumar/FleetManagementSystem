@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/6733/its/src/com/trimax/its/pass/model
+END
+PassDistanceType.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6539/its/src/com/trimax/its/pass/model/PassDistanceType.java
+END
+PassIssuerCenter.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/model/PassIssuerCenter.java
+END
+PassCasteType.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/model/PassCasteType.java
+END
+PassDurationType.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6733/its/src/com/trimax/its/pass/model/PassDurationType.java
+END
+PassCounterMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/model/PassCounterMaster.java
+END
+PassPurchaseType.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6539/its/src/com/trimax/its/pass/model/PassPurchaseType.java
+END
+PassType.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/6733/its/src/com/trimax/its/pass/model/PassType.java
+END
+PassSubType.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/6625/its/src/com/trimax/its/pass/model/PassSubType.java
+END
+PassIssuerType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/6538/its/src/com/trimax/its/pass/model/PassIssuerType.java
+END
+PassInstitutionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/model/PassInstitutionType.java
+END
+PassRate.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/6550/its/src/com/trimax/its/pass/model/PassRate.java
+END

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="weeklychart" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<action name="viewWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showWeeklyChart">
+			<result name="success" type="tiles">WeeklyChart</result>
+		</action>
+
+		<action name="viewWeeklyChartAction"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="viewWeeklyChartList">
+
+		</action>
+		
+		<action name="createWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showScheduleList">
+			<result name="success" type="tiles">CreateWeeklyChart</result>
+		</action>
+
+		<action name="FormFourViewlistforweekly"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showFormFourList">
+			<result name="success">/weeklyChart/weeklyChartAjax.jsp</result>
+		</action>
+
+		<action name="saveWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="createWeeklyChart">
+			<result name="input" type="tiles">CreateWeeklyChart</result>
+			<result name="success" type="tiles">WeeklyChart</result>
+		</action>
+
+		<action name="editWeeklyChart"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="editWeeklyChart">
+			<result name="success" type="tiles">EditWeeklyChart</result>
+		</action>
+		<action name="findAllSchedule"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="getScheduleName">
+			<result name="success" type="tiles">EditWeeklyChart</result>
+		</action>
+		<action name="editFormFourView"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="editWeeklyChartList">
+
+		</action>
+		<action name="addEditWeeklyChartAction"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="addEditWeeklyChart">
+            <result name="input" type="tiles">EditWeeklyChart</result>
+			<result name="success" type="tiles">WeeklyChart</result>
+		</action>
+		<action name="FormFourViewForEdit"
+			class="com.trimax.its.transport.action.WeeklyChartAction" method="showWeeklyList">
+			<result name="success">/weeklyChart/editAjaxWeeklyChart.jsp</result>
+		</action>
+
+	</package>
+</struts>

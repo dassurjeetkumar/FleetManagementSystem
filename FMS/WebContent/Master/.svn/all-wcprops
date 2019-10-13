@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/its/!svn/ver/5224/its/WebContent/Master
+END
+Vendor.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/5224/its/WebContent/Master/Vendor.jsp
+END
+EditVendor.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5224/its/WebContent/Master/EditVendor.jsp
+END
+ShowVendorList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5224/its/WebContent/Master/ShowVendorList.jsp
+END

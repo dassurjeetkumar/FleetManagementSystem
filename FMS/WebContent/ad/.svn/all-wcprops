@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/its/!svn/ver/7327/its/WebContent/ad
+END
+getCustomerAd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/7327/its/WebContent/ad/getCustomerAd.jsp
+END
+Editcustomer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/6940/its/WebContent/ad/Editcustomer.jsp
+END
+viewAd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/its/!svn/ver/6397/its/WebContent/ad/viewAd.jsp
+END
+createcustomer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/6940/its/WebContent/ad/createcustomer.jsp
+END
+editAd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/its/!svn/ver/6397/its/WebContent/ad/editAd.jsp
+END
+createAd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/its/!svn/ver/6271/its/WebContent/ad/createAd.jsp
+END
+getAllAds.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/its/!svn/ver/5829/its/WebContent/ad/getAllAds.jsp
+END

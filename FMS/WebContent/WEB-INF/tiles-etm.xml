@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/layout/baselayout.jsp">
+		<put-attribute name="layoutId" value="" />
+		<put-attribute name="js" value="/layout/js.jsp" />
+		<put-attribute name="css" value="/layout/css.jsp" />
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+	</definition>
+	
+
+	<!-- <definition name="ShowAlerts" extends="baseLayout">
+		<put-attribute name="layoutId" value="ShowDashBoard" />
+		<put-attribute name="title" value="Alerts" />
+		<put-attribute name="content" value="/pages/etm/etmDashboard.jsp" />
+	</definition> -->
+	
+<!-- 	 <definition name="etmDeviceHistory" extends="baseLayout"> -->
+<!--       <put-attribute name="title"  value="Etm Device History"/> -->
+<!--       <put-attribute name="layoutId"  value="Etm Device History"/> -->
+<!--       <put-attribute name="content"   value="/device/etmdevicehistory.jsp"/>       -->
+<!--    </definition> -->
+	
+</tiles-definitions>

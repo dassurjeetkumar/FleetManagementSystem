@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+   
+   <definition name="viewBreaktype" extends="baseLayout">
+      <put-attribute name="title"  value="View Break Type"/>
+      <put-attribute name="content"  value="/breaktype/viewbreaktype.jsp"/>      
+   </definition>
+   <definition name="createBreaktype" extends="baseLayout">
+      <put-attribute name="title"  value="Create Break Type"/>
+      <put-attribute name="content"  value="/breaktype/createBreaktype.jsp"/>      
+   </definition>
+   <definition name="editBreaktype" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Break Type"/>
+      <put-attribute name="content"  value="/breaktype/editBreaktype.jsp"/>      
+   </definition>
+   
+   </tiles-definitions>

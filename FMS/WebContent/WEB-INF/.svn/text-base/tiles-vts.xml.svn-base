@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	
+	<definition name="ShowBusesOnline" extends="baseLayout">
+		<put-attribute name="layoutId" value="ShowBusesOnline" />
+		<put-attribute name="title" value="Live Buses" />
+		<put-attribute name="content" value="/pages/vts/livebuses.jsp" />
+	</definition>
+
+	<definition name="ShowAlerts" extends="baseLayout">
+		<!-- <put-attribute name="layoutId" value="ShowDashBoard" /> -->
+		<put-attribute name="title" value="Alerts" />
+		<put-attribute name="content" value="/pages/vts/vehiclealert.jsp" />
+	</definition>
+
+	<definition name="ShowDashBoard" extends="baseLayout">
+		<put-attribute name="layoutId" value="ShowDashBoard" />
+		<put-attribute name="title" value="DashBoard" />
+		<put-attribute name="content" value="/pages/vts/dashBoard.jsp" />
+
+	</definition>
+	<definition name="ShowPollSms" extends="baseLayout">
+		<put-attribute name="layoutId" value="ShowPollsms" />
+		<put-attribute name="title" value="ShowPollsms" />
+		<put-attribute name="content" value="/pages/vts/pollsms.jsp" />
+
+	</definition>
+	<definition name="ShowRouteFence" extends="baseLayout">
+		<put-attribute name="layoutId" value="ShowRouteFence" />
+		<put-attribute name="title" value="ShowRouteFence" />
+		<put-attribute name="content" value="/pages/vts/routeFence.jsp" />
+
+	</definition>
+<definition name="RouteDeviation" extends="baseLayout">
+		<put-attribute name="title" value="VTS" />
+		<put-attribute name="content" value="/pages/vts/scheduleroute.jsp" />
+
+	</definition>
+	<definition name="RouteDeviationScreen" extends="baseLayout">
+		<put-attribute name="title" value="VTS" />
+		<put-attribute name="content" value="/pages/vts/routedeviationscreen.jsp" />
+
+	</definition>
+
+	<definition name="RouteScheduleScreen" extends="baseLayout">
+		<put-attribute name="title" value="VTS" />
+		<put-attribute name="content" value="/pages/vts/scheduleVehiclereport.jsp" />
+
+	</definition>
+
+	<definition name="ShowVehicleAlertConfiguration" extends="baseLayout">
+		<put-attribute name="layoutId" value="vehicleAlertConfiguration" />
+		<put-attribute name="title" value="Vehicle Alert Configuration" />
+		<put-attribute name="content" value="/pages/vts/viewVehicleAlertConfiguration.jsp" />
+
+	</definition>
+	<definition name="CreateVehicleAlertConfiguration" extends="baseLayout">
+		<put-attribute name="layoutId" value="vehicleAlertConfiguration" />
+		<put-attribute name="title" value="Vehicle Alert Configuration" />
+		<put-attribute name="content" value="/pages/vts/CreateVehicleAlertConfiguration.jsp" />
+
+	</definition>
+	<definition name="EditVehicleAlertConfiguration" extends="baseLayout">
+		<put-attribute name="layoutId" value="vehicleAlertConfiguration" />
+		<put-attribute name="title" value="Vehicle Alert Configuration" />
+		<put-attribute name="content" value="/pages/vts/EditVehicleAlertConfiguration.jsp" />
+
+	</definition>
+	
+	<definition name="ViewVehicleDepotInout" extends="baseLayout">
+		<put-attribute name="layoutId" value="viewVehicleDepotInout" />
+		<put-attribute name="title" value="View Vehicle Depot in-out" />
+		<put-attribute name="content" value="/pages/vts/viewVehicleDepotInout.jsp" />
+
+	</definition>
+
+	
+	<definition name="ViewVtsAlertConfigMaster" extends="baseLayout">
+		<put-attribute name="layoutId" value="viewVtsAlertConfigMaster" />
+		<put-attribute name="title" value="View Vts Alert Config Master" />
+		<put-attribute name="content" value="/pages/vts/viewVtsAlertConfigMaster.jsp" />
+
+	</definition>
+	
+	<definition name="CreateVehicleAlertMasterConfig" extends="baseLayout">
+		<put-attribute name="layoutId" value="viewVtsAlertConfigMaster" />
+		<put-attribute name="title" value="View Vts Alert Config Master" />
+		<put-attribute name="content" value="/pages/vts/createVehicleAlertMasterConfig.jsp" />
+
+	</definition>
+	<definition name="EditVehicleAlertMasterConfig" extends="baseLayout">
+		<put-attribute name="layoutId" value="viewVtsAlertConfigMaster" />
+		<put-attribute name="title" value="View Vts Alert Config Master" />
+		<put-attribute name="content" value="/pages/vts/editVehicleAlertMasterConfig.jsp" />
+
+	</definition>
+	<definition name="ViewVTUReport" extends="baseLayout">
+		<put-attribute name="layoutId" value="VTSReport" />
+		<put-attribute name="title" value="View VTS REPORT" />
+		<put-attribute name="content" value="/pages/vts/viewVTSReport.jsp" />
+
+	</definition>
+	<definition name="ViewTripWiseVTUPacketAnalysis" extends="baseLayout">
+        <put-attribute name="layoutId" value="View TripWise VTU Packet Analysis Report" />
+        <put-attribute name="title" value="View TripWise VTU Packet Analysis Report" />
+        <put-attribute name="content" value="/pages/vts/TripwiseVTUpacketAnalysisReport.jsp" />
+
+    </definition>
+	<definition name="ViewSkipRoute" extends="baseLayout">
+		<put-attribute name="layoutId" value="VTSSkipBusTop" />
+		<put-attribute name="title" value="VTS" />
+		<put-attribute name="content" value="/pages/vts/busStopSkip.jsp" />
+
+	</definition>
+	<definition name="BusBunchingScreen" extends="baseLayout">
+	    <put-attribute name="layoutId" value="Bus Bunching" />
+		<put-attribute name="title" value="Bus Bunching" />		
+		<put-attribute name="content" value="/pages/vts/BusBunching.jsp" />
+	</definition>
+	
+	<definition name="ViewVTSAlertReport" extends="baseLayout">
+		<put-attribute name="layoutId" value="View VTS Alert Report" />
+		<put-attribute name="title" value="View VTS Alert Report" />
+		<put-attribute name="content" value="/pages/vts/viewVtsAlertReport.jsp" />
+
+	</definition>
+	<definition name="ViewVTSvehicleWiseDistance" extends="baseLayout">
+		<put-attribute name="layoutId" value="View Vehicle Wise Distance Travelled Report" />
+		<put-attribute name="title" value="View  Vehicle Wise Distance Travelled Report" />
+		<put-attribute name="content" value="/pages/vts/vehiclewisedistance.jsp" />
+
+	</definition>
+	<definition name="ScheduleTripStatus" extends="baseLayout">
+        <put-attribute name="layoutId" value="View Schedule Trip Status Report" />
+        <put-attribute name="title" value="View Schedule Trip Status Report" />
+        <put-attribute name="content" value="/pages/vts/scheduletripstatusreport.jsp" />
+
+    </definition>
+    <definition name="ShowBusBunchingReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="View Bus Bunching Report" />
+        <put-attribute name="title" value="View Bus Bunching Report" />
+        <put-attribute name="content" value="/pages/vts/busBunchingReport.jsp" />
+
+    </definition>
+   
+    <definition name="viewEarlyReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewEarlyReport.jsp" />
+
+    </definition>
+    
+    <definition name="viewSOSReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewSOSReport.jsp" />
+
+    </definition>
+    <definition name="viewAccidentReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewAccidentReport.jsp" />
+
+    </definition>
+<!--     vts accident report and breakdown report with current date only-->
+     <definition name="viewAccidentVtsReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewAccidentVtsReport.jsp" />
+
+    </definition>
+    
+     <definition name="viewBreakdownVtsReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewBreakdownVtsReport.jsp" />
+
+    </definition>
+<!--     end -->
+    <definition name="viewOverSpeedReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewOverSpeedReport.jsp" />
+
+    </definition>
+    
+    <definition name="viewBreakdownReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewBreakdownReport.jsp" />
+
+    </definition>
+    <definition name="viewSchEarlyDeptReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewSchEarlyDeptReport.jsp" />
+
+    </definition>
+    <definition name="viewSchLateDeptReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/viewSchLateDeptReport.jsp" />
+
+    </definition>
+    <definition name="LateDeptReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/LateDeptReport.jsp" />
+
+    </definition>
+    <definition name="TamperingReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/TamperingReport.jsp" />
+
+    </definition>
+    <definition name="SkipStopReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/SkipStopReport.jsp" />
+
+    </definition>
+    <definition name="StationaryVehicleReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/StationaryVehicles.jsp" />
+
+    </definition>
+     <definition name="WorkShopReportDetails" extends="baseLayout">
+        <put-attribute name="layoutId" value="VTS REPORT" />
+        <put-attribute name="title" value="VTS REPORT" />
+        <put-attribute name="content" value="/pages/vts/WorkShopReportDetails.jsp" />
+
+    </definition>
+    
+    <!-- Sarthi Vehicle Geofence -->
+	
+	<definition name="vehicleSectorData" extends="baseLayout">
+      <put-attribute name="title"  value=" Sector "/>
+      <put-attribute name="content"   value="/pages/vts/SarthiVehicleGeofenceList.jsp"/>
+   </definition>
+   
+   <definition name="CreateVehicleSector" extends="baseLayout">
+      <put-attribute name="title"  value=" Create  Sector "/>
+      <put-attribute name="content"   value="/pages/vts/createSarthiSectorGeofence.jsp"/>
+   </definition>
+   
+   <definition name="vehicleSectorData" extends="baseLayout">
+      <put-attribute name="title"  value="Sector"/>
+      <put-attribute name="layoutId"  value="View"/>
+      <put-attribute name="content"   value="/pages/vts/SarthiVehicleGeofenceList.jsp"/>      
+   </definition>
+   
+   <definition name="editVehicleSector" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Sector"/>
+      <put-attribute name="layoutId"  value="Edit Sarthi Sector Geofence"/>
+      <put-attribute name="content"   value="/pages/vts/editSarthiSectorGeofence.jsp"/>      
+   </definition>
+   
+     <definition name="mapVehicleToSector" extends="baseLayout">
+      <put-attribute name="title"  value="Assign  Sector To Vehicle"/>
+      <put-attribute name="layoutId"  value="Assign  Sector To Vehicle"/>
+      <put-attribute name="content"   value="/pages/vts/AssignVehicleToSector.jsp"/>      
+   </definition>
+    <definition name="allocatedVehicleToSector" extends="baseLayout">
+    <put-attribute name="title"  value="Assign  Sector To Vehicle"/>
+      <put-attribute name="layoutId"  value="Vehicle Allocated To Sector"/>
+      <put-attribute name="content"   value="/pages/vts/AllocatedVehicleToSector.jsp"/>      
+   </definition>
+	<!-- Revenue Sector End -->
+    
+    <definition name="ExtractTripStatus" extends="baseLayout">
+        <put-attribute name="layoutId" value="View Extract Trip Report" />
+        <put-attribute name="title" value="View Extract Trip Report" />
+        <put-attribute name="content" value="/pages/vts/ExtractTripReport.jsp" />
+
+    </definition>
+    
+ <!-- Revenue Sector End -->
+    
+     <!--Start of Break Location Report-->
+    
+     <definition name="ViewUnauthorizedBreakLocationReport" extends="baseLayout">
+      <put-attribute name="title"  value="View Unauthorized Break Location Report"/>
+      <put-attribute name="layoutId"  value="View Unauthorized Break Location Report"/>
+      <put-attribute name="content"   value="/pages/vts/viewUnauthorizedBreakLoc.jsp"/>      
+   </definition>
+   <!-- End Of Break Location Report-->
+   
+    <!-- Start of Accident Analysis Report-->
+     <definition name="ViewAccidentAnalysisReport" extends="baseLayout">
+      <put-attribute name="title"  value="View Accident Analysis Report"/>
+      <put-attribute name="layoutId"  value="View Accident Analysis Report"/>
+      <put-attribute name="content"   value="/pages/vts/viewAccidentAnalysisReport.jsp"/>      
+   </definition>
+   
+   
+   <definition name="vehiclewisereport" extends="baseLayout">
+      <put-attribute name="title"  value="Vehiclewise Status Report"/>
+      <put-attribute name="layoutId"  value="vehiclewisereport"/>
+      <put-attribute name="content"   value="/pages/vts/vehiclewiseStatusReport.jsp"/>      
+      </definition>
+       <definition name="viewSarthiDeviationReport" extends="baseLayout">
+      <put-attribute name="title"  value="View LC/Sarthi Deviation  Report"/>
+      <put-attribute name="layoutId"  value="View LC/Sarthi Deviation  Report"/>
+      <put-attribute name="content"   value="/pages/vts/sarthiDeviationReport.jsp"/>      
+   
+   </definition>
+
+   
+   <definition name="shiftWiseReport" extends="baseLayout">
+      <put-attribute name="title"  value="Shift Wise Report"/>
+      <put-attribute name="layoutId"  value="Shift Wise Reportt"/>
+      <put-attribute name="content"   value="/pages/vts/shiftwisereport.jsp"/>      
+   </definition>
+   <definition name="ShowBusBunchingReport" extends="baseLayout">
+        <put-attribute name="layoutId" value="View Bus Bunching Report" />
+        <put-attribute name="title" value="View Bus Bunching Report" />
+        <put-attribute name="content" value="/pages/vts/busBunchingReport.jsp" />
+
+    </definition>
+    <definition name="scheduleAdherenceReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Adherence Report"/>
+      <put-attribute name="layoutId"  value="Shift Wise Reportt"/>
+      <put-attribute name="content"   value="/pages/vts/scheduleAdherenceReport.jsp"/>      
+   </definition>
+ <definition name="scheduleArrivalReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Arrival Report"/>
+      <put-attribute name="layoutId"  value="Shift Wise Reportt"/>
+      <put-attribute name="content"   value="/pages/vts/scheduleArrivalReport.jsp"/>      
+   </definition>
+ <definition name="scheduleDepartureReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Departure Report"/>
+      <put-attribute name="layoutId"  value="Shift Wise Reportt"/>
+      <put-attribute name="content"   value="/pages/vts/scheduleDepartureReport.jsp"/>      
+   </definition>
+   <definition name="routeDeviationReport" extends="baseLayout">
+      <put-attribute name="title"  value="Route Deviation Report"/>
+      <put-attribute name="layoutId"  value="Shift Wise Report"/>
+      <put-attribute name="content"   value="/pages/vts/routeDeviationReport.jsp"/>      
+   </definition>
+   <definition name="ha" extends="baseLayout">
+      <put-attribute name="title"  value="HA Report"/>
+      <put-attribute name="layoutId"  value="HA Report"/>
+      <put-attribute name="content"   value="/pages/vts/haReport.jsp"/>      
+   </definition>
+   <definition name="hd" extends="baseLayout">
+      <put-attribute name="title"  value="HD Report"/>
+      <put-attribute name="layoutId"  value="HD Report"/>
+      <put-attribute name="content"   value="/pages/vts/hdReport.jsp"/>      
+   </definition>
+    <definition name="missedTripsReport" extends="baseLayout">
+      <put-attribute name="title"  value="Missed Trips Report"/>
+      <put-attribute name="layoutId"  value="Missed Trips Report"/>
+      <put-attribute name="content"   value="/pages/vts/missedTripsReport.jsp"/>      
+   </definition>
+   <definition name="busBreakDownReport" extends="baseLayout">
+      <put-attribute name="title"  value="Bus BreakDown Report"/>
+      <put-attribute name="layoutId"  value="Missed Trips Report"/>
+      <put-attribute name="content"   value="/pages/vts/busBreakDownReport.jsp"/>      
+   </definition>
+   <definition name="controlChartReport" extends="baseLayout">
+      <put-attribute name="title"  value="Control Chart Report"/>
+      <put-attribute name="layoutId"  value="Control Chart Report"/>
+      <put-attribute name="content"   value="/pages/vts/controlChartReport.jsp"/>      
+   </definition>
+   
+     <definition name="scheduleArrivalDaily" extends="baseLayout">
+      <put-attribute name="title"  value="ScheduleWise Daily Report"/>
+      <put-attribute name="layoutId"  value="Control Chart Report"/>
+      <put-attribute name="content"   value="/pages/vts/scheduleArrivalDailyReport.jsp"/>      
+   </definition>
+   <definition name="scheduleDepartureDaily" extends="baseLayout">
+      <put-attribute name="title"  value="ScheduleWise Daily Report"/>
+      <put-attribute name="layoutId"  value="Control Chart Report"/>
+      <put-attribute name="content"   value="/pages/vts/scheduleDepartureDailyReport.jsp"/>      
+   </definition>
+   
+   <definition name="schedulePerformanceReport" extends="baseLayout">
+      <put-attribute name="title"  value="Schedule Performance Report"/>
+      <put-attribute name="layoutId"  value="Schedule Performance Report"/>
+      <put-attribute name="content"   value="/pages/vts/SchedulePerformanceReport.jsp"/>      
+   </definition>
+     
+   <definition name="dailyOpearationSummaryReport" extends="baseLayout">
+      <put-attribute name="title"  value="Daily Operational Summary Report"/>
+      <put-attribute name="layoutId"  value="Daily Operational Summary Report"/>
+      <put-attribute name="content"   value="/pages/vts/DailyOperationalSummaryReport.jsp"/>      
+   </definition>
+    <definition name="lateDepartureReport" extends="baseLayout">
+      <put-attribute name="title"  value="Late Departure Report"/>
+      <put-attribute name="layoutId"  value="Late Departure Report"/>
+      <put-attribute name="content"   value="/pages/vts/lateDapartureReport.jsp"/>      
+   </definition>
+  <definition name="earlyArrivalReport" extends="baseLayout">
+      <put-attribute name="title"  value="Early Arrival Report"/>
+      <put-attribute name="layoutId"  value="Early Arrival Report"/>
+      <put-attribute name="content"   value="/pages/vts/EarlyArrivalReport.jsp"/>      
+   </definition>
+   
+   <definition name="TripCancleReport" extends="baseLayout">
+      <put-attribute name="title"  value="Trip Cancel Report"/>
+      <put-attribute name="layoutId"  value="Trip Cancel Report"/>
+      <put-attribute name="content"   value="/pages/vts/TripCancleReport.jsp"/>      
+   </definition>
+   <definition name="DeviatedTripReport" extends="baseLayout">
+      <put-attribute name="title"  value="Deviated Trip Report"/>
+      <put-attribute name="layoutId"  value="Deviated Trip Report"/>
+      <put-attribute name="content"   value="/pages/vts/TripDeviatedReport.jsp"/>      
+   </definition>
+   
+   <definition name="BusSkippedReport" extends="baseLayout">
+      <put-attribute name="title"  value="Bus Stop Skipped Report"/>
+      <put-attribute name="layoutId"  value="Bus Stop Skipped Report"/>
+      <put-attribute name="content"   value="/pages/vts/BusStopSkippedReport.jsp"/>      
+   </definition>
+   
+   <definition name="showEtmDashboard" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="ETM Dashboard" />
+		<put-attribute name="content" value="/pages/etm/etmDashboard.jsp" />
+	</definition>
+	<definition name="tripcancel" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Cancel" />
+		<put-attribute name="content" value="/pages/vts/tripcancel.jsp" />
+	</definition>
+	<definition name="trippartial" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Partial" />
+		<put-attribute name="content" value="/pages/vts/partialtrip.jsp" />
+	</definition>
+	
+	<definition name="tripcancelvts" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Partial" />
+		<put-attribute name="content" value="/pages/vts/canceltripvts.jsp" />
+	</definition>
+	
+	<definition name="trippartialvts" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Partial" />
+		<put-attribute name="content" value="/pages/vts/partialtripvts.jsp" />
+	</definition>
+	
+	<definition name="scheduleMismatch" extends="baseLayout">
+		<put-attribute name="layoutId" value="Vts Mismatching" />
+		<put-attribute name="title" value="Schedule Mismatching" />
+		<put-attribute name="content" value="/pages/vts/schedulemismatch.jsp" />
+	</definition>
+	
+	<definition name="ShowLiveBusDetailsAllVts" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Vts" />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/ShowLiveBusDetailsAllVts.jsp" />
+	</definition>
+	<definition name="ShowLiveBusDetailsForStationaryVehicle" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Stationary Vehicle " />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/ShowLiveBusDetailsForStationaryVehicle.jsp" />
+	</definition>
+	<definition name="ShowLiveBusDetailsForStationaryVehicleLocation" extends="vtureport">
+		<put-attribute name="title" value="Show Stationary Vehicle Location " />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/ShowLiveBusDetailsForStationaryVehicleLocation.jsp" />
+	</definition>
+	
+	<definition name="SearchRoute" extends="baseLayout">
+		<put-attribute name="layoutId" value="Search Route" />
+		<put-attribute name="title" value="Search Route" />
+		<put-attribute name="content" value="/pages/vts/SearchRoute.jsp" />
+	</definition>
+	<definition name="ShowLiveBusDetailsAllVtsData" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Early Vts" />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/ShowLiveBusDetailsAllVtsData.jsp" />
+	</definition>
+	<definition name="ShowLiveBusDetailsAllVtsLateData" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Late Vts" />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/ShowLiveBusDetailsAllVtsLateData.jsp" />
+	</definition>
+	<definition name="ShowLiveBusSkipStopDetailsAllVts" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Skip Vts" />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/skipstoptracking.jsp" />
+	</definition>
+	<definition name="ShowLiveBusDetailsDeviatedAllVts" extends="loginbaseLayout">
+		<put-attribute name="title" value="Show Deviated Vts" />
+<!-- 		<put-attribute name="layoutId" value="BusStopEdit" /> -->
+		<put-attribute name="content" value="/pages/vts/DeviatedTrackingStop.jsp" />
+	</definition>
+	
+	<definition name="TripTicketOnline" extends="baseLayout">
+		<put-attribute name="layoutId" value="TripTicketOnline" />
+		<put-attribute name="title" value="Trip Ticket Online" />
+		<put-attribute name="content" value="/pages/vts/TripTicketOnline.jsp" />
+	</definition>
+	
+	<definition name="ScheduleTripDurationAnanalysis" extends="baseLayout">
+        <put-attribute name="layoutId" value="View Schedule Trip Duration Report" />
+        <put-attribute name="title" value="View Schedule Trip Duration Report" />
+        <put-attribute name="content" value="/pages/vts/scheduletripdurationanalysisreport.jsp" />
+       	</definition> 
+        
+        <definition name="vtuDeviceDetails" extends="vtureport" >
+		
+		<put-attribute name="title" value="View VTU Device Detail" />
+		<put-attribute name="content" value="/pages/vts/ShowVTUDeviceDetail.jsp" />
+	</definition>
+	
+	  <definition name="ScheduleWiseOperationalDetails" extends="baseLayout">
+      <put-attribute name="title"  value="ScheduleWise Operational Details"/>
+      <put-attribute name="layoutId"  value="ScheduleWiseOperationalDetails"/>
+      <put-attribute name="content"  value="/vehicle/ScheduleWiseOperationalDetailsReport.jsp"/>      
+    </definition>
+    
+        <definition name="CancellationKMPercentReport" extends="baseLayout">
+      <put-attribute name="title"  value="20% KM Cancellation Report"/>
+      <put-attribute name="content"   value="/Reports/CancellationKMReport.jsp"/>      
+   </definition>
+
+   		<definition name="ScheduleNotDeparted" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Schedule Not Departed Report" />
+         <put-attribute name="title" value="View Schedule Not Departed Report" />
+         <put-attribute name="content" value="/pages/vts/scheduleNotDeparted.jsp" />
+       	</definition> 
+       	
+       	<definition name="KMCancelDetails" extends="vtureport" >
+		<put-attribute name="title" value="View Cancelled KM Details" />
+		<put-attribute name="content" value="/pages/vts/ShowCancelledDetails.jsp" />
+	</definition>
+	
+	
+	<definition name="NRDVehicleDetails" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View NRD Vehicle" />
+         <put-attribute name="title" value="View NRD Vehicle Report" />
+         <put-attribute name="content" value="/pages/vts/ShowNRDVehicle.jsp" />
+       	</definition> 
+       	
+       	<definition name="ActiveVehicleDetails" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Active Vehicle List" />
+         <put-attribute name="title" value="View Active Vehicle Report" />
+         <put-attribute name="content" value="/pages/vts/ShowActiveVehicle.jsp" />
+       	</definition>
+       	
+       		<definition name="MissedTripDetails" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Missed Trip Details" />
+         <put-attribute name="title" value="View Missed Trip Details Report" />
+         <put-attribute name="content" value="/pages/vts/ShowMissedTrips.jsp" />
+       	</definition>  
+       	
+       	<definition name="BagwiseCumulativeRevenue" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Bagwise Cumulative Revenue " />
+         <put-attribute name="title" value="View Bagwise Cumulative Report" />
+         <put-attribute name="content" value="/Reports/BagwiseRevenue.jsp" />
+       	</definition> 
+       	
+       		<definition name="CashCollectionReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Cash Collection Report " />
+         <put-attribute name="title" value="View Cash Collection Report" />
+         <put-attribute name="content" value="/Reports/CashCollectionReport.jsp" />
+       	</definition>
+       	
+       	<definition name="DailyTicketPassIssueReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Daily Tkt/Pass Issue " />
+         <put-attribute name="title" value="View Daily Tkt/Pass Issue Report" />
+         <put-attribute name="content" value="/Reports/DailyTicketPassIssueReport.jsp" />
+       	</definition> 
+       	
+       		<definition name="CrewWiseCaseReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Crewwise Case Report " />
+         <put-attribute name="title" value="View Crewwise Case Report" />
+         <put-attribute name="content" value="/Reports/CrewwiseReport.jsp" />
+       	</definition>
+       	
+       	<definition name="CaseDetails" extends="vtureport" >
+		<put-attribute name="title" value="View Crew wise Case Details" />
+		<put-attribute name="content" value="/Reports/vts/ShowCaseDetails.jsp" />
+	</definition>
+       	
+       		<definition name="BagWiseTcktPassIssueAction" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View BagWise Tkt/Pass Issue Report " />
+         <put-attribute name="title" value="View Bagwise Tkt/Pass Issue Report" />
+         <put-attribute name="content" value="/Reports/BagwiseIssue.jsp" />
+       	</definition>
+       	
+       		<definition name="ShiftwiseLateDepartureReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Shiftwise Late Departure Report " />
+         <put-attribute name="title" value="View Shift wise Late Departure Report" />
+         <put-attribute name="content" value="/Reports/ShiftwiseLateDeparture.jsp" />
+       	</definition>
+       	
+       	<definition name="ShiftwiseScheduleNotDepartedReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Shiftwise Schedule Not Departed Report " />
+         <put-attribute name="title" value="View Shiftwise Schedule Not Departed Report" />
+         <put-attribute name="content" value="/Reports/ShiftwiseScheduleNotDept.jsp" />
+       	</definition>
+
+       	<definition name="RegisteredDeviceVts" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Registered Device Vts Report" />
+         <put-attribute name="title" value="View Registered Device Vts Report" />
+         <put-attribute name="content" value="/Reports/RegisteredDeviceVts.jsp" />
+       	</definition> 
+       	
+       	  <definition name="DepotWiseScheduleTripOperated" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Depot wise Schedule Trip Operated Report " />
+         <put-attribute name="title" value="View Depot wise Schedule Trip Operated Report" />
+         <put-attribute name="content" value="/Reports/ViewDepotwiseScheduleTripOpeReport.jsp" />
+       	</definition>	
+       	   	<definition name="DashBoardSummaryReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Dashboard Vts Report" />
+         <put-attribute name="title" value="View Dashboard  Vts Report" />
+         <put-attribute name="content" value="/Reports/Dasboardsummaryreport.jsp" />
+       	</definition> 
+       	 <definition name="TripwiseLateDeparture" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Trip Wise Late Departure Report " />
+         <put-attribute name="title" value="Trip Wise Late Departure Report" />
+         <put-attribute name="content" value="/VtsReport/TripwiseLateDepature.jsp" />
+       	</definition>	
+ <definition name="TripwiseEarlyDeparture" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Trip Wise Early Departure Report " />
+         <put-attribute name="title" value="Trip Wise Early Departure Report" />
+         <put-attribute name="content" value="/VtsReport/TripwiseEarlyDeparture.jsp" />
+       	</definition>
+       	<definition name="TripwiseEarlyArrival" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Trip Wise Early Arrival Report " />
+         <put-attribute name="title" value="Trip Wise Early Arrival Report" />
+         <put-attribute name="content" value="/VtsReport/TripwiseEarlyArrival.jsp" />
+       	</definition>
+       		<definition name="TripwiseLateArrival" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Trip Wise Late Arrival Report " />
+         <put-attribute name="title" value="Trip Wise Late Arrival Report" />
+         <put-attribute name="content" value="/VtsReport/TripwiseLateArrival.jsp" />
+       	</definition>
+       	<definition name="ActualEtmAmountAndGprsAmountReport" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Actual Etm Amount And Gprs Amount Report" />
+         <put-attribute name="title" value="Actual Etm Amount And Gprs Amount Report" />
+         <put-attribute name="content" value="/Reports/ActualEtmAmountAndGprsAmountDifference.jsp" />
+       	</definition>
+       	
+       	<definition name="ZeroLatLongDevices" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Zero Lat Long Devices" />
+         <put-attribute name="title" value="View Zero Lat Long Devices"/>
+         <put-attribute name="content" value="/pages/vts/ShowZeroLatLong.jsp" />
+       	</definition>
+       	
+       	 	<definition name="ExtremeKmDevices" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Extreme KM Devices" />
+         <put-attribute name="title" value="View Extreme KM Devices"/>
+         <put-attribute name="content" value="/pages/vts/ShowExtremeKm.jsp" />
+       	</definition> 
+       	
+       	<definition name="busStopWiseSkipStop" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Skip Stop " />
+         <put-attribute name="title" value="View Skip Stop "/>
+         <put-attribute name="content" value="/Reports/BusStopWiseSkipStop.jsp" />
+       	</definition>  
+       	
+       	 	<definition name="OnlineVehicleBusStopWise" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View Online Vehicle BusStop " />
+         <put-attribute name="title" value="View Online Vehicle Bus Stop "/>
+         <put-attribute name="content" value="/Reports/BusStopWiseOnlineVehicles.jsp" />
+       	</definition> 
+       	
+       		<definition name="DriverWiseHarshAcceleration" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Driver Wise Harsh Acceleration " />
+         <put-attribute name="title" value="View Driver Wise Harsh Acceleration "/>
+         <put-attribute name="content" value="/pages/vts/DriverWiseHarshAcc.jsp" />
+       	</definition> 
+       	
+       	  <definition name="DriverWiseHarshBreaking" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="Driver Wise Harsh Breaking " />
+         <put-attribute name="title" value="View Driver Wise Harsh Breaking "/>
+         <put-attribute name="content" value="/pages/vts/DriverWiseHarshBreaking.jsp" />
+       	</definition> 
+       	
+       <!-- 	
+       	 <definition name="showSosDashboard" extends="baseLayout">
+		<put-attribute name="layoutId" value="showSosDashboard" />
+		<put-attribute name="title" value="SOS Dashboard" />
+		<put-attribute name="content" value="/pages/vts/SOSDashboard.jsp" />
+	</definition> -->
+<!-- 	<definition name="tripcancel" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Cancel" />
+		<put-attribute name="content" value="/pages/vts/tripcancel.jsp" />
+	</definition>
+	<definition name="trippartial" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Partial" />
+		<put-attribute name="content" value="/pages/vts/partialtrip.jsp" />
+	</definition>
+	
+	<definition name="tripcancelvts" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Partial" />
+		<put-attribute name="content" value="/pages/vts/canceltripvts.jsp" />
+	</definition>
+	
+	<definition name="trippartialvts" extends="baseLayout">
+		<put-attribute name="layoutId" value="showEtmDashboard" />
+		<put-attribute name="title" value="Trip Partial" />
+		<put-attribute name="content" value="/pages/vts/partialtripvts.jsp" />
+	</definition> -->
+	
+	 <definition name="sosVehiclesDashboardList" extends="baseLayout">
+      <put-attribute name="title"  value="SOS Vehicles List"/>
+      <put-attribute name="layoutId"  value="SOSVehiclesList"/>
+      <put-attribute name="content"  value="/vehicle/SOSVehicleList.jsp"/>      
+    </definition>
+       	
+       	 <definition name="showDeviceDashboard" extends="baseLayout">
+		<put-attribute name="layoutId" value="showDeviceDashboard" />
+		<put-attribute name="title" value="Device Dashboard" />
+		<put-attribute name="content" value="/pages/etm/deviceDashboard.jsp" />
+	</definition>
+	
+	   <definition name="DeviceDisconected" extends="baseLayout">
+      <put-attribute name="title"  value="Device Disconnected List"/>
+      <put-attribute name="layoutId"  value="deviceDisconnect"/>
+      <put-attribute name="content"  value="/vehicle/DeviceDisconnectedList.jsp"/>      
+    </definition>
+    
+      	<definition name="EPKMReportScheduleWise" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View EPKM Reports" />
+         <put-attribute name="title" value="View EPKM Reports" />
+         <put-attribute name="content" value="/pages/vts/EPKMReportScheduleWise.jsp" />
+       	</definition>
+       	
+       	   	<definition name="EPKMReportConductorWise" extends="baseLayout">
+       	 <put-attribute name="layoutId" value="View ConductorWise EPKM Reports" />
+         <put-attribute name="title" value="View ConductorWise EPKM Reports" />
+         <put-attribute name="content" value="/pages/vts/EPKMReportConductorWise.jsp" />
+       	</definition>
+       	
+       	 	<definition name="driverHarshDetails" extends="vtureport" >
+		<put-attribute name="title" value="View DriverWise Harsh Details" />
+		<put-attribute name="content" value="/pages/vts/driverWiseHarshAccData.jsp" />
+	</definition>
+	
+	<definition name="NotOperatedReport" extends="baseLayout">
+		<put-attribute name="layoutId" value="NotOperatedReport" />
+		<put-attribute name="title" value="Not Operated Report" />
+		<put-attribute name="content" value="/pages/vts/NotOperatedTrip.jsp" />
+	</definition>
+       	<!--  Daily Check List Report -->
+       	<definition name="dailyCheckList" extends="baseLayout">
+		<put-attribute name="layoutId" value="Daily Check List" />
+		<put-attribute name="title" value="Daily Check List" />
+		<put-attribute name="content" value="/VtsReport/dailyCheckList.jsp" />
+	</definition>
+       	<!--  Daily Check List Report -->
+       	
+       	
+<!--  Deport Wise Packet number Ashu start-->
+		<definition name="DepotsWisePackets" extends="baseLayout">
+		<put-attribute name="layoutId" value="DepotsWisePackets"/>
+		<put-attribute name="title" value="Depot Wise Number of Packets"/>
+		<put-attribute name="content" value="/pages/vts/DepotsWisePackets.jsp"/>	
+		</definition>
+<!--  Deport Wise Packet number Ashu End-->
+
+<!--  Daily Pass Report  Ashu start-->
+		<definition name="DailyPassReport" extends="baseLayout">
+		<put-attribute name="layoutId" value="DailyPassReport"/>
+		<put-attribute name="title" value="Daily Pass Report"/>
+		<put-attribute name="content" value="/pages/vts/ShowDailyPassReport.jsp"/>	
+		</definition>
+<!--  Daily Pass Report Ashu End-->
+<!-- Zero km devices repot start-->
+<definition name="ZeroKMDevicesReport" extends="baseLayout">
+<put-attribute name="layoutId" value="ZeroKMDevicesReport"/>
+<put-attribute name="title" value="Zero KM Devices Report"/>
+<put-attribute name="content" value="/Reports/showZeroKMDevices.jsp"/>
+</definition><!-- Zero km devices repot End-->
+<!-- Zero lat/long  devices packet repot start by ashu -->
+<definition name="zeroLatLongDevicespacketsReport" extends="baseLayout">
+<put-attribute name="layoutId" value="zeroLatLongDevicespacketsReport"/>
+<put-attribute name="title" value=" zero Lat/Long Devices packets Report"/>
+<put-attribute name="content" value="/Reports/showZeroLatLongDevices.jsp"/>
+</definition>
+<!-- Zero lat/long  devices packet repot ashu -->
+
+
+       	
+</tiles-definitions>

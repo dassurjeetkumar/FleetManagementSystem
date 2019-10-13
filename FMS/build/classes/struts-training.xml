@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="training" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+		
+<!-- 		Training Master -->
+		<action name="Training" class="com.trimax.its.training.action.TrainingAction">
+			
+		</action>
+		
+		<action name="traininglist" class="com.trimax.its.training.action.TrainingAction" method="viewTraining">
+			<result name="success" type="tiles">ViewTrainingListDetails</result>
+		</action>
+		
+		<action name="createTraining" class="com.trimax.its.training.action.TrainingAction"
+			method="createtraining">
+			<result name="success" type="tiles">CreateTrainingview</result>
+		</action> 
+		
+		<action name="createTrainingAction" class="com.trimax.its.training.action.TrainingAction"
+			method="createTrainingAction">
+			<result name="input" type="tiles">CreateTrainingview</result>
+			<result name="success" type="tiles">ViewTrainingListDetails</result>
+		</action> 
+		
+		<action name="ModifyTrainingDetails" class="com.trimax.its.training.action.TrainingAction"
+			method="getEditDetails">
+			<result name="success" type="tiles">showEditTraining</result>
+		</action>
+		
+		<action name="updateTrainingDetails" class="com.trimax.its.training.action.TrainingAction"
+			method="updateTrainingDetails">
+			<result name="input" type="tiles">showEditTraining</result>
+			<result name="success" type="tiles">ViewTrainingListDetails</result>
+		</action>
+
+		<action name="DeleteTrainingDetails" class="com.trimax.its.training.action.TrainingAction"
+			method="deleteTraining">
+			<result name="success" type="tiles">ViewTrainingListDetails</result>
+			<result name="input" type="tiles">ViewTrainingListDetails</result>
+		</action>
+<!-- End Training master -->
+
+	<!-- 		Training Type Master -->
+		<action name="TrainingType" class="com.trimax.its.training.action.TrainingTypeAction">
+			
+		</action>
+		
+		<action name="trainingtypelist" class="com.trimax.its.training.action.TrainingTypeAction" method="viewTrainingType">
+			<result name="success" type="tiles">ViewTrainingTypeListDetails</result>
+		</action>
+		
+		<action name="createTrainingType" class="com.trimax.its.training.action.TrainingTypeAction"
+			method="createtrainingtype">
+			<result name="success" type="tiles">CreateTrainingTypeview</result>
+		</action> 
+		
+		<action name="createTrainingTypeAction" class="com.trimax.its.training.action.TrainingTypeAction"
+			method="createTrainingTypeAction">
+			<result name="input" type="tiles">CreateTrainingTypeview</result>
+			<result name="success" type="tiles">ViewTrainingTypeListDetails</result>
+		</action> 
+		
+		<action name="DeleteTrainingTypeDetails" class="com.trimax.its.training.action.TrainingTypeAction"
+			method="deleteTrainingType">
+			<result name="success" type="tiles">ViewTrainingTypeListDetails</result>
+			<result name="input" type="tiles">ViewTrainingTypeListDetails</result>
+		</action>
+		
+		<action name="ModifyTrainingTypeDetails" class="com.trimax.its.training.action.TrainingTypeAction"
+			method="getEditDetails">
+			<result name="success" type="tiles">showEditTrainingType</result>
+		</action>
+		
+		<action name="updateTrainingTypeDetails" class="com.trimax.its.training.action.TrainingTypeAction"
+			method="updateTrainingTypeDetails">
+			<result name="input" type="tiles">showEditTrainingType</result>
+			<result name="success" type="tiles">ViewTrainingTypeListDetails</result>
+		</action>
+		<!-- 	End	Training Type Master  -->
+		
+	</package>
+</struts>

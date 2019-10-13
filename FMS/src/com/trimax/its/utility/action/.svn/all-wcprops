@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/6984/its/src/com/trimax/its/utility/action
+END
+UserMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/285/its/src/com/trimax/its/utility/action/UserMaster.java
+END
+RoleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/4345/its/src/com/trimax/its/utility/action/RoleAction.java
+END
+GroupRoleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/4194/its/src/com/trimax/its/utility/action/GroupRoleAction.java
+END
+PageRoleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6984/its/src/com/trimax/its/utility/action/PageRoleAction.java
+END
+UserGroupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/2452/its/src/com/trimax/its/utility/action/UserGroupAction.java
+END
+GroupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4345/its/src/com/trimax/its/utility/action/GroupAction.java
+END
+PageAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/6738/its/src/com/trimax/its/utility/action/PageAction.java
+END

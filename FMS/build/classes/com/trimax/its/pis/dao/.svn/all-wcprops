@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/its/!svn/ver/6397/its/src/com/trimax/its/pis/dao
+END
+PlayListDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/6397/its/src/com/trimax/its/pis/dao/PlayListDao.java
+END
+PisDisplayMappingDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/5410/its/src/com/trimax/its/pis/dao/PisDisplayMappingDao.java
+END
+PisTemplateMasterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6397/its/src/com/trimax/its/pis/dao/PisTemplateMasterDao.java
+END
+PISCustomerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/4822/its/src/com/trimax/its/pis/dao/PISCustomerDao.java
+END
+PISDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/6225/its/src/com/trimax/its/pis/dao/PISDao.java
+END
+PisDisplayUnitDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/5640/its/src/com/trimax/its/pis/dao/PisDisplayUnitDao.java
+END
+PisScrollMessageDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/4749/its/src/com/trimax/its/pis/dao/PisScrollMessageDao.java
+END

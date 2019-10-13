@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/7212/its/src/com/trimax/its/usermanagement/dao
+END
+SMSPageDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6877/its/src/com/trimax/its/usermanagement/dao/SMSPageDAO.java
+END
+EmployeeTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/5212/its/src/com/trimax/its/usermanagement/dao/EmployeeTypeDAO.java
+END
+UserDetailDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/5023/its/src/com/trimax/its/usermanagement/dao/UserDetailDAO.java
+END
+EmployeeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/7212/its/src/com/trimax/its/usermanagement/dao/EmployeeDAO.java
+END
+BataConfigDetailDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/its/!svn/ver/5857/its/src/com/trimax/its/usermanagement/dao/BataConfigDetailDAO.java
+END
+DesignationTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/5396/its/src/com/trimax/its/usermanagement/dao/DesignationTypeDAO.java
+END

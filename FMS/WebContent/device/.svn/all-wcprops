@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/its/!svn/ver/7303/its/WebContent/device
+END
+editrfidcard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4345/its/WebContent/device/editrfidcard.jsp
+END
+EditEtmDeviceHistory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/6321/its/WebContent/device/EditEtmDeviceHistory.jsp
+END
+MaintenanceTypelist.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/5224/its/WebContent/device/MaintenanceTypelist.jsp
+END
+createdeviceType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/5224/its/WebContent/device/createdeviceType.jsp
+END
+editSim.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/5224/its/WebContent/device/editSim.jsp
+END
+createBattery.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/5365/its/WebContent/device/createBattery.jsp
+END
+verifonepending.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/7182/its/WebContent/device/verifonepending.jsp
+END
+createDevice.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/7303/its/WebContent/device/createDevice.jsp
+END
+etmwisestatus.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/7165/its/WebContent/device/etmwisestatus.jsp
+END
+createdatacard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/4345/its/WebContent/device/createdatacard.jsp
+END
+DepotWiseAndCauseWiseSummary.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/6843/its/WebContent/device/DepotWiseAndCauseWiseSummary.jsp
+END
+ResolveETMVerifone.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/7008/its/WebContent/device/ResolveETMVerifone.jsp
+END
+serviceTicketToPickUp.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/7116/its/WebContent/device/serviceTicketToPickUp.jsp
+END
+editdeviceType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5224/its/WebContent/device/editdeviceType.jsp
+END
+createSim.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/7303/its/WebContent/device/createSim.jsp
+END
+rfidcardlist.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4345/its/WebContent/device/rfidcardlist.jsp
+END
+EtmDeviceHistory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/7144/its/WebContent/device/EtmDeviceHistory.jsp
+END
+depotandcausesummary.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/7171/its/WebContent/device/depotandcausesummary.jsp
+END
+editDevice.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5728/its/WebContent/device/editDevice.jsp
+END
+ServiceTicketToCompany.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/7131/its/WebContent/device/ServiceTicketToCompany.jsp
+END
+etmreceivedfromtrimax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/7141/its/WebContent/device/etmreceivedfromtrimax.jsp
+END
+editmaintenancetype.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/5224/its/WebContent/device/editmaintenancetype.jsp
+END
+causewiseetmhistory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/7165/its/WebContent/device/causewiseetmhistory.jsp
+END
+editdatacard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4064/its/WebContent/device/editdatacard.jsp
+END
+RawPrint.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/7106/its/WebContent/device/RawPrint.jsp
+END
+ViewetmdeviceHistory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/7244/its/WebContent/device/ViewetmdeviceHistory.jsp
+END
+serviceTicketToCompanyduplicate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/7108/its/WebContent/device/serviceTicketToCompanyduplicate.jsp
+END
+batteryList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/5224/its/WebContent/device/batteryList.jsp
+END
+etmreslovetrimax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/7135/its/WebContent/device/etmreslovetrimax.jsp
+END
+serviceTicketToCompanyEtmDuplicate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/7034/its/WebContent/device/serviceTicketToCompanyEtmDuplicate.jsp
+END
+etmreceivedfromverifone.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/7144/its/WebContent/device/etmreceivedfromverifone.jsp
+END
+createmaintenancetype.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/5224/its/WebContent/device/createmaintenancetype.jsp
+END
+etmpickformdepot.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/7135/its/WebContent/device/etmpickformdepot.jsp
+END
+EtmDeviceHistoryReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/6321/its/WebContent/device/EtmDeviceHistoryReport.jsp
+END
+simList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/5224/its/WebContent/device/simList.jsp
+END
+etmresolved.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/7220/its/WebContent/device/etmresolved.jsp
+END
+device.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/5224/its/WebContent/device/device.jsp
+END
+datacardlist.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4345/its/WebContent/device/datacardlist.jsp
+END
+resolvedetmreport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/7182/its/WebContent/device/resolvedetmreport.jsp
+END
+createrfidcard.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/4345/its/WebContent/device/createrfidcard.jsp
+END
+viewDevice.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5224/its/WebContent/device/viewDevice.jsp
+END
+etmrepairstatus.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/7288/its/WebContent/device/etmrepairstatus.jsp
+END
+keyBoardEvents.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/1522/its/WebContent/device/keyBoardEvents.js
+END
+deviceHistory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/5224/its/WebContent/device/deviceHistory.jsp
+END
+DailyEtmGprsCount.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/6908/its/WebContent/device/DailyEtmGprsCount.jsp
+END
+reportOfDevice.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/7137/its/WebContent/device/reportOfDevice.jsp
+END
+editBattery.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/5365/its/WebContent/device/editBattery.jsp
+END

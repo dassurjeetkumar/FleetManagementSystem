@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/its/!svn/ver/4845/its/WebContent/pisTemplate
+END
+viewTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/4845/its/WebContent/pisTemplate/viewTemplate.jsp
+END
+editTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/4845/its/WebContent/pisTemplate/editTemplate.jsp
+END
+createTemplate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/4845/its/WebContent/pisTemplate/createTemplate.jsp
+END

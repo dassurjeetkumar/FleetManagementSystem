@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   <tiles-definitions>
+   
+	
+<!-- 	start Training Master -->
+  <definition name="ViewInventoryTicketPassType" extends="baseLayout">
+     	<put-attribute name="title"  value=" Ticket Inventory Pass Day"/>
+ 		<put-attribute name="content"  value="/inventoryticketpasstype/InventoryTicketPassTypeList.jsp"/>      	
+    </definition>
+  
+    <definition name="CreateInventoryTicketPassType" extends="baseLayout">
+     	<put-attribute name="title"  value=" Create Ticket Inventory  Pass Day"/>
+ 		<put-attribute name="content"  value="/inventoryticketpasstype/createInventoyTicketPassType.jsp"/>      	
+    </definition>
+    
+    
+    <definition name="InventoryTicketPassList" extends="baseLayout">
+     	<put-attribute name="title"  value=" Ticket  Inventory Pass Day"/>
+ 		<put-attribute name="content"  value="/inventoryticketpasstype/InventoryTicketPassTypeList.jsp"/>      	
+    </definition>
+    
+     
+   
+   <definition name="editInventoryTicketPassType" extends="baseLayout">
+      <put-attribute name="title"  value="Edit   Ticket Inventory Pass Day"/>
+      <put-attribute name="layoutId"  value="Edit   Ticket Inventory Pass Day"/>
+      <put-attribute name="content"   value="/inventoryticketpasstype/editInventoyTicketPassType.jsp"/>      
+   </definition>
+    
+   </tiles-definitions>

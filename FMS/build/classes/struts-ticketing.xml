@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="json" namespace="/" extends="json-default">
+		<action name="databaseJSON" class="com.trimax.ticketing.action.TicketBagLoadAction">
+			<result type="json">
+				<param name="root">databases</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="ticketing" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="itsStack" />
+
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<action name="ticketbag"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="viewTickBag">
+			<result name="success" type="tiles">ShowTicketBag</result>
+		</action>
+
+		<action name="viewTicketBagRecord"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="showTicketBag">
+
+		</action>
+
+		<action name="saveTicketBag"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="saveTicketBagDetails">
+			<result name="success" type="tiles">ShowTicketBag</result>
+			<result name="input" type="tiles">CreateTicketBag</result>
+		</action>
+
+		<action name="createTicketBag"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="createTicketBag">
+			<result name="success" type="tiles">CreateTicketBag</result>
+		</action>
+
+		<action name="editTicketBag"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="editTicketBag">
+			<result name="success" type="tiles">EditTicketBag</result>
+		</action>
+
+		<action name="deleteTicketBag"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="deleteTicketBag">
+			<result name="success" type="tiles">ShowTicketBag</result>
+		</action>
+
+		<action name="editTicketBagDetails"
+			class="com.trimax.dao.ticketbag.action.TicketBagMasterAction" method="editTicketBagDetails">
+			<result name="success" type="tiles">ShowTicketBag</result>
+			<result name="input" type="tiles">EditTicketBag</result>
+		</action>
+
+		<action name="viewTicketInv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="showTicketInv">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="viewPassInv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="showPassInv">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="getTotalNumberOfBooks"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getTotalTicket">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="getTotalNumberOfPasses"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getTotalPass">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="getTotalNumberOfLuggagess"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getTotalLuggage">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="viewLuggageInv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="showLuggageInv">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+		<action name="viewTSheetInv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="showTSheetInv">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="ticketinv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction">
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+
+		<action name="issueTicket"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="issuTicket">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+
+		<action name="checkDuplicateDenomAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkDuplicateTicket">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+
+		<action name="checkDuplicateTsheetAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkDuplicateTsheet">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+		<action name="checkDuplicateLuggageAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkDuplicateLuggage">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+
+		<action name="findPriority"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getPriority">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+
+		<action name="getPassPriority"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getPassPriority">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+
+		<action name="getLuggagePriority"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getLuggagePriority">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+		
+		<action name="checkDuplicatePassAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkDuplicatePass">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+		
+		<action name="GetPasslist"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getPasslist">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+
+		<action name="GetPassDayOrMonth"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getPassDayOrMonth">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+		
+		<action name="GetLuggagelist"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getLuggagelist">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+		
+		<action name="ajaxLogin"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="validateDenom">
+			<result name="success" type="tiles">StockEntry</result>
+			<result name="input" type="tiles">StockEntry</result>
+		</action>
+		
+		<action name="saveStock"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction">
+
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+		
+		<action name="ticketInventoryEntrySuccess"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="saveEntry">
+			<result name="success" type="tiles">StockEntrySuccess</result>
+		</action>
+		
+		<action name="GetDenomlist"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getDenom">
+			<result name="success" type="tiles">StockEntry</result>
+		</action>
+		
+		<action name="addToStock"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="saveIssuedTicket">
+			<result name="input" type="tiles">IssueTicketBag</result>
+			<result name="success" type="tiles">ViewTicketBag</result>
+		</action>
+		
+		<action name="findAllOrgTypeAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getOrgType">
+			<result name="input" type="tiles">IssueTicketBag</result>
+		</action>
+
+		<action name="findUnitNameAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getUnitName">
+			<result name="input" type="tiles">IssueTicketBag</result>
+		</action>
+		
+		<action name="deleteStock"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="deleteStock">
+			<result name="success" type="tiles">DeleteStock</result>
+			<result name="input" type="tiles">DeleteStock</result>
+		</action>
+		
+		<action name="TicketAjaxChange"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction">
+		</action>
+
+		<action name="checkDeletePassinv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkForDelPassInv">
+		</action>
+
+		<action name="checkDeleteTicketinv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkForDelTickInv">
+		</action>
+		
+		<action name="checkDeleteLuggageinv"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="checkForDelLuggageInv">
+		</action>
+
+		<action name="TicketAjaxDelete"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction">
+		</action>
+
+		<action name="PassAjaxDeleteAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="deletePassData">
+		</action>
+
+		<action name="LuggageAjaxDeleteAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="deleteLuggageData">
+		</action>
+		
+		<action name="TicketingAjaxDeleteAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="deleteStockData">
+		</action>
+		
+		
+		<action name="addStock"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="addStock">
+			<result name="success" type="tiles">ViewTicketBag</result>
+			<result name="input" type="tiles">IssueStock</result>
+		</action>
+
+		<action name="receive"
+			class="com.trimax.its.ticketing.action.ReceiveTicketInventory"
+			method="receiveStock">
+			<result name="success" type="tiles">ReceiveStock</result>
+			<result name="input" type="tiles">ReceiveStock</result>
+		</action>
+		
+		<action name="receiveTicketInv"
+			class="com.trimax.its.ticketing.action.ReceiveTicketInventory">
+		</action>
+		
+		<action name="acceptTicket"
+			class="com.trimax.its.ticketing.action.ReceiveTicketInventory"
+			method="acceptTicket">
+			<result name="success" type="tiles">ReceiveStock</result>
+			<result name="input" type="tiles">ReceiveStock</result>
+		</action>
+		
+		<action name="rejectTicket"
+			class="com.trimax.its.ticketing.action.ReceiveTicketInventory"
+			method="rejectTicket">
+			<result name="success" type="tiles">ReceiveStock</result>
+			<result name="input" type="tiles">ReceiveStock</result>
+		</action>
+		
+		<action name="findAllDenomAction"
+			class="com.trimax.its.ticketing.action.TicketInventoryAction" method="getAllDenoms">
+			<result name="input" type="tiles">IssueTicketBag</result>
+		</action>
+		
+		<action name="denomination"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="viewDenom">
+			<result name="success" type="tiles">ViewDenomination</result>
+		</action>
+		
+		<action name="showDenomination"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="showDenom">
+		</action>
+
+		<action name="createDenomination"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="createDenomination">
+			<result name="input" type="tiles">CreateDenomination</result>
+			<result name="success" type="tiles">CreateDenomination</result>
+		</action>
+		
+		<action name="editDenomination"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="editDenomination">
+			<result name="success" type="tiles">EditDenomination</result>
+		</action>
+		
+		<action name="deleteDenomination"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="deleteDenominationDetails">
+			<result name="success" type="tiles">ViewDenomination</result>
+		</action>
+		
+		<action name="saveDenomination"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="saveDenominationDetails">
+			<result name="input" type="tiles">CreateDenomination</result>
+			<result name="success" type="tiles">ViewDenomination</result>
+		</action>
+		
+		<action name="editDenominationDetails"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="saveEditedDenominationDetails">
+			<result name="input" type="tiles">EditDenomination</result>
+			<result name="success" type="tiles">ViewDenomination</result>
+		</action>
+
+		<action name="findAllTicketTypeAction"
+			class="com.trimax.its.ticketing.action.DenominationTypeAction"
+			method="getAllTicketType">
+		</action>
+
+		
+		<action name="findSpecificOrgTypeAction"
+			class="com.trimax.its.inventory.action.VoucherAction" method="getOrgTypeSpecific">
+			<result name="input" type="tiles">IssueTicketBag</result>
+		</action>
+		
+		
+	
+		
+		
+		
+	
+		
+	</package>
+</struts>

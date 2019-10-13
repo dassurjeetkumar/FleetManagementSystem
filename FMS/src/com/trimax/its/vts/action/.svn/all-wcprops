@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/7431/its/src/com/trimax/its/vts/action
+END
+CancelledKMDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6009/its/src/com/trimax/its/vts/action/CancelledKMDetails.java
+END
+SarthiSectorGeofenceAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/4602/its/src/com/trimax/its/vts/action/SarthiSectorGeofenceAction.java
+END
+ShowLiveBusAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/ShowLiveBusAction.java
+END
+EPKMReportConductorWise.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6959/its/src/com/trimax/its/vts/action/EPKMReportConductorWise.java
+END
+DepotwiseScheduleTripOperatedAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/its/!svn/ver/6259/its/src/com/trimax/its/vts/action/DepotwiseScheduleTripOperatedAction.java
+END
+RouteFence.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/RouteFence.java
+END
+ScheduleOperationAndRevenueSummaryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/its/!svn/ver/6126/its/src/com/trimax/its/vts/action/ScheduleOperationAndRevenueSummaryAction.java
+END
+ShowLiveBusActionForAll.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6948/its/src/com/trimax/its/vts/action/ShowLiveBusActionForAll.java
+END
+ExtremeKMAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7087/its/src/com/trimax/its/vts/action/ExtremeKMAction.java
+END
+OnlineVehiclesBusStopWiseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/its/!svn/ver/6681/its/src/com/trimax/its/vts/action/OnlineVehiclesBusStopWiseAction.java
+END
+BusStopWiseSkipStopAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/6525/its/src/com/trimax/its/vts/action/BusStopWiseSkipStopAction.java
+END
+VehicleAlertConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/its/!svn/ver/5044/its/src/com/trimax/its/vts/action/VehicleAlertConfigurationAction.java
+END
+ActiveVehicleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/7143/its/src/com/trimax/its/vts/action/ActiveVehicleAction.java
+END
+PartialTripAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6953/its/src/com/trimax/its/vts/action/PartialTripAction.java
+END
+NotOperatedTrip.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/6953/its/src/com/trimax/its/vts/action/NotOperatedTrip.java
+END
+VehicleDepotinoutAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6780/its/src/com/trimax/its/vts/action/VehicleDepotinoutAction.java
+END
+ActionForCWSDWS.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7199/its/src/com/trimax/its/vts/action/ActionForCWSDWS.java
+END
+ShiftwiseScheduleNotDeptAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/its/!svn/ver/6158/its/src/com/trimax/its/vts/action/ShiftwiseScheduleNotDeptAction.java
+END
+VehiclewiseStatusReportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/VehiclewiseStatusReportAction.java
+END
+VTUDeviceDetailsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/6021/its/src/com/trimax/its/vts/action/VTUDeviceDetailsAction.java
+END
+ScheduleTripwiseStatusSummaryReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/ScheduleTripwiseStatusSummaryReport.java
+END
+vehicleFromETMAndSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/7213/its/src/com/trimax/its/vts/action/vehicleFromETMAndSchedule.java
+END
+EPKMReportSchduleWise.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/7121/its/src/com/trimax/its/vts/action/EPKMReportSchduleWise.java
+END
+ChangeVehicleStatusAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/6320/its/src/com/trimax/its/vts/action/ChangeVehicleStatusAction.java
+END
+NRDVehicleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/7175/its/src/com/trimax/its/vts/action/NRDVehicleAction.java
+END
+StationaryVehicleReportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/its/!svn/ver/7200/its/src/com/trimax/its/vts/action/StationaryVehicleReportAction.java
+END
+VtsAlertMasterConfigAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/4099/its/src/com/trimax/its/vts/action/VtsAlertMasterConfigAction.java
+END
+ZeroLatLongDevicesAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/7317/its/src/com/trimax/its/vts/action/ZeroLatLongDevicesAction.java
+END
+OTACommandInsertAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7431/its/src/com/trimax/its/vts/action/OTACommandInsertAction.java
+END
+ShiftwiseLateDepartureAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/its/!svn/ver/6158/its/src/com/trimax/its/vts/action/ShiftwiseLateDepartureAction.java
+END
+DepotsWisePacketsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/7249/its/src/com/trimax/its/vts/action/DepotsWisePacketsAction.java
+END
+SectorVehicleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/4640/its/src/com/trimax/its/vts/action/SectorVehicleAction.java
+END
+DriverWiseHarshBreakingAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/its/!svn/ver/6952/its/src/com/trimax/its/vts/action/DriverWiseHarshBreakingAction.java
+END
+LiveBusesAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7430/its/src/com/trimax/its/vts/action/LiveBusesAction.java
+END
+BusBunchingAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/BusBunchingAction.java
+END
+StagewiseTicketConsumptionReportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/StagewiseTicketConsumptionReportAction.java
+END
+MissedTripAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6211/its/src/com/trimax/its/vts/action/MissedTripAction.java
+END
+DriverWiseHarshAccAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/6950/its/src/com/trimax/its/vts/action/DriverWiseHarshAccAction.java
+END
+DailyPassReportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/7235/its/src/com/trimax/its/vts/action/DailyPassReportAction.java
+END

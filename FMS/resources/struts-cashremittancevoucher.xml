@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="cashremittancevoucher" extends="struts-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings> <exception-mapping exception="java.lang.NumberFormatException" 
+			result="NullException" /> <exception-mapping exception="java.lang.NullPointerException" 
+			result="NullException" /> <exception-mapping exception="java.io.IOException" 
+			result="NullException" /> <exception-mapping exception="java.sql.SQLException" 
+			result="NullException" /> <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" 
+			result="welcome" /> <exception-mapping exception="java.lang.Exception" result="welcome" 
+			/> <exception-mapping exception="java.lang.NullPointerException" result="welcome" 
+			/> </global-exception-mappings> -->
+
+		<!-- Start cashRemittanceVoucher Type -->
+		<action name="cashRemittanceVoucherView"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="showCashRemittanceVoucher">
+			<result name="success" type="tiles">CashRemittanceVoucher</result>
+		</action>
+
+		<action name="CashRemittanceVoucher"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction">
+
+		</action>
+
+		<action name="createCashRemittanceVoucher"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="createCashRemittanceVoucher">
+			<result name="success" type="tiles">CreateCashRemittanceVoucher
+			</result>
+		</action>
+		<action name="createCashRemittanceVoucherAction"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="createCashRemittanceVoucherAction">
+			<result name="input" type="tiles">CreateCashRemittanceVoucher</result>
+			<result name="success" type="tiles">CashRemittanceVoucher</result>
+		</action>
+
+		<action name="editCashRemittanceVoucher"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="editCashRemittanceVoucher">
+			<result name="success" type="tiles">EditCashRemittanceVoucher</result>
+		</action>
+		<action name="addeditCashRemittanceVoucherAction"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="addeditCashRemittanceVoucherAction">
+			<result name="input" type="tiles">EditCashRemittanceVoucher</result>
+			<result name="success" type="tiles">CashRemittanceVoucher</result>
+		</action>
+
+		<action name="deleteCashRemittanceVoucher"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="deleteCashRemittanceVoucherAction">
+			<result name="input" type="tiles">CashRemittanceVoucher</result>
+			<result name="success" type="tiles">CashRemittanceVoucher</result>
+		</action>
+
+		<!-- <action name="getOrganizationName" class="com.trimax.its.cashremittancevoucher.action.AjaxCashRemmittanceAction" 
+			method="getOrganizationName"> <result name="success">/cashRemittanceVoucher/organizationList.jsp</result> 
+			</action> -->
+		<action name="findAllOrgType"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="getOrgType">
+
+
+		</action>
+		
+		<action name="findAllOrgTypeAction1"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="getOrgType">
+			
+
+		</action>
+
+		<action name="findUnitNameAction1"
+			class="com.trimax.its.cashremittancevoucher.action.CashRemittanceVoucherAction"
+			method="getUnitName">
+			
+
+		</action>
+
+		<!-- End cashRemittanceVoucher Type -->
+
+	</package>
+
+</struts>

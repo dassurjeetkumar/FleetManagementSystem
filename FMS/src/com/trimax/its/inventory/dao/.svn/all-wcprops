@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5857/its/src/com/trimax/its/inventory/dao
+END
+VoucherReceiveDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/5364/its/src/com/trimax/its/inventory/dao/VoucherReceiveDAO.java
+END
+DayWiseStockDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4755/its/src/com/trimax/its/inventory/dao/DayWiseStockDAO.java
+END
+StockViewDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4458/its/src/com/trimax/its/inventory/dao/StockViewDAO.java
+END
+DeleteStockDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/5409/its/src/com/trimax/its/inventory/dao/DeleteStockDAO.java
+END
+InventoryIssueDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/5164/its/src/com/trimax/its/inventory/dao/InventoryIssueDAO.java
+END
+VoucherDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/5363/its/src/com/trimax/its/inventory/dao/VoucherDAO.java
+END
+AutomaticIssueDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/5857/its/src/com/trimax/its/inventory/dao/AutomaticIssueDAO.java
+END
+EditTicketsPriorityDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/4566/its/src/com/trimax/its/inventory/dao/EditTicketsPriorityDAO.java
+END

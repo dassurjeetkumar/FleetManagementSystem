@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/5573/its/WebContent/fare/penaltyticket
+END
+editPenaltyTicket.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5224/its/WebContent/fare/penaltyticket/editPenaltyTicket.jsp
+END
+viewPenaltyTicket.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5224/its/WebContent/fare/penaltyticket/viewPenaltyTicket.jsp
+END
+addPenaltyTicket.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/5573/its/WebContent/fare/penaltyticket/addPenaltyTicket.jsp
+END

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/7429/its/src/com/trimax/its/vehicle/dao
+END
+CancellationDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5857/its/src/com/trimax/its/vehicle/dao/CancellationDAO.java
+END
+SearchCriteriaJson.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/337/its/src/com/trimax/its/vehicle/dao/SearchCriteriaJson.java
+END
+ModelTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/4214/its/src/com/trimax/its/vehicle/dao/ModelTypeDAO.java
+END
+ScheduleMapDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7429/its/src/com/trimax/its/vehicle/dao/ScheduleMapDAO.java
+END
+DockingHistoryDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4214/its/src/com/trimax/its/vehicle/dao/DockingHistoryDAO.java
+END
+VehicleTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/4214/its/src/com/trimax/its/vehicle/dao/VehicleTypeDAO.java
+END
+VehicleMaintenanceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/4214/its/src/com/trimax/its/vehicle/dao/VehicleMaintenanceDao.java
+END
+BreakDownTypeDetailsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/4302/its/src/com/trimax/its/vehicle/dao/BreakDownTypeDetailsDao.java
+END
+MakeTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/4214/its/src/com/trimax/its/vehicle/dao/MakeTypeDAO.java
+END
+AccidentTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5857/its/src/com/trimax/its/vehicle/dao/AccidentTypeDao.java
+END
+DockingTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/3672/its/src/com/trimax/its/vehicle/dao/DockingTypeDao.java
+END
+VehicleCategoryDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/4214/its/src/com/trimax/its/vehicle/dao/VehicleCategoryDAO.java
+END
+VehicleDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/7327/its/src/com/trimax/its/vehicle/dao/VehicleDAO.java
+END
+ServiceTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/5715/its/src/com/trimax/its/vehicle/dao/ServiceTypeDAO.java
+END
+ServiceTaxTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/5965/its/src/com/trimax/its/vehicle/dao/ServiceTaxTypeDAO.java
+END
+ExtraKmDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/5182/its/src/com/trimax/its/vehicle/dao/ExtraKmDAO.java
+END
+BreakDownHistoryDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/4269/its/src/com/trimax/its/vehicle/dao/BreakDownHistoryDao.java
+END
+ComplaintDataDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/4318/its/src/com/trimax/its/vehicle/dao/ComplaintDataDao.java
+END
+VehicleDefectsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/6224/its/src/com/trimax/its/vehicle/dao/VehicleDefectsDao.java
+END
+VehicleDockingReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/4775/its/src/com/trimax/its/vehicle/dao/VehicleDockingReportDao.java
+END
+ETMAvailabilityDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/7229/its/src/com/trimax/its/vehicle/dao/ETMAvailabilityDao.java
+END
+BreakdownTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/1030/its/src/com/trimax/its/vehicle/dao/BreakdownTypeDao.java
+END
+DockingVehicleDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4957/its/src/com/trimax/its/vehicle/dao/DockingVehicleDAO.java
+END
+VehicleDeviceRelationDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/7319/its/src/com/trimax/its/vehicle/dao/VehicleDeviceRelationDAO.java
+END
+UpdateVehicleDetailsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/7212/its/src/com/trimax/its/vehicle/dao/UpdateVehicleDetailsDAO.java
+END
+EtmDeviceHistoryDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/7300/its/src/com/trimax/its/vehicle/dao/EtmDeviceHistoryDao.java
+END
+TransferVehicleDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/7327/its/src/com/trimax/its/vehicle/dao/TransferVehicleDAO.java
+END
+BrandTypeDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6608/its/src/com/trimax/its/vehicle/dao/BrandTypeDAO.java
+END

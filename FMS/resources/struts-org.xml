@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="org" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+				<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+		<exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+		
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+		<action name="orgChrart" class="com.trimax.its.orgchart.action.OrgChartAction">
+
+		</action>
+		<action name="OrgAjaxAction" class="com.trimax.its.orgchart.action.OrgAjaxAction">
+
+		</action>
+		<action name="showorgChrart" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="showOrg">
+			<result name="success" type="tiles">orgchart</result>
+		</action>
+		<action name="createOrg" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="createOrg">
+			<result name="success" type="tiles">createorgchart</result>
+		</action>
+		<action name="editorgchart" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="editorgchart">
+			<result name="success" type="tiles">editorgchart</result>
+		</action>
+		<action name="createOrgchart" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="createOrgchart">
+			<result name="input" type="tiles">createorgchart</result>
+			<result name="success" type="tiles">orgchart</result>
+		</action>
+		<action name="saveeditOrgchart" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="saveeditedOrgchart">
+			<result name="input" type="tiles">editorgchart</result>
+			<result name="success" type="tiles">orgchart</result>
+		</action>
+		
+		<action name="deleteorg" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="deleteselected">
+			<result name="success" type="tiles">orgchart</result>
+		</action>
+
+		<action name="ShowCorporationshow" class="com.trimax.its.orgchart.action.OrgChartAction">
+
+		</action>
+		<action name="ShowCorporation" class="com.trimax.its.orgchart.action.OrgChartAction"
+			method="showCorporation">
+			<result name="success" type="tiles">orgchart</result>
+		</action>
+
+		<action name="Showdivision" class="com.trimax.its.orgchart.action.DivisionAction">
+
+		</action>
+
+		<action name="AllDivision" class="com.trimax.its.orgchart.action.DivisionAction"
+			method="showDivision">
+			<result name="success" type="tiles">divisions</result>
+		</action>
+		<action name="createdivision" class="com.trimax.its.orgchart.action.DivisionAction"
+			method="createOrg">
+			<result name="success" type="tiles">createdivision</result>
+		</action>
+		<action name="editdivision" class="com.trimax.its.orgchart.action.DivisionAction"
+			method="editorgchart">
+			<result name="success" type="tiles">editdivision</result>
+		</action>
+	<action name="saveeditDiv" class="com.trimax.its.orgchart.action.DivisionAction"
+			method="saveeditedDiv">
+			<result name="input" type="tiles">editdivision</result>
+			<result name="success" type="tiles">divisions</result>
+		</action>
+		<action name="deleteDiv" class="com.trimax.its.orgchart.action.DivisionAction"
+			method="deleteselected">
+			
+			<result name="success" type="tiles">divisions</result>
+		</action>
+		<action name="Showdepots" class="com.trimax.its.orgchart.action.DepotAction">
+
+		</action>
+
+		<action name="AllDepots" class="com.trimax.its.orgchart.action.DepotAction"
+			method="showDepots">
+			<result name="success" type="tiles">depots</result>
+		</action>
+		<action name="createdepots" class="com.trimax.its.orgchart.action.DepotAction"
+			method="createOrg">
+			<result name="success" type="tiles">createdepot</result>
+		</action>
+		<action name="createnewDepots" class="com.trimax.its.orgchart.action.DepotAction"
+			method="createDepot">
+			<result name="input" type="tiles">createdepot</result>
+			<result name="success" type="tiles">depots</result>
+		</action>
+		<action name="editdepots" class="com.trimax.its.orgchart.action.DepotAction"
+			method="editorgchart">
+			<result name="success" type="tiles">editdepots</result>
+		</action>
+		<action name="deletedepots" class="com.trimax.its.orgchart.action.DepotAction"
+			method="deleteselected">
+			<result name="success" type="tiles">depots</result>
+		</action>
+	<action name="saveeditDepot" class="com.trimax.its.orgchart.action.DepotAction"
+			method="saveeditedDepot">
+			<result name="input" type="tiles">editdepots</result>
+			<result name="success" type="tiles">depots</result>
+		</action>
+		<action name="Showbustations" class="com.trimax.its.device.action.BusStationAction">
+
+		</action>
+
+		<action name="AllBusStations" class="com.trimax.its.device.action.BusStationAction"
+			method="showBusStation">
+			<result name="success" type="tiles">busstation</result>
+		</action>
+		<action name="createBusstations" class="com.trimax.its.device.action.BusStationAction"
+			method="createOrg">
+			<result name="success" type="tiles">createbusstation</result>
+		</action>
+		<action name="createnewBusstation" class="com.trimax.its.device.action.BusStationAction"
+			method="createOrgchart">
+			<result name="input" type="tiles">createbusstation</result>
+			<result name="success" type="tiles">busstation</result>
+		</action>
+		<action name="editbusstation" class="com.trimax.its.device.action.BusStationAction"
+			method="editorgchart">
+			<result name="success" type="tiles">editbusstations</result>
+		</action>
+		<action name="saveeditBus" class="com.trimax.its.device.action.BusStationAction"
+			method="saveeditedBus">
+			<result name="input" type="tiles">editbusstations</result>
+			<result name="success" type="tiles">busstation</result>
+		</action>
+		<action name="deletebus" class="com.trimax.its.device.action.BusStationAction"
+			method="deleteselected">
+			<result name="success" type="tiles">busstation</result>
+		</action>
+		<action name="createnewDivision" class="com.trimax.its.orgchart.action.DivisionAction"
+			method="createOrgchart">
+			<result name="input" type="tiles">createdivision</result>
+			<result name="success" type="tiles">divisions</result>
+		</action>
+		<action name="PlatformActionForBusStation" class="com.trimax.its.route.action.PlatformAction"
+			method="getPlatformDetails">
+
+			<result name="addbus" type="tiles">addBus</result>
+
+		</action>
+		<action name="bayAjaxAction" class="com.trimax.its.route.action.BayAjaxAction">
+
+		</action>
+		<action name="platFormAjaxAction" class="com.trimax.its.route.action.PlatFormAjaxAction">
+
+		</action>
+		<action name="getLatLong" class="com.trimax.its.orgchart.action.OrgAjaxAction" method="showMap">
+  
+	</action>
+	<action name="orgtypeview" class="com.trimax.its.orgchart.action.OrgTypeAction">
+	<result name="success" type="tiles">showOrgType</result> </action>
+	
+	<action name="createOrgType" class="com.trimax.its.orgchart.action.OrgTypeAction" method="createorgType">
+	<result name="success" type="tiles">createOrgType</result>
+	</action>
+	
+	<action name="savecreateOrgType" class="com.trimax.its.orgchart.action.OrgTypeAction" method="saveCreatedorgType">
+	<result name="input" type="tiles">createOrgType</result>
+	<result name="success" type="tiles">showOrgType</result>
+	</action>
+	
+	<action name="editorgtype" class="com.trimax.its.orgchart.action.OrgTypeAction" method="editorgType">
+	<result name="success" type="tiles">editOrgType</result>
+	</action>
+	
+	<action name="saveeditOrgType" class="com.trimax.its.orgchart.action.OrgTypeAction" method="saveEditedorgType">
+	<result name="input" type="tiles">editOrgType</result>
+	<result name="success" type="tiles">showOrgType</result>
+	</action>
+	<action name="deleteorgType" class="com.trimax.its.orgchart.action.OrgTypeAction" method="deleteorgType">
+	<result name="success" type="tiles">showOrgType</result>
+	</action>
+	</package>
+	
+</struts>
+		

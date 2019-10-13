@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="actdashboard" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		<global-results>
+			<result name="welcome" type="tiles">showActEtmDashboard</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+
+		
+		
+<action name="getDeviceDashboardData" class="com.trimax.its.actdashboard.action.ActiveDashboardAction"></action>
+		
+			<action name="getforallDeviceData" class="com.trimax.its.actdashboard.action.ActiveDashboardAction"
+			method="getAllDeviceDetails">
+		</action>
+		
+<!-- 		<action name="getEtmDeviceHistoryData" class="com.trimax.its.actdashboard.action.ActiveEtmDeviceAction" method="getDivisionData" > -->
+<!-- 		<result name="success" type="tiles">EtmDeviceHistory</result> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="getEtmDeviceHistory" class="com.trimax.its.actdashboard.action.ActiveEtmDeviceAction"> -->
+<!-- 		<result name="success" type="tiles">EtmDeviceHistory</result> -->
+<!-- 		<result name="input" type="tiles">EtmDeviceHistory</result> -->
+<!-- 		</action> -->
+<!-- 		<action name="getEtmno" class="com.trimax.its.actdashboard.action.ActiveEtmDeviceAction" -->
+<!-- 			method="getEtmListData"> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="getEtmDeviceView" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" -->
+<!-- 			method="getetmview"> -->
+<!-- 			<result name="success" type="tiles">EtmDeviceHistoryView</result> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="AjaxEtmDeviceView" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" -->
+<!-- 			method="getetmview"> -->
+<!-- 		</action> -->
+		
+		
+<!-- 		<action name="saveEtmDeviceData" class="com.trimax.its.etm.action.EtmDeviceHistoryAction" -->
+<!-- 			method="saveEtmData"> -->
+<!-- 			<result name="success" type="tiles">EtmDeviceHistory</result> -->
+<!-- 		</action> -->
+
+
+		
+		
+	</package>
+</struts>

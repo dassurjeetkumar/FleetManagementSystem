@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5175/its/WebContent/transport/busstoptype
+END
+busstoptypeView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/5175/its/WebContent/transport/busstoptype/busstoptypeView.jsp
+END
+busstoptypeAdd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/4020/its/WebContent/transport/busstoptype/busstoptypeAdd.jsp
+END
+busstoptypeEdit.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/4021/its/WebContent/transport/busstoptype/busstoptypeEdit.jsp
+END

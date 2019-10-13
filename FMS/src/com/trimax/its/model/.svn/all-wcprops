@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/its/!svn/ver/7303/its/src/com/trimax/its/model
+END
+Menu.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/2197/its/src/com/trimax/its/model/Menu.java
+END
+SessionDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/866/its/src/com/trimax/its/model/SessionDetails.java
+END
+ErrorLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/1/its/src/com/trimax/its/model/ErrorLog.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/145/its/src/com/trimax/its/model/User.java
+END
+DependentTableCheck.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/3015/its/src/com/trimax/its/model/DependentTableCheck.java
+END
+Users.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/1/its/src/com/trimax/its/model/Users.java
+END
+Vendor.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/7303/its/src/com/trimax/its/model/Vendor.java
+END
+AppVersion.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/3944/its/src/com/trimax/its/model/AppVersion.java
+END

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   <tiles-definitions>
+   
+    <!-- EmployeeType Start -->
+    
+     <definition name="EmployeeTypeList" extends="baseLayout">
+      <put-attribute name="title"  value="EmployeeType List"/>
+      <put-attribute name="content"   value="/pages/usermanagement/employeetypelist.jsp"/>      
+   </definition>
+   
+   <definition name="RSchedule" extends="baseLayout">
+      <put-attribute name="title"  value="Rationalized Schedule Details"/>
+      <put-attribute name="layoutId"  value="schedule"/>
+      <put-attribute name="content"   value="/transport/rationalizedSchedule.jsp"/>      
+   </definition>
+    <definition name="RFormFour" extends="baseLayout">
+      <put-attribute name="title"  value="Rationalized FormIV"/>
+      <put-attribute name="layoutId"  value="schedule"/>
+      <put-attribute name="content"   value="/transport/rationalizedFormFour.jsp"/>      
+   </definition>
+    <definition name="PFormFour" extends="baseLayout">
+      <put-attribute name="title"  value="Partial FormIV"/>
+      <put-attribute name="layoutId"  value="schedule"/>
+      <put-attribute name="content"   value="/transport/partialFormFour.jsp"/>      
+   </definition>
+   
+   
+     <definition name="ShowEmployeeType" extends="baseLayout">
+      <put-attribute name="title"  value="EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/createemployeetype.jsp"/>      
+   </definition>
+   
+    <definition name="AddEmployeeType" extends="baseLayout">
+      <put-attribute name="title"  value="EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/employeetypelist.jsp"/>      
+   </definition>
+   
+
+	<definition name="ErrorEmployeeType" extends="baseLayout">
+      <put-attribute name="title"  value="EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/createemployeetype.jsp"/>      
+   </definition>
+
+
+ <definition name="ShowEmployeeTypeListDetails" extends="baseLayout">
+      <put-attribute name="title"  value="EmployeeType List"/>
+      <put-attribute name="content"   value="/pages/usermanagement/employeetypelist.jsp"/>      
+   </definition>
+
+<definition name="ErrorModifyEmployeeType" extends="baseLayout">
+      <put-attribute name="title"  value="EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/editemployeetype.jsp"/>      
+   </definition>
+   
+     <definition name="DeleteEmployeeType" extends="baseLayout">
+      <put-attribute name="title"  value="Delete EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/employeetypelist.jsp"/>      
+   </definition>
+   
+     <definition name="DisplayModifyEmployeeTypeDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Modify EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/editemployeetype.jsp"/>      
+   </definition>
+    
+      <definition name="UpdateEmployeeTypeDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Modify EmployeeType"/>
+      <put-attribute name="content"   value="/pages/usermanagement/employeetypelist.jsp"/>      
+   </definition>
+    
+    <!-- EmployeeType End -->
+    <!-- Designation -->
+    <definition name="Designationlist" extends="baseLayout">
+      <put-attribute name="title"  value="Show Designation Type List"/>
+      <put-attribute name="content"   value="/pages/usermanagement/designationlist.jsp"/>      
+   </definition>
+   
+     <definition name="ShowDesignationType" extends="baseLayout">
+      <put-attribute name="title"  value="Show Designation Type "/>
+      <put-attribute name="content"   value="/pages/usermanagement/createdesignationtype.jsp"/>      
+   </definition>
+   
+     <definition name="AddDesignationtype" extends="baseLayout">
+      <put-attribute name="title"  value="Add Designation Type"/>
+      <put-attribute name="content"   value="/pages/usermanagement/designationlist.jsp"/>      
+   </definition>
+   
+    <definition name="ModifyDesignationtype" extends="baseLayout">
+      <put-attribute name="title"  value="Modify Designation Type"/>
+      <put-attribute name="content"   value="/pages/usermanagement/editdesignationtype.jsp"/>      
+   </definition>
+  
+   
+   
+   <definition name="updateDesignationtype" extends="baseLayout">
+      <put-attribute name="title"  value="Modify Designation Type"/>
+      <put-attribute name="content"   value="/pages/usermanagement/designationlist.jsp"/>      
+   </definition>
+   
+   
+    <definition name="ErrorUpdateDesignationtype" extends="baseLayout">
+      <put-attribute name="title"  value="Designation Type"/>
+      <put-attribute name="content"   value="/pages/usermanagement/editdesignationtype.jsp"/>      
+   </definition>
+   
+     <definition name="ErrorAddDesignationtype" extends="baseLayout">
+      <put-attribute name="title"  value="Update Designation Type"/>
+      <put-attribute name="content"   value="/pages/usermanagement/createdesignationtype.jsp"/>      
+   </definition>
+ 
+   
+   <definition name="DeleteDesignationType" extends="baseLayout">
+      <put-attribute name="title"  value="Delete Designation Type"/>
+      <put-attribute name="content"   value="/pages/usermanagement/designationlist.jsp"/>      
+   </definition>
+   <!-- Designation -->
+   
+   
+   <definition name="ErrorInAddVendor" extends="baseLayout">
+      <put-attribute name="title"  value="Vendor list "/>
+      <put-attribute name="content"   value="/Master/Vendor.jsp"/>      
+   </definition>
+   
+   
+    <definition name="ErrorInUpdate" extends="baseLayout">
+      <put-attribute name="title"  value="Vendor list "/>
+      <put-attribute name="content"   value="/Master/EditVendor.jsp"/>      
+   </definition>
+   
+   
+    <definition name="showUserListDetails" extends="baseLayout">
+      <put-attribute name="title"  value="User list "/>
+      <put-attribute name="content"   value="/pages/usermanagement/userlist.jsp"/>      
+   </definition>
+   
+
+  
+  <definition name="showCreateUser" extends="baseLayout">
+      <put-attribute name="title"  value="Show User"/>
+      <put-attribute name="content"   value="/pages/usermanagement/createuser.jsp"/>      
+   </definition>
+   
+  
+   
+   <definition name="AddUserDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Show User"/>
+      <put-attribute name="content"   value="/pages/usermanagement/userlist.jsp"/>      
+   </definition>
+   
+    <definition name="ErrorAddUserDetails" extends="baseLayout">
+      <put-attribute name="title"  value="Show User"/>
+    <put-attribute name="content"   value="/pages/usermanagement/createuser.jsp"/>  
+   </definition>
+   
+  
+   <definition name="showEditUser" extends="baseLayout">
+      <put-attribute name="title"  value="Edit User"/>
+    <put-attribute name="content"   value="/pages/usermanagement/edituser.jsp"/>  
+   </definition>
+   
+
+   
+     <definition name="UpdateUser" extends="baseLayout">
+      <put-attribute name="title"  value="User List"/>
+    <put-attribute name="content"   value="/pages/usermanagement/userlist.jsp"/>  
+   </definition>
+   
+   
+    <definition name="DeleteUser" extends="baseLayout">
+      <put-attribute name="title"  value="User List"/>
+    <put-attribute name="content"   value="/pages/usermanagement/userlist.jsp"/>  
+   </definition>
+   
+   
+   
+    <definition name="ErrorUpdateUserDetails" extends="baseLayout">
+      <put-attribute name="title"  value="User List"/>
+    <put-attribute name="content"   value="/pages/usermanagement/edituser.jsp"/>  
+   </definition>
+   
+  
+    <definition name="Rolelist" extends="baseLayout">
+      <put-attribute name="title"  value="Group Role"/>
+    <put-attribute name="content"   value="/pages/admin/groupRole.jsp"/>  
+   </definition>
+   
+   
+   <definition name="viewGroupRole" extends="baseLayout">
+      <put-attribute name="title"  value="Assign Group Role"/>
+      <put-attribute name="layoutId"  value="grouprole"/>
+      <put-attribute name="content"   value="/pages/admin/groupRole.jsp"/>   
+         
+   </definition>
+  
+    <definition name="PageRoleList" extends="baseLayout">
+           <put-attribute name="title"  value="Assign Page Role"/>
+      <put-attribute name="layoutId"  value="PageRole"/>
+   <put-attribute name="content"   value="/pages/admin/pagerole.jsp"/>  
+   </definition>
+   
+   
+   
+     <definition name="UserRolePageAccess" extends="baseLayout">
+      <put-attribute name="title"  value="User Role Page"/>
+       <put-attribute name="layoutId"  value="UserRolePage"/>
+    <put-attribute name="content"   value="/pages/usermanagement/userrolepageaccess.jsp"/>  
+   </definition>
+   
+   
+     <definition name="UpdateRoleAction" extends="baseLayout">
+      <put-attribute name="title"  value="Role"/>
+      <put-attribute name="layoutId"  value="Role"/>
+      <put-attribute name="content"   value="/pages/admin/role.jsp"/>      
+   </definition>
+   
+  <definition name="fail" extends="baseLayout">
+      <put-attribute name="title"  value="Role"/>
+      <put-attribute name="layoutId"  value="Role"/>
+      <put-attribute name="content"   value="/pages/admin/editRole.jsp"/>      
+   </definition>
+  
+   
+   
+   <definition name="DeleteRole" extends="baseLayout">
+      <put-attribute name="title"  value="Role"/>
+      <put-attribute name="layoutId"  value="Role"/>
+      <put-attribute name="content"   value="/pages/admin/role.jsp"/>      
+   </definition>
+   
+   
+
+   
+   <definition name="DeletePage" extends="baseLayout">
+      <put-attribute name="title"  value="Page"/>
+      <put-attribute name="layoutId"  value="Page"/>
+      <put-attribute name="content"   value="/pages/admin/addPage.jsp"/>      
+   </definition>
+ 
+   
+    <definition name="emplist" extends="baseLayout">
+      <put-attribute name="title"  value="Employee List"/>
+      <put-attribute name="layoutId"  value="Employee"/>
+      <put-attribute name="content"   value="/pages/usermanagement/employeelistdetails.jsp"/>      
+   </definition>
+   
+   <!--  added by rama -->
+   
+   <definition name="createEmp" extends="baseLayout">
+      <put-attribute name="title"  value="Create Employee"/>
+      <put-attribute name="content"  value="/pages/usermanagement/createmployee.jsp"/>      
+   </definition>
+   <definition name="editEmp" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Employee"/>
+      <put-attribute name="content"  value="/pages/usermanagement/editemployeedetails.jsp"/>      
+   </definition>
+   
+   <!--  ended by rama -->
+   
+  
+   
+  <!--  <definition name="inactivedetails" extends="baseLayout">
+      <put-attribute name="title"  value="Employee List"/>
+      <put-attribute name="layoutId"  value="Employee"/>
+      <put-attribute name="content"   value="/pages/admin/editRole.jsp"/>      
+   </definition> -->
+   
+  
+   
+    <definition name="displaybataconfig" extends="baseLayout">
+      <put-attribute name="title"  value="Bata List"/>
+      <put-attribute name="layoutId"  value="Bata"/>
+      <put-attribute name="content"   value="/pages/usermanagement/batalistdetails.jsp"/>      
+   </definition>
+   
+  
+   
+    <definition name="createbataconfigdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Create Bata Config"/>
+      <put-attribute name="layoutId"  value="Create Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/createBataConfig.jsp"/>      
+   </definition>
+   
+   
+   
+      <definition name="addbataconfigdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Add Bata Config"/>
+      <put-attribute name="layoutId"  value="Add Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/batalistdetails.jsp"/>      
+   </definition>
+   
+   
+      <definition name="erroraddbataconfigdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Error Bata Config"/>
+      <put-attribute name="layoutId"  value="Error Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/createBataConfig.jsp"/>      
+   </definition>
+   
+
+   
+     <definition name="editbataconfigdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Bata Config"/>
+      <put-attribute name="layoutId"  value="Edit Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/editBataConfig.jsp"/>      
+   </definition>
+   
+  
+   
+    <definition name="updatebataconfigdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Update Bata Config"/>
+      <put-attribute name="layoutId"  value="Update Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/batalistdetails.jsp"/>      
+   </definition>
+   
+    <definition name="erroupdateconfigdetails" extends="baseLayout">
+      <put-attribute name="title"  value="Error Bata Config"/>
+      <put-attribute name="layoutId"  value="Error Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/editBataConfig.jsp"/>      
+   </definition>
+   
+  
+   
+    <definition name="deleteBataConfig" extends="baseLayout">
+      <put-attribute name="title"  value="Delete Bata Config"/>
+      <put-attribute name="layoutId"  value="Delete Bata Config"/>
+      <put-attribute name="content"   value="/pages/usermanagement/batalistdetails.jsp"/>      
+   </definition>
+   
+  
+	
+	<definition name="WeeklyChart" extends="baseLayout">
+		<put-attribute name="title" value="Weekly Chart" />
+		<put-attribute name="layoutId" value="Weekly Chart" />
+		<put-attribute name="content" value="/weeklyChart/viewWeeklyChart.jsp" />
+	</definition>
+
+	<definition name="CreateWeeklyChart" extends="baseLayout">
+		<put-attribute name="title" value="Create Weekly Chart" />
+		<put-attribute name="layoutId" value="Create Weekly Chart" />
+		<put-attribute name="content" value="/weeklyChart/createWeeklyChart.jsp" />
+	</definition>
+	
+	<definition name="EditWeeklyChart" extends="baseLayout">
+		<put-attribute name="title" value="Edit Weekly Chart" />
+		<put-attribute name="layoutId" value="Edit Weekly Chart" />
+		<put-attribute name="content" value="/weeklyChart/editWeeklyChart.jsp" />
+	</definition>
+	
+  <!-- Vendor -->
+	<definition name="VendorList" extends="baseLayout">
+		<put-attribute name="title" value="Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+	<definition name="CreateVendor" extends="baseLayout">
+		<put-attribute name="title" value="Create Vendor" />
+		<put-attribute name="content" value="/Master/Vendor.jsp" />
+	</definition>
+
+	<definition name="ViewVendorList" extends="baseLayout">
+		<put-attribute name="title" value="View Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+	<definition name="DeleteVendorList" extends="baseLayout">
+		<put-attribute name="title" value="View Vendor List" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+
+	<definition name="EditRecord" extends="baseLayout">
+		<put-attribute name="title" value="Edit Vendor" />
+		<put-attribute name="content" value="/Master/EditVendor.jsp" />
+	</definition>
+
+	<definition name="EditVendor" extends="baseLayout">
+		<put-attribute name="title" value="Edit Vendor" />
+		<put-attribute name="content" value="/Master/ShowVendorList.jsp" />
+	</definition>
+	<!-- Vendor -->
+   <definition name="EditRecord" extends="baseLayout">
+		<put-attribute name="title" value="route" />
+		<put-attribute name="content" value="/Master/EditVendor.jsp" />
+	</definition>
+	<definition name="PageRoleListDisplay" extends="baseLayout">
+       <put-attribute name="title"  value="Assign Page Role Display"/>
+       <put-attribute name="content"   value="/pages/admin/PageRoleListDisplay.jsp"/>  
+   </definition>
+	
+   </tiles-definitions>
+   
+   

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/its/!svn/ver/5761/its/WebContent/reportMaster
+END
+DatewiseRevenueDetailed.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5761/its/WebContent/reportMaster/DatewiseRevenueDetailed.jsp
+END
+viewReportMaster.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/4879/its/WebContent/reportMaster/viewReportMaster.jsp
+END
+editReportMaster.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/4879/its/WebContent/reportMaster/editReportMaster.jsp
+END
+createReportMaster.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/4879/its/WebContent/reportMaster/createReportMaster.jsp
+END
+createEmailConfiguration.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/4879/its/WebContent/reportMaster/createEmailConfiguration.jsp
+END

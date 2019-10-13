@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	<package name="fare" extends="struts-default" namespace="/">
+
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!--  <global-exception-mappings>
+		 <exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+ 		 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+ 		 
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> 	 -->
+
+		<action name="FareChartAction" class="com.trimax.its.fare.action.FareChartMasterAction">
+			<result name="success" type="tiles">FareChart</result>
+			<result name="copy" type="tiles">FareChartCopy</result>
+		</action>
+		<action name="FareChartajaxAction" class="com.trimax.its.fare.action.FareChartMasterAction" method="getRouteNo">
+			<result name="success" type="tiles">FareChart</result>
+
+		</action>
+		<action name="ShowFareChartAction" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="showfareChart">
+			<result name="success" type="tiles">FareChart</result>
+			<result name="successess" type="tiles">FareChart</result>
+		</action>
+
+		<action name="RateMasterAction" class="com.trimax.its.fare.action.RateMasterAction">
+		
+			<result name="data" type="tiles">RateMaster</result>
+			<result name="input" type="tiles">RateMasterAdd</result>
+			<result name="edit" type="tiles">RateMasterEdit</result>
+			 <result name="rateDetailData" type="tiles">RateMasterDetail</result> 
+			<result name="rateDetailEdit" type="tiles">RateMasterDetailEdit</result>
+			<result type="tiles">RateMaster</result>
+			<result name="deletedstat" type="tiles">RateMaster</result>
+			<result name="inactivestatus" type="tiles">RateMasterEdit</result>
+
+		</action>
+
+
+		<action name="createRateChart" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="createFareChart">
+
+			<result name="success" type="tiles">CreateFareChart</result>
+
+
+		</action>
+		<action name="createFarechart" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="createFare_Chart">
+
+			
+			<result name="input" type="tiles">CreateFareChart</result>
+			<result name="faretri" type="tiles">FareChartTri</result>
+			<result name="successess" type="tiles">FareChart</result>
+			<result name="input2" type="tiles">FareChartCopy</result>
+
+		</action>
+		
+		<action name="copyFarechart" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="copyFare_Chart">
+
+			
+			<result name="input" type="tiles">FareChartCopy</result>
+			<result name="faretri" type="tiles">FareChartTri</result>
+			<result name="successess" type="tiles">FareChart</result>
+			<result name="input2" type="tiles">FareChartCopy</result>
+
+		</action>
+		
+		<action name="EditFareChartMaser" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="editFareChart">
+			<result name="success" type="tiles">EditFareChartMaster</result>
+		</action>
+		<action name="AddEditedFareChart" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="addeditFareChartMaster">
+			<result name="input" type="tiles">EditFareChartMaster</result>
+			<result name="success" type="tiles">FareChart</result>
+		</action>
+		<action name="deleteFareChart" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="deleteFareChartMaster">
+			<result name="success" type="tiles">FareChart</result>
+		</action>
+		<action name="FarechartTri" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="fareChartDetail">
+
+
+			<result name="input" type="tiles">FareChartTri</result>
+			<result name="successess" type="tiles">FareChart</result>
+			<result name="nonFlexi" type="tiles">NonFlexiFareChartTri</result>
+
+		</action>
+		<action name="FarechartTriUpdate" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="updateFareTriangle">
+
+            <result name="nonFlexi" type="tiles">NonFlexiFareChartTri</result>
+			<result name="input" type="tiles">FareChartTri</result>
+			<result name="successess" type="tiles">FareChart</result>
+
+		</action>
+		
+		<action name="RateMasterAjaxAction" class="com.trimax.its.fare.action.RateMasterAjaxAction">
+		
+			<result name="data" type="tiles">RateMaster</result>
+			<result name="input" type="tiles">RateMasterAdd</result>
+			<result name="edit" type="tiles">RateMasterEdit</result>
+			<result name="rateDetailData" type="tiles">RateMasterDetail</result> 
+			<result name="rateDetailEdit" type="tiles">RateMasterDetailEdit</result>
+			<result type="tiles">RateMaster</result>
+			
+		</action>
+		
+		<action name="CreateFarechartRoute" class="com.trimax.its.fare.action.FareChartMasterAction"
+			method="createFare_Chart_Route">
+
+			
+			<result name="success" type="tiles">CreateFareChart</result>
+
+		</action>
+
+		<action name="PassengerTypeAction" class="com.trimax.its.fare.action.PassengerTypeAction">
+     	    <result name="view"  type="tiles">viewPassengerType</result>
+     		<result name="add"  type="tiles">addPassengerType</result>
+     		<result name="edit"  type="tiles">editPassengerType</result>
+    	</action>
+   
+	   	<action name="AddPassengerTypeAction" class="com.trimax.its.fare.action.PassengerTypeAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewPassengerType</result>
+	     <result name="input"  type="tiles">addPassengerType</result>
+	     <result name="invalid.token" type="tiles">viewPassengerType</result>
+	    </action>
+	    
+	    <action name="EditPassengerTypeAction" class="com.trimax.its.fare.action.PassengerTypeAction" method="update">
+	    <!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewPassengerType</result>
+	     <result name="input"  type="tiles">editPassengerType</result>
+	     <!-- <result name="invalid.token" type="tiles">viewPassengerType</result> -->
+	    </action>
+	    
+	    <action name="DeletePassengerTypeAction" class="com.trimax.its.fare.action.PassengerTypeAction" method="delete">
+	     <result name="success" type="tiles">viewPassengerType</result>
+	    </action>
+	    
+	    <action name="ConcessionAction" class="com.trimax.its.fare.action.ConcessionAction">
+     	    <result name="view"  type="tiles">viewConcession</result>
+     		<result name="add"  type="tiles">addConcession</result>
+     		<result name="edit"  type="tiles">editConcession</result>
+    	</action>
+   
+	   	<action name="AddConcessionAction" class="com.trimax.its.fare.action.ConcessionAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewConcession</result>
+	     <result name="input"  type="tiles">addConcession</result>
+	     <result name="invalid.token" type="tiles">viewConcession</result>
+	    </action>
+	    
+	    <action name="EditConcessionAction" class="com.trimax.its.fare.action.ConcessionAction" method="update">
+	    <!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewConcession</result>
+	     <result name="input"  type="tiles">editConcession</result>
+	     <!-- <result name="invalid.token" type="tiles">viewConcession</result> -->
+	    </action>
+	    
+	    <action name="DeleteConcessionAction" class="com.trimax.its.fare.action.ConcessionAction" method="delete">
+	     <result name="success" type="tiles">viewConcession</result>
+	    </action>
+	    
+	   
+	    <action name="LuggageTypeAction" class="com.trimax.its.fare.action.LuggageTypeAction">
+     	    <result name="view"  type="tiles">viewLuggageType</result>
+     		<result name="add"  type="tiles">addLuggageType</result>
+     		<result name="edit"  type="tiles">editLuggageType</result>
+    	</action>
+   
+	   	<action name="AddLuggageTypeAction" class="com.trimax.its.fare.action.LuggageTypeAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewLuggageType</result>
+	     <result name="input"  type="tiles">addLuggageType</result>
+	     <result name="invalid.token" type="tiles">viewLuggageType</result>
+	    </action>
+	    
+	    <action name="EditLuggageTypeAction" class="com.trimax.its.fare.action.LuggageTypeAction" method="update">
+	    <!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewLuggageType</result>
+	     <result name="input"  type="tiles">editLuggageType</result>
+	     <!-- <result name="invalid.token" type="tiles">viewLuggageType</result> -->
+	    </action>
+	    
+	    <action name="DeleteLuggageTypeAction" class="com.trimax.its.fare.action.LuggageTypeAction" method="delete">
+	     <result name="success" type="tiles">viewLuggageType</result>
+	    </action>
+	    
+	    
+	    <action name="RevenueTypeAction" class="com.trimax.its.fare.action.RevenueTypeAction">
+     	    <result name="view"  type="tiles">viewRevenueType</result>
+     		<result name="add"  type="tiles">addRevenueType</result>
+     		<result name="edit"  type="tiles">editRevenueType</result>
+    	</action>
+   
+	   	<action name="AddRevenueTypeAction" class="com.trimax.its.fare.action.RevenueTypeAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewRevenueType</result>
+	     <result name="input"  type="tiles">addRevenueType</result>
+	     <result name="invalid.token" type="tiles">viewRevenueType</result>
+	    </action>
+	    
+	    <action name="EditRevenueTypeAction" class="com.trimax.its.fare.action.RevenueTypeAction" method="update">
+	   <!--  <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewRevenueType</result>
+	     <result name="input"  type="tiles">editRevenueType</result>
+	     <!-- <result name="invalid.token" type="tiles">viewRevenueType</result> -->
+	    </action>
+	    
+	    <action name="DeleteRevenueTypeAction" class="com.trimax.its.fare.action.RevenueTypeAction" method="delete">
+	     <result name="success" type="tiles">viewRevenueType</result>
+	    </action>
+	    
+	    <action name="PenaltyTicketAction" class="com.trimax.its.fare.action.PenaltyTicketAction">
+     	    <result name="view"  type="tiles">viewPenaltyTicket</result>
+     		<result name="add"  type="tiles">addPenaltyTicket</result>
+     		<result name="edit"  type="tiles">editPenaltyTicket</result>
+    	</action>
+   
+	   	<action name="AddPenaltyTicketAction" class="com.trimax.its.fare.action.PenaltyTicketAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewPenaltyTicket</result>
+	     <result name="input"  type="tiles">addPenaltyTicket</result>
+	     <result name="invalid.token" type="tiles">viewPenaltyTicket</result>
+	    </action>
+	    
+	    <action name="EditPenaltyTicketAction" class="com.trimax.its.fare.action.PenaltyTicketAction" method="update">
+	    <!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewPenaltyTicket</result>
+	     <result name="input"  type="tiles">editPenaltyTicket</result>
+	     <!-- <result name="invalid.token" type="tiles">viewPenaltyTicket</result> -->
+	    </action>
+	    
+	    <action name="DeletePenaltyTicketAction" class="com.trimax.its.fare.action.PenaltyTicketAction" method="delete">
+	     <result name="success" type="tiles">viewPenaltyTicket</result>
+	    </action>
+	    
+	    <action name="ShowHourlyChart" class="com.trimax.its.fare.action.FareChartMasterAction" method="showHourlyChart">
+			<result name="success" type="tiles">hourlyChart</result>
+		</action>
+		
+		<action name="getHourlyChart" class="com.trimax.its.fare.action.FareChartMasterAction" method="getHourlyChartByRouteServiceType">
+			<result name="success" type="tiles">hourlyChart</result>
+		</action>
+		<action name="bankRemittanceDetails" class="com.trimax.its.fare.action.BankRemittanceDetailsAction">
+			<result name="success" type="tiles">bankRemittanceDetails</result>
+		</action>
+		<action name="BankRemittanceDetailsTableActions" class="com.trimax.its.fare.action.BankRemittanceDetailsAction" method="getBankRemittanceDetailsTable">
+			
+		</action>
+		<action name="CreateBankRemittanceDetails" class="com.trimax.its.fare.action.BankRemittanceDetailsAction" method="CreateBankRemittanceDetails">
+			<result name="success" type="tiles">CreateBankRemittanceDetails</result>
+		</action>
+		<action name="saveBankRemittanceDetails" class="com.trimax.its.fare.action.BankRemittanceDetailsAction" method="saveBankRemittanceDetails">
+			<result name="success" type="tiles">bankRemittanceDetails</result>
+			<result name="input" type="tiles">CreateBankRemittanceDetails</result>
+			<result name="fail" type="tiles">CreateBankRemittanceDetails</result>
+		</action>
+		<action name="EditBankRemittanceDetails" class="com.trimax.its.fare.action.BankRemittanceDetailsAction" method="EditBankRemittanceDetails">
+			<result name="success" type="tiles">EditBankRemittanceDetails</result>
+		</action>
+		<action name="SaveEditBankRemittanceDetails" class="com.trimax.its.fare.action.BankRemittanceDetailsAction" method="saveEditDetails">
+			<result name="success" type="tiles">bankRemittanceDetails</result>
+			<result name="input" type="tiles">EditBankRemittanceDetails</result>
+			<result name="fail" type="tiles">EditBankRemittanceDetails</result>
+		</action>
+		<action name="DeleteBankRemittanceDetails" class="com.trimax.its.fare.action.BankRemittanceDetailsAction" method="DeleteBankRemittanceDetails">
+			<result name="success" type="tiles">bankRemittanceDetails</result>
+		</action>
+		
+		
+		
+		
+		<action name="specialPassTicket" class="com.trimax.its.fare.action.SpecialPassTicketAction">
+			<result name="success" type="tiles">ViewSpecialPassTicketDetails</result>
+		</action>
+		<action name="AjaxspecialPassTicketTableAction" class="com.trimax.its.fare.action.SpecialPassTicketAction" method="viewspecialPassTicket"></action>
+		
+		<action name="DeletespecialPassTicket" class="com.trimax.its.fare.action.SpecialPassTicketAction"
+			method="deletespecialPassTicket">
+			<result name="success" type="tiles">ViewSpecialPassTicketDetails</result>
+		</action>
+		<action name="CreatespecialPassTicket" class="com.trimax.its.fare.action.SpecialPassTicketAction"
+			method="createspecialPassTicket">
+			<result name="success" type="tiles">CreateSpecialPassTicketview</result>
+		</action> 
+		<action name="createspecialPassTicketAction" class="com.trimax.its.fare.action.SpecialPassTicketAction"
+			method="createspecialPassTicketAction">
+			<result name="input" type="tiles">CreateSpecialPassTicketview</result>
+			<result name="success" type="tiles">ViewSpecialPassTicketDetails</result>
+		</action> 
+		<action name="EditspecialPassTicket" class="com.trimax.its.fare.action.SpecialPassTicketAction"
+			method="editspecialPassTicket">
+			<result name="success" type="tiles">EditSpecialPassTicketview</result>
+		</action> 
+		<action name="editspecialPassTicketAction" class="com.trimax.its.fare.action.SpecialPassTicketAction"
+			method="editspecialPassTicketAction">
+			<result name="input" type="tiles">EditSpecialPassTicketview</result>
+			<result name="success" type="tiles">ViewSpecialPassTicketDetails</result>
+		</action> 
+		<action name="tollPassTicket" class="com.trimax.its.fare.action.TollPassTicketAction">
+			<result name="success" type="tiles">ViewTollPassTicketDetails</result>
+		</action>
+		<action name="AjaxTollPassTicketTableAction" class="com.trimax.its.fare.action.TollPassTicketAction" method="viewTollPassMaster"></action>
+		
+		<action name="DeleteTollPassTicket" class="com.trimax.its.fare.action.TollPassTicketAction"
+			method="deleteTollPassTicket">
+			<result name="success" type="tiles">ViewTollPassTicketDetails</result>
+		</action>
+		<action name="CreateTollPassTicket" class="com.trimax.its.fare.action.TollPassTicketAction"
+			method="createTollPassTicket">
+			<result name="success" type="tiles">CreateTollPassTicketview</result>
+		</action> 
+		<action name="createTollPassTicketAction" class="com.trimax.its.fare.action.TollPassTicketAction"
+			method="createTollPassTicketAction">
+			<result name="input" type="tiles">CreateTollPassTicketview</result>
+			<result name="success" type="tiles">ViewTollPassTicketDetails</result>
+		</action> 
+		<action name="EditTollPassTicket" class="com.trimax.its.fare.action.TollPassTicketAction"
+			method="editTollPassTicket">
+			<result name="success" type="tiles">EditTollPassTicketview</result>
+		</action> 
+		<action name="editTollPassTicketAction" class="com.trimax.its.fare.action.TollPassTicketAction"
+			method="editTollPassTicketAction">
+			<result name="input" type="tiles">EditTollPassTicketview</result>
+			<result name="success" type="tiles">ViewTollPassTicketDetails</result>
+		</action> 
+	</package> 
+</struts>

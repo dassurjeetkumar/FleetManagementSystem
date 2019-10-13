@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	<package name="tollfee" extends="struts-default" namespace="/">
+	
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+		<action name="Tollfeeaction" class="com.trimax.its.toll.action.TollfeeAction">
+		 <result name="view"  type="tiles">viewTollFee</result>
+     	 <result name="add"  type="tiles">addTollFee</result>
+     	 <result name="edit"  type="tiles">editTollFee</result>	
+     	 <result name="copy"  type="tiles">copyTollFee</result>			
+		</action>
+		<action name="AddTollfeeaction" class="com.trimax.its.toll.action.TollfeeAction" method="Add">
+	   	<interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewTollFee</result>
+	     <result name="input"  type="tiles">addTollFee</result>
+	     <result name="invalid.token" type="tiles">viewTollFee</result>
+	    </action>
+	    
+	    <action name="EditTollfeeaction" class="com.trimax.its.toll.action.TollfeeAction" method="update">
+	    <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewTollFee</result>
+	     <result name="input"  type="tiles">editTollFee</result>
+	     <result name="invalid.token" type="tiles">viewTollFee</result>
+	    </action>
+	    
+	     <action name="CopyTollfeeaction" class="com.trimax.its.toll.action.TollfeeAction" method="copyTollFee">
+	    <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref>
+	     <result name="success" type="tiles">viewTollFee</result>
+	     <result name="input"  type="tiles">copyTollFee</result>
+	     <result name="invalid.token" type="tiles">viewTollFee</result>
+	    </action>
+	    
+	    <action name="DeleteTollfeeaction" class="com.trimax.its.toll.action.TollfeeAction" method="delete">
+	     <result name="success" type="tiles">viewTollFee</result>
+	    </action>
+	    <action name="ShowTollfeeaction" class="com.trimax.its.toll.action.TollfeeAction"
+			method="showTollfee">
+			<result name="success" type="tiles">viewTollFee</result>
+			<result name="successess" type="tiles">viewTollFee</result>
+		</action>
+		<action name="GetBusStopName" class="com.trimax.its.toll.action.TollfeeAction" method="getBusStopDrop">
+     <result name="success"  type="tiles">showBusStop</result>
+    </action> 
+	</package>
+	</struts>

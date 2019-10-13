@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/its/!svn/ver/5224/its/WebContent/training
+END
+TrainingList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/4345/its/WebContent/training/TrainingList.jsp
+END
+EditTrainingType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/5224/its/WebContent/training/EditTrainingType.jsp
+END
+createtrainingtype.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/5224/its/WebContent/training/createtrainingtype.jsp
+END
+TrainingTypeList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/5224/its/WebContent/training/TrainingTypeList.jsp
+END
+EditTraining.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/4345/its/WebContent/training/EditTraining.jsp
+END
+createtraining.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/4345/its/WebContent/training/createtraining.jsp
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/its/!svn/ver/7295/its/src/com/trimax/its/util
+END
+SecurityInterceptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6662/its/src/com/trimax/its/util/SecurityInterceptor.java
+END
+HibernateUtil_its_slave.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/7295/its/src/com/trimax/its/util/HibernateUtil_its_slave.java
+END
+HibernateUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/6263/its/src/com/trimax/its/util/HibernateUtil.java
+END
+HibernateUtilVtu.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6792/its/src/com/trimax/its/util/HibernateUtilVtu.java
+END
+HibernateUtilTick.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/2090/its/src/com/trimax/its/util/HibernateUtilTick.java
+END

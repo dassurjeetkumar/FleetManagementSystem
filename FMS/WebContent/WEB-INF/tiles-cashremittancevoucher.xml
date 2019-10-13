@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+   <tiles-definitions>
+   <definition name="CashRemittanceVoucher" extends="baseLayout">
+      <put-attribute name="title"  value="View Cash Remittance Voucher"/>
+       <put-attribute name="layoutId"  value="Cash Remittance Voucher"/>
+      <put-attribute name="content"   value="/cashRemittanceVoucher/cashRemittanceVoucher.jsp"/>
+   </definition>
+   <definition name="CreateCashRemittanceVoucher" extends="baseLayout">
+      <put-attribute name="title"  value="Create Cash Remittance Voucher"/>
+      <put-attribute name="layoutId"  value="Cash Remittance Voucher"/>
+      <put-attribute name="content"  value="/cashRemittanceVoucher/createCashRemittanceVoucher.jsp"/>      
+   </definition>
+   
+    <definition name="EditCashRemittanceVoucher" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Cash Remittance Voucher"/>
+      <put-attribute name="layoutId"  value="Cash Remittance Voucher"/>
+      <put-attribute name="content"  value="/cashRemittanceVoucher/editCashRemittanceVoucher.jsp"/>      
+   </definition> 
+	<!-- End cashRemittanceVoucher -->
+</tiles-definitions>

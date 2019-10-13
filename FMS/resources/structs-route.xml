@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="route" extends="struts-default" namespace="/">
+    
+    <result-types>
+         <result-type name="tiles" 
+         class="org.apache.struts2.views.tiles.TilesResult" />
+      </result-types>
+       <interceptors>
+	<interceptor name="securityInterceptor" class="com.trimax.its.util.SecurityInterceptor"/>
+	
+	 <interceptor-stack name="itsStack">
+	 		<interceptor-ref name="securityInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="validation">
+     <param name="excludeMethods">input,back,cancel,browse</param>
+     </interceptor-ref>
+     <interceptor-ref name="workflow">
+     <param name="excludeMethods">input,back,cancel,browse</param>
+     </interceptor-ref>
+     
+     </interceptor-stack>
+	</interceptors>
+	<default-interceptor-ref name="itsStack" />
+	
+	 <global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results> 
+			<!-- <global-exception-mappings>
+			<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+    
+    <action name="ShowRoute" class="com.trimax.its.route.action.RouteAction" >
+    <result name="success"  type="tiles">RouteText</result>
+    </action>
+    
+    <action name="RouteAjaxAction" class="com.trimax.its.route.action.RouteAjaxAction">
+     <result name="success"  type="tiles">RouteText</result>
+    </action>
+    
+    <action name="GetRouteMap" class="com.trimax.its.route.action.RouteAction" method="showmap">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetRouteStopMap" class="com.trimax.its.route.action.RouteAction" method="getBusStop">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetRouteStopMapForRoute" class="com.trimax.its.route.action.RouteAction" method="getBusStopForRoute">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="SaveRoute" class="com.trimax.its.route.action.RouteAction" method="saveRoute">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetFloor" class="com.trimax.its.route.action.RouteAction" method="getFloor">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetBay" class="com.trimax.its.route.action.RouteAction" method="getBay">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetPlatform" class="com.trimax.its.route.action.RouteAction" method="getPlatforms">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+   
+   
+    <action name="FloorAction" class="com.trimax.its.route.action.FloorAction">
+     <result name="view"  type="tiles">viewFloor</result>
+     <result name="add"  type="tiles">addFloor</result>
+     <result name="addbus"  type="tiles">addFloorBus</result>
+     <result name="edit"  type="tiles">editFloor</result>
+    </action>
+   
+   	<action name="AddFloorAction" class="com.trimax.its.route.action.FloorAction" method="Add">
+     <!-- <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+     <result name="success" type="tiles">viewFloor</result>
+     <result name="input"  type="tiles">addFloor</result>
+<!--      <result name="invalid.token" type="tiles">viewFloor</result>
+ -->    </action>
+    
+    <action name="EditFloorAction" class="com.trimax.its.route.action.FloorAction" method="update">
+  <!--   <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+    -->  <result name="success" type="tiles">viewFloor</result>
+     <result name="input"  type="tiles">editFloor</result>
+<!--      <result name="invalid.token" type="tiles">viewFloor</result>
+ -->    </action>
+    
+    <action name="DeleteFloorAction" class="com.trimax.its.route.action.FloorAction" method="delete">
+     <result name="success" type="tiles">viewFloor</result>
+    </action>
+   
+  
+   <action name="BayAction" class="com.trimax.its.route.action.BayAction">
+     <result name="view"  type="tiles">viewBay</result>
+     <result name="add"  type="tiles">addBay</result>
+     <result name="addbus"  type="tiles">addBaybus</result>
+     <result name="edit"  type="tiles">editBay</result>
+    </action>
+   
+   	<action name="AddBayAction" class="com.trimax.its.route.action.BayAction" method="Add">
+   	<interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+     <result name="success" type="tiles">viewBay</result>
+     <result name="input"  type="tiles">addBay</result>
+     <result name="invalid.token" type="tiles">viewBay</result>
+    </action>
+    
+    <action name="EditBayAction" class="com.trimax.its.route.action.BayAction" method="update">
+    <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+     <result name="success" type="tiles">viewBay</result>
+     <result name="input"  type="tiles">editBay</result>
+     <result name="invalid.token" type="tiles">viewBay</result>
+    </action>
+    
+    <action name="DeleteBayAction" class="com.trimax.its.route.action.BayAction" method="delete">
+     <result name="success" type="tiles">viewBay</result>
+    </action>
+    
+    
+    <action name="PlatformAction" class="com.trimax.its.route.action.PlatformAction">
+     <result name="view"  type="tiles">viewPlatform</result>
+     <result name="add"  type="tiles">addPlatform</result>
+      
+     <result name="edit"  type="tiles">editPlatform</result>
+    </action>
+    
+   
+   	<action name="AddPlatformAction" class="com.trimax.its.route.action.PlatformAction" method="Add">
+   	<interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+     <result name="success" type="tiles">viewPlatform</result>
+     <result name="input"  type="tiles">addPlatform</result>
+     <result name="invalid.token" type="tiles">viewPlatform</result>
+    </action>
+    
+    <action name="EditPlatformAction" class="com.trimax.its.route.action.PlatformAction" method="update">
+    <interceptor-ref name="token"></interceptor-ref>
+	 <interceptor-ref name="defaultStack"></interceptor-ref>
+     <result name="success" type="tiles">viewPlatform</result>
+     <result name="input"  type="tiles">editPlatform</result>
+     <result name="invalid.token" type="tiles">viewPlatform</result>
+    </action>
+    
+    <action name="DeletePlatformAction" class="com.trimax.its.route.action.PlatformAction" method="delete">
+     <result name="success" type="tiles">viewPlatform</result>
+    </action>
+    
+    <action name="editRoute" class="com.trimax.its.route.action.RouteAction" method="showRoutemap">
+     <result name="success"  type="tiles">EditRouteMap</result>
+    </action>
+    
+    <action name="editRouteAjax" class="com.trimax.its.route.action.RouteAction" method="showRoutemapAjax">
+     <result name="success"  type="tiles">EditRouteMap</result>
+    </action>
+    
+    <action name="editRouteAjax1" class="com.trimax.its.route.action.RouteAction" method="showRoutemapAjax1">
+     <result name="success"  type="tiles">EditRouteMap</result>
+    </action>
+    
+    <action name="GetRouteUniNo" class="com.trimax.its.route.action.RouteAction" method="getRouteUniNo">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetServiceTable" class="com.trimax.its.route.action.RouteAction" method="getServiceTable">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetRoadType" class="com.trimax.its.route.action.RouteAction" method="getRoadType">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+   
+   <action name="FloorAjaxAction" class="com.trimax.its.route.action.FloorAjaxAction">
+   
+   </action>
+   
+   <action name="GetBusDropStop" class="com.trimax.its.transport.action.BusStopsAction" method="getRouteStopDrop">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action> 
+    
+    <action name="EditRoute" class="com.trimax.its.route.action.RouteAction" method="editRoute">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="viewRoute" class="com.trimax.its.route.action.RouteAction" method="showRoutemap">
+     <result name="success"  type="tiles">ViewRouteMap</result>
+    </action>
+    
+     <action name="copyRoute" class="com.trimax.its.route.action.RouteAction" method="copyRoutemap">
+     <result name="success"  type="tiles">CopyRouteMap</result>
+    </action> 
+    
+    <action name="GetBusStopRouteList" class="com.trimax.its.route.action.RouteAction" method="getBusStopRouteList">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetRouteBusStopsList" class="com.trimax.its.route.action.RouteAction" method="getRouteBusStopsList">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetRouteCopyInfo" class="com.trimax.its.route.action.RouteAction" method="getRouteCopyInfo">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="GetTktInvView" class="com.trimax.its.route.action.TicketInventorys" >
+     <result name="success"  type="tiles">TicketInventory</result>
+    </action>
+    
+    <action name="findUnitNameActionForInventory"
+			class="com.trimax.its.route.action.TicketInventorys" method="getUnitName">
+ 	</action>
+ 	
+ 	 <action name="checkDuplicateInitialStock"
+			class="com.trimax.its.route.action.TicketInventorys" method="checkDuplicateInitialStock">
+ 	</action>
+ 	
+ 	<action name="findAllOrgTypeActionForInventory"
+			class="com.trimax.its.route.action.TicketInventorys" method="getOrgType">
+	</action>
+    <action name="GetTktInvViewData" class="com.trimax.its.route.action.TicketInventorys" method="getViewData">
+     <result name="success"  type="tiles">TicketInventory</result>
+    </action>
+    
+    <action name="IssueTicketInventory" class="com.trimax.its.route.action.TicketInventorys" method="issueTicketInventory">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="GetTicketDenomList" class="com.trimax.its.route.action.TicketInventorys" method="getTicketDenomList">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="GetPassDropList" class="com.trimax.its.route.action.TicketInventorys" method="getPassType">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="GetPassDenomDropList" class="com.trimax.its.route.action.TicketInventorys" method="getPasslist">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="SaveTicketInventory" class="com.trimax.its.route.action.TicketInventorys" method="saveTicketInventory">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="GetTicketPriority" class="com.trimax.its.route.action.TicketInventorys" method="getPriority">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="GetTicketsDuplicateCheck" class="com.trimax.its.route.action.TicketInventorys" method="getDuplicateCheck">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="GetScheduleData" class="com.trimax.its.route.action.RouteAction" method="checkScheduledata">
+     <result name="success"  type="tiles">RouteMap</result>
+    </action>
+    
+    <action name="getDayDropdown" class="com.trimax.its.route.action.TicketInventorys" method="getDayDropdown">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="getMonthDropDown" class="com.trimax.its.route.action.TicketInventorys" method="getMonthDropDown">
+     <result name="success"  type="tiles">IssueTicketInventory</result>
+    </action>
+    
+    <action name="deleteRoute" class="com.trimax.its.route.action.RouteAction" method="deleteRoute">
+     <result name="success"  type="tiles">RouteText</result>
+    </action>
+    
+    <action name="ShowRouteAjax" class="com.trimax.its.route.action.RouteAction" method="showRouteInfoAjax">
+     <result name="success"  type="tiles">EditRouteMap</result>
+    </action>
+    
+    <action name="getRouteStartEndPoint" class="com.trimax.its.route.action.RouteAction" method="getRouteStartEndPoint">
+     <result name="success"  type="tiles">EditRouteMap</result>
+    </action>
+    
+    <action name="SavePlatformChanges" class="com.trimax.its.route.action.RouteAction" method="savePlatformChanges">
+     <result name="success"  type="tiles">EditRouteMap</result>
+    </action>
+    
+    <action name="getRouteInfo" class="com.trimax.its.route.action.RouteAjaxAction" method="getRouteDataByBusStop">
+     <result name="success"  type="tiles">RouteText</result>
+    </action>
+    
+    <action name="ShowRouteBusStop" class="com.trimax.its.route.action.RouteAction" method="showRouteInfo" >
+    <result name="success"  type="tiles">busStopRouteInfo</result>
+    </action>
+   <action name="ShowVehicles" class="com.trimax.its.route.action.RouteAction" method="showVehicles" >
+    <result name="success"  type="tiles">VehilceToPlot</result>
+    </action>
+    
+    <action name="LinearRouteTracking" class="com.trimax.its.route.action.RouteAction" method="getRouteList">
+     <result name="success"  type="tiles">LinearRouteTracking</result>
+    </action>
+    
+    <action name="VehicleList" class="com.trimax.its.route.action.RouteAction" method="getVehicleData">
+     <result name="success"  type="tiles">LinearRouteTracking</result>
+    </action>
+    
+    <action name="RouteDropDownList1" class="com.trimax.its.transport.action.BusStopsAction" method="getRouteDropdownList1">
+    
+    </action>
+    
+    <!-- Trip bus stop detail configuration -->
+    <action name="TripDropDownList1" class="com.trimax.its.transport.action.BusStopsAction" method="getTripDropdownList1">    
+    </action>
+    
+    <action name="RouteViewTemplate" class="com.trimax.its.route.action.RouteAction" method="getRouteList">
+     <result name="success"  type="tiles">RouteViewTemplate</result>
+    </action>
+    
+    <action name="viewRoutePis" class="com.trimax.its.route.action.RouteMapPisActon" >
+     <result name="success"  type="tiles">ViewRouteMapPis</result>
+    </action>
+    <action name="viewroutmapdetails" class="com.trimax.its.route.action.RouteMapPisActon" method="getviewroutmapdetails">
+     </action>
+    <action name="createviewRoutePis" class="com.trimax.its.route.action.RouteMapPisActon" method="showRoutemapPis">
+     <result name="success"  type="tiles">createviewRoutePis</result>
+     
+    </action>
+    <action name="deleteviewRoutePis" class="com.trimax.its.route.action.RouteMapPisActon" method="deleteviewRoutePis">
+     <result name="success"  type="tiles">ViewRouteMapPis</result>
+    </action>
+     <action name="editviewRoutePis" class="com.trimax.its.route.action.RouteMapPisActon" method="editviewRoutePis">
+     <result name="success"  type="tiles">editviewRoutePis</result>
+    </action>
+     <action name="getTTMC" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getPerticularBusStop">
+		</action>
+		<action name="getfloorpis" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getfloorpis">
+		</action>
+		<action name="getPlatForm" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getPlatForm">
+		</action>
+		<action name="getBays" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getBays">
+		</action>
+		<action name="getService" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getService">
+		</action>
+		<action name="getBusStopRoute" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getBusStopRoute">
+		</action>
+		<action name="SaveRoutMapPisAction" class="com.trimax.its.route.action.RouteMapPisActon"
+			method="getSaveRoutMapPisAction">
+			<result name="success" type="tiles">ViewRouteMapPis</result>
+			<result name="input" type="tiles">createviewRoutePis</result>
+		</action>
+   
+   
+           <action name="LinearRouteTrackingPlanner" class="com.trimax.its.route.action.TripRouteActionPlanner" method="getRouteListPlanner">
+     <result name="success"  type="tiles">LinearRouteTrackingPlanner</result>
+    </action>
+     <action name="TripPlannerMapDisplayActionRoute" class="com.trimax.its.route.action.TripRouteActionPlanner" method="tripPlannerMapDisplayActionRoute">
+    
+    </action>
+    
+     <action name="ShowFormOneReport" class="com.trimax.its.route.action.FormOneReportAction" >
+    <result name="success"  type="tiles">FormOneReport</result>
+    </action>
+    <action name="FormOnelist" class="com.trimax.its.route.action.FormOneReportAction" method="showFormOnelistData">
+   </action>
+    <action name="ShowFormTwoReport" class="com.trimax.its.route.action.FormTwoReportAction" >
+    <result name="success"  type="tiles">FormTwoReport</result>
+    </action>
+    <action name="FormTwolist" class="com.trimax.its.route.action.FormTwoReportAction" method="showFormTwolistData">
+   </action>
+    <action name="ShowRouteWiseTripReport" class="com.trimax.its.route.action.RouteWiseTripAction" >
+    <result name="success"  type="tiles">RouteWiseTripReport</result>
+    </action>
+    <action name="RouteWiseTriplistShow" class="com.trimax.its.route.action.RouteWiseTripAction" method="showRouteWiselistData">
+   </action>
+    <action name="getRouteListForTripWise" class="com.trimax.its.route.action.RouteWiseTripAction"
+			method="getRouteListData">
+		</action>
+		<action name="editRouteName" class="com.trimax.its.route.action.RouteAction" method="showRouteName">
+     <result name="success"  type="tiles">EditRouteName</result>
+    </action>
+    <action name="SaveRouteName" class="com.trimax.its.route.action.RouteAction" method="saveRouteName">
+    <result name="success" type="chain">ShowRoute</result>
+    </action>
+    </package>
+    </struts>

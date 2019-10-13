@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	<package name="account" extends="struts-default" namespace="/">
+	
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+				<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		
+			<!-- <global-exception-mappings>
+			<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+			<exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+			
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+		<action name="AccountHeadaction" class="com.trimax.its.account.action.ActHeadMasterAction">
+		 <result name="view"  type="tiles">viewAccountHead</result>
+     	 <result name="add"  type="tiles">addAccountHead</result>
+     	 <result name="edit"  type="tiles">editAccountHead</result>			
+		</action>
+		<action name="AddAccountHeadaction" class="com.trimax.its.account.action.ActHeadMasterAction" method="Add">
+	   	<!-- <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	      <result name="input"  type="tiles">addAccountHead</result>
+	      <result name="success" type="tiles">viewAccountHead</result>
+	      <!-- <result name="invalid.token" type="tiles">viewAccountHead</result> -->
+	    </action>
+	    
+	    <action name="EditAccountHeadaction" class="com.trimax.its.account.action.ActHeadMasterAction" method="update">
+	  <!--   <interceptor-ref name="token"></interceptor-ref>
+		 <interceptor-ref name="defaultStack"></interceptor-ref> -->
+	     <result name="success" type="tiles">viewAccountHead</result>
+	     <result name="input"  type="tiles">editAccountHead</result>
+<!-- 	     <result name="invalid.token" type="tiles">editAccountHead</result>
+ -->	    </action>
+	    
+	    <action name="DeleteAccountHeadaction" class="com.trimax.its.account.action.ActHeadMasterAction" method="delete">
+	     <result name="success" type="tiles">viewAccountHead</result>
+	    </action>
+	    <action name="ShowAccountHeadAction" class="com.trimax.its.account.action.ActHeadMasterAction"
+			method="showAccount">
+			<result name="success" type="tiles">viewAccountHead</result>
+			<result name="successess" type="tiles">viewAccountHead</result>
+		</action>
+	</package>
+	</struts>

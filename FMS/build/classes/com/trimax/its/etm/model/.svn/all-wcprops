@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/7144/its/src/com/trimax/its/etm/model
+END
+docketinfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/7039/its/src/com/trimax/its/etm/model/docketinfo.java
+END
+EtmDeviceHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7077/its/src/com/trimax/its/etm/model/EtmDeviceHistory.java
+END
+EtmDeviceIssue.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/7144/its/src/com/trimax/its/etm/model/EtmDeviceIssue.java
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/6263/its/src/com/trimax/its/vts/model
+END
+StagewiseTicketConsumpModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/6155/its/src/com/trimax/its/vts/model/StagewiseTicketConsumpModel.java
+END
+DisplayMappingModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4361/its/src/com/trimax/its/vts/model/DisplayMappingModel.java
+END
+WaybillDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6013/its/src/com/trimax/its/vts/model/WaybillDetails.java
+END
+VtsDataModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/2991/its/src/com/trimax/its/vts/model/VtsDataModel.java
+END
+VtsAlertMaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/6263/its/src/com/trimax/its/vts/model/VtsAlertMaster.java
+END
+SarthiSectorGeofence.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/4591/its/src/com/trimax/its/vts/model/SarthiSectorGeofence.java
+END
+INFO_MODE.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/3050/its/src/com/trimax/its/vts/model/INFO_MODE.java
+END
+Busstop.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/3891/its/src/com/trimax/its/vts/model/Busstop.java
+END
+SectorVehicleRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/4591/its/src/com/trimax/its/vts/model/SectorVehicleRelation.java
+END
+VehicleAlertConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/3048/its/src/com/trimax/its/vts/model/VehicleAlertConfig.java
+END

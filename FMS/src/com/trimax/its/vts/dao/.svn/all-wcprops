@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/its/!svn/ver/7430/its/src/com/trimax/its/vts/dao
+END
+DBConnect.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/7397/its/src/com/trimax/its/vts/dao/DBConnect.java
+END
+DeviceDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6263/its/src/com/trimax/its/vts/dao/DeviceDetails.java
+END
+StageWiseTicketConsumptionDOA.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/6791/its/src/com/trimax/its/vts/dao/StageWiseTicketConsumptionDOA.java
+END
+DBConnectVts.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/6662/its/src/com/trimax/its/vts/dao/DBConnectVts.java
+END
+VtsAlertMasterConfigDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/5987/its/src/com/trimax/its/vts/dao/VtsAlertMasterConfigDao.java
+END
+PisDisplayMapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/4361/its/src/com/trimax/its/vts/dao/PisDisplayMapping.java
+END
+ScheduleTripUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/6952/its/src/com/trimax/its/vts/dao/ScheduleTripUpdate.java
+END
+ChangeVehicleStatusDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/5393/its/src/com/trimax/its/vts/dao/ChangeVehicleStatusDAO.java
+END
+ScheduleTripDurationDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/7415/its/src/com/trimax/its/vts/dao/ScheduleTripDurationDAO.java
+END
+VehicleAlertConfigDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/5987/its/src/com/trimax/its/vts/dao/VehicleAlertConfigDAO.java
+END
+VTUDeviceDetailsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/6021/its/src/com/trimax/its/vts/dao/VTUDeviceDetailsDao.java
+END
+VehiclewiseStatusreportDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/5987/its/src/com/trimax/its/vts/dao/VehiclewiseStatusreportDAO.java
+END
+SarthiSectorGeofenceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/4640/its/src/com/trimax/its/vts/dao/SarthiSectorGeofenceDao.java
+END
+ScheduleTripwiseStatausSummaryDOA.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/its/!svn/ver/6126/its/src/com/trimax/its/vts/dao/ScheduleTripwiseStatausSummaryDOA.java
+END
+UpdateTripStartEndEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/7397/its/src/com/trimax/its/vts/dao/UpdateTripStartEndEvent.java
+END
+VtsDataDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/7430/its/src/com/trimax/its/vts/dao/VtsDataDAO.java
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5349/its/src/com/trimax/its/vts/dao/Test.java
+END
+VehicleDepotinoutDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/6780/its/src/com/trimax/its/vts/dao/VehicleDepotinoutDAO.java
+END

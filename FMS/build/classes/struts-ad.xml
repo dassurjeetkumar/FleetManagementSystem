@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.multipart.maxSize" value="2147483647" /> 
+	<package name="ad" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		<action name="viewAdMannagement" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="viewAdMannagement">
+			<result name="success" type="tiles">ViewAdMannagement</result>
+		</action>
+		<action name="showAdvertisementList" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="getAdvertisementList">
+			
+		</action>
+		<action name="createAdMannagement" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="createAdMannagement">
+			<result name="success" type="tiles">CreateAdMannagement</result>
+		</action>
+		<action name="saveAd" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="saveAdMannagement">
+			<result name="input" type="tiles">CreateAdMannagement</result>
+			<result name="success" type="tiles">ViewAdMannagement</result>
+		</action>
+		<action name="uploadFile" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="savePisUploadFile">
+			<result name="success" type="tiles">CreateAdMannagement</result>
+			
+		</action>
+		<action name="editAdMannagement" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="editAdMannagement">
+			<result name="success" type="tiles">EditAdMannagement</result>
+		</action>
+		<action name="updateAd" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="updateAdvertisement">
+			<result name="input" type="tiles">EditAdMannagement</result>
+			<result name="success" type="tiles">ViewAdMannagement</result>
+		</action>
+		
+		<action name="deleteAdMannagement" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="deleteAdvetisement">
+			<result name="success" type="tiles">ViewAdMannagement</result>
+		</action>
+		<action name="findCustomerNameAction" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="getAllCustomerNames">
+			
+		</action>
+		
+		<action name="getAllAdds" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="getAllAddsForCustomer">
+			<result name="success" type="tiles">GetAllAds</result>
+		</action>
+		<action name="findAllAdvertisementTypesAction" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="getAllAdvertisementTypes">
+			
+		</action>
+		<action name="showAdvertisementCustList" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="getAdvertisementOfCustomer">	
+		</action>
+		
+		<action name="findAllAdvertisement" class="com.trimax.its.ad.action.AdMannagementAction"
+			method="getAllAdvertisement">
+		</action>
+
+			  
+<!-- 			  gopinatha Customer code start -->
+			  
+			<action name="Customerdetails" class="com.trimax.its.ad.action.Customerdetails">
+			<result name="success" type="tiles">GetCustomer</result>
+		</action>
+		<action name="DeleteCustomer" class="com.trimax.its.ad.action.Customerdetails"
+		method="Deletecustomer">
+			 <result name="success" type="chain">Customerdetails</result>
+			 <result name="fail" type="chain">Customerdetails</result>
+		</action>
+			<action name="Createcustomer" class="com.trimax.its.ad.action.Customerdetails">
+			 <result name="success" type="tiles">Createcustomer</result>
+			  <result name="fail" type="chain">Customerdetails</result>
+			  </action>
+			 
+			 <action name="savecustomerdetails" class="com.trimax.its.ad.action.Customerdetails" method="savecustomerdetails">
+			 <result name="success" type="chain">Customerdetails</result>
+			 <result name="fail" type="chain">Customerdetails</result>
+		</action>
+		<action name="Editcustomer" class="com.trimax.its.ad.action.Customerdetails" method="editcustomerdetails">
+			 <result name="success" type="tiles">Editcustomer</result>
+			  <result name="fail" type="chain">Customerdetails</result>
+		</action>
+		 <action name="updatecustomer" class="com.trimax.its.ad.action.Customerdetails" 
+		 method="Updatecustomer">
+			 <result name="success" type="chain">Customerdetails</result>
+			 <result name="fail" type="chain">Customerdetails</result>
+		</action>
+		
+		<action name="getallcustomerdetais" class="com.trimax.its.ad.action.Customerdetails" method="Customerdetails">
+		</action>
+		<!-- 		gopinath  customer code  ends-->
+	</package>
+</struts>

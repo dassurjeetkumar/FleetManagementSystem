@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/its/!svn/ver/7382/its/WebContent/WEB-INF/lib
+END
+itextpdf-5.2.0-javadoc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/6122/its/WebContent/WEB-INF/lib/itextpdf-5.2.0-javadoc.jar
+END
+xwork-core-2.1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/xwork-core-2.1.6.jar
+END
+tiles-core-2.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/tiles-core-2.2.2.jar
+END
+jsch-0.1.42.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/6013/its/WebContent/WEB-INF/lib/jsch-0.1.42.jar
+END
+WsVTS.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/7382/its/WebContent/WEB-INF/lib/WsVTS.jar
+END
+commons-collections-3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/commons-collections-3.2.jar
+END
+commons-digester-2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/commons-digester-2.0.jar
+END
+InventoryVoucherTransfer.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/5009/its/WebContent/WEB-INF/lib/InventoryVoucherTransfer.jar
+END
+hibernate-c3p0-4.0.0.Final.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4217/its/WebContent/WEB-INF/lib/hibernate-c3p0-4.0.0.Final.jar
+END
+slf4j-api-1.4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/slf4j-api-1.4.2.jar
+END
+quartz-all-2.1.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/7078/its/WebContent/WEB-INF/lib/quartz-all-2.1.5.jar
+END
+slf4j-log4j12-1.4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/slf4j-log4j12-1.4.2.jar
+END
+struts2-dojo-plugin-2.2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/1597/its/WebContent/WEB-INF/lib/struts2-dojo-plugin-2.2.3.jar
+END
+mysql-5.1.10.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/mysql-5.1.10.jar
+END
+commons-lang-2.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/5830/its/WebContent/WEB-INF/lib/commons-lang-2.6.jar
+END
+json-simple-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/164/its/WebContent/WEB-INF/lib/json-simple-1.1.1.jar
+END
+antlr-2.7.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/antlr-2.7.6.jar
+END
+c3p0-0.9.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/926/its/WebContent/WEB-INF/lib/c3p0-0.9.1.2.jar
+END
+commons-logging-1.0.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/commons-logging-1.0.4.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/dom4j-1.6.1.jar
+END
+jstl-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/90/its/WebContent/WEB-INF/lib/jstl-1.2.jar
+END
+tiles-servlet-2.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/tiles-servlet-2.2.2.jar
+END
+struts2-core-2.2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/5830/its/WebContent/WEB-INF/lib/struts2-core-2.2.3.jar
+END
+tiles-jsp-2.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/tiles-jsp-2.2.2.jar
+END
+commons-fileupload-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/commons-fileupload-1.2.1.jar
+END
+javassist-3.9.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/javassist-3.9.0.GA.jar
+END
+tiles-template-2.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/tiles-template-2.2.2.jar
+END
+log4j-1.2.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/log4j-1.2.15.jar
+END
+WsEpbax.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4468/its/WebContent/WEB-INF/lib/WsEpbax.jar
+END
+hibernate-annotations-3.2.1.ga.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/hibernate-annotations-3.2.1.ga.jar
+END
+java-json.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/5938/its/WebContent/WEB-INF/lib/java-json.jar
+END
+gson-2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/35/its/WebContent/WEB-INF/lib/gson-2.2.jar
+END
+htmlToPDF-1.0.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/518/its/WebContent/WEB-INF/lib/htmlToPDF-1.0.0.jar
+END
+itextpdf-5.2.0-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/6122/its/WebContent/WEB-INF/lib/itextpdf-5.2.0-sources.jar
+END
+tiles-compat-2.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/tiles-compat-2.2.2.jar
+END
+hibernate-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/hibernate-core.jar
+END
+WsPis.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/3252/its/WebContent/WEB-INF/lib/WsPis.jar
+END
+tiles-api-2.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/tiles-api-2.2.2.jar
+END
+itext-2.1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/518/its/WebContent/WEB-INF/lib/itext-2.1.0.jar
+END
+freemarker-2.3.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/freemarker-2.3.15.jar
+END
+org.apache.commons.io.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/4419/its/WebContent/WEB-INF/lib/org.apache.commons.io.jar
+END
+jta-1.3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/jta-1.3.1.jar
+END
+ejb3-persistence.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/ejb3-persistence.jar
+END
+ognl-2.7.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/ognl-2.7.3.jar
+END
+mchange-commons-java-0.2.3.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/its/!svn/ver/4217/its/WebContent/WEB-INF/lib/mchange-commons-java-0.2.3.4.jar
+END
+struts2-tiles-plugin-2.1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/struts2-tiles-plugin-2.1.6.jar
+END
+itextpdf-5.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/6122/its/WebContent/WEB-INF/lib/itextpdf-5.2.0.jar
+END
+commons-beanutils-1.7.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/1/its/WebContent/WEB-INF/lib/commons-beanutils-1.7.0.jar
+END
+mysql-connector-java-5.1.23-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/4217/its/WebContent/WEB-INF/lib/mysql-connector-java-5.1.23-bin.jar
+END

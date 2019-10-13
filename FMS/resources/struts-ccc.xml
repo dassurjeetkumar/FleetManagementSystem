@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="ccc" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+			<global-results>
+			<result name="welcome" type="tiles">login</result>
+				<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+		<exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+		
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+		<action name="ShowCCCDashBoard" class="com.trimax.its.ccc.action.showDashBoardAction">
+			<result name="success" type="tiles">ShowDashBoard1</result>
+		</action>
+		<action name="alertCCCData" class="com.trimax.its.ccc.action.showSOSAction" method="getAlerts"></action>
+		 
+		 <action name="sosData" class="com.trimax.its.ccc.action.showSOSAction" method="getData"></action> 
+		 
+		 <action name="getSOSType" class="com.trimax.its.ccc.action.showSOSAction" method="getBreakdownType"></action>
+		  
+		  <action name="getSOSData" class="com.trimax.its.ccc.action.showSOSAction" method="getSOSData"></action>
+		  
+		  <action name="getRevenueData" class="com.trimax.its.ccc.action.showSOSAction" method="getRevenueData"></action>
+		  
+		 <action name="getRevenueData_depot" class="com.trimax.its.ccc.action.showSOSAction" method=" getRevenueData_depot"></action>
+		 
+		 <action name="getRevenueDataWay" class="com.trimax.its.ccc.action.showSOSAction" method="getRevenueDataByWaybill"></action>
+		 
+		 <action name="getTicketData" class="com.trimax.its.ccc.action.showSOSAction" method="getTicketDetail"></action>
+		 
+		 <action name="getTicketByData_depot" class="com.trimax.its.ccc.action.showSOSAction" method="getTicketByData_depot"></action>
+		 
+		 <action name="getTicketByData_way" class="com.trimax.its.ccc.action.showSOSAction" method="getTicketDataByWaybill"></action>
+		 
+		  <action name="insertSOS" class="com.trimax.its.ccc.action.showSOSAction" method="insertData">
+		  	<result name="success" type="tiles">ShowDashBoard1</result>
+		  </action>
+ 		<action name="getSosattendedUnattended" class="com.trimax.its.ccc.action.showSOSAction" method="getSosattendedUnattended"></action> 
+ 		<action name="getSosAttendedDetails" class="com.trimax.its.ccc.action.showSOSAction" method="getSosAttendedDetails"></action>
+ 		<action name="getSosUnAttendedDetails" class="com.trimax.its.ccc.action.showSOSAction" method="getSosUnAttendedDetails"></action>
+ 		
+ 		<!-- dashbord start -->
+ 		
+ 		 <action name="cccdashboard" class="com.trimax.its.ccc.action.showSOSAction" method="insertCCC">
+		  	<result name="success" type="tiles">cccdashboard</result>
+		  </action> 
+		  
+		  
+ 		<action name="getAccidentpiedata" class="com.trimax.its.ccc.action.showSOSAction" method="getVehicleCount"></action>
+ 		<action name="getVehicleDepotwiseCount" class="com.trimax.its.ccc.action.showSOSAction" method="getVehicleDepotwiseCount"></action>
+ 		
+ 		<action name="getAccidentcountdata" class="com.trimax.its.ccc.action.showSOSAction" method="getAccidetpiechart"></action>
+ 		<action name="getBreakdownpiedata" class="com.trimax.its.ccc.action.showSOSAction" method="getBreakdownpiechart"></action>
+ 		<action name="getVehicleDepotdata" class="com.trimax.its.ccc.action.showSOSAction" method="getVehicleDepotwiseData"></action>
+ 		
+ 		<action name="getAccidentstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getAccidentDatapiechart"></action>
+ 		<action name="getBreakdownstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getBreakdownDatapiechart"></action>
+ 		<!-- //conductor count -->
+ 		<action name="getConductorDriverpiedata" class="com.trimax.its.ccc.action.showSOSAction" method="getDriverConductorCountpiechart"></action>
+ 		<action name="getEmployeestatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getEmployeeDatapiechart"></action>
+ 		
+ 		 		<action name="getEmployeeData" class="com.trimax.its.ccc.action.showSOSAction" method="getEmployeeDataDepot"></action>
+ 		
+ 		<action name="getVTUpiedata" class="com.trimax.its.ccc.action.showSOSAction" method="getVTUCountpiechart"></action>
+ 		<action name="getETMpiedata" class="com.trimax.its.ccc.action.showSOSAction" method="getETMCountpiechart"></action>
+ 		<action name="getEtmstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getETMData"></action>
+ 		
+ 		<action name="getETMFaultyData" class="com.trimax.its.ccc.action.showSOSAction" method="getETMFaultyData"></action>
+ 		
+ 		
+ 		
+ 		<action name="getVTUstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getVTUData"></action>
+ 		<action name="getLCCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getLCCount"></action>
+ 		<action name="getLCDepotData" class="com.trimax.its.ccc.action.showSOSAction" method="getLCDepotdata"></action>
+ 		<action name="getTicketCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getTotalTicketCount"></action>
+ 		<action name="getTicketDepotData" class="com.trimax.its.ccc.action.showSOSAction" method="getTotalTicketData"></action>
+ 		<action name="getPassCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getTotalPassCount"></action>
+ 		<action name="getPassDepotData" class="com.trimax.its.ccc.action.showSOSAction" method="getTotalPassData"></action>
+ 		<action name="getComplaintCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getComplaintCount"></action>
+ 		<action name="getTripCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getTripCount"></action>
+ 		<action name="getScheduleCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getScheduleCount"></action>
+ 		<action name="getRouteCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getRouteCount"></action>
+ 		 <action name="getBusSkipCountData" class="com.trimax.its.ccc.action.showSOSAction" method="getBusSkipCount"></action>
+ 		 <action name="getTripCounttpiechart" class="com.trimax.its.ccc.action.showSOSAction" method="getTripCounttpiechart"></action>
+ 		 <action name="getTripstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getStatusWiseDataofTrip"></action>
+ 		  		  		 
+ 		 <action name="getScheduleTripCounttpiechart" class="com.trimax.its.ccc.action.showSOSAction" method="getScheduleTripCounttpiechart"></action>
+ 		   <action name="getScheduleTripstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getStatusWiseDataofScheduleTrip"></action>
+ 		   
+ 		   
+<!--  		   crew -->
+ 		   <action name="getCrewAllocationCounttpiechart" class="com.trimax.its.ccc.action.showSOSAction" method="getCrewAllocationCountpiechart"></action>
+
+			<action name="getCrewAlloactionstatuswisedata" class="com.trimax.its.ccc.action.showSOSAction" method="getStatusWiseDataofCrewAlloaction"></action>
+
+<!-- crew -->
+ 		   
+ 		 <action name="getOnlineOfflineDepotCounttpiechart" class="com.trimax.its.ccc.action.showSOSAction"></action>
+ 		 
+ 		  <action name="getOnlineDepotData" class="com.trimax.its.ccc.action.showSOSAction" method="getOnlineDepotData"></action>
+ 		   <action name="getOfflineDepotData" class="com.trimax.its.ccc.action.showSOSAction" method="getOfflineDepotData"></action>
+ 		   
+ 		   
+ 		  <action name="manualticketdepotdata" class="com.trimax.its.ccc.action.showSOSAction" method="getManualTicketDepotData"></action>
+ 		  
+ 		  <action name="getManualTicketDepotwiseData" class="com.trimax.its.ccc.action.showSOSAction" method="getManualTicketDepotwiseData"></action>
+ 		 
+ 		<!-- dashboard end -->
+ 		
+	</package>
+</struts>

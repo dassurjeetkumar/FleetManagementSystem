@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/7301/its/src/com/trimax/its/etm/action
+END
+EtmRepairStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7288/its/src/com/trimax/its/etm/action/EtmRepairStatus.java
+END
+ResolvedEtmReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/its/!svn/ver/7288/its/src/com/trimax/its/etm/action/ResolvedEtmReport.java
+END
+showEtmDashboardAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7301/its/src/com/trimax/its/etm/action/showEtmDashboardAction.java
+END
+EtmDeviceHistoryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7288/its/src/com/trimax/its/etm/action/EtmDeviceHistoryAction.java
+END
+EtmWiseStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/7288/its/src/com/trimax/its/etm/action/EtmWiseStatus.java
+END
+EtmDeviceHistoryReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/6685/its/src/com/trimax/its/etm/action/EtmDeviceHistoryReport.java
+END
+DailyEtmGprsCountReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/6908/its/src/com/trimax/its/etm/action/DailyEtmGprsCountReport.java
+END
+CauseWiseEtmHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/7165/its/src/com/trimax/its/etm/action/CauseWiseEtmHistory.java
+END
+ReportOfDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/7137/its/src/com/trimax/its/etm/action/ReportOfDevice.java
+END
+VerifonePending.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7182/its/src/com/trimax/its/etm/action/VerifonePending.java
+END
+DepotWiseCauseWiseSummary.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/its/!svn/ver/7171/its/src/com/trimax/its/etm/action/DepotWiseCauseWiseSummary.java
+END

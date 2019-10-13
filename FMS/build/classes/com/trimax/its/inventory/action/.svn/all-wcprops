@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/6211/its/src/com/trimax/its/inventory/action
+END
+SearchCriteriaJson.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/3930/its/src/com/trimax/its/inventory/action/SearchCriteriaJson.java
+END
+DayWiseStockAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/its/!svn/ver/6211/its/src/com/trimax/its/inventory/action/DayWiseStockAction.java
+END
+VoucherReceiveAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/5008/its/src/com/trimax/its/inventory/action/VoucherReceiveAction.java
+END
+EditTicketsPriorityAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/its/!svn/ver/4566/its/src/com/trimax/its/inventory/action/EditTicketsPriorityAction.java
+END
+VoucherAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/its/!svn/ver/5363/its/src/com/trimax/its/inventory/action/VoucherAction.java
+END
+AutomaticIssueAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/5389/its/src/com/trimax/its/inventory/action/AutomaticIssueAction.java
+END
+InventoryIssueAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/its/!svn/ver/6211/its/src/com/trimax/its/inventory/action/InventoryIssueAction.java
+END
+DeleteStockAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/5414/its/src/com/trimax/its/inventory/action/DeleteStockAction.java
+END
+StockViewAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/its/!svn/ver/6211/its/src/com/trimax/its/inventory/action/StockViewAction.java
+END

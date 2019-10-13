@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+<definition name="baseLayout" template="/layout/baselayout.jsp">
+		<put-attribute name="layoutId" value="" />
+		<put-attribute name="js" value="/layout/js.jsp" />
+		<put-attribute name="css" value="/layout/css.jsp" />
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="showPIS" extends="baseLayout">
+		<put-attribute name="layoutId" value="showPIS" />
+		<put-attribute name="title" value="PIS" />
+		<put-attribute name="content" value="/pages/pis/showPIS.jsp" />
+	</definition>
+	
+	<definition name="PisBusTracking" extends="baseLayout">
+	<put-attribute name="layoutId" value="PisBusTracking" />
+	<put-attribute name="title" value="PIS Bus Tracking" />
+	<put-attribute name="content" value="/pages/pis/LiveBusTracking.jsp" />
+	</definition>
+    <definition name="ViewPisDisplayMapping" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="PIS View Display Mapping" />
+	<put-attribute name="content" value="/pages/pis/viewDisplayMapping.jsp" />
+	</definition>
+    <definition name="CreatePisDisplayMapping" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="PIS Create Display Mapping" />
+	<put-attribute name="content" value="/pages/pis/createDisplayMapping.jsp" />
+	</definition>
+	<definition name="EditPisDisplayMapping" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="PIS Edit Display Mapping" />
+	<put-attribute name="content" value="/pages/pis/editDisplayMapping.jsp" />
+	</definition>
+    <definition name="ViewPisScrollMessage" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="PIS View Scroll Message" />
+	<put-attribute name="content" value="/pages/pis/ViewScrollMessage.jsp" />
+	</definition>
+	<definition name="CreatePisScrollMessage" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="PIS Create Scroll Message" />
+	<put-attribute name="content" value="/pages/pis/CreateScrollMessage.jsp" />
+	</definition>
+	<definition name="EditPisScrollMessage" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="PIS Edit Scroll Message" />
+	<put-attribute name="content" value="/pages/pis/EditScrollMessage.jsp" />
+	</definition>
+	<definition name="ViewPisUploadFile" extends="baseLayout">
+	<put-attribute name="layoutId" value="Pis Upload File" />
+	<put-attribute name="title" value="PIS Upload File" />
+	<put-attribute name="content" value="/pages/pis/FileUpload.jsp" />
+	</definition>
+	
+	<definition name="ViewDisplayUnit" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Mapping" />
+	<put-attribute name="title" value="Pis View Display Unit" />
+	<put-attribute name="content" value="/pages/pis/viewDisplayUnit.jsp" />
+	</definition>
+	
+	<definition name="CreatePisDisplayUnit" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Unit" />
+	<put-attribute name="title" value="Pis Create Display Unit" />
+	<put-attribute name="content" value="/pages/pis/createPisDisplayUnit.jsp" />
+	</definition>
+	
+	<definition name="EditPisDisplayUnit" extends="baseLayout">
+	<put-attribute name="layoutId" value="Display Unit" />
+	<put-attribute name="title" value="Pis Edit Display Unit" />
+	<put-attribute name="content" value="/pages/pis/editPisDisplayUnit.jsp" />
+	</definition>
+
+	<definition name="ShowCustList" extends="baseLayout">
+	<put-attribute name="layoutId" value="PIS Customer List" />
+	<put-attribute name="title" value="View PIS Customer" />
+	<put-attribute name="content" value="/pages/pis/customer/customerView.jsp" />
+	</definition>
+	
+	<definition name="addCustomer" extends="baseLayout">
+	<put-attribute name="layoutId" value="Create PIS Customer" />
+	<put-attribute name="title" value="Create PIS Customer" />
+	<put-attribute name="content" value="/pages/pis/customer/customerAdd.jsp" />
+	</definition>
+	
+	<definition name="editCustomer" extends="baseLayout">
+	<put-attribute name="layoutId" value="Edit PIS Customer" />
+	<put-attribute name="title" value="Edit PIS Customer" />
+	<put-attribute name="content" value="/pages/pis/customer/customerEdit.jsp" />
+	</definition>
+	
+	<definition name="ShowPlayList" extends="baseLayout">
+	<put-attribute name="layoutId" value="Play List" />
+	<put-attribute name="title" value="View Play List" />
+	<put-attribute name="content" value="/pages/pis/playList/playListView.jsp" />
+	</definition>
+	
+	<definition name="addPlayList" extends="baseLayout">
+	<put-attribute name="layoutId" value="Create Play List" />
+	<put-attribute name="title" value="Create Play List" />
+	<put-attribute name="content" value="/pages/pis/playList/playListAdd.jsp" />
+	</definition>
+	
+	<definition name="editPlayList" extends="baseLayout">
+	<put-attribute name="layoutId" value="Edit Play List" />
+	<put-attribute name="title" value="Edit Play List" />
+	<put-attribute name="content" value="/pages/pis/playList/playListEdit.jsp" />
+	</definition>
+	
+	<definition name="ViewTemplate" extends="baseLayout">
+	<put-attribute name="layoutId" value="View Template" />
+	<put-attribute name="title" value="View Template" />
+	<put-attribute name="content" value="/pisTemplate/viewTemplate.jsp" />
+	</definition>
+	
+	<definition name="CreateTemplate" extends="baseLayout">
+	<put-attribute name="layoutId" value="Create Template" />
+	<put-attribute name="title" value="Create Template" />
+	<put-attribute name="content" value="/pisTemplate/createTemplate.jsp" />
+	</definition>
+	
+	<definition name="EditTemplate" extends="baseLayout">
+	<put-attribute name="layoutId" value="Edit Template" />
+	<put-attribute name="title" value="Edit Template" />
+	<put-attribute name="content" value="/pisTemplate/editTemplate.jsp" />
+	</definition>
+
+</tiles-definitions>

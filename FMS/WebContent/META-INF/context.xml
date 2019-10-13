@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="">
+
+<!-- 
+<Resource auth="Container"
+description="DB Connection"
+driverClass="com.mysql.jdbc.Driver"
+maxPoolSize="5"
+minPoolSize="1"
+
+maxIdleTime="30"
+
+maxConnectionAge="40"
+maxIdleTimeExcessConnections="40"
+maxStatements="20"
+
+
+acquireIncrement="1"
+name="jdbc/itsConnection"
+user="abhishek"
+password="abhishek"
+factory="org.apache.naming.factory.BeanFactory"
+type="com.mchange.v2.c3p0.ComboPooledDataSource"
+jdbcUrl="jdbc:mysql://10.30.1.157:3306/its?zeroDateTimeBehavior=convertToNull" /> -->
+</Context>

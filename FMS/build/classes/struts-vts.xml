@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="vts" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		<global-results>
+			<result name="welcome" type="tiles">ShowDashBoard</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		<!-- <global-exception-mappings> <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" 
+			result="welcome" /> <exception-mapping exception="java.lang.NumberFormatException" 
+			result="NullException" /> <exception-mapping exception="java.lang.NullPointerException" 
+			result="NullException" /> <exception-mapping exception="java.io.IOException" 
+			result="NullException" /> <exception-mapping exception="java.sql.SQLException" 
+			result="NullException" /> <exception-mapping exception="java.lang.Exception" 
+			result="welcome" /> </global-exception-mappings> -->
+
+		<action name="ShowLiveBuses" class="com.trimax.its.vts.action.LiveBusesAction">
+			<result name="success" type="tiles">ShowBusesOnline</result>
+		</action>
+		<action name="actgetCordinates" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getCordinates">
+		</action>
+		
+		<action name="actgetCordinatesForAll" class="com.trimax.its.vts.action.ShowLiveBusActionForAll"
+			method="getCordinatesForAll">
+		</action>
+		<action name="alertData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAlerts">
+		</action>
+		<action name="getScheduleHeaderData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleHeaderData">
+		</action>
+		<action name="alertDataAjax" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAlertsSuccess">
+			<result name="success" type="tiles">ShowAlerts</result>
+		</action>
+		<action name="dashboard" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDashBoard">
+			<result name="success" type="tiles">ShowDashBoard</result>
+		</action>
+
+		<action name="getDepotArrivalTime" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDepotArrivalTimeData">
+			<result name="success" type="tiles">ShowArrival</result>
+		</action>
+
+		<action name="getDepotDepartureTime" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDepotDepartureTimeData">
+			<result name="success" type="tiles">ShowDeparture</result>
+		</action>
+		<action name="getDepotDelayedDepartureTime" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDepotDelayedDepartureTime">
+			<result name="success" type="tiles">ShowDeparture</result>
+		</action>
+		<!-- <action name="getLateDeptReason" class="com.trimax.its.vts.action.LiveBusesAction" 
+			method="getLateDeptReasonList"> </action> -->
+
+		<action name="alertSosData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSoSAlertData">
+			<result name="success" type="tiles">ShowSosAlert</result>
+		</action>
+
+		<!-- Design by Aditi for SOS Manual Calls -->
+		<action name="insertDataIntoVtsSosForCall"
+			class="com.trimax.its.vts.action.DriverWiseHarshBreakingAction"
+			method="insertVTSSosData">
+		</action>
+
+		<action name="getSkippedStop" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSkippedStopData">
+			<result name="success" type="tiles">ShowSKipStopAlert</result>
+		</action>
+
+		<action name="alertSkippedStopDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSkippedStopDetail">
+			<result name="success" type="tiles">ShowSKipStopAlert</result>
+		</action>
+		<action name="getOverSpeed" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getOverSpeedDetail">
+
+		</action>
+		<action name="alertOverSpeedDataDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getOverSpeedDataDetails">
+			<result name="success" type="tiles">ShowOverSpeedAlert</result>
+		</action>
+		<!-- Start of ScheduledTripStatusReport -->
+		<action name="scheduletripstatus" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleTripStatus">
+			<result name="success" type="tiles">ScheduleTripStatus</result>
+		</action>
+		<action name="scheduletripstatuslist" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduledTripStatusData">
+
+		</action>
+
+		<action name="TripTicketOnline" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="TripTicketOnline">
+			<result name="success" type="tiles">TripTicketOnline</result>
+		</action>
+		<action name="getTripTicketWayBill" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripTicketWayBill">
+			<result name="success" type="tiles">TripTicketOnline</result>
+		</action>
+
+		<!-- <action name="tripReportDetails123" class="com.trimax.its.vts.action.LiveBusesAction" 
+			method="showtripReportDetails"> </action> -->
+		<!-- End of ScheduledTripStatusReport -->
+		<action name="getDepot" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularDepot">
+		</action>
+
+		<action name="getDepot"
+			class="com.trimx.its.OnlineWaybills.action.ShowOnlineWaybillsAction"
+			method="getPerticularDepot">
+		</action>
+
+		<action name="getRoutes" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getRoutes" />
+		<action name="getLiveVehicle" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularVehicle">
+		</action>
+		<action name="getLiveVehicles" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularVehicles">
+		</action>
+		<action name="tripReportDetails123" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showtripReportDetails">
+
+		</action>
+		<action name="getDevice" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getPerticularDevice">
+		</action>
+		<action name="getVehicleData" class="com.trimax.its.vts.action.LiveBusesAction">
+		</action>
+		
+		<action name="getRevenue" class="com.trimax.its.vts.action.RevenueAction">
+		</action>
+		
+		<action name="getAlertData" class="com.trimax.its.vts.action.LiveBusesAction">
+		</action>
+		<action name="alertPerticular" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="alertPerticularData">
+		</action>
+		<action name="vehiclePerticular" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="vehiclePerticularData">
+		</action>
+		<action name="vehicleAlertDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="vehicleAlertCountPerticular">
+		</action>
+		<action name="pollmsg" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="pollMsg">
+			<result name="success" type="tiles">ShowPollSms</result>
+		</action>
+		<action name="getVehicleDataForSms" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getVehicleDataForSms">
+		</action>
+		<action name="insertPoll" class="com.trimax.its.vts.action.OTACommandInsertAction">
+			<result name="success" type="tiles">ShowPollSms</result>
+		</action>
+
+		<action name="fence" class="com.trimax.its.vts.action.RouteFence">
+		</action>
+		<action name="fence1" class="com.trimax.its.vts.action.RouteFence"
+			method="regenerateFence">
+		</action>
+		<action name="insertfence" class="com.trimax.its.vts.action.RouteFence"
+			method="insertRouteFence">
+		</action>
+		<action name="updateRouteGeofence" class="com.trimax.its.vts.action.RouteFence"
+			method="updateRouteGeofence">
+		</action>
+		<action name="getRoutefence" class="com.trimax.its.route.action.RouteAction"
+			method="showRouteInfoAjax"></action>
+
+		<action name="routedeviation" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDeviation">
+			<result name="success" type="tiles">RouteDeviation</result>
+		</action>
+		<action name="scheduleDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleDetails"></action>
+		<action name="vehicleroutetracking" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getRoutetrackinfo">
+			<result name="success" type="tiles">RouteDeviationScreen</result>
+		</action>
+		<action name="routetracking" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getRouteTracking">
+		</action>
+
+		<action name="getScheduledVehicle" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduledVehicle">
+		</action>
+		<action name="getScheduledVehicleDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduledVehicleDetails">
+		</action>
+		<action name="getScheduletrip" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSchedule">
+		</action>
+
+		<action name="updateScheduleData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="updateScheduleData">
+		</action>
+		<action name="viewScheduledVehicle" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduledVehiclesuccess">
+			<result name="success" type="tiles">RouteScheduleScreen</result>
+		</action>
+
+		<!-- Start of Vehicle Alert Configuration -->
+		<action name="vehiclealertconfig"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="viewVehicleAlertConfiguration">
+			<result name="success" type="tiles">ShowVehicleAlertConfiguration
+			</result>
+		</action>
+
+		<action name="showVehicleAlertConfigList"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="showVehicleAlertConfigData">
+
+		</action>
+
+		<action name="createVehicleAlertConfig"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="createVehicleAlertConfiguration">
+			<result name="success" type="tiles">CreateVehicleAlertConfiguration
+			</result>
+		</action>
+
+		<action name="saveAlertConfig"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="saveAlertConfig">
+			<result name="input" type="tiles">CreateVehicleAlertConfiguration
+			</result>
+			<result name="success" type="tiles">ShowVehicleAlertConfiguration
+			</result>
+		</action>
+		<action name="editVehicleAlertConfig"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="editVehicleAlertConfiguration">
+			<result name="success" type="tiles">EditVehicleAlertConfiguration
+			</result>
+			<!-- <result name="success" type="tiles">ShowVehicleAlertConfiguration 
+				</result> -->
+		</action>
+
+		<action name="updateAlertConfigDetails"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="updateAlertConfigDetails">
+			<result name="success" type="tiles">ShowVehicleAlertConfiguration
+			</result>
+			<result name="input" type="tiles">EditVehicleAlertConfiguration
+			</result>
+		</action>
+		<action name="deleteVehicleAlertConfig"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="deleteVehicleAlertConfiguration">
+			<result name="success" type="tiles">ShowVehicleAlertConfiguration
+			</result>
+		</action>
+
+		<action name="findAlertDescAction"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="getAlertDescAction">
+			<result name="input" type="tiles">EditVehicleAlertConfiguration
+			</result>
+			<result name="success" type="tiles">ShowVehicleAlertConfiguration
+			</result>
+		</action>
+
+		<action name="getPacketCodeAndMisBytes"
+			class="com.trimax.its.vts.action.VehicleAlertConfigurationAction"
+			method="getPacketCodeAndMisBytes">
+			<result name="success" type="tiles">ShowVehicleAlertConfiguration
+			</result>
+		</action>
+		<!-- End of Vehicle Alert Configuration -->
+		<!-- Start of Vehicle Depot in-out UI -->
+		<action name="vehicledepotinout"
+			class="com.trimax.its.vts.action.VehicleDepotinoutAction" method="viewVehicleDepotinout">
+			<result name="success" type="tiles">ViewVehicleDepotInout</result>
+		</action>
+
+		<action name="showVehicleDepotin-outList"
+			class="com.trimax.its.vts.action.VehicleDepotinoutAction" method="showVehicleDepotinoutList">
+
+		</action>
+		<action name="showVehicleDepotin-outList1"
+			class="com.trimax.its.vts.action.VehicleDepotinoutAction" method="showVehicleDepotinoutList1">
+
+		</action>
+		<!-- End of Vehicle Depot in-out UI -->
+		<!-- Start of Vehicle Alert Configuration Master -->
+		<action name="vtsalertmastconfig"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="showVtsAlertMastConfig">
+			<result name="success" type="tiles">ViewVtsAlertConfigMaster</result>
+		</action>
+
+		<action name="showVehicleAlertConfigMaster"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="showVehicleAlertConfigMasterList">
+
+		</action>
+
+		<action name="createVehicleAlertMasterConfig"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="createVehicleAlertMasterConfig">
+			<result name="success" type="tiles">CreateVehicleAlertMasterConfig
+			</result>
+		</action>
+		<action name="editVehicleAlertMasterConfig"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="editVehicleAlertMasterConfig">
+			<result name="success" type="tiles">EditVehicleAlertMasterConfig
+			</result>
+		</action>
+
+		<action name="deleteVehicleAlertMasterConfig"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="deleteVehicleAlertMasterConfig">
+			<result name="success" type="tiles">ViewVtsAlertConfigMaster</result>
+		</action>
+
+		<action name="saveAlertConfigMaster"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="saveAlertConfigMasterDetails">
+			<result name="success" type="tiles">ViewVtsAlertConfigMaster</result>
+			<result name="input" type="tiles">CreateVehicleAlertMasterConfig
+			</result>
+		</action>
+
+		<action name="updateAlertConfigMaster"
+			class="com.trimax.its.vts.action.VtsAlertMasterConfigAction" method="editAlertConfigMasterDetails">
+			<result name="success" type="tiles">ViewVtsAlertConfigMaster</result>
+			<result name="input" type="tiles">EditVehicleAlertMasterConfig
+			</result>
+		</action>
+		<action name="vtureport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getVtuReport">
+			<result name="success" type="tiles">ViewVTUReport</result>
+		</action>
+		<action name="getVtuReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getHOURLYVTUReport"></action>
+		<!-- End of Vehicle Alert Configuration Master -->
+		<action name="getSkipStopRoute" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSkipStops">
+			<result name="success" type="tiles">ViewSkipRoute</result>
+		</action>
+		<action name="getSkipStopData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSkipStopData"></action>
+		<action name="getRouteDeviationData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getRouteDeviationData"></action>
+
+		<action name="viewBusBunching" class="com.trimax.its.vts.action.BusBunchingAction"
+			method="getBusBunching">
+			<result name="success" type="tiles">BusBunchingScreen</result>
+		</action>
+
+		<action name="getBusStopListforBunch" class="com.trimax.its.vts.action.BusBunchingAction"
+			method="getBusStopList">
+			<result name="success" type="tiles">BusBunchingScreen</result>
+		</action>
+
+		<action name="getRoutList" class="com.trimax.its.vts.action.BusBunchingAction"
+			method="getRoutList">
+			<!-- <result name="success" type="tiles">BusBunchingScreen</result> -->
+		</action>
+		<action name="getRoutebunchInfo" class="com.trimax.its.vts.action.BusBunchingAction"
+			method="getRoutebunchInfo">
+		</action>
+
+		<action name="getRouteonMap" class="com.trimax.its.vts.action.BusBunchingAction"
+			method="getRouteonMap">
+			<!-- <result name="success" type="tiles">BusBunchingScreen</result> -->
+		</action>
+
+		<action name="viewAlertReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAlertReport">
+			<result name="success" type="tiles">ViewVTSAlertReport</result>
+		</action>
+		<action name="getAlertReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAlertReportonChange" />
+		<action name="vehicleWiseDistanceTravel" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="vehiclewisedetail">
+			<result name="success" type="tiles">ViewVTSvehicleWiseDistance
+			</result>
+		</action>
+		<action name="getVehicleDataReports" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getVehicleDataForReports">
+		</action>
+
+		<action name="viewTripWiseVTUPacketAnalysis" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="viewTripWiseVTUPacketAnalysis">
+			<result name="success" type="tiles">ViewTripWiseVTUPacketAnalysis
+			</result>
+		</action>
+
+		<action name="showTripWiseVTUPacketAnalysis" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showTripVtuPacketAnalysis">
+
+		</action>
+		<action name="viewVtuPacketRecieved" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="viewTripVtuPacketRecieved">
+
+		</action>
+		<action name="scheduledevaitionlist" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleDeviationData"></action>
+
+		<action name="deviationinfo" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleDeviation"></action>
+
+
+		<action name="earlyreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="earlyreport">
+			<result name="success" type="tiles">viewEarlyReport
+			</result>
+		</action>
+		<action name="sosreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="sosreport">
+			<result name="success" type="tiles">viewSOSReport
+			</result>
+		</action>
+		<action name="accidentalert" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="accidentalert">
+			<result name="success" type="tiles">viewAccidentReport
+			</result>
+		</action>
+		<!-- accident report and breakdown report in VTS with Current date -->
+		<action name="accidentalertvts" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="accidentalertvts">
+			<result name="success" type="tiles">viewAccidentVtsReport
+			</result>
+		</action>
+
+		<action name="getAlertReportVTS" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAlertReportonChangeVts" />
+		<action name="getAlertReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAlertReportonChange" />
+
+
+		<action name="breakdownreportvts" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="breakdownreportvts">
+			<result name="success" type="tiles">viewBreakdownVtsReport
+			</result>
+		</action>
+		<action name="breakDownReportVtsData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="breakDownVtsReportData">
+		</action>
+
+		<!-- end -->
+
+		<action name="overspeed" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="overspeed">
+			<result name="success" type="tiles">viewOverSpeedReport
+			</result>
+		</action>
+		<action name="breakdownreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="breakdownreport">
+			<result name="success" type="tiles">viewBreakdownReport
+			</result>
+		</action>
+		<action name="breakDownReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="breakDownReportData">
+
+		</action>
+		<action name="schearlydept" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="schearlydept">
+			<result name="success" type="tiles">viewSchEarlyDeptReport
+			</result>
+		</action>
+		<action name="schlatedept" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="schlatedept">
+			<result name="success" type="tiles">viewSchLateDeptReport
+			</result>
+		</action>
+		<action name="latedeptreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="latedeptreport">
+			<result name="success" type="tiles">LateDeptReport
+			</result>
+		</action>
+		<action name="tamperingreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="tamperingreport">
+			<result name="success" type="tiles">TamperingReport
+			</result>
+		</action>
+		<action name="skipstopreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="skipstopreport">
+			<result name="success" type="tiles">SkipStopReport
+			</result>
+		</action>
+		<!-- Staionary vehicle Report -->
+		<action name="stationaryvehiclereport" class="com.trimax.its.vts.action.StationaryVehicleReportAction">
+			<result name="success" type="tiles">StationaryVehicleReport
+			</result>
+		</action>
+	
+		<action name="getstationaryvehiclereport" class="com.trimax.its.vts.action.StationaryVehicleReportAction"
+			method="stationaryvehiclereportList">
+		</action>
+		
+		
+		
+		
+		<!-- Work Shop Report -->
+		<action name="workshopreportdetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="workshopreportdetails">
+			<result name="success" type="tiles">WorkShopReportDetails
+			</result>
+		</action>
+		<action name="getSosDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSosDetails">
+		</action>
+		<!-- Sarthi Revenue Sector -->
+		<action name="viewVehicleSector"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="viewSarthiGeofence">
+
+			<result name="success" type="tiles">vehicleSectorData</result>
+		</action>
+		<action name="vehicleSectorData"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction">
+
+		</action>
+
+		<action name="createVehicleSector"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="createSarthiGeofence">
+			<result name="success" type="tiles">CreateVehicleSector</result>
+		</action>
+
+		<action name="createVehicleSectorAction"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="createSarthiGeofenceAction">
+			<result name="input" type="tiles">CreateVehicleSector</result>
+			<result name="success" type="tiles">vehicleSectorData</result>
+		</action>
+
+		<action name="editVehicleSector"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="editSarthiGeofence">
+			<result name="success" type="tiles">editVehicleSector</result>
+		</action>
+		<action name="addEditedVehicleSector"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="addeditedSarthiGeofence">
+
+			<result name="input" type="tiles">editVehicleSector</result>
+			<result name="success" type="chain">viewVehicleSector</result>
+		</action>
+		<action name="viewVehicleSectorList"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="showSarthiGeofence">
+			<result name="success" type="redirectAction">viewVehicleSector</result>
+		</action>
+
+
+
+		<action name="deleteVehicleSector"
+			class="com.trimax.its.vts.action.SarthiSectorGeofenceAction" method="deleteSarthiGeofenceAction">
+			<result name="success" type="tiles">vehicleSectorData</result>
+			<result name="input" type="tiles">vehicleSectorData </result>
+		</action>
+		<action name="vehicleAllocationToSector" class="com.trimax.its.vts.action.SectorVehicleAction"
+			method="mapVehicleToSector">
+			<result name="success" type="tiles">mapVehicleToSector</result>
+
+		</action>
+
+		<action name="GetvehicleNameForSectors" class="com.trimax.its.vts.action.SectorVehicleAction"
+			method="getVehicledetails">
+		</action>
+		<action name="saveSectorVehicleRelation" class="com.trimax.its.vts.action.SectorVehicleAction"
+			method="saveSectorRelationVehicle">
+			<result name="success" type="tiles">vehicleSectorData</result>
+			<result name="input" type="tiles">mapVehicleToSector</result>
+		</action>
+		<action name="vehicleToSectorList" class="com.trimax.its.vts.action.SectorVehicleAction"
+			method="getAllocatedVehicle">
+			<result name="success" type="tiles">allocatedVehicleToSector</result>
+		</action>
+		<action name="vehicleAllocatedToSector" class="com.trimax.its.vts.action.SectorVehicleAction"
+			method="getAllocatedVehicleList"></action>
+
+
+		<action name="deleteAssignedVehicle" class="com.trimax.its.vts.action.SectorVehicleAction"
+			method="deleteVehicleSectorAction">
+			<result name="success" type="tiles">allocatedVehicleToSector</result>
+			<result name="input" type="tiles">allocatedVehicleToSector </result>
+		</action>
+		<!-- Sarthi End -->
+
+		<action name="insertVehicleStatus"
+			class="com.trimax.its.vts.action.ChangeVehicleStatusAction" method="insertData">
+		</action>
+
+		<!-- extarct trip report start -->
+
+		<action name="extracttripreport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getExtractTripStatus">
+			<result name="success" type="tiles">ExtractTripStatus</result>
+		</action>
+
+
+		<action name="extracttripreportlist" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showExtractdTripReportData">
+
+		</action>
+
+		<action name="scheduleWisetripReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleWiseReportDetails">
+
+		</action>
+		<!-- Start of Unauthorized Break Location Report -->
+		<action name="uabreaklocation" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="viewUnauthorizedBreakLocationReport">
+			<result name="success" type="tiles">ViewUnauthorizedBreakLocationReport
+			</result>
+		</action>
+
+		<action name="unAuthorizedBreakLocationList" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showUnAuthorizedBreakLocationList">
+
+		</action>
+
+		<action name="breaklocationList" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showbreaklocationList">
+
+		</action>
+		<action name="depotdept" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="depotdeptDetails">
+
+		</action>
+		<action name="depotarr" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="depotArrDetails">
+
+		</action>
+		<action name="accidentanalysisrpt" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="viewAccidentAnalysisReport">
+			<result name="success" type="tiles">ViewAccidentAnalysisReport
+			</result>
+		</action>
+
+		<action name="showVehicles"
+			class="com.trimax.its.vts.action.VehiclewiseStatusReportAction"
+			method="getVehicles">
+
+		</action>
+		<action name="accidentAnalysisReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showAccidentAnalysisReportList">
+
+		</action>
+		<action name="updateVehicle"
+			class="com.trimax.its.vts.action.VehiclewiseStatusReportAction"
+			method="updateVehicle">
+
+		</action>
+
+		<action name="sarthiDevaitionRepot" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="sarthiDeviation">
+			<result name="success" type="tiles">viewSarthiDeviationReport
+			</result>
+		</action>
+		<action name="getSarthiDeviationData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showSarthiDeviationData">
+
+		</action>
+		<action name="getSarthiDeviationInfo" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showSarthiDeviationInformation">
+
+		</action>
+		<action name="getBusBunching" class="com.trimax.its.vts.action.LiveBusesAction">
+			<result name="success" type="tiles">ShowBusBunchingReport</result>
+		</action>
+		<action name="getHA" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getHA">
+
+		</action>
+		<action name="getHD" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getHD">
+
+		</action>
+
+		<action name="getAccident" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getAccidentInfo">
+
+		</action>
+		<action name="getDepotIn" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDepotInInfo">
+
+		</action>
+
+		<action name="getStationaryVehicle" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getStationaryVehicleInfo">
+
+		</action>
+		<action name="getWorkShopVehicle" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getWorkShopVehicleInfo">
+
+		</action>
+		<action name="getBreakDown" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getBreakDownInfo">
+
+		</action>
+		<action name="getRouteNo" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getRouteNo">
+		</action>
+		<action name="busbunchinglist" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showBusBunchingData">
+
+		</action>
+		<action name="scheduleWiseTripDistance" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleTripStatus">
+			<result name="success" type="tiles">shiftWiseReport</result>
+		</action>
+
+		<action name="getScheduleALL" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleALL">
+		</action>
+		<action name="getScheduleWiseTripDistance" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleTripWiseDistace">
+
+		</action>
+		<action name="getStartPoint" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showStartPointForDepot">
+
+		</action>
+
+
+		<action name="vehiclewiseStatusReport" class="com.trimax.its.vts.action.LiveBusesAction">
+			<result name="success" type="tiles">vehiclewisereport</result>
+		</action>
+
+		<action name="showVehicles"
+			class="com.trimax.its.vts.action.VehiclewiseStatusReportAction"
+			method="getVehicles">
+
+		</action>
+
+		<action name="updateVehicle"
+			class="com.trimax.its.vts.action.VehiclewiseStatusReportAction"
+			method="updateVehicle">
+
+		</action>
+		<action name="scheduleAdherence" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getscheduleAdherence">
+			<result name="success" type="tiles">scheduleAdherenceReport</result>
+		</action>
+
+		<action name="getScheduleAdherenceData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleAdherenceData">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+
+		<action name="scheduleArrival" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getscheduleArrival">
+			<result name="success" type="tiles">scheduleArrivalReport</result>
+		</action>
+		<action name="getScheduleArrivalData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleArrivalData">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+		<action name="scheduleDeparture" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getscheduleDeparture">
+			<result name="success" type="tiles">scheduleDepartureReport</result>
+		</action>
+		<action name="getScheduleDepartureData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleDepartureData">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+		<action name="routeDeviation" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getRouteDeviation">
+			<result name="success" type="tiles">routeDeviationReport</result>
+		</action>
+
+		<action name="hareport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getHaReport">
+			<result name="success" type="tiles">ha</result>
+		</action>
+
+		<action name="hdReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getHdReport">
+			<result name="success" type="tiles">hd</result>
+		</action>
+
+
+		<!-- <action name="getRouteDeviationData" class="com.trimax.its.vts.action.LiveBusesAction" 
+			method="showRouteDeviationData"> <result name="success" type="tiles">scheduleAdherenceReport</result> 
+			</action> -->
+		<action name="missedTrips" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getMissedTrips">
+			<result name="success" type="tiles">missedTripsReport</result>
+		</action>
+		<action name="getMissedTripsData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showMissedTripsData">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+		<action name="busBreakDown" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getbusBreakDown">
+			<result name="success" type="tiles">busBreakDownReport</result>
+		</action>
+		<action name="getbusBreakDownData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showbusBreakDownData">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+		<action name="controlChart" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getControlChart">
+			<result name="success" type="tiles">controlChartReport</result>
+		</action>
+		<action name="getbusControlChartData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showControlChartData">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+		<action name="scheduleArrivalDaily" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="scheduleArrivalDaily">
+			<result name="success" type="tiles">scheduleArrivalDaily</result>
+		</action>
+		<action name="getScheduleArrivalDataDaily" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleArrivalDaily">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+		<action name="scheduleDepartureDaily" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="scheduleArrivalDaily">
+			<result name="success" type="tiles">scheduleDepartureDaily</result>
+		</action>
+		<action name="getScheduleDepartureDataDaily" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleDepartureDataDaily">
+			<!-- <result name="success" type="tiles">scheduleAdherenceReport</result> -->
+		</action>
+
+		<action name="getSchedulePerformanceReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSchedulePerformanceReport">
+			<result name="success" type="tiles">schedulePerformanceReport</result>
+		</action>
+		<action name="getSchedulePerformanceData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduledPerformanceData">
+			<!-- <result name="success" type="tiles">schedulePerformanceReport</result> -->
+		</action>
+
+		<action name="getSchedulePerformanceHeaderData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSchedulePerformanceHeaderData">
+			<result name="success" type="tiles">schedulePerformanceReport</result>
+		</action>
+		<action name="getSchedulePerformanceFooterData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getSchedulePerformanceFooterData">
+			<result name="success" type="tiles">schedulePerformanceReport</result>
+		</action>
+		<action name="dailyOperationalSummary" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="dailyOpearationSummary">
+			<result name="success" type="tiles">dailyOpearationSummaryReport
+			</result>
+		</action>
+		<action name="getDailyOperationalSummaryData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showDailyOperationalSummary">
+			<result name="success" type="tiles">dailyOpearationSummaryReport
+			</result>
+		</action>
+		<action name="getVehicleDataToPlot" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showVehiclesToPlotOnMap">
+			<!-- <result name="success" type="tiles">schedulePerformanceReport</result> -->
+		</action>
+
+		<action name="getVehicleDataToPlotDateTime" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showVehiclesToPlotOnMapDateTime">
+			<!-- <result name="success" type="tiles">schedulePerformanceReport</result> -->
+		</action>
+
+		<action name="getVehicleDataDateTime" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getVehicleMapDataOnDateTime">
+		</action>
+		<action name="lateDepartureReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showlateDepartureReport">
+			<result name="success" type="tiles">lateDepartureReport</result>
+		</action>
+		<action name="getlateDepartureReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getlateDepartureReportData">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> -->
+		</action>
+		<action name="getlateDepartureSummaryReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getlateDepartureSummaryReportData">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> -->
+		</action>
+		<action name="EarlyArrivalReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showEarlyArrivalReport">
+			<result name="success" type="tiles">earlyArrivalReport</result>
+		</action>
+		<action name="getEarlyArrivalReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getEarlyArrivalReportData">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> -->
+		</action>
+		<action name="getEarlyArrivalReportSummaryData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getEarlyArrivalReportSummaryData">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> -->
+		</action>
+		<!-- Trip cancle -->
+
+		<action name="TripCancleReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showlateDepartureReport">
+			<result name="success" type="tiles">TripCancleReport</result>
+		</action>
+		<action name="getTripCancleReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripCancleReportData">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> 
+				getTripPartialReport -->
+		</action>
+		<action name="getTripPartialReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripPartialReportData">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> -->
+		</action>
+		<action name="getTripCancelReportPage" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripCancelReportPage">
+			<result name="success" type="tiles">tripcancel</result>
+		</action>
+		<action name="getTripPartialReportPage" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripPartialReportPage">
+			<result name="success" type="tiles">trippartial</result>
+		</action>
+		<action name="getTripCancelReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripCancelReportDataSummary">
+			<!-- <result name="success" type="tiles">lateDepartureReport</result> -->
+		</action>
+
+		<!-- Trip cancle -->
+
+
+		<!-- Trip Partial and cancel Report in VTS -->
+		<action name="getTripCancelVtsReportPage" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripCancelVtsReportPage">
+			<result name="success" type="tiles">tripcancelvts</result>
+		</action>
+
+		<action name="getTripPartialVtsReportPage" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getTripPartialVtsReportPage">
+			<result name="success" type="tiles">trippartialvts</result>
+		</action>
+
+
+		<!-- end -->
+
+
+		<!-- trip-deviated-report start -->
+		<action name="DeviatedTripReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showlateDepartureReport">
+			<result name="success" type="tiles">DeviatedTripReport</result>
+		</action>
+		<action name="getDeviatedTripReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getDeviatedTripReportData">
+		</action>
+		<!-- trip-deviated-report end -->
+		<!-- Busstop-skip report start -->
+
+		<action name="BusSkippedReport" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showlateDepartureReport">
+			<result name="success" type="tiles">BusSkippedReport</result>
+		</action>
+		<action name="getBusSkippedReportData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getBusSkippedReportData">
+		</action>
+		<action name="getBusbunching" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getBusBunchingDetail">
+		</action>
+		<action name="vehicleAlertAccDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="vehicleAlertAccDetails">
+		</action>
+		<action name="vehicleAlertDeaccDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="vehicleAlertDeaccDetails">
+		</action>
+		<action name="etmDashboard" class="com.trimax.its.etm.action.showEtmDashboardAction"
+			method="showEtmDashoboard">
+			<result name="success" type="tiles">showEtmDashboard</result>
+		</action>
+		<action name="scheduleMismatchingPage" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleMismatchingPage">
+			<result name="success" type="tiles">scheduleMismatch</result>
+		</action>
+		<action name="scheduleMismatchingRecord" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getscheduleMismatchingRecord">
+		</action>
+		<action name="getscheduleMismatchingRecordDetails" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getscheduleMismatchingRecordDetails">
+		</action>
+
+		<action name="ShowLiveBusDetailsAllVts" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showLiveBusDetailsVts">
+			<result name="success" type="tiles">ShowLiveBusDetailsAllVts</result>
+		</action>
+
+		<action name="ShowLiveBusDetailsForStationaryVehicle" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="ShowLiveBusDetailsForStationaryVehicle">
+			<result name="success" type="tiles">ShowLiveBusDetailsForStationaryVehicle
+			</result>
+		</action>
+		<action name="ShowLiveBusDetailsForStationaryVehicleLocation"
+			class="com.trimax.its.vts.action.LiveBusesAction" method="ShowLiveBusDetailsForStationaryVehicleLocation">
+			<result name="success" type="tiles">ShowLiveBusDetailsForStationaryVehicleLocation
+			</result>
+		</action>
+		<action name="ShowLiveBusDetailsAllVtsData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showLiveBusDetailsVtsEarlyData">
+			<result name="success" type="tiles">ShowLiveBusDetailsAllVtsData
+			</result>
+		</action>
+		<action name="ShowLiveBusDetailsAllVtsLateDepData" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showLiveBusDetailsVtsLateData">
+			<result name="success" type="tiles">ShowLiveBusDetailsAllVtsLateData
+			</result>
+		</action>
+		<action name="ShowLiveBusSkipStopDetailsAllVts" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showLiveBusSkipStopDetailsVts">
+			<result name="success" type="tiles">ShowLiveBusSkipStopDetailsAllVts
+			</result>
+		</action>
+		<action name="ShowLiveBusDeviatedDetailsAllVts" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showLiveBusDeviatedDetailsVts">
+			<result name="success" type="tiles">ShowLiveBusDetailsDeviatedAllVts
+			</result>
+		</action>
+		<action name="showskipstoproute" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showskipstoproute">
+			<result name="success" type="tiles">ShowLiveBusSkipStopDetailsAllVts
+			</result>
+		</action>
+		<!-- Busstop-skip report start getBusbunching -->
+
+		<action name="scheduletripdurationanalysis" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduletripdurationanalysis">
+			<result name="success" type="tiles">ScheduleTripDurationAnanalysis
+			</result>
+		</action>
+		<action name="scheduletripdurationanalysislist" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduletripdurationanalysisData">
+
+		</action>
+		<action name="getScheduleDuration" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleDuration">
+		</action>
+
+
+		<action name="vtuDeviceDetails" class="com.trimax.its.vts.action.VTUDeviceDetailsAction"
+			method="getVtuDeviceDetailsAjax">
+			<result name="success" type="tiles">vtuDeviceDetails</result>
+		</action>
+		<!-- <action name="vtuDeviceDetailsAjax" class="com.trimax.its.vts.action.VTUDeviceDetailsAction" -->
+		<!-- method="getVtuDeviceDetailsAjax"> -->
+		<!-- </action> -->
+
+		<action name="ScheduleWiseOperationalDetails"
+			class="com.trimax.its.vehicle.action.ScheduleWiseOperationalDetails">
+			<result name="success" type="tiles">ScheduleWiseOperationalDetails
+			</result>
+		</action>
+		<action name="getScheduleWiseOperationalDetailsData"
+			class="com.trimax.its.vehicle.action.ScheduleWiseOperationalDetails"
+			method="getScheduleWiseOperationalDetailsData">
+		</action>
+
+		<action name="CancellationKMPercentReport"
+			class="com.trimax.its.report.action.PercentKMCancellationReport">
+			<result name="success" type="tiles">CancellationKMPercentReport
+			</result>
+		</action>
+		<action name="getCancellationKMPercentReport"
+			class="com.trimax.its.report.action.PercentKMCancellationReport"
+			method="PercentOfCancelKM">
+		</action>
+
+		<!-- adding link on Schedule no in 20% km Cancel report -->
+
+		<action name="KMCancelDetails" class="com.trimax.its.vts.action.CancelledKMDetails"
+			method="getKMCancelDetailsAjax">
+			<result name="success" type="tiles">KMCancelDetails</result>
+		</action>
+		<!-- end -->
+
+		<action name="schedulenotdeparted" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="getScheduleNotDeparted">
+			<result name="success" type="tiles">ScheduleNotDeparted</result>
+		</action>
+		<action name="schedulenotdepartedlist" class="com.trimax.its.vts.action.LiveBusesAction"
+			method="showScheduleNotDeparted">
+		</action>
+
+		<action name="NRDVehicleDetails" class="com.trimax.its.vts.action.NRDVehicleAction">
+			<result name="success" type="tiles">NRDVehicleDetails</result>
+		</action>
+		<action name="getNrdVehicleData" class="com.trimax.its.vts.action.NRDVehicleAction"
+			method="getNrdVehicleDetailsList">
+		</action>
+
+
+		<action name="ActiveVehicleDetails" class="com.trimax.its.vts.action.ActiveVehicleAction">
+			<result name="success" type="tiles">ActiveVehicleDetails</result>
+		</action>
+		<action name="getActiveVehicleList" class="com.trimax.its.vts.action.ActiveVehicleAction"
+			method="getActiveVehicleList">
+		</action>
+
+		<action name="MissedTripDetails" class="com.trimax.its.vts.action.MissedTripAction">
+			<result name="success" type="tiles">MissedTripDetails</result>
+		</action>
+		<action name="getMissedTripDetails" class="com.trimax.its.vts.action.MissedTripAction"
+			method="getMissedTripList">
+		</action>
+		<action name="getSchedule" class="com.trimax.its.vts.action.MissedTripAction"
+			method="getScheduleName">
+		</action>
+
+		<action name="BagwiseCumulativeRevenue"
+			class="com.trimax.its.report.action.BagwiseCumulativeRevenueAction">
+			<result name="success" type="tiles">BagwiseCumulativeRevenue</result>
+		</action>
+		<action name="getBagwiseCumulativeRevenueDetails"
+			class="com.trimax.its.report.action.BagwiseCumulativeRevenueAction"
+			method="getBagwiseDetails">
+		</action>
+
+		<action name="CashCollectionReport"
+			class="com.trimax.its.report.action.CashCollectionReportAction">
+			<result name="success" type="tiles">CashCollectionReport</result>
+		</action>
+		<action name="getCashCollectionDetails"
+			class="com.trimax.its.report.action.CashCollectionReportAction"
+			method="getCashCollectionData">
+		</action>
+
+		<action name="DailyTicketPassIssueReport"
+			class="com.trimax.its.report.action.DailyTicketPassIssueAction">
+			<result name="success" type="tiles">DailyTicketPassIssueReport
+			</result>
+		</action>
+		<action name="getDailyTicketPassIssueReportData"
+			class="com.trimax.its.report.action.DailyTicketPassIssueAction"
+			method="getPassIssueReport">
+		</action>
+
+		<action name="CrewWiseCaseReport"
+			class="com.trimax.its.report.action.CrewWiseCaseReportAction">
+			<result name="success" type="tiles">CrewWiseCaseReport</result>
+		</action>
+		<action name="getCrewWiseCaseDetails"
+			class="com.trimax.its.report.action.CrewWiseCaseReportAction" method="getCrewWiseData">
+		</action>
+
+		<!-- To add link in Crew wise -->
+		<action name="CaseDetails"
+			class="com.trimax.its.report.action.CrewWiseCaseReportAction" method="getCaseDetails">
+			<result name="success" type="tiles">CaseDetails</result>
+		</action>
+
+
+		<action name="BagWiseTcktPassIssueAction"
+			class="com.trimax.its.report.action.BagwiseIssueReportAction">
+			<result name="success" type="tiles">BagWiseTcktPassIssueAction
+			</result>
+		</action>
+		<action name="getBagWiseTcktPassIssueData"
+			class="com.trimax.its.report.action.BagwiseIssueReportAction" method="getBagwiseIssue">
+		</action>
+
+		<action name="ShiftwiseLateDepartureReport"
+			class="com.trimax.its.vts.action.ShiftwiseLateDepartureAction">
+			<result name="success" type="tiles">ShiftwiseLateDepartureReport
+			</result>
+		</action>
+		<action name="AjaxShiftwiseLateDepartureData"
+			class="com.trimax.its.vts.action.ShiftwiseLateDepartureAction"
+			method="getShiftwiseLateDepartureData">
+		</action>
+
+		<action name="ShiftwiseScheduleNotDepartedReport"
+			class="com.trimax.its.vts.action.ShiftwiseScheduleNotDeptAction">
+			<result name="success" type="tiles">ShiftwiseScheduleNotDepartedReport
+			</result>
+		</action>
+		<action name="AjaxShiftwiseScheduleNotDepartedData"
+			class="com.trimax.its.vts.action.ShiftwiseScheduleNotDeptAction"
+			method="getNotDepartedData">
+		</action>
+
+		<action name="DepotwiseScheduleTripOpReport"
+			class="com.trimax.its.vts.action.DepotwiseScheduleTripOperatedAction">
+			<result name="success" type="tiles">DepotWiseScheduleTripOperated
+			</result>
+		</action>
+		<action name="AjaxDepotwiseScheduleTripOpReport"
+			class="com.trimax.its.vts.action.DepotwiseScheduleTripOperatedAction"
+			method="getDepotWiseScheduleDetails">
+		</action>
+
+
+		<action name="registeredDeviceVts"
+			class="com.trimax.its.report.action.RegisteredDeviceVtsReportAction">
+			<result name="success" type="tiles">RegisteredDeviceVts</result>
+		</action>
+		<action name="getRegisteredDeviceVts"
+			class="com.trimax.its.report.action.RegisteredDeviceVtsReportAction"
+			method="getregisteredDeviceDetails">
+		</action>
+
+		<!-- Dashboard Summary Report -->
+		<action name="dasboardsummaryreport"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction">
+			<result name="success" type="tiles">DashBoardSummaryReport</result>
+		</action>
+		<action name="getdasboardsummaryreport"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDasboardsummary">
+		</action>
+
+		<action name="getdasboardsummaryRunningReport"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDasboardsummaryRunningData">
+		</action>
+
+		<action name="getDasboardsummaryPartial"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDasboardsummaryPartialData">
+		</action>
+
+		<action name="getDashboardSummaryNRD"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDasboardsummaryNRDTotalData">
+		</action>
+
+		<action name="getDashboardSummarySkipStop"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getdashboardSkipStopDetails">
+		</action>
+
+		<action name="getDashboardSummaryRouteDeviated"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDashboardSummaryRouteDeviateData">
+		</action>
+		<action name="getschedulewiseLateData"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDashboardSummaryLatedataScheWise">
+		</action>
+		<action name="getDriverwiseLateDept"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDashboardSummaryLatedataDrivereWise">
+		</action>
+		<action name="getschedulewiseEarlyArrival"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDashboardSummaryEarlydataScheWise">
+		</action>
+		<action name="AlertScheduleWiseEarlyArrival"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getAlertScheduleWiseEarlyArrival">
+		</action>
+		<action name="AlertDriverWiseEarlyArrival"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getAlertDriverWiseEarlyArrival">
+		</action>
+		<action name="AlertSchWiseLateDept"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getAlertSchWiseLateDept">
+		</action>
+		<action name="AlertDriverWiseLateDept"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getAlertDriverWiseLateDept">
+		</action>
+		<action name="AlertScheduledist80percent"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getAlertScheduledist80percent">
+		</action>
+		<action name="getDriverWiseEarlyArrival"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDashboardSummaryEarlydataDriverWise">
+		</action>
+		<action name="getPartialOperatedData"
+			class="com.trimax.its.report.action.DashBoardSummaryReportAction"
+			method="getDashboardSummaryPartialDataScheWise">
+		</action>
+
+
+
+		<action name="getTripwiseLateDepartureReport"
+			class="com.trimax.its.vts.report.action.TripwiseLateDepartureReport"
+			method="getScheduleTripStatus">
+			<result name="success" type="tiles">TripwiseLateDeparture</result>
+		</action>
+		<action name="AjaxtripwiseLateDepartureReport"
+			class="com.trimax.its.vts.report.action.TripwiseLateDepartureReport"
+			method="getTripwiseLateDeparture">
+
+		</action>
+		<action name="getScheduleno"
+			class="com.trimax.its.vts.report.action.TripwiseLateDepartureReport"
+			method="getScheduleListData">
+		</action>
+		<action name="getTripwiseEarlyDepartureReport"
+			class="com.trimax.its.vts.report.action.TripwiseEarlyDepartureReport"
+			method="getScheduleTripStatus">
+			<result name="success" type="tiles">TripwiseEarlyDeparture</result>
+		</action>
+
+		<action name="AjaxtripwiseEarlyDepartureReport"
+			class="com.trimax.its.vts.report.action.TripwiseEarlyDepartureReport"
+			method="getTripwiseEarlyDeparture">
+
+		</action>
+
+		<action name="getTripwiseEarlyArrivalReport"
+			class="com.trimax.its.vts.report.action.TripwiseEarlyArrivalReport"
+			method="getScheduleTripStatus">
+			<result name="success" type="tiles">TripwiseEarlyArrival</result>
+		</action>
+
+		<action name="AjaxtripwiseEarlyArrivalReport"
+			class="com.trimax.its.vts.report.action.TripwiseEarlyArrivalReport"
+			method="getTripwiseEarlyArrival">
+
+		</action>
+
+		<action name="getTripwiseLateArrivalReport"
+			class="com.trimax.its.vts.report.action.TripwiseLateArrivalReport"
+			method="getScheduleTripStatus">
+			<result name="success" type="tiles">TripwiseLateArrival</result>
+		</action>
+
+		<action name="AjaxtripwiseLateArrivalReport"
+			class="com.trimax.its.vts.report.action.TripwiseLateArrivalReport"
+			method="getTripwiseLateArrival">
+
+		</action>
+		<action name="getActualEtmAmountAndGprsAmountReport"
+			class="com.trimax.its.report.action.ActualEtmAmountAndGprsAmountDiffReport">
+			<result name="success" type="tiles">ActualEtmAmountAndGprsAmountReport
+			</result>
+		</action>
+		<action name="AjaxEtmAmountAndGprsAmountDiffReport"
+			class="com.trimax.its.report.action.ActualEtmAmountAndGprsAmountDiffReport"
+			method="getActualEtmAndGprsAmountReport">
+		</action>
+
+		<!-- Zero Lat-Long report by Aditi -->
+		<action name="ZeroLatLongDevices"
+			class="com.trimax.its.vts.action.ZeroLatLongDevicesAction">
+			<result name="success" type="tiles">ZeroLatLongDevices</result>
+		</action>
+		<action name="getZeroLatLongDevices"
+			class="com.trimax.its.vts.action.ZeroLatLongDevicesAction" method="getZeroLatLongDevicesList">
+		</action>
+<!-- 		To add link on count -->
+		<action name="zerolatlongdetails" class="com.trimax.its.vts.action.ZeroLatLongDevicesAction"
+			method="getZeroLatlong">
+<!-- 			<result name="success" type="tiles">KMCancelDetails</result> -->
+		</action>
+
+		<!-- Extreme Km Report by Aditi -->
+		<action name="ExtremeKmDevices" class="com.trimax.its.vts.action.ExtremeKMAction">
+			<result name="success" type="tiles">ExtremeKmDevices</result>
+		</action>
+		<action name="getExtremeKmDevices" class="com.trimax.its.vts.action.ExtremeKMAction"
+			method="getExtremeKmDeviceList">
+		</action>
+
+		<!-- Skip stop Bus Stop Wise by Aditi -->
+		<action name="busStopWiseSkipStop"
+			class="com.trimax.its.vts.action.BusStopWiseSkipStopAction">
+			<result name="success" type="tiles">busStopWiseSkipStop</result>
+		</action>
+		<action name="getbusStopWiseSkipStop"
+			class="com.trimax.its.vts.action.BusStopWiseSkipStopAction" method="getSkipStopData">
+		</action>
+		<action name="getBusStopListDetailVTS"
+			class="com.trimax.its.vts.action.BusStopWiseSkipStopAction" method="getBusStopList">
+		</action>
+		<action name="getBusDetailsVts"
+			class="com.trimax.its.vts.action.BusStopWiseSkipStopAction" method="getRouteListData">
+		</action>
+
+		<action name="BusStopdropDownList1"
+			class="com.trimax.its.vts.action.BusStopWiseSkipStopAction" method="getbusStopList">
+
+		</action>
+
+		<!-- Show Online Vehicles on bus stop by Aditi -->
+		<action name="OnlineVehicleBusStopWise"
+			class="com.trimax.its.vts.action.OnlineVehiclesBusStopWiseAction">
+			<result name="success" type="tiles">OnlineVehicleBusStopWise</result>
+		</action>
+		<action name="getOnlineVehicleBusStop"
+			class="com.trimax.its.vts.action.OnlineVehiclesBusStopWiseAction"
+			method="getData">
+		</action>
+		<action name="BusStopdropDownList1"
+			class="com.trimax.its.vts.action.OnlineVehiclesBusStopWiseAction"
+			method="getbusStopList">
+		</action>
+
+		<!-- Harsh Acceleration Driver Wise by Aditi -->
+		<action name="DriverWiseharshAcc"
+			class="com.trimax.its.vts.action.DriverWiseHarshAccAction">
+			<result name="success" type="tiles">DriverWiseHarshAcceleration
+			</result>
+		</action>
+		<action name="getHarshAcc"
+			class="com.trimax.its.vts.action.DriverWiseHarshAccAction" method="getHarshAcc">
+		</action>
+		
+		<action name="driverHarshDetails" class="com.trimax.its.vts.action.DriverWiseHarshAccAction"
+			method="getHarshDetails">
+			<result name="success" type="tiles">driverHarshDetails</result>
+		</action>
+
+		<!-- Driver wise Harsh Breaking by Aditi -->
+		<action name="DriverWiseharshBreaking"
+			class="com.trimax.its.vts.action.DriverWiseHarshBreakingAction">
+			<result name="success" type="tiles">DriverWiseHarshBreaking</result>
+		</action>
+		<action name="getHarshBreaking"
+			class="com.trimax.its.vts.action.DriverWiseHarshBreakingAction"
+			method="getHarshBreaking">
+			</action>
+			<action name="driverHarshBreaking" class="com.trimax.its.vts.action.DriverWiseHarshBreakingAction"
+			method="getHarshBreakingDetails">
+			<result name="success" type="tiles">DriverWiseHarshBreaking</result>
+		</action>
+		<!-- end -->
+
+		<!-- Reason for Late departure by Aditi -->
+		<action name="insertLateDeptReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertLateDeptReasonValue">
+		</action>
+
+		<action name="insertEarlyArrReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertEarlyArrReasonValue">
+		</action>
+
+		<action name="insertStationaryReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertStationaryReasonValue">
+		</action>
+
+		<action name="insertSkipStopReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertSkipStopReasonValue">
+		</action>
+
+		<action name="insertSOSReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertSOSReasonValue">
+		</action>
+
+		<action name="insertDeviatedReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertDeviatedReasonValue">
+		</action>
+
+		<action name="insertSchNotDeptReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertSchNotDeptReasonValue">
+		</action>
+
+		<action name="insertNRDReason" class="com.trimax.its.dao.getReasonListDao"
+			method="insertNRDReasonData">
+		</action>
+		<!-- <action name="sosDashboard" class="com.trimax.its.sos.action.showSosDashboardAction" 
+			method="showSosDashoboard"> <result name="success" type="tiles">showSosDashboard</result> 
+			</action> -->
+
+		<action name="sosVehiclesDashboard"
+			class="com.trimax.its.vehicle.action.SOSVehicleDashboardAction">
+			<result name="success" type="tiles">sosVehiclesDashboardList</result>
+			<!-- <result name="input" type="tiles">sosVehiclesDashboard</result> -->
+		</action>
+
+		<action name="sosVehiclesDashboardAjax"
+			class="com.trimax.its.vehicle.action.SOSVehicleDashboardAction"
+			method="getSOSList">
+			<result name="success" type="chain">sosVehiclesDashboardList</result>
+		</action>
+
+		<action name="showDeviceDashboard"
+			class="com.trimax.its.device.action.ShowDeviceDashboardAction"
+			method="showDeviceDashoboardList">
+			<result name="success" type="tiles">showDeviceDashboard</result>
+		</action>
+
+		<action name="getDeviceDashboardData"
+			class="com.trimax.its.device.action.ShowDeviceDashboardAction"></action>
+
+ 	<action name="DeviceDisconected" class="com.trimax.its.vehicle.action.DeviceDisconnectedAction">
+			<result name="success" type="tiles">DeviceDisconected</result>
+			<result name="input" type="tiles">DeviceDisconected</result>
+		</action>
+		
+		<action name="getDeviceDisconectedData" class="com.trimax.its.vehicle.action.DeviceDisconnectedAction"
+			method="getDeviceDisconnectData">
+			<result name="success" type="chain">DeviceDisconected</result>
+		</action>
+		
+		
+		<action name="EPKMReportScheduleWise" class="com.trimax.its.vts.action.EPKMReportSchduleWise">
+			<result name="success" type="tiles">EPKMReportScheduleWise</result>
+		</action>
+		<action name="getEPKMReportScheduleWise" class="com.trimax.its.vts.action.EPKMReportSchduleWise"
+			method="getData">
+		</action>
+		
+			<action name="EPKMReportConductorWise" class="com.trimax.its.vts.action.EPKMReportConductorWise">
+			<result name="success" type="tiles">EPKMReportConductorWise</result>
+		</action>
+		<action name="getEPKMReportConductorWise" class="com.trimax.its.vts.action.EPKMReportConductorWise"
+			method="getEPKMData">
+		</action>
+
+
+ <action name="LiveBusTrackingDataForAll" 
+		class="com.trimax.its.vts.action.ShowLiveBusActionForAll" method="showLiveBusDetailsTrackingForAll">
+		<result name="success" type="tiles">LiveBusTrackingDataForAll</result>
+		</action>
+		
+		<action name="getPartialDetails" class="com.trimax.its.vts.action.PartialTripAction"
+			method="getPartialData">
+		</action>
+
+<action name="getNotOpeartedReport" class="com.trimax.its.vts.action.NotOperatedTrip">
+			<result name="success" type="tiles">NotOperatedReport</result>
+		</action>
+<action name="getNotOpeartedDetails" class="com.trimax.its.vts.action.NotOperatedTrip"
+			method="getNotOperatedData">
+		</action>
+		<!--  Daily Check List Report -->
+		<action name="dailyCheckList" class="com.trimax.its.vts.report.action.DailyCheckList">
+		<result name="success" type="tiles">dailyCheckList</result>
+		</action>
+		<action name="AjaxdailyCheckList" class="com.trimax.its.vts.report.action.DailyCheckList" method="getDailyCheckList"></action>
+		<!--  Daily Check List Report -->
+		
+<!-- Depot wise number of packet by Ashu start  -->
+
+		
+<!-- 		<action name="DepotsWisePacketsAction" class="com.trimax.its.vts.action.DepotsWisePacketsAction"> -->
+<!-- 		<result name="success" type="tiles">DepotsWisePackets</result> -->
+<!-- 		</action> -->
+<!-- 		<action name="getDepotsWisePackets" class="com.trimax.its.vts.action.DepotsWisePacketsAction" method="getDepotsWisePackets"> -->
+<!-- 		</action> -->
+
+
+<!-- 		<action name="DepotsWisePacketsAction" class="com.trimax.its.vts.action.DepotsWisePacketsAction"> -->
+<!-- 		<result name="success" type="tiles">DepotsWisePackets</result> -->
+<!-- 		</action> -->
+<!-- 		<action name="getDepotsWisePackets" class="com.trimax.its.vts.action.DepotsWisePacketsAction" method="getDepotsWisePackets"> -->
+<!-- 		</action> -->
+
+<!-- Depot wise number of packet by Ashu End --> 
+
+<!-- Daily Pass Report by Ashu start  -->
+		<action name="DailyPassReportAction" class="com.trimax.its.vts.action.DailyPassReportAction">
+		<result name="success" type="tiles">DailyPassReport</result>
+		</action>
+		<action name="getDailyPassReport" class="com.trimax.its.vts.action.DailyPassReportAction" method="getDailyPassReport">
+		</action>
+		<action name="getDailyPassDetails" class="com.trimax.its.vts.action.DailyPassReportAction" method="getDailyPassDetails">
+		</action>
+<!-- Daily Pass Report  Ashu End --> 
+<!-- Zero KM Device Report by Ashu start  -->
+<action name="ZeroKMDevicesReportAction" class="com.trimax.its.report.action.ZeroKMDevicesReportAction"><result name="success" type="tiles">ZeroKMDevicesReport</result></action><action name="getZeroKMDevicesReport" class="com.trimax.its.report.action.ZeroKMDevicesReportAction" method="getZeroKMDevicesReport">
+		</action><!-- Zero KM Device Report by Ashu end  -->
+<!-- Zero lat long device packets Report by Ashu start  
+--><action name="zeroLatLongDevicesReportAction" class="com.trimax.its.report.action.zeroLatLongDevicesReportAction"><result name="success" type="tiles">zeroLatLongDevicespacketsReport</result></action><action name="getZerolatLongDevicePackets" class="com.trimax.its.report.action.zeroLatLongDevicesReportAction" method="getZerolatLongDevicePackets">
+		</action><!-- Zero lat long device packets Report by Ashu end  -->
+
+	</package>
+</struts>
+
+

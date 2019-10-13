@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+<definition name="WeeklyChart" extends="baseLayout">
+		<put-attribute name="title" value="Weekly Chart" />
+		<put-attribute name="layoutId" value="Weekly Chart" />
+		<put-attribute name="content" value="/weeklyChart/viewWeeklyChart.jsp" />
+	</definition>
+
+	<definition name="CreateWeeklyChart" extends="baseLayout">
+		<put-attribute name="title" value="Create Weekly Chart" />
+		<put-attribute name="layoutId" value="Create Weekly Chart" />
+		<put-attribute name="content" value="/weeklyChart/createWeeklyChart.jsp" />
+	</definition>
+	
+	<definition name="EditWeeklyChart" extends="baseLayout">
+		<put-attribute name="title" value="Edit Weekly Chart" />
+		<put-attribute name="layoutId" value="Edit Weekly Chart" />
+		<put-attribute name="content" value="/weeklyChart/editWeeklyChart.jsp" />
+	</definition>
+
+</tiles-definitions>

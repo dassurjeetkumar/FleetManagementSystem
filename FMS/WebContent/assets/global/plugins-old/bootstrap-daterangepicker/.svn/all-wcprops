@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/its/!svn/ver/4081/its/WebContent/assets/global/plugins/bootstrap-daterangepicker
+END
+moment.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/its/!svn/ver/1/its/WebContent/assets/global/plugins/bootstrap-daterangepicker/moment.min.js
+END
+daterangepicker-bs2.css
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/its/!svn/ver/1/its/WebContent/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs2.css
+END
+daterangepicker-bs3.css
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/its/!svn/ver/1/its/WebContent/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/its/!svn/ver/1/its/WebContent/assets/global/plugins/bootstrap-daterangepicker/README.md
+END
+daterangepicker.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/its/!svn/ver/4081/its/WebContent/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js
+END

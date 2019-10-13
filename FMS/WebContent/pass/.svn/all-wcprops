@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/its/!svn/ver/6738/its/WebContent/pass
+END
+EditPassDurationType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6733/its/WebContent/pass/EditPassDurationType.jsp
+END
+PassPurchaseType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/6539/its/WebContent/pass/PassPurchaseType.jsp
+END
+addPassType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/5224/its/WebContent/pass/addPassType.jsp
+END
+PassSubTypeView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/6625/its/WebContent/pass/PassSubTypeView.jsp
+END
+PassCasteType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/6550/its/WebContent/pass/PassCasteType.jsp
+END
+viewPassType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5224/its/WebContent/pass/viewPassType.jsp
+END
+CreatePassIssuerCenterType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/6550/its/WebContent/pass/CreatePassIssuerCenterType.jsp
+END
+editPass.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/6642/its/WebContent/pass/editPass.jsp
+END
+CreatePassDistanceType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/6539/its/WebContent/pass/CreatePassDistanceType.jsp
+END
+PassDurationType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/6738/its/WebContent/pass/PassDurationType.jsp
+END
+CreatePassIssuerType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6546/its/WebContent/pass/CreatePassIssuerType.jsp
+END
+PassIssuerCenterView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6550/its/WebContent/pass/PassIssuerCenterView.jsp
+END
+CreatePassInstitutionType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6733/its/WebContent/pass/CreatePassInstitutionType.jsp
+END
+CreatePassPurchaseType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/6546/its/WebContent/pass/CreatePassPurchaseType.jsp
+END
+EditPassDistanceType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6539/its/WebContent/pass/EditPassDistanceType.jsp
+END
+CreatePassCounterMasterType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/its/!svn/ver/6550/its/WebContent/pass/CreatePassCounterMasterType.jsp
+END
+CreatePassSubType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/6738/its/WebContent/pass/CreatePassSubType.jsp
+END
+EditPassIssuerType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/6539/its/WebContent/pass/EditPassIssuerType.jsp
+END
+PassCounterMasterView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/its/!svn/ver/6550/its/WebContent/pass/PassCounterMasterView.jsp
+END
+addPass.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/its/!svn/ver/6642/its/WebContent/pass/addPass.jsp
+END
+CreatePassCasteType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/6550/its/WebContent/pass/CreatePassCasteType.jsp
+END
+editPassType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/5224/its/WebContent/pass/editPassType.jsp
+END
+EditPassPurchaseType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/6539/its/WebContent/pass/EditPassPurchaseType.jsp
+END
+viewPass.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/its/!svn/ver/6550/its/WebContent/pass/viewPass.jsp
+END
+editPassInstitutionType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/its/!svn/ver/6550/its/WebContent/pass/editPassInstitutionType.jsp
+END
+CreatePassDurationType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/6733/its/WebContent/pass/CreatePassDurationType.jsp
+END
+editPassCounterMasterType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/6550/its/WebContent/pass/editPassCounterMasterType.jsp
+END
+editPassSubType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/6733/its/WebContent/pass/editPassSubType.jsp
+END
+PassDistanceType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/6539/its/WebContent/pass/PassDistanceType.jsp
+END
+PassInstitutionType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/6550/its/WebContent/pass/PassInstitutionType.jsp
+END
+editPassIssuerCenterType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/6550/its/WebContent/pass/editPassIssuerCenterType.jsp
+END
+PassIssuerType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/6539/its/WebContent/pass/PassIssuerType.jsp
+END
+editPassCasteType.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/6550/its/WebContent/pass/editPassCasteType.jsp
+END

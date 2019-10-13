@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/its/!svn/ver/7385/its/src/com/trimax/its/device/dao
+END
+DeviceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/its/!svn/ver/7303/its/src/com/trimax/its/device/dao/DeviceDao.java
+END
+DVPDashboardDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/its/!svn/ver/7385/its/src/com/trimax/its/device/dao/DVPDashboardDao.java
+END
+SimCardDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/7303/its/src/com/trimax/its/device/dao/SimCardDao.java
+END
+DataCardDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/4214/its/src/com/trimax/its/device/dao/DataCardDao.java
+END
+MaintenanceTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/its/!svn/ver/4214/its/src/com/trimax/its/device/dao/MaintenanceTypeDao.java
+END
+ShowDeviceDashboardDoa.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/its/!svn/ver/7016/its/src/com/trimax/its/device/dao/ShowDeviceDashboardDoa.java
+END
+BatteryDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/5857/its/src/com/trimax/its/device/dao/BatteryDAO.java
+END
+DeviceHistoryDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/1003/its/src/com/trimax/its/device/dao/DeviceHistoryDao.java
+END
+RFIDCardDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/4214/its/src/com/trimax/its/device/dao/RFIDCardDao.java
+END
+DeviceTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/its/!svn/ver/4214/its/src/com/trimax/its/device/dao/DeviceTypeDao.java
+END

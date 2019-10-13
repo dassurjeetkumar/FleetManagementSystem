@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="memo_notice" extends="struts-default"
+		namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+				<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings> -->	
+		
+		
+		
+		<action name="memoNoticeAction" class="com.trimax.its.memo.action.MemoAction" method="insertData">
+    	 <result name="success"  type="tiles">memolist</result>
+    </action>
+    <action name="memoListAction" class="com.trimax.its.memo.action.MemoAction"></action>
+    
+      <action name="createMemoAction" class="com.trimax.its.memo.action.MemoAction" method="createMemo">
+			<result name="success" type="tiles">creatememo</result>
+	</action>
+    
+    	<action name="createMemoNoticeAction" class="com.trimax.its.memo.action.MemoAction" method="addMemoNotice">
+			<result name="success" type="tiles">memoAdd</result>
+			<result name="input" type="tiles">creatememo</result> 
+		</action>
+		
+		<action name="deleteMemoNotice" class="com.trimax.its.memo.action.MemoAction" method="deleteMemoAction">
+			<result name="success" type="tiles">memoAdd</result>
+		</action>
+		
+		
+		<action name="ModifyMemoNoticeDetails" class="com.trimax.its.memo.action.MemoAction" method="editMemo">
+			<result name="success" type="tiles">memoEdit</result>
+		</action>
+  <action name="addEditedMemo" class="com.trimax.its.memo.action.MemoAction" method="addeditedMemo">
+			<result name="success" type="tiles">memolist</result>
+			<result name="input" type="tiles">memoEdit</result>
+		</action>
+  
+ 
+  
+
+
+	</package>
+</struts>

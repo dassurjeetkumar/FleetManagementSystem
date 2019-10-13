@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+     <property name="connection.url"> 
+  			jdbc:mysql://10.30.1.158:3306/its?zeroDateTimeBehavior=convertToNull  
+  		</property>
+   		<property name="connection.username">manishJ</property>  
+		 <property name="connection.password">Man!shJ</property> 
+			
+ 		<!-- <property name="connection.url">  
+
+			jdbc:mysql://10.30.1.154/its_live?zeroDateTimeBehavior=convertToNull 
+ 		</property> 
+ 		<property name="connection.username">doa</property> 
+  		<property name="connection.password">doa</property>   -->
+  	<!-- 	<property name="connection.url">  
+
+			jdbc:mysql://10.30.2.21/its?zeroDateTimeBehavior=convertToNull 
+ 		</property> 
+ 		<property name="connection.username">venkateswara</property>  
+		 <property name="connection.password">VenkateswarR</property>  -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect	</property>
+		<property name="current_session_context_class">thread</property>
+		<!-- <property name="cache.provider_class"> org.hibernate.cache.NoCacheProvider 
+			</property> -->
+		<property name="show_sql">true</property>
+		<property name="connection.autoReconnect">true</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection.is-connection-validation-required">true</property>
+
+		<property name="org.hibernate.connection.C3P0ConnectionProvider">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider.class</property>
+		<property name="c3p0.min_size">1</property>
+		<property name="c3p0.max_size">5000</property>		
+		<property name="c3p0.timeout">1000</property>
+		<property name="c3p0.max_statements">5000</property>
+		<property name="c3p0.idle_test_period">1000</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.preferredTestQuery">select 1;</property>
+		
+		
+		<mapping class="com.trimax.its.model.Users" />
+		<mapping class="com.trimax.its.model.ErrorLog" />
+		<mapping class="com.trimax.its.model.SessionDetails" />
+		<mapping class="com.trimax.its.transport.model.Route_Trans" />
+		<mapping class="com.trimax.its.transport.model.BusStops" />
+		<mapping class="com.trimax.its.vts.model.VtsDataModel" />
+
+		<!-- <mapping class="com.trimax.its.transport.model.Route"/> -->
+		<mapping class="com.trimax.its.fare.model.RoutePoint_Fare" />
+		<mapping class="com.trimax.its.fare.model.FareChart" />
+		<mapping class="com.trimax.its.fare.model.Farechart_Master" />
+		<mapping class="com.trimax.its.fare.model.RateMaster" />
+		<mapping class="com.trimax.its.fare.model.RateMasterDetail" />
+		<mapping class="com.trimax.its.utility.model.Role" />
+		<mapping class="com.trimax.its.utility.model.PageRole" />
+		<mapping class="com.trimax.its.utility.model.GroupRole" />
+
+		<mapping class="com.trimax.its.device.model.Device_Type" />
+		<mapping class="com.trimax.its.device.model.Device" />
+		<mapping class="com.trimax.its.model.Vendor" />
+		<mapping class="com.trimax.its.vehicle.model.MakeType" />
+		<mapping class="com.trimax.its.vehicle.model.Vehicle" />
+		<mapping class="com.trimax.its.vehicle.model.ModelType" />
+		<mapping class="com.trimax.its.vehicle.model.BrandType" />
+		<mapping class="com.trimax.its.vehicle.model.OrganisationChart" />
+		<mapping class="com.trimax.its.vehicle.model.BrandType" />
+		<mapping class="com.trimax.its.vehicle.model.BodyType" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleType" />
+		<mapping class="com.trimax.its.vehicle.model.TransferVehicleHistory" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleFcRenewal" />
+		<mapping class="com.trimax.its.vehicle.model.DockingType" />
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.vehicle.model.Fuel" />
+		<!-- <mapping class="com.trimax.its.vehicle.model.ServiceType" /> -->
+		<mapping class="com.trimax.its.vehicle.model.ServiceTaxType" />
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.transport.model.PointType" />
+		<mapping class="com.trimax.its.route.model.Route" />
+		<mapping class="com.trimax.its.route.model.RoutePoint" />
+		<mapping class="com.trimax.its.route.model.RouteMap" />
+		<mapping class="com.trimax.its.route.model.RouteType" />
+
+		<mapping class="com.trimax.its.fare.model.RateMaster" />
+		<mapping class="com.trimax.its.fare.model.RateMasterDetail" />
+		<mapping class="com.trimax.its.fare.model.SpecialPassTicketModel" />
+		<mapping class="com.trimax.its.fare.model.TollPassTicketModel" />
+		<mapping class="com.trimax.its.utility.model.Role" />
+		<mapping class="com.trimax.its.utility.model.PageRole" />
+		<mapping class="com.trimax.its.utility.model.GroupRole" />
+
+		<mapping class="com.trimax.its.device.model.Device_Type" />
+		<mapping class="com.trimax.its.device.model.Device" />
+		<mapping class="com.trimax.its.model.Vendor" />
+
+		<mapping class="com.trimax.its.vehicle.model.MakeType" />
+		<mapping class="com.trimax.its.vehicle.model.Vehicle" />
+		<mapping class="com.trimax.its.vehicle.model.ModelType" />
+		<mapping class="com.trimax.its.vehicle.model.BrandType" />
+		<mapping class="com.trimax.its.vehicle.model.OrganisationChart" />
+		<mapping class="com.trimax.its.vehicle.model.BrandType" />
+		<mapping class="com.trimax.its.vehicle.model.BodyType" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleType" />
+		<mapping class="com.trimax.its.vehicle.model.TransferVehicleHistory" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleFcRenewal" />
+		<mapping class="com.trimax.its.vehicle.model.DockingType" />
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.vehicle.model.Fuel" />
+		<mapping class="com.trimax.its.vehicle.model.ServiceType" />
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.vehicle.model.ComponentsTypes" />
+		<mapping class="com.trimax.its.vehicle.model.SubComponents" />
+		<mapping class="com.trimax.its.transport.model.PointType" />
+		<mapping class="com.trimax.its.route.model.Route" />
+		<mapping class="com.trimax.its.route.model.RoutePoint" />
+		<mapping class="com.trimax.its.route.model.RouteMap" />
+		<mapping class="com.trimax.its.route.model.RouteType" />
+
+		<mapping class="com.trimax.its.vehicle.model.MakeType" />
+		<mapping class="com.trimax.its.vehicle.model.Vehicle" />
+		<mapping class="com.trimax.its.vehicle.model.ModelType" />
+		<mapping class="com.trimax.its.vehicle.model.BrandType" />
+		<mapping class="com.trimax.its.vehicle.model.OrganisationChart" />
+		<mapping class="com.trimax.its.vehicle.model.BrandType" />
+		<mapping class="com.trimax.its.vehicle.model.BodyType" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleType" />
+		<mapping class="com.trimax.its.vehicle.model.TransferVehicleHistory" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleFcRenewal" />
+		<mapping class="com.trimax.its.vehicle.model.DockingType" />
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.vehicle.model.Fuel" />
+		<!-- <mapping class="com.trimax.its.vehicle.model.ServiceType" /> -->
+
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.vehicle.model.AccidentType" />
+		<mapping class="com.trimax.its.vehicle.model.BreakDownType" />
+
+		<mapping class="com.trimax.its.vehicle.model.BreakDownTypeDetails" />
+		<mapping class="com.trimax.its.vehicle.model.BreakDownCategory" />
+		<mapping class="com.trimax.its.transport.model.PointType" />
+
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleCategory" />
+		<mapping class="com.trimax.its.transport.model.PointType" />
+
+		<mapping class="com.trimax.its.route.model.Route" />
+		<mapping class="com.trimax.its.route.model.RoutePoint" />
+		<mapping class="com.trimax.its.route.model.RouteMap" />
+		<mapping class="com.trimax.its.route.model.RouteType" />
+		<mapping class="com.trimax.its.usermanagement.model.DesignationType" />
+
+		<mapping class="com.trimax.its.vehicle.model.DockingHistory" />
+		<mapping class="com.trimax.its.transport.model.ScheduleType" />
+		<mapping class="com.trimax.its.transport.model.Schedule" />
+		<mapping class="com.trimax.its.transport.model.ScheduleService" />
+		<mapping class="com.trimax.its.transport.model.OrgType" />
+		<mapping class="com.trimax.its.transport.model.FormFour" />
+		<mapping class="com.trimax.its.transport.model.FormFourType" />
+		<mapping class="com.trimax.its.transport.model.TripType" />
+		<mapping class="com.trimax.its.transport.model.ShiftType" />
+		<mapping class="com.trimax.its.transport.model.BreakType" />
+		<mapping class="com.trimax.its.transport.model.ScheduleDetails" />
+		<mapping class="com.trimax.its.transport.model.RoadType" />
+		<mapping class="com.trimax.its.utility.model.Page_Master" />
+		<mapping class="com.trimax.its.utility.model.Group_Master" />
+		<mapping class="com.trimax.its.utility.model.UserGroup" />
+		<mapping class="com.trimax.its.device.model.DeviceHistory" />
+		<mapping class="com.trimax.its.device.model.Simcard" />
+		<mapping class="com.trimax.its.device.model.SimVtu" />
+		<mapping class="com.trimax.its.device.model.DeviceOrg" />
+		<mapping class="com.trimax.its.device.model.BatteryDevice" />
+		<mapping class="com.trimax.its.device.model.Battery" />
+
+		<mapping class="com.trimax.its.transport.model.RoadType" />
+
+		<mapping class="com.trimax.its.device.model.DeviceHistory" />
+		<mapping class="com.trimax.its.device.model.Simcard" />
+		<mapping class="com.trimax.its.device.model.SimVtu" />
+		<mapping class="com.trimax.its.device.model.DeviceOrg" />
+		<mapping class="com.trimax.its.device.model.BatteryDevice" />
+		<mapping class="com.trimax.its.device.model.Battery" />
+		<mapping class="com.trimax.its.route.model.Platform" />
+		<mapping class="com.trimax.its.route.model.Bay" />
+		<mapping class="com.trimax.its.route.model.Floor" />
+
+		<mapping class="com.trimax.its.transport.model.BusStopType" />
+
+		<mapping class="com.trimax.its.route.model.RoutePlatformRel" />
+
+		<mapping class="com.trimax.its.usermanagement.model.DesignationType" />
+
+		<mapping class="com.trimax.its.usermanagement.model.DesignationType" />
+		<mapping class="com.trimax.its.model.Vendor" />
+
+		<mapping class="com.trimax.doa.ticketing.model.TicketInventory" />
+		<mapping class="com.trimax.doa.ticketing.model.TicketInventoryIssue" />
+		<!-- <mapping class="com.trimax.doa.ticketing.model.DenominationType"/> -->
+		<mapping class="com.trimax.its.pass.model.PassRate" />
+		<mapping class="com.trimax.its.pass.model.PassType" />
+		<mapping class="com.trimax.doa.ticketing.model.TicketInventoryMaster" />
+		<mapping class="com.trimax.its.transport.model.TicketType" />
+
+		<mapping class="com.trimax.its.vehicle.model.BreakDownTypeDetails"/>
+		<mapping class="com.trimax.its.transport.model.Customer"/>
+		
+		<mapping class="com.trimax.its.usermanagement.model.UserDetails"/>
+        <mapping class="com.trimax.its.usermanagement.model.Employee"/>
+         <mapping class="com.trimax.its.usermanagement.model.EmployeeType"/>
+        
+        <mapping class="com.trimax.its.vehicle.model.DockingDetails"/>
+		<mapping class="com.trimax.its.vehicle.model.VehicleScrap"/>
+		<!--         rajesh start-->
+				<mapping class="com.trimax.its.vehicle.model.Complaint"/>
+		
+		<!-- rajesh end -->
+        <mapping class="com.trimax.its.report.model.ReportHeader" />
+
+		<mapping class="com.trimax.its.vehicle.model.BreakDownTypeDetails" />
+		<mapping class="com.trimax.its.transport.model.Customer" />
+
+		<mapping class="com.trimax.its.usermanagement.model.UserDetails" />
+		<mapping class="com.trimax.its.usermanagement.model.Employee" />
+
+		<mapping class="com.trimax.its.vehicle.model.DockingDetails" />
+		<mapping class="com.trimax.its.vehicle.model.VehicleScrap" />
+
+		<mapping class="com.trimax.its.report.model.ReportHeader" />
+
+		<mapping class="com.trimax.its.report.model.ReportDetail" />
+ 
+        <mapping class="com.trimax.its.report.model.ReportFilter" />
+        
+         <mapping class="com.trimax.its.vehicle.model.VehicleDevice"/>
+         
+         <mapping class="com.trimax.its.utility.model.MenuPageRole"/>
+        <mapping class="com.trimax.its.usermanagement.model.MenuUserRolePage"/>
+        
+        <mapping class="com.trimax.doa.ticketing.model.TicketInvoiceMaster"/>
+        <mapping class="com.trimax.doa.ticketing.model.TicketInvoiceDetails"/>
+        <mapping class="com.trimax.doa.ticketing.model.TicketBagMaster" />
+        <mapping class="com.trimax.its.fare.model.Concession"/>
+        <mapping class="com.trimax.its.fare.model.PassengerType"/>
+      
+		<mapping class="com.trimax.its.report.model.ReportFilter" />
+
+		<mapping class="com.trimax.its.vehicle.model.VehicleDevice" />
+
+		<mapping class="com.trimax.its.utility.model.MenuPageRole" />
+		<mapping class="com.trimax.its.usermanagement.model.MenuUserRolePage" />
+
+		<mapping class="com.trimax.doa.ticketing.model.TicketInvoiceMaster" />
+		<mapping class="com.trimax.doa.ticketing.model.TicketInvoiceDetails" />
+       
+		<mapping class="com.trimax.its.fare.model.Concession" />
+		<mapping class="com.trimax.its.fare.model.PassengerType" />
+       
+       <mapping class="com.trimax.its.fare.model.LuggageType"/>
+       <mapping class="com.trimax.its.fare.model.RevenueType"/>
+       <mapping class="com.trimax.its.fare.model.PenaltyTicket"/>
+       
+       <mapping class="com.trimax.its.account.model.ActHeadMasterModel"/>
+       <mapping class="com.trimax.its.transport.model.CaseType" />
+       
+       <mapping class="com.trimax.its.toll.model.Tollfee"/>
+       
+       <!--         Start VehicleDefects -->
+        <mapping class="com.trimax.its.vehicle.model.VehicleDefects"/> 
+<!--  End VehicleDefects -->
+
+		<mapping class="com.trimax.its.transport.model.BusStopGroup" />
+		<mapping class="com.trimax.its.transport.model.BusStopGroupStop" />
+		<mapping class="com.trimax.its.transport.model.GroupType" />
+
+		<mapping class="com.trimax.its.fare.model.LuggageType" />
+		<mapping class="com.trimax.its.fare.model.RevenueType" />
+		<mapping class="com.trimax.its.fare.model.PenaltyTicket" />
+		<mapping class="com.trimax.its.fare.model.bankRemmitanceModal" />
+
+		
+		<mapping class="com.trimax.its.transport.model.CaseType" />
+
+		<mapping class="com.trimax.its.toll.model.Tollfee" />
+		 <mapping class="com.trimax.doa.ticketing.model.DenominationType" />
+        <mapping class="com.trimax.doa.ticketing.model.TicketTypeManual" />
+		<mapping class="com.trimax.doa.ticketing.model.TicketBagMaster" />
+        <mapping class="com.trimax.its.vehicle.model.BreakDownHistory" />
+		<mapping class="com.trimax.its.componenttype.model.ComponentType" />
+        <mapping class="com.trimax.its.holiday.model.HolidayType" />
+         <mapping class="com.trimax.its.holiday.model.HolidayMasterModel" />
+        
+        <mapping class="com.trimax.its.vehicle.model.VehicleMaintenance" />
+         <mapping class="com.trimax.its.vehicle.model.CancellationCause" />
+          <mapping class="com.trimax.its.vehicle.model.ExtraKmCause" />
+<!-- reveneu Sector  start-->
+        <mapping class="com.trimax.its.revenuesector.model.RevenueSector"/>
+<!-- revenue Sector end -->
+
+		<mapping class="com.trimax.its.transport.model.PeakHour"/>
+		
+		 <mapping class="com.trimax.its.usermanagement.model.UserType" />
+		<mapping class="com.trimax.its.cashremittancevoucher.model.CashRemittanceVoucher"/>
+		 <mapping class="com.trimax.its.device.model.DataCard" />
+        <mapping class="com.trimax.its.device.model.RFIDCard" />
+        <mapping class="com.trimax.its.device.model.MaintenanceType" />
+        <mapping class="com.trimax.its.memo.model.Memo"/>
+		<mapping class="com.trimax.its.memo.model.MemoType"/>
+		<mapping class="com.trimax.its.training.model.Training" /> 
+		<mapping class="com.trimax.its.training.model.TrainingType" />
+		<mapping class="com.trimax.its.passengercategory.model.PassengerCategory"/>
+		
+		<!-- Report Relation start --> 
+		<mapping class="com.trimax.its.report.model.ReportRelation" />
+		<!-- Report Relation End --> 
+		
+		<mapping class="com.trimax.its.usermanagement.model.BataConfigDetails" />
+		<mapping class="com.trimax.its.pis.model.PisScrollMessageModel" />
+		<mapping class="com.trimax.its.transport.model.WeeklyChart" />
+		<mapping class="com.trimax.doa.ticketing.model.TicketInventoryLog"/>
+		<mapping class="com.trimax.its.pis.model.DisplayMappingModel"/>
+		<mapping class="com.trimax.its.inventoryticketpasstype.model.InventoryTicketPassType"/>
+		<mapping class="com.trimax.its.model.AppVersion"/> 
+		<mapping class="com.trimax.its.pis.model.DisplayUnitModel"/>
+		<mapping class="com.trimax.its.ad.model.Advertisement"/>
+		<mapping class="com.trimax.its.ad.model.AdvertisementType"/>
+		<mapping class="com.trimax.its.vts.model.SarthiSectorGeofence"/>
+		<mapping class="com.trimax.its.vts.model.SectorVehicleRelation"/>
+		<mapping class="com.trimax.its.dashboard.model.ChartMapping"/>
+		<mapping class="com.trimax.its.pis.model.PISCustomer"/>
+		<mapping class="com.trimax.its.pis.model.PisTemplateMaster"/> 
+		<mapping class="com.trimax.its.pis.model.PlayList"/>
+		<mapping class="com.trimax.its.dashboard.model.DashboardModel"/>
+		<mapping class="com.trimax.its.dashboard.model.DashBoardUserMapping"/>
+		<mapping class="com.trimax.its.route.model.BusStopRoutePoint"/>
+        <mapping class="com.trimax.its.route.model.BusStopRouteInfo"/>
+        <mapping class="com.trimax.its.vehicle.model.VehicleStatusModel"/>
+        <mapping class="com.trimax.its.vehicle.model.ServiceTypeTaxModel"/>
+        <mapping class="com.trimax.its.vehicle.model.ScheduleMap"/>
+        <mapping class="com.trimax.its.vehicle.model.ServiceLimit"/>
+        <mapping class="com.trimax.its.vehicle.model.ScheduleServiceLimit"/>
+        <mapping class="com.trimax.its.pass.model.PassIssuerType" />
+        <mapping class="com.trimax.its.pass.model.PassDistanceType" />
+        <mapping class="com.trimax.its.pass.model.PassPurchaseType" />
+        <mapping class="com.trimax.its.pass.model.PassDurationType" />
+        <mapping class="com.trimax.its.transport.model.HappyHour" />
+        <mapping class="com.trimax.its.pass.model.PassCasteType"/>
+        <mapping class="com.trimax.its.pass.model.PassInstitutionType"/>
+          <mapping class="com.trimax.its.pass.model.PassIssuerCenter"/>
+          <mapping class="com.trimax.its.pass.model.PassCounterMaster"/>
+          <mapping class="com.trimax.its.pass.model.PassSubType"/>
+          <mapping class="com.trimax.its.etm.model.EtmDeviceHistory"/>
+          <mapping class="com.trimax.its.etm.model.docketinfo"/>
+           <mapping class="com.trimax.its.etm.model.EtmDeviceIssue"/>
+           <mapping class="com.trimax.its.transport.model.TicketSubType" />   
+           <mapping class="com.trimax.its.report.model.DutyRota" />  
+              <mapping class="com.trimax.its.usermanagement.model.EmployeeTransfer" />   
+              <mapping class="com.trimax.its.vehicle.model.VehicleTrasnsfer" />       
+	</session-factory>
+
+
+</hibernate-configuration>

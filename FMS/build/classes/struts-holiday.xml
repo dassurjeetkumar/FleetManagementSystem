@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="holiday" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+				<global-results>
+			<result name="welcome" type="tiles">login</result>
+				<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+
+		<!-- <global-exception-mappings>
+		<exception-mapping exception="java.lang.NumberFormatException" result="NullException" />
+   	 <exception-mapping exception="java.lang.NullPointerException" result="NullException" />
+   	 <exception-mapping exception="java.io.IOException" result="NullException" />
+   	 	 	 <exception-mapping exception="java.sql.SQLException" result="NullException" />
+   	 
+ 		 <exception-mapping exception="org.apache.struts.register.exceptions.SecurityBreachException" result="welcome" />
+  		 <exception-mapping exception="java.lang.Exception" result="welcome" />
+  		 <exception-mapping exception="java.lang.NullPointerException" result="welcome" />
+		</global-exception-mappings>	 -->
+		
+<!-- 		Holiday Master -->
+		<action name="HolidayTypes" class="com.trimax.its.holiday.action.HolidayTypeAction">
+			
+		</action>
+		
+		<action name="HolidayTypelist" class="com.trimax.its.holiday.action.HolidayTypeAction" method="viewHolidayType">
+			<result name="success" type="tiles">ViewHolidayTypesListDetails</result>
+		</action>
+		
+		<action name="createholidaytype" class="com.trimax.its.holiday.action.HolidayTypeAction"
+			method="createholidaytype">
+			<result name="success" type="tiles">CreateHolidayTypeview</result>
+		</action> 
+		
+		<action name="createHolidayTypeAction" class="com.trimax.its.holiday.action.HolidayTypeAction"
+			method="createHolidayTypeAction">
+			<result name="input" type="tiles">CreateHolidayTypeview</result>
+			<result name="success" type="tiles">ViewHolidayTypesListDetails</result>
+		</action> 
+		
+		<action name="ModifyHolidayTypeDetails" class="com.trimax.its.holiday.action.HolidayTypeAction"
+			method="getEditDetails">
+			<result name="success" type="tiles">showEditHolidayType</result>
+		</action>
+		
+		<action name="updateHolidayTypeDetails" class="com.trimax.its.holiday.action.HolidayTypeAction"
+			method="updateHolidayTypeDetails">
+			<result name="input" type="tiles">showEditHolidayType</result>
+			<result name="success" type="tiles">ViewHolidayTypesListDetails</result>
+		</action>
+
+		<action name="DeleteHolidayType" class="com.trimax.its.holiday.action.HolidayTypeAction"
+			method="deleteHolidayType">
+			<result name="success" type="tiles">DeleteHolydayType</result>
+			<result name="input" type="tiles">DeleteHolydayType</result>
+		</action>
+		<action name="holidayMaster" class="com.trimax.its.holiday.action.HolidayMasterAction">
+			<result name="success" type="tiles">ViewHolidayMasterListDetails</result>
+		</action>
+		<action name="AjaxHolidayMasterTableAction" class="com.trimax.its.holiday.action.HolidayMasterAction" method="viewHolidayMaster"></action>
+		
+		<action name="DeleteHolidayMaster" class="com.trimax.its.holiday.action.HolidayMasterAction"
+			method="deleteHolidayMaster">
+			<result name="success" type="tiles">ViewHolidayMasterListDetails</result>
+		</action>
+		<action name="CreateHolidayMaster" class="com.trimax.its.holiday.action.HolidayMasterAction"
+			method="createholidaymaster">
+			<result name="success" type="tiles">CreateHolidayMasterview</result>
+		</action> 
+		<action name="createHolidayMasterAction" class="com.trimax.its.holiday.action.HolidayMasterAction"
+			method="createHolidaymasterAction">
+			<result name="input" type="tiles">CreateHolidayMasterview</result>
+			<result name="success" type="tiles">ViewHolidayMasterListDetails</result>
+		</action> 
+		<action name="EditHolidayMaster" class="com.trimax.its.holiday.action.HolidayMasterAction"
+			method="editholidaymaster">
+			<result name="success" type="tiles">EditHolidayMasterview</result>
+		</action> 
+		<action name="editHolidayMasterAction" class="com.trimax.its.holiday.action.HolidayMasterAction"
+			method="editHolidaymasterAction">
+			<result name="input" type="tiles">EditHolidayMasterview</result>
+			<result name="success" type="tiles">ViewHolidayMasterListDetails</result>
+		</action> 
+<!-- End Holiday master -->
+		
+	</package>
+</struts>

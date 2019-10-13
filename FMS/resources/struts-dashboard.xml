@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="dashboard" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="securityInterceptor"
+				class="com.trimax.its.util.SecurityInterceptor" />
+			<interceptor-stack name="itsStack">
+				<interceptor-ref name="securityInterceptor" />
+				<interceptor-ref name="defaultStack" />
+
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="itsStack" />
+		
+		<global-results>
+			<result name="welcome" type="tiles">login</result>
+			<result name="NullException" type="tiles">Exception</result>
+		</global-results>
+		 <action name="dashboardAccess"
+			class="com.trimax.its.dashboard.action.DashboardMappingAction"
+			method="createDashboard">
+			<result name="success" type="tiles">showDashboardMaster</result>
+		</action>
+		<action name="getDashboardlist"
+			class="com.trimax.its.dashboard.action.DashboardMappingAction"
+			method="getAllDashboardMster">
+			<result name="success" type="tiles">showDashboardMaster</result>
+		</action>
+      <action name="dashboardAccess1"
+			class="com.trimax.its.dashboard.action.DashboardMappingAction"
+			method="createDashboard">
+
+			<result name="success" type="tiles">createDashboard</result>
+		</action>
+		  <action name="getDashboard" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="getAllDashboard">
+            <result name="success" type="tiles">viewGroupRole</result>
+        </action>
+        <action name="saveDashboard" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="mapUserDashboard">
+            <result name="success" type="tiles">showDashboardMaster</result>
+        </action>
+		
+			<action name="createDashboardName" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="CreateDashboardName">
+            <result name="success" type="tiles">createDashboardAssign</result>
+            <result name="input" type="tiles">createDashboard</result> 
+        </action>
+        
+        <action name="getDashboardUsermapping" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="getAllDashboardMapping">
+         </action>
+         
+         <action name="saveDashboardUserMapping" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="mapUserDashboardMapping">
+            <result name="success" type="tiles">createDashboardUserAssign</result>
+        </action> 
+         <action name="deleteDashboard" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="deleteDashboardAction">
+            <result name="success" type="tiles">showDashboardMaster</result>
+        </action>
+        
+        <action name="ModifyDashboardDetails" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="editDashBoard">
+            <result name="success" type="tiles">editDashboardMaster</result>
+        </action>
+        
+        <action name="updateDashboard" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="addeditedDashboard">
+            <result name="success" type="tiles">createDashboardAssign</result>
+            	<result name="input" type="tiles">editDashboardMaster</result> 
+        </action>
+        <action name="getlistofuser" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="getListOfUser">
+         <result name="success" type="tiles">createDashboardAssign</result>
+        </action>
+        
+         <action name="userroledashboardassign" class="com.trimax.its.dashboard.action.DashboardMappingAction" method="getRoleDashboardMapping">
+         <result name="success" type="tiles">createDashboardUserAssign</result>
+        </action>
+	</package>
+</struts>

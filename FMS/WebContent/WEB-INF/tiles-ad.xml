@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   <tiles-definitions>
+   
+    <!-- Ad Mannagement Start -->
+    
+     
+   <definition name="GetAllAds" extends="baseLayout">
+      <put-attribute name="title"  value="Get All Adds"/>
+      <put-attribute name="content"   value="/ad/getAllAds.jsp"/>      
+   </definition>
+   
+   <definition name="ViewAdMannagement" extends="baseLayout">
+      <put-attribute name="title"  value="ViewAd Mannagement"/>
+      <put-attribute name="content"   value="/ad/viewAd.jsp"/>      
+   </definition>
+    
+    <definition name="CreateAdMannagement" extends="baseLayout">
+      <put-attribute name="title"  value="CreateAd Mannagement"/>
+      <put-attribute name="content"   value="/ad/createAd.jsp"/>      
+   </definition>
+   <definition name="EditAdMannagement" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Ad Mannagement"/>
+      <put-attribute name="content"   value="/ad/editAd.jsp"/>      
+   </definition>
+   	<!-- Ad Mannagement End -->
+    
+
+
+<!--    Gopinath Ktg customer code Start -->
+    <definition name="GetCustomer" extends="baseLayout">
+      <put-attribute name="title"  value="Customers"/>
+      <put-attribute name="content"   value="/ad/getCustomerAd.jsp"/>      
+   </definition>
+   
+     <definition name="Createcustomer" extends="baseLayout">
+      <put-attribute name="title"  value="Create Customer"/>
+            <put-attribute name="content"   value="/ad/createcustomer.jsp"/>      
+   </definition>
+    <definition name="Editcustomer" extends="baseLayout">
+      <put-attribute name="title"  value="Edit Customer"/>
+            <put-attribute name="content"   value="/ad/Editcustomer.jsp"/>      
+   </definition>
+   
+   <!--    Gopinath Ktg code end -->
+
+   
+   </tiles-definitions>

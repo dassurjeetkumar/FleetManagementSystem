@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/7212/its/src/com/trimax/its/report/model
+END
+ReportRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/its/!svn/ver/2453/its/src/com/trimax/its/report/model/ReportRelation.java
+END
+DutyRota.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/its/!svn/ver/7212/its/src/com/trimax/its/report/model/DutyRota.java
+END
+ReportFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/1139/its/src/com/trimax/its/report/model/ReportFilter.java
+END
+TicketConsumptionStatementMonthlyPassModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/its/!svn/ver/5394/its/src/com/trimax/its/report/model/TicketConsumptionStatementMonthlyPassModel.java
+END
+TicketConsumptionStatementModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/its/!svn/ver/5394/its/src/com/trimax/its/report/model/TicketConsumptionStatementModel.java
+END
+ActiontoTakenBasedonITSReportspojo.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/its/!svn/ver/6718/its/src/com/trimax/its/report/model/ActiontoTakenBasedonITSReportspojo.java
+END
+ReportDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/1195/its/src/com/trimax/its/report/model/ReportDetail.java
+END
+ReportHeader.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/its/!svn/ver/1195/its/src/com/trimax/its/report/model/ReportHeader.java
+END

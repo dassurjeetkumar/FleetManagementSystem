@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/its/!svn/ver/6984/its/WebContent/pages/admin
+END
+error.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/its/!svn/ver/4345/its/WebContent/pages/admin/error.jsp
+END
+UserGroupMap.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/4065/its/WebContent/pages/admin/UserGroupMap.jsp
+END
+employeetype.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/25/its/WebContent/pages/admin/employeetype.jsp
+END
+employee.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/its/!svn/ver/25/its/WebContent/pages/admin/employee.jsp
+END
+addPage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/its/!svn/ver/4316/its/WebContent/pages/admin/addPage.jsp
+END
+createrole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/5224/its/WebContent/pages/admin/createrole.jsp
+END
+IMMSlogin1.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/its/!svn/ver/5601/its/WebContent/pages/admin/IMMSlogin1.jsp
+END
+groupRole_bk.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/its/!svn/ver/5747/its/WebContent/pages/admin/groupRole_bk.jsp
+END
+createNewPage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/its/!svn/ver/5745/its/WebContent/pages/admin/createNewPage.jsp
+END
+UserGroup.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/280/its/WebContent/pages/admin/UserGroup.jsp
+END
+editGroup.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/4345/its/WebContent/pages/admin/editGroup.jsp
+END
+groupRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/4194/its/WebContent/pages/admin/groupRole.jsp
+END
+role.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/its/!svn/ver/4194/its/WebContent/pages/admin/role.jsp
+END
+designation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/its/!svn/ver/25/its/WebContent/pages/admin/designation.jsp
+END
+customException.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/its/!svn/ver/4097/its/WebContent/pages/admin/customException.jsp
+END
+addGroup.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/3841/its/WebContent/pages/admin/addGroup.jsp
+END
+group.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/its/!svn/ver/25/its/WebContent/pages/admin/group.jsp
+END
+PageRoleListDisplay.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/its/!svn/ver/6984/its/WebContent/pages/admin/PageRoleListDisplay.jsp
+END
+editRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/4345/its/WebContent/pages/admin/editRole.jsp
+END
+createGroup.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/4345/its/WebContent/pages/admin/createGroup.jsp
+END
+pagerole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/its/!svn/ver/6984/its/WebContent/pages/admin/pagerole.jsp
+END
+editAddPage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/its/!svn/ver/5746/its/WebContent/pages/admin/editAddPage.jsp
+END
